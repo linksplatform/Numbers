@@ -3,7 +3,7 @@
     /// <remarks>
     /// Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org
     /// </remarks>
-    public class MathHelpers
+    public static class MathHelpers
     {
         /// <remarks>
         /// Source: https://oeis.org/A000142/list
