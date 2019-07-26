@@ -12,7 +12,7 @@
     <PackageTags>LinksPlatform;Numbers;Integer;BitwiseHelpers;BitwiseExtensions;ArithmeticHelpers;ArithmeticExtensions;MathHelpers;MathExtensions</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/d65e8dd6e1b647405bc3d33687172e79b70e3435/doc/Avatar-rainbow.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/linksplatform/Numbers</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/linksplatform/Numbers/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Numbers</RepositoryUrl>
