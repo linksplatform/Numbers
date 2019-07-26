@@ -1,6 +1,6 @@
 ﻿namespace Platform.Numbers
 {
-    public class ArithmeticHelpers
+    public static class ArithmeticHelpers
     {
         public static T Add<T>(T x, T y) => ArithmeticHelpers<T>.Add(x, y);
         public static T And<T>(T x, T y) => ArithmeticHelpers<T>.And(x, y);
