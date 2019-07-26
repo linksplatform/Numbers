@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionPrefix>0.0.2</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -21,6 +21,11 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>Exceptions are correcly ignored now.
+Platform.Reflection dependency updated from 0.0.1 to 0.0.3.
+Platform.Reflection.Sigil dependency updated from 0.0.2 to 0.0.3.
+Platform.Converters dependency updated from 0.0.1 to 0.0.2.
+Refactoring and issues fixes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
