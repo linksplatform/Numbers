@@ -1,8 +1,9 @@
-﻿using Platform.Converters;
+﻿using System;
+using Platform.Converters;
 
 namespace Platform.Numbers
 {
-    public struct Integer
+    public struct Integer : IEquatable<Integer>
     {
         public readonly ulong Value;
 
@@ -43,6 +44,8 @@ namespace Platform.Numbers
         public static implicit operator sbyte(Integer integer) => To.SByte(integer.Value);
 
         public static implicit operator bool(Integer integer) => To.Boolean(integer.Value);
+
+        public bool Equals(Integer other) => Value == other.Value;
 
         public override string ToString() => Value.ToString();
     }
