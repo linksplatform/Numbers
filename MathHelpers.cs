@@ -28,17 +28,27 @@
 
         public static double Factorial(double n)
         {
-            if (n <= 1) return 1;
-            if (n < Factorials.Length) return Factorials[(int)n];
-
+            if (n <= 1)
+            {
+                return 1;
+            }
+            if (n < Factorials.Length)
+            {
+                return Factorials[(int)n];
+            }
             return n * Factorial(n - 1);
         }
 
         public static double Catalan(double n)
         {
-            if (n <= 1) return 1;
-            if (n < Catalans.Length) return Catalans[(int)n];
-
+            if (n <= 1)
+            {
+                return 1;
+            }
+            if (n < Catalans.Length)
+            {
+                return Catalans[(int)n];
+            }
             return Factorial(2 * n) / (Factorial(n + 1) * Factorial(n));
         }
 

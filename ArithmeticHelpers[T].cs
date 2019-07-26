@@ -16,55 +16,53 @@ namespace Platform.Numbers
 
         static ArithmeticHelpers()
         {
-            DelegateHelpers.Compile(out Add, emiter =>
+            Add = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.IsNumeric)
-                    throw new NotSupportedException();
-
+                EnsureIsNumeric();
                 emiter.LoadArguments(0, 1);
                 emiter.Add();
                 emiter.Return();
             });
 
-            DelegateHelpers.Compile(out And, emiter =>
+            And = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.IsNumeric)
-                    throw new NotSupportedException();
-
+                EnsureIsNumeric();
                 emiter.LoadArguments(0, 1);
                 emiter.And();
                 emiter.Return();
             });
 
-            DelegateHelpers.Compile(out Increment, emiter =>
+            Increment = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.IsNumeric)
-                    throw new NotSupportedException();
-
+                EnsureIsNumeric();
                 emiter.LoadArgument(0);
                 emiter.Increment(typeof(T));
                 emiter.Return();
             });
 
-            DelegateHelpers.Compile(out Subtract, emiter =>
+            Subtract = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.IsNumeric)
-                    throw new NotSupportedException();
-
+                EnsureIsNumeric();
                 emiter.LoadArguments(0, 1);
                 emiter.Subtract();
                 emiter.Return();
             });
 
-            DelegateHelpers.Compile(out Decrement, emiter =>
+            Decrement = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.IsNumeric)
-                    throw new NotSupportedException();
-
+                EnsureIsNumeric();
                 emiter.LoadArgument(0);
                 emiter.Decrement(typeof(T));
                 emiter.Return();
             });
+        }
+
+        private static void EnsureIsNumeric()
+        {
+            if (!CachedTypeInfo<T>.IsNumeric)
+            {
+                throw new NotSupportedException();
+            }
         }
     }
 }

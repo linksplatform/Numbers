@@ -3,6 +3,8 @@ using System.Reflection;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 using Platform.Converters;
+using System.Linq;
+using Platform.Exceptions;
 
 // ReSharper disable StaticFieldInGenericType
 
@@ -20,24 +22,23 @@ namespace Platform.Numbers
 
         static Integer()
         {
-            DelegateHelpers.Compile(out Create, emiter =>
+            Create = DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
             {
-                if (!CachedTypeInfo<T>.CanBeNumeric && typeof(T) != typeof(Integer))
-                    throw new NotSupportedException();
-
+                EnsureCanBeNumericOrIsInteger();
                 emiter.LoadArgument(0);
-
                 if (typeof(T) != typeof(ulong) && typeof(T) != typeof(Integer))
-                    emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array));
-
+                {
+                    emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array.ToArray()));
+                }
                 if (CachedTypeInfo<T>.IsNullable)
+                {
                     emiter.NewObject(typeof(T), CachedTypeInfo<T>.UnderlyingType);
-
+                }
                 if (typeof(T) == typeof(Integer))
+                {
                     emiter.NewObject(typeof(Integer), typeof(ulong));
-
+                }
                 emiter.NewObject(typeof(Integer<T>), typeof(T));
-
                 emiter.Return();
             });
 
@@ -47,9 +48,9 @@ namespace Platform.Numbers
                 One = ArithmeticHelpers.Increment(Zero);
                 Two = ArithmeticHelpers.Increment(One);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                // Ignored exception
+                exception.Ignore();
             }
         }
 
@@ -105,5 +106,13 @@ namespace Platform.Numbers
         public static implicit operator bool(Integer<T> integer) => To.Boolean(integer);
 
         public override string ToString() => Value.ToString();
+
+        private static void EnsureCanBeNumericOrIsInteger()
+        {
+            if (!CachedTypeInfo<T>.CanBeNumeric && typeof(T) != typeof(Integer))
+            {
+                throw new NotSupportedException();
+            }
+        }
     }
 }

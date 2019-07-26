@@ -8,7 +8,7 @@
             while (x != 0)
             {
                 n++;
-                x = x & x - 1;
+                x &= x - 1;
             }
             return n;
         }
@@ -16,8 +16,9 @@
         public static int GetLowestBitPosition(ulong value)
         {
             if (value == 0)
+            {
                 return -1;
-
+            }
             var position = 0;
             while ((value & 1UL) == 0)
             {
