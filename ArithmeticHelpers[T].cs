@@ -6,7 +6,7 @@ using Platform.Reflection.Sigil;
 
 namespace Platform.Numbers
 {
-    public class ArithmeticHelpers<T>
+    public static class ArithmeticHelpers<T>
     {
         public static readonly Func<T, T, T> Add;
         public static readonly Func<T, T, T> And;
