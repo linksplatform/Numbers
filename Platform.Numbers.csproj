@@ -10,7 +10,7 @@
     <AssemblyName>Platform.Numbers</AssemblyName>
     <PackageId>Platform.Numbers</PackageId>
     <PackageTags>LinksPlatform;Numbers;Integer;BitwiseHelpers;BitwiseExtensions;ArithmeticHelpers;ArithmeticExtensions;MathHelpers;MathExtensions</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/d65e8dd6e1b647405bc3d33687172e79b70e3435/doc/Avatar-rainbow.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/linksplatform/Numbers</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
