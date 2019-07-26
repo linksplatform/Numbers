@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
+using System.Collections.Generic;
+using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 using Platform.Converters;
-using System.Linq;
-using Platform.Exceptions;
 
 // ReSharper disable StaticFieldInGenericType
 
 namespace Platform.Numbers
 {
-    public struct Integer<T>
+    public struct Integer<T> : IEquatable<Integer<T>>
     {
+        private static readonly EqualityComparer<T> _equalityComparer = EqualityComparer<T>.Default;
         private static readonly Func<ulong, Integer<T>> Create;
 
         public static readonly T Zero;
@@ -59,7 +61,9 @@ namespace Platform.Numbers
         public static implicit operator Integer(Integer<T> integer)
         {
             if (typeof(T) == typeof(Integer))
+            {
                 return (Integer)(object)integer.Value;
+            }
             return Convert.ToUInt64(integer.Value);
         }
 
@@ -104,6 +108,8 @@ namespace Platform.Numbers
         public static implicit operator sbyte(Integer<T> integer) => To.SByte(integer);
 
         public static implicit operator bool(Integer<T> integer) => To.Boolean(integer);
+
+        public bool Equals(Integer<T> other) => _equalityComparer.Equals(Value, other.Value);
 
         public override string ToString() => Value.ToString();
 
