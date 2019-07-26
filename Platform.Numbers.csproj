@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Platform.Reflection" Version="0.0.3" />
-    <PackageReference Include="Platform.Reflection.Sigil" Version="0.0.2" />
+    <PackageReference Include="Platform.Reflection.Sigil" Version="0.0.3" />
     <PackageReference Include="Platform.Converters" Version="0.0.1" />
   </ItemGroup>
 
