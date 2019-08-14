@@ -1,19 +1,18 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
+# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+    echo "Skipping documentation deploy."
+    exit 0
+fi
+
 # Settings
-SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 SHA=$(git rev-parse --verify HEAD)
 COMMIT_USER_NAME="linksplatform-docs"
 COMMIT_USER_EMAIL="konard@yandex.ru"
 REPOSITORY="github.com/linksplatform/${TRAVIS_REPO_NAME}"
-
-# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy."
-    exit 0
-fi
 
 # Insert repository name into DocFX's configuration files
 sed -i "s/\$TRAVIS_REPO_NAME/${TRAVIS_REPO_NAME}/g" toc.yml
