@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 
@@ -16,7 +17,7 @@ namespace Platform.Numbers
         {
             Abs = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                EnsureNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
                 if (CachedTypeInfo<T>.IsSigned)
                 {
@@ -24,30 +25,13 @@ namespace Platform.Numbers
                 }
                 emiter.Return();
             });
-
             Negate = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                EnsureSigned();
+                Ensure.Always.IsSigned<T>();
                 emiter.LoadArgument(0);
                 emiter.Negate();
                 emiter.Return();
             });
-        }
-
-        private static void EnsureNumeric()
-        {
-            if (!CachedTypeInfo<T>.IsNumeric)
-            {
-                throw new NotSupportedException();
-            }
-        }
-
-        private static void EnsureSigned()
-        {
-            if (!CachedTypeInfo<T>.IsSigned)
-            {
-                throw new NotSupportedException();
-            }
         }
     }
 }

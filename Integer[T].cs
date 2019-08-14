@@ -26,7 +26,10 @@ namespace Platform.Numbers
         {
             _create = DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
             {
-                EnsureCanBeNumericOrIsInteger();
+                if (typeof(T) != typeof(Integer))
+                {
+                    Ensure.Always.CanBeNumeric<T>();
+                }
                 emiter.LoadArgument(0);
                 if (typeof(T) != typeof(ulong) && typeof(T) != typeof(Integer))
                 {
@@ -111,13 +114,5 @@ namespace Platform.Numbers
         public bool Equals(Integer<T> other) => _equalityComparer.Equals(Value, other.Value);
 
         public override string ToString() => Value.ToString();
-
-        private static void EnsureCanBeNumericOrIsInteger()
-        {
-            if (!CachedTypeInfo<T>.CanBeNumeric && typeof(T) != typeof(Integer))
-            {
-                throw new NotSupportedException();
-            }
-        }
     }
 }

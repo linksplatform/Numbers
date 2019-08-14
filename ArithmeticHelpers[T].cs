@@ -1,4 +1,5 @@
 ﻿using System;
+using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 
@@ -18,47 +19,39 @@ namespace Platform.Numbers
         {
             Add = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
                 emiter.Add();
                 emiter.Return();
             });
             And = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
                 emiter.And();
                 emiter.Return();
             });
             Increment = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
                 emiter.Increment(typeof(T));
                 emiter.Return();
             });
             Subtract = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
                 emiter.Subtract();
                 emiter.Return();
             });
             Decrement = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
                 emiter.Decrement(typeof(T));
                 emiter.Return();
             });
-        }
-
-        private static void EnsureIsNumeric()
-        {
-            if (!CachedTypeInfo<T>.IsNumeric)
-            {
-                throw new NotSupportedException();
-            }
         }
     }
 }

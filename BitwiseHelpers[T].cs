@@ -1,4 +1,5 @@
 ﻿using System;
+using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 
@@ -15,7 +16,7 @@ namespace Platform.Numbers
         {
             PartialWrite = DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 var constants = GetConstants();
                 var bitsNumber = constants.Item1;
                 var numberFilledWithOnes = constants.Item2;
@@ -72,7 +73,7 @@ namespace Platform.Numbers
             });
             PartialRead = DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
             {
-                EnsureIsNumeric();
+                Ensure.Always.IsNumeric<T>();
                 var constants = GetConstants();
                 var bitsNumber = constants.Item1;
                 var numberFilledWithOnes = constants.Item2;
@@ -144,14 +145,6 @@ namespace Platform.Numbers
                 return new Tuple<int, T>(8, (T)(object)byte.MaxValue);
             }
             throw new NotSupportedException();
-        }
-
-        private static void EnsureIsNumeric()
-        {
-            if (!CachedTypeInfo<T>.IsNumeric)
-            {
-                throw new NotSupportedException();
-            }
         }
     }
 }
