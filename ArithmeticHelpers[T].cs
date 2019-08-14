@@ -23,7 +23,6 @@ namespace Platform.Numbers
                 emiter.Add();
                 emiter.Return();
             });
-
             And = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
                 EnsureIsNumeric();
@@ -31,7 +30,6 @@ namespace Platform.Numbers
                 emiter.And();
                 emiter.Return();
             });
-
             Increment = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
                 EnsureIsNumeric();
@@ -39,7 +37,6 @@ namespace Platform.Numbers
                 emiter.Increment(typeof(T));
                 emiter.Return();
             });
-
             Subtract = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
                 EnsureIsNumeric();
@@ -47,7 +44,6 @@ namespace Platform.Numbers
                 emiter.Subtract();
                 emiter.Return();
             });
-
             Decrement = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
                 EnsureIsNumeric();

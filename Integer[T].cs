@@ -14,7 +14,7 @@ namespace Platform.Numbers
     public struct Integer<T> : IEquatable<Integer<T>>
     {
         private static readonly EqualityComparer<T> _equalityComparer = EqualityComparer<T>.Default;
-        private static readonly Func<ulong, Integer<T>> Create;
+        private static readonly Func<ulong, Integer<T>> _create;
 
         public static readonly T Zero;
         public static readonly T One;
@@ -24,7 +24,7 @@ namespace Platform.Numbers
 
         static Integer()
         {
-            Create = DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
+            _create = DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
             {
                 EnsureCanBeNumericOrIsInteger();
                 emiter.LoadArgument(0);
@@ -43,7 +43,6 @@ namespace Platform.Numbers
                 emiter.NewObject(typeof(Integer<T>), typeof(T));
                 emiter.Return();
             });
-
             try
             {
                 Zero = default;
@@ -73,9 +72,9 @@ namespace Platform.Numbers
 
         public static implicit operator Integer<T>(T integer) => new Integer<T>(integer);
 
-        public static implicit operator Integer<T>(ulong integer) => Create(integer);
+        public static implicit operator Integer<T>(ulong integer) => _create(integer);
 
-        public static implicit operator Integer<T>(Integer integer) => Create(integer.Value);
+        public static implicit operator Integer<T>(Integer integer) => _create(integer.Value);
 
         public static implicit operator Integer<T>(long integer) => To.UInt64(integer);
 
