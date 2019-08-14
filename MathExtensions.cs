@@ -1,4 +1,6 @@
-﻿namespace Platform.Numbers
+﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+namespace Platform.Numbers
 {
     public static class MathExtensions
     {
