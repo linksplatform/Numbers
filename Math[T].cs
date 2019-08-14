@@ -8,12 +8,12 @@ using Platform.Reflection.Sigil;
 
 namespace Platform.Numbers
 {
-    public static class MathHelpers<T>
+    public static class Math<T>
     {
         public static readonly Func<T, T> Abs;
         public static readonly Func<T, T> Negate;
 
-        static MathHelpers()
+        static Math()
         {
             Abs = DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
@@ -21,7 +21,7 @@ namespace Platform.Numbers
                 emiter.LoadArgument(0);
                 if (CachedTypeInfo<T>.IsSigned)
                 {
-                    emiter.Call(typeof(Math).GetTypeInfo().GetMethod("Abs", new[] { typeof(T) }));
+                    emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", new[] { typeof(T) }));
                 }
                 emiter.Return();
             });

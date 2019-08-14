@@ -7,7 +7,7 @@ using Platform.Reflection.Sigil;
 
 namespace Platform.Numbers
 {
-    public static class ArithmeticHelpers<T>
+    public static class Arithmetic<T>
     {
         public static readonly Func<T, T, T> Add;
         public static readonly Func<T, T, T> And;
@@ -15,7 +15,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T, T> Subtract;
         public static readonly Func<T, T> Decrement;
 
-        static ArithmeticHelpers()
+        static Arithmetic()
         {
             Add = DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {

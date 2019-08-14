@@ -3,7 +3,7 @@
     /// <remarks>
     /// Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org
     /// </remarks>
-    public static class MathHelpers
+    public static class Math
     {
         /// <remarks>
         /// Source: https://oeis.org/A000142/list
@@ -54,8 +54,8 @@
 
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
 
-        public static T Abs<T>(T x) => MathHelpers<T>.Abs(x);
+        public static T Abs<T>(T x) => Math<T>.Abs(x);
 
-        public static T Negate<T>(T x) => MathHelpers<T>.Negate(x);
+        public static T Negate<T>(T x) => Math<T>.Negate(x);
     }
 }

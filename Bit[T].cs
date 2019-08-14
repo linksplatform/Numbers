@@ -7,12 +7,12 @@ using Platform.Reflection.Sigil;
 
 namespace Platform.Numbers
 {
-    public static class BitwiseHelpers<T>
+    public static class Bit<T>
     {
         public static readonly Func<T, T, int, int, T> PartialWrite;
         public static readonly Func<T, int, int, T> PartialRead;
 
-        static BitwiseHelpers()
+        static Bit()
         {
             PartialWrite = DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
             {

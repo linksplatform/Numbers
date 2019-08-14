@@ -1,8 +1,8 @@
 ﻿namespace Platform.Numbers
 {
-    public static class BitwiseHelpers
+    public static class Bit
     {
-        public static long CountBits(long x)
+        public static long Count(long x)
         {
             long n = 0;
             while (x != 0)
@@ -13,7 +13,7 @@
             return n;
         }
 
-        public static int GetLowestBitPosition(ulong value)
+        public static int GetLowestPosition(ulong value)
         {
             if (value == 0)
             {
@@ -28,8 +28,8 @@
             return position;
         }
 
-        public static T PartialWrite<T>(T target, T source, int shift, int limit) => BitwiseHelpers<T>.PartialWrite(target, source, shift, limit);
+        public static T PartialWrite<T>(T target, T source, int shift, int limit) => Bit<T>.PartialWrite(target, source, shift, limit);
 
-        public static T PartialRead<T>(T target, int shift, int limit) => BitwiseHelpers<T>.PartialRead(target, shift, limit);
+        public static T PartialRead<T>(T target, int shift, int limit) => Bit<T>.PartialRead(target, shift, limit);
     }
 }

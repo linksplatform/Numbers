@@ -49,8 +49,8 @@ namespace Platform.Numbers
             try
             {
                 Zero = default;
-                One = ArithmeticHelpers.Increment(Zero);
-                Two = ArithmeticHelpers.Increment(One);
+                One = Arithmetic.Increment(Zero);
+                Two = Arithmetic.Increment(One);
             }
             catch (Exception exception)
             {
