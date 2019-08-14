@@ -29,8 +29,6 @@ Refactoring and issues fixes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Reflection" Version="0.0.4" />
-    <PackageReference Include="Platform.Reflection.Sigil" Version="0.0.4" />
     <PackageReference Include="Platform.Converters" Version="0.0.3" />
   </ItemGroup>
 
