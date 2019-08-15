@@ -7,6 +7,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers", "Platfor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers.Tests", "Platform.Numbers.Tests\Platform.Numbers.Tests.csproj", "{767218FA-DF3C-40BE-B3A1-BD63F971C96B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE939241-666E-47D5-A5D9-707825B8E38A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+		docfx.json = docfx.json
+		format-csharp-files.py = format-csharp-files.py
+		format-document.sh = format-document.sh
+		generate-pdf.sh = generate-pdf.sh
+		publish-docs.sh = publish-docs.sh
+		push-nuget.bat = push-nuget.bat
+		README.md = README.md
+		toc.yml = toc.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
