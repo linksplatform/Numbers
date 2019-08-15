@@ -36,9 +36,9 @@ namespace Platform.Numbers
                 {
                     emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array.ToArray()));
                 }
-                if (CachedTypeInfo<T>.IsNullable)
+                if (Type<T>.IsNullable)
                 {
-                    emiter.NewObject(typeof(T), CachedTypeInfo<T>.UnderlyingType);
+                    emiter.NewObject(typeof(T), Type<T>.UnderlyingType);
                 }
                 if (typeof(T) == typeof(Integer))
                 {

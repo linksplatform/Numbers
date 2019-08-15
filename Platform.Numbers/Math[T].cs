@@ -20,7 +20,7 @@ namespace Platform.Numbers
             {
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
-                if (CachedTypeInfo<T>.IsSigned)
+                if (Type<T>.IsSigned)
                 {
                     emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", new[] { typeof(T) }));
                 }
