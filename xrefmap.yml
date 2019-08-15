@@ -1120,3 +1120,22 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Tests.MathTests.CompiledOperationsTest
   nameWithType: MathTests.CompiledOperationsTest
+- uid: Platform.Numbers.Tests.SystemTests
+  name: SystemTests
+  href: api/Platform.Numbers.Tests.SystemTests.html
+  commentId: T:Platform.Numbers.Tests.SystemTests
+  fullName: Platform.Numbers.Tests.SystemTests
+  nameWithType: SystemTests
+- uid: Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest
+  name: PossiblePackTwoValuesIntoOneTest()
+  href: api/Platform.Numbers.Tests.SystemTests.html#Platform_Numbers_Tests_SystemTests_PossiblePackTwoValuesIntoOneTest
+  commentId: M:Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest
+  fullName: Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest()
+  nameWithType: SystemTests.PossiblePackTwoValuesIntoOneTest()
+- uid: Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest*
+  name: PossiblePackTwoValuesIntoOneTest
+  href: api/Platform.Numbers.Tests.SystemTests.html#Platform_Numbers_Tests_SystemTests_PossiblePackTwoValuesIntoOneTest_
+  commentId: Overload:Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.SystemTests.PossiblePackTwoValuesIntoOneTest
+  nameWithType: SystemTests.PossiblePackTwoValuesIntoOneTest

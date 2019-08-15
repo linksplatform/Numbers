@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "i9m6yDoafUE7iCczvCRDkg=="
+          "hash": "RsrQ7CxU2a4nZ5wVXXi30A=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "5B18gmDuRH5a/sVct4TT9A=="
+          "hash": "Y9UBydST5dA88AAPmSwflA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "oldy8YSJMo/TJn0XJxHbdA=="
+          "hash": "uY4YY3sHM4+3k0+mmFh+pg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "UUsqMA9JE4yY7Rqbn5zXcQ=="
+          "hash": "skuLvv00BLJlmEU+ZqjNLg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "TcbKQQxe66utiDjLJ4JJ4w=="
+          "hash": "Y7fOy4aUTXC+uWTc2Un6Xg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "PlyliccqpmHb3mQChdjX9w=="
+          "hash": "sE+/K9dcEqHpCzxr7HB43Q=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer-1.html",
-          "hash": "XZII9KxjJBXVtvnzNyGfLQ=="
+          "hash": "wtZNe1aTeL5MjKZhjOt5zQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer.html",
-          "hash": "PNltqqKa4Ze1Kh6GgZrYJw=="
+          "hash": "jGCPiJVtHaaHcbCJX+J+Aw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "jLwq8XhyRZhFOEHvTJuvIw=="
+          "hash": "xqjkkZxmJP/7QAsaecuJFA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "MnIzldc+iMdPv+o4pcVTxQ=="
+          "hash": "nYSWGN56miq7DGg09mTioA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "fnIGNjoDGBngaq4hCeXhlw=="
+          "hash": "SztMMGfroo36mUoK0J+W6Q=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.ArithmeticExtensionsTests.html",
-          "hash": "GmLFkR3vLHOzPmVoNCM0dw=="
+          "hash": "NkNd8nDdv8ykT/5VWFDbbA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.ArithmeticTests.html",
-          "hash": "TsA9+hVCuQaV8Nc8XuzutQ=="
+          "hash": "YYPWgOvul6hvuArh/8Fzww=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.BitTests.html",
-          "hash": "qOJxZBI8aqhVrHMhzMJHoA=="
+          "hash": "qIeKqaBXYIFk7kOhQKVHOw=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.MathExtensionsTests.html",
-          "hash": "08tLRC2a4+2JK29NCK+Ryg=="
+          "hash": "m5TRUfKa3eyCfDllTn1OtQ=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.MathTests.html",
-          "hash": "GLEkn6sTrJflOQgGRDHYRA=="
+          "hash": "6xyuu4kUWFOw5h3ehn63Qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Tests.SystemTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Tests.SystemTests.html",
+          "hash": "hROufRb1YIN9j0CvoWxFhQ=="
         }
       },
       "is_incremental": false,
@@ -222,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.html",
-          "hash": "KOaIG38KzDYHrEBXjsIhsw=="
+          "hash": "HV4Z60hvE5M99Cnxsfgc0w=="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "8tb+tRugcoT+XpO/w8OcjA=="
+          "hash": "5OYszwIKyCP8zb0VFo8oGQ=="
         }
       },
       "is_incremental": false,
@@ -279,11 +291,10 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 19,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -292,10 +303,11 @@
           "total_file_count": 1,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
