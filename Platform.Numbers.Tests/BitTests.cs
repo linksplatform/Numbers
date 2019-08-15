@@ -115,12 +115,10 @@ namespace Platform.Numbers.Tests
             {
                 shift = 32 + shift;
             }
-
             if (limit < 0)
             {
                 limit = 32 + limit;
             }
-
             var sourceMask = ~(uint.MaxValue << limit) & uint.MaxValue;
             var targetMask = ~(sourceMask << shift);
             return target & targetMask | (source & sourceMask) << shift;
@@ -132,12 +130,10 @@ namespace Platform.Numbers.Tests
             {
                 shift = 32 + shift;
             }
-
             if (limit < 0)
             {
                 limit = 32 + limit;
             }
-
             var sourceMask = ~(uint.MaxValue << limit) & uint.MaxValue;
             var targetMask = sourceMask << shift;
             return (target & targetMask) >> shift;
@@ -149,12 +145,10 @@ namespace Platform.Numbers.Tests
             {
                 shift = 32 + shift;
             }
-
             if (limit < 0)
             {
                 limit = 32 + limit;
             }
-
             var sourceMask = ~(uint.MaxValue << limit) & uint.MaxValue;
             var targetMask = ~(sourceMask << shift);
             return new Tuple<uint, uint, int>(targetMask, sourceMask, shift);
@@ -166,12 +160,10 @@ namespace Platform.Numbers.Tests
             {
                 shift = 32 + shift;
             }
-
             if (limit < 0)
             {
                 limit = 32 + limit;
             }
-
             var sourceMask = ~(uint.MaxValue << limit) & uint.MaxValue;
             var targetMask = sourceMask << shift;
             return new Tuple<uint, int>(targetMask, shift);
