@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MathExtensionsTests
+    <title>Class BitTests
    | LinksPlatform's Platform.Numbers Library </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MathExtensionsTests
+    <meta name="title" content="Class BitTests
    | LinksPlatform's Platform.Numbers Library ">
     <meta name="generator" content="docfx 2.44.0.0">
     
@@ -78,17 +78,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Platform.Tests.Numbers.MathExtensionsTests">
+            <article class="content wrap" id="_content" data-uid="Platform.Numbers.Tests.BitTests">
   
   
-  <h1 id="Platform_Tests_Numbers_MathExtensionsTests" data-uid="Platform.Tests.Numbers.MathExtensionsTests" class="text-break">Class MathExtensionsTests
+  <h1 id="Platform_Numbers_Tests_BitTests" data-uid="Platform.Numbers.Tests.BitTests" class="text-break">Class BitTests
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">MathExtensionsTests</span></div>
+    <div class="level1"><span class="xref">BitTests</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -114,45 +114,71 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Platform.Tests.Numbers.html">Platform.Tests.Numbers</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Platform.Numbers.Tests.html">Platform.Numbers.Tests</a></h6>
   <h6><strong>Assembly</strong>: Platform.Numbers.Tests.dll</h6>
-  <h5 id="Platform_Tests_Numbers_MathExtensionsTests_syntax">Syntax</h5>
+  <h5 id="Platform_Numbers_Tests_BitTests_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MathExtensionsTests</code></pre>
+    <pre><code class="lang-csharp hljs">public class BitTests</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Tests_Numbers_MathExtensionsTests_AbsTest.md&amp;value=---%0Auid%3A%20Platform.Tests.Numbers.MathExtensionsTests.AbsTest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Numbers_Tests_BitTests_GetLowestBitPositionTest_System_UInt64_System_Int32_.md&amp;value=---%0Auid%3A%20Platform.Numbers.Tests.BitTests.GetLowestBitPositionTest(System.UInt64%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/linksplatform/Numbers/blob/82f04a192e038f2b68cc074b589d557858ed6f6b/Platform.Numbers.Tests/MathExtensionsTests.cs/#L8">View Source</a>
+    <a href="https://github.com/linksplatform/Numbers/blob/626a5e9805a030ae244013839c7a64911e348ffa/Platform.Numbers.Tests/BitTests.cs/#L9">View Source</a>
   </span>
-  <a id="Platform_Tests_Numbers_MathExtensionsTests_AbsTest_" data-uid="Platform.Tests.Numbers.MathExtensionsTests.AbsTest*"></a>
-  <h4 id="Platform_Tests_Numbers_MathExtensionsTests_AbsTest" data-uid="Platform.Tests.Numbers.MathExtensionsTests.AbsTest">AbsTest()</h4>
+  <a id="Platform_Numbers_Tests_BitTests_GetLowestBitPositionTest_" data-uid="Platform.Numbers.Tests.BitTests.GetLowestBitPositionTest*"></a>
+  <h4 id="Platform_Numbers_Tests_BitTests_GetLowestBitPositionTest_System_UInt64_System_Int32_" data-uid="Platform.Numbers.Tests.BitTests.GetLowestBitPositionTest(System.UInt64,System.Int32)">GetLowestBitPositionTest(UInt64, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Fact]
-public void AbsTest()</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{0, -1})]
+[InlineData(new object[]{1, 0})]
+[InlineData(new object[]{8, 3})]
+[InlineData(new object[]{88, 3})]
+public void GetLowestBitPositionTest(ulong value, int expectedPosition)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">expectedPosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Tests_Numbers_MathExtensionsTests_NegateTest.md&amp;value=---%0Auid%3A%20Platform.Tests.Numbers.MathExtensionsTests.NegateTest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Numbers_Tests_BitTests_PartialReadWriteTest.md&amp;value=---%0Auid%3A%20Platform.Numbers.Tests.BitTests.PartialReadWriteTest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/linksplatform/Numbers/blob/82f04a192e038f2b68cc074b589d557858ed6f6b/Platform.Numbers.Tests/MathExtensionsTests.cs/#L17">View Source</a>
+    <a href="https://github.com/linksplatform/Numbers/blob/626a5e9805a030ae244013839c7a64911e348ffa/Platform.Numbers.Tests/BitTests.cs/#L19">View Source</a>
   </span>
-  <a id="Platform_Tests_Numbers_MathExtensionsTests_NegateTest_" data-uid="Platform.Tests.Numbers.MathExtensionsTests.NegateTest*"></a>
-  <h4 id="Platform_Tests_Numbers_MathExtensionsTests_NegateTest" data-uid="Platform.Tests.Numbers.MathExtensionsTests.NegateTest">NegateTest()</h4>
+  <a id="Platform_Numbers_Tests_BitTests_PartialReadWriteTest_" data-uid="Platform.Numbers.Tests.BitTests.PartialReadWriteTest*"></a>
+  <h4 id="Platform_Numbers_Tests_BitTests_PartialReadWriteTest" data-uid="Platform.Numbers.Tests.BitTests.PartialReadWriteTest">PartialReadWriteTest()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Fact]
-public void NegateTest()</code></pre>
+public void PartialReadWriteTest()</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
@@ -166,10 +192,10 @@ public void NegateTest()</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Tests_Numbers_MathExtensionsTests.md&amp;value=---%0Auid%3A%20Platform.Tests.Numbers.MathExtensionsTests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/linksplatform/Numbers/new/master/apiSpec/new?filename=Platform_Numbers_Tests_BitTests.md&amp;value=---%0Auid%3A%20Platform.Numbers.Tests.BitTests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/linksplatform/Numbers/blob/82f04a192e038f2b68cc074b589d557858ed6f6b/Platform.Numbers.Tests/MathExtensionsTests.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/linksplatform/Numbers/blob/626a5e9805a030ae244013839c7a64911e348ffa/Platform.Numbers.Tests/BitTests.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
