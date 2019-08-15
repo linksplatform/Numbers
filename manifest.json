@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "SwPUkYJuTV9BP7nAKc6E7A=="
+          "hash": "cBD1Eo8gJr5Tb8AMT9IABA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "1647xosLLcjxvI3HjbofUA=="
+          "hash": "hChKKCiyuMpDnhgCp8gJWg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "J4SLi4ezMEr16WxZFWGXrw=="
+          "hash": "m9T95vFRjxqNUuERi9++9A=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "OBCZEIY9LKW+fuRx5yck0A=="
+          "hash": "bKnhMJDNXuxQ8QUIYjor2A=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "0/LTbJ/7kR3883AVR2ZXRw=="
+          "hash": "fBqjw3Wx31HiNq9ib9lenw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "3x98G9RpQONhZeWGL3w/cw=="
+          "hash": "RiXx4HXuMr03H+QwDAl86g=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer-1.html",
-          "hash": "rCPD1eKkoSOL5ykj0lM6fw=="
+          "hash": "a1bHMrOCx/6WsPXPR7/hIQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer.html",
-          "hash": "gm7TQZgZXqis9RvTAlJQCg=="
+          "hash": "CYFBmlBJnI+90cmdzFkr1A=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "ApKHRa505KJPwk442h6Zdg=="
+          "hash": "pWCc3aGkAfkQ/xTaaY/kVQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "0aaePALya9H6NiqPcBikOA=="
+          "hash": "W5mt9P/uT1Idm0yLoUJs/Q=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "W3SC3A/WANVeF9UFMQBVCw=="
+          "hash": "fooBFD3XK94RZU04DFvKYw=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.ArithmeticExtensionsTests.html",
-          "hash": "FAVkjIjxTS1MDVjvjlWfgw=="
+          "hash": "qbu0ogBLsfF/yY4bjoZDxA=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.ArithmeticTests.html",
-          "hash": "k4MGe9PTTMUBxB+grZBwMw=="
+          "hash": "UwXe/nDBt3vFSWKgF+WRiQ=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.BitTests.html",
-          "hash": "j1hyHH18tmpW4ucCZY6VcQ=="
+          "hash": "DeJk2vC6qQh2wup5+Y+PQg=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.MathExtensionsTests.html",
-          "hash": "B2DiuSKq5qVQ1fcUxgBxbQ=="
+          "hash": "tU4NLs9L/Niff3CYeN5kng=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Tests.MathTests.html",
-          "hash": "ibCm78608FYG82Ee+e2G5A=="
+          "hash": "KBgncujgOWg0Neyr6uZ4kw=="
         }
       },
       "is_incremental": false,
@@ -279,10 +279,11 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -291,11 +292,10 @@
           "total_file_count": 1,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 18,
           "skipped_file_count": 0
         }
       }
