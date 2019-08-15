@@ -2,7 +2,7 @@
 using Xunit;
 using Platform.Numbers;
 
-namespace Platform.Tests.Numbers
+namespace Platform.Numbers.Tests
 {
     public class BitTests
     {
