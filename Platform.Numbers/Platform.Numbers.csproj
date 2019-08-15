@@ -31,7 +31,7 @@ Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.0.3" />
+    <PackageReference Include="Platform.Converters" Version="0.0.4" />
   </ItemGroup>
 
 </Project>
