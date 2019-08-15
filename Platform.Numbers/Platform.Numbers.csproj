@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.1.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -21,13 +21,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.2 to 0.0.3.
-Using new Platform.Reflection.EnsureExtensions now.
-No more duplicate dependencies.
-Classes and methods renamed to a shorter versions.
-XML documentation file generation turned on.
-Travis CI connected.
-Refactoring, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.3 to 0.0.4.
+Added tests.
+Build fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
