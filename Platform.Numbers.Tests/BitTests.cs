@@ -3,20 +3,20 @@ using Xunit;
 
 namespace Platform.Numbers.Tests
 {
-    public class BitTests
+    public static class BitTests
     {
         [Theory]
         [InlineData(00, -1)] // 0000 0000 (none, -1)
         [InlineData(01, 00)] // 0000 0001 (first, 0)
         [InlineData(08, 03)] // 0000 1000 (forth, 3)
         [InlineData(88, 03)] // 0101 1000 (forth, 3)
-        public void GetLowestBitPositionTest(ulong value, int expectedPosition)
+        public static void GetLowestBitPositionTest(ulong value, int expectedPosition)
         {
             Assert.True(Bit.GetLowestPosition(value) == expectedPosition);
         }
 
         [Fact]
-        public void PartialReadWriteTest()
+        public static void PartialReadWriteTest()
         {
             {
                 uint firstValue = 1;
@@ -109,7 +109,7 @@ namespace Platform.Numbers.Tests
         }
 
         // TODO: Can be optimized using precalculation of TargetMask and SourceMask
-        private uint PartialWrite(uint target, uint source, int shift, int limit)
+        private static uint PartialWrite(uint target, uint source, int shift, int limit)
         {
             if (shift < 0)
             {
@@ -126,7 +126,7 @@ namespace Platform.Numbers.Tests
             return target & targetMask | (source & sourceMask) << shift;
         }
 
-        private uint PartialRead(uint target, int shift, int limit)
+        private static uint PartialRead(uint target, int shift, int limit)
         {
             if (shift < 0)
             {
@@ -143,7 +143,7 @@ namespace Platform.Numbers.Tests
             return (target & targetMask) >> shift;
         }
 
-        private Tuple<uint, uint, int> GetWriteMasksAndShift(int shift, int limit)
+        private static Tuple<uint, uint, int> GetWriteMasksAndShift(int shift, int limit)
         {
             if (shift < 0)
             {
@@ -160,7 +160,7 @@ namespace Platform.Numbers.Tests
             return new Tuple<uint, uint, int>(targetMask, sourceMask, shift);
         }
 
-        private Tuple<uint, int> GetReadMaskAndShift(int shift, int limit)
+        private static Tuple<uint, int> GetReadMaskAndShift(int shift, int limit)
         {
             if (shift < 0)
             {
@@ -177,12 +177,12 @@ namespace Platform.Numbers.Tests
             return new Tuple<uint, int>(targetMask, shift);
         }
 
-        private uint PartialWrite(uint target, uint targetMask, uint source, uint sourceMask, int shift) => target & targetMask | (source & sourceMask) << shift;
+        private static uint PartialWrite(uint target, uint targetMask, uint source, uint sourceMask, int shift) => target & targetMask | (source & sourceMask) << shift;
 
-        private uint PartialWrite(uint target, uint source, Tuple<uint, uint, int> masksAndShift) => PartialWrite(target, masksAndShift.Item1, source, masksAndShift.Item2, masksAndShift.Item3);
+        private static uint PartialWrite(uint target, uint source, Tuple<uint, uint, int> masksAndShift) => PartialWrite(target, masksAndShift.Item1, source, masksAndShift.Item2, masksAndShift.Item3);
 
-        private uint PartialRead(uint target, uint targetMask, int shift) => (target & targetMask) >> shift;
+        private static uint PartialRead(uint target, uint targetMask, int shift) => (target & targetMask) >> shift;
 
-        private uint PartialRead(uint target, Tuple<uint, int> masksAndShift) => PartialRead(target, masksAndShift.Item1, masksAndShift.Item2);
+        private static uint PartialRead(uint target, Tuple<uint, int> masksAndShift) => PartialRead(target, masksAndShift.Item1, masksAndShift.Item2);
     }
 }

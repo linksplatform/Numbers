@@ -3,10 +3,10 @@ using Xunit;
 
 namespace Platform.Numbers.Tests
 {
-    public class ArithmeticTests
+    public static class ArithmeticTests
     {
         [Fact]
-        public void CompiledOperationsTest()
+        public static void CompiledOperationsTest()
         {
             Assert.True(Arithmetic<short>.Add(1, 2) == 3);
             Assert.True(Arithmetic<byte>.Increment(1) == 2);

@@ -2,10 +2,10 @@
 
 namespace Platform.Numbers.Tests
 {
-    public class MathExtensionsTests
+    public static class MathExtensionsTests
     {
         [Fact]
-        public void AbsTest()
+        public static void AbsTest()
         {
             var number = -1L;
             var returnValue = number.Abs();
@@ -14,7 +14,7 @@ namespace Platform.Numbers.Tests
         }
 
         [Fact]
-        public void NegateTest()
+        public static void NegateTest()
         {
             var number = 2L;
             var returnValue = number.Negate();

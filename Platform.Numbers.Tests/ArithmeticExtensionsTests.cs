@@ -2,10 +2,10 @@
 
 namespace Platform.Numbers.Tests
 {
-    public class ArithmeticExtensionsTests
+    public static class ArithmeticExtensionsTests
     {
         [Fact]
-        public void IncrementTest()
+        public static void IncrementTest()
         {
             var number = 0UL;
             var returnValue = number.Increment();
@@ -14,7 +14,7 @@ namespace Platform.Numbers.Tests
         }
 
         [Fact]
-        public void DecrementTest()
+        public static void DecrementTest()
         {
             var number = 1UL;
             var returnValue = number.Decrement();
