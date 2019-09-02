@@ -30,7 +30,15 @@ namespace Platform.Numbers
             return position;
         }
 
+        public static T Not<T>(T x) => Bit<T>.Not(x);
+
+        public static T Or<T>(T x, T y) => Bit<T>.Or(x, y);
+
         public static T And<T>(T x, T y) => Bit<T>.And(x, y);
+
+        public static T ShiftLeft<T>(T x, int y) => Bit<T>.ShiftLeft(x, y);
+
+        public static T ShiftRight<T>(T x, int y) => Bit<T>.ShiftRight(x, y);
 
         public static T PartialWrite<T>(T target, T source, int shift, int limit) => Bit<T>.PartialWrite(target, source, shift, limit);
 
