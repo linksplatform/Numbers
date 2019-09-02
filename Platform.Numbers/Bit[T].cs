@@ -14,7 +14,13 @@ namespace Platform.Numbers
 
         static Bit()
         {
-            PartialWrite = DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
+            PartialWrite = CompilePartialWriteDelegate();
+            PartialRead = CompilePartialReadDelegate();
+        }
+
+        private static Func<T, T, int, int, T> CompilePartialWriteDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
             {
                 Ensure.Always.IsNumeric<T>();
                 var constants = GetConstants();
@@ -69,7 +75,11 @@ namespace Platform.Numbers
                 emiter.Or();
                 emiter.Return();
             });
-            PartialRead = DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
+        }
+
+        private static Func<T, int, int, T> CompilePartialReadDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
             {
                 Ensure.Always.IsNumeric<T>();
                 var constants = GetConstants();

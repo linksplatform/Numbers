@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 using Platform.Exceptions;
@@ -24,28 +23,7 @@ namespace Platform.Numbers
 
         static Integer()
         {
-            _create = DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
-            {
-                if (typeof(T) != typeof(Integer))
-                {
-                    Ensure.Always.CanBeNumeric<T>();
-                }
-                emiter.LoadArgument(0);
-                if (typeof(T) != typeof(ulong) && typeof(T) != typeof(Integer))
-                {
-                    emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array.ToArray()));
-                }
-                if (NumericType<T>.IsNullable)
-                {
-                    emiter.NewObject(typeof(T), NumericType<T>.UnderlyingType);
-                }
-                if (typeof(T) == typeof(Integer))
-                {
-                    emiter.NewObject(typeof(Integer), typeof(ulong));
-                }
-                emiter.NewObject(typeof(Integer<T>), typeof(T));
-                emiter.Return();
-            });
+            _create = CompileCreateDelegate();
             try
             {
                 Zero = default;
@@ -114,5 +92,31 @@ namespace Platform.Numbers
         public bool Equals(Integer<T> other) => _equalityComparer.Equals(Value, other.Value);
 
         public override string ToString() => Value.ToString();
+
+        private static Func<ulong, Integer<T>> CompileCreateDelegate()
+        {
+            return DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>
+            {
+                if (typeof(T) != typeof(Integer))
+                {
+                    Ensure.Always.CanBeNumeric<T>();
+                }
+                emiter.LoadArgument(0);
+                if (typeof(T) != typeof(ulong) && typeof(T) != typeof(Integer))
+                {
+                    emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array));
+                }
+                if (NumericType<T>.IsNullable)
+                {
+                    emiter.NewObject(typeof(T), NumericType<T>.UnderlyingType);
+                }
+                if (typeof(T) == typeof(Integer))
+                {
+                    emiter.NewObject(typeof(Integer), typeof(ulong));
+                }
+                emiter.NewObject(typeof(Integer<T>), typeof(T));
+                emiter.Return();
+            });
+        }
     }
 }

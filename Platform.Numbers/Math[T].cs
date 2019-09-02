@@ -15,17 +15,27 @@ namespace Platform.Numbers
 
         static Math()
         {
-            Abs = DelegateHelpers.Compile<Func<T, T>>(emiter =>
+            Abs = CompileAbsDelegate();
+            Negate = CompileNegateDelegate();
+        }
+
+        private static Func<T, T> CompileAbsDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
                 if (NumericType<T>.IsSigned)
                 {
-                    emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", new[] { typeof(T) }));
+                    emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", Types<T>.Array));
                 }
                 emiter.Return();
             });
-            Negate = DelegateHelpers.Compile<Func<T, T>>(emiter =>
+        }
+
+        private static Func<T, T> CompileNegateDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
                 Ensure.Always.IsSigned<T>();
                 emiter.LoadArgument(0);
