@@ -30,6 +30,8 @@ namespace Platform.Numbers
             return position;
         }
 
+        public static T And<T>(T x, T y) => Bit<T>.And(x, y);
+
         public static T PartialWrite<T>(T target, T source, int shift, int limit) => Bit<T>.PartialWrite(target, source, shift, limit);
 
         public static T PartialRead<T>(T target, int shift, int limit) => Bit<T>.PartialRead(target, shift, limit);

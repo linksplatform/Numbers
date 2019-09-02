@@ -10,13 +10,26 @@ namespace Platform.Numbers
 {
     public static class Bit<T>
     {
+        public static readonly Func<T, T, T> And;
         public static readonly Func<T, T, int, int, T> PartialWrite;
         public static readonly Func<T, int, int, T> PartialRead;
 
         static Bit()
         {
+            And = CompileAndDelegate();
             PartialWrite = CompilePartialWriteDelegate();
             PartialRead = CompilePartialReadDelegate();
+        }
+
+        private static Func<T, T, T> CompileAndDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.And();
+                emiter.Return();
+            });
         }
 
         private static Func<T, T, int, int, T> CompilePartialWriteDelegate()
