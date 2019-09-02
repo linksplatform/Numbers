@@ -262,6 +262,22 @@ references:
   fullName.vb: Platform.Numbers.Bit(Of T).And
   nameWithType: Bit<T>.And
   nameWithType.vb: Bit(Of T).And
+- uid: Platform.Numbers.Bit`1.Not
+  name: Not
+  href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_Not
+  commentId: F:Platform.Numbers.Bit`1.Not
+  fullName: Platform.Numbers.Bit<T>.Not
+  fullName.vb: Platform.Numbers.Bit(Of T).Not
+  nameWithType: Bit<T>.Not
+  nameWithType.vb: Bit(Of T).Not
+- uid: Platform.Numbers.Bit`1.Or
+  name: Or
+  href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_Or
+  commentId: F:Platform.Numbers.Bit`1.Or
+  fullName: Platform.Numbers.Bit<T>.Or
+  fullName.vb: Platform.Numbers.Bit(Of T).Or
+  nameWithType: Bit<T>.Or
+  nameWithType.vb: Bit(Of T).Or
 - uid: Platform.Numbers.Bit`1.PartialRead
   name: PartialRead
   href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_PartialRead
@@ -278,6 +294,22 @@ references:
   fullName.vb: Platform.Numbers.Bit(Of T).PartialWrite
   nameWithType: Bit<T>.PartialWrite
   nameWithType.vb: Bit(Of T).PartialWrite
+- uid: Platform.Numbers.Bit`1.ShiftLeft
+  name: ShiftLeft
+  href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_ShiftLeft
+  commentId: F:Platform.Numbers.Bit`1.ShiftLeft
+  fullName: Platform.Numbers.Bit<T>.ShiftLeft
+  fullName.vb: Platform.Numbers.Bit(Of T).ShiftLeft
+  nameWithType: Bit<T>.ShiftLeft
+  nameWithType.vb: Bit(Of T).ShiftLeft
+- uid: Platform.Numbers.Bit`1.ShiftRight
+  name: ShiftRight
+  href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_ShiftRight
+  commentId: F:Platform.Numbers.Bit`1.ShiftRight
+  fullName: Platform.Numbers.Bit<T>.ShiftRight
+  fullName.vb: Platform.Numbers.Bit(Of T).ShiftRight
+  nameWithType: Bit<T>.ShiftRight
+  nameWithType.vb: Bit(Of T).ShiftRight
 - uid: Platform.Numbers.BitwiseExtensions
   name: BitwiseExtensions
   href: api/Platform.Numbers.BitwiseExtensions.html
@@ -1043,6 +1075,19 @@ references:
   commentId: T:Platform.Numbers.Tests.BitTests
   fullName: Platform.Numbers.Tests.BitTests
   nameWithType: BitTests
+- uid: Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest
+  name: ByteBitwiseOperationsTest()
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_ByteBitwiseOperationsTest
+  commentId: M:Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest
+  fullName: Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest()
+  nameWithType: BitTests.ByteBitwiseOperationsTest()
+- uid: Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest*
+  name: ByteBitwiseOperationsTest
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_ByteBitwiseOperationsTest_
+  commentId: Overload:Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest
+  nameWithType: BitTests.ByteBitwiseOperationsTest
 - uid: Platform.Numbers.Tests.BitTests.GetLowestBitPositionTest(System.UInt64,System.Int32)
   name: GetLowestBitPositionTest(UInt64, Int32)
   href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_GetLowestBitPositionTest_System_UInt64_System_Int32_
@@ -1069,6 +1114,45 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Tests.BitTests.PartialReadWriteTest
   nameWithType: BitTests.PartialReadWriteTest
+- uid: Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest
+  name: UInt16BitwiseOperationsTest()
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt16BitwiseOperationsTest
+  commentId: M:Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest
+  fullName: Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest()
+  nameWithType: BitTests.UInt16BitwiseOperationsTest()
+- uid: Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest*
+  name: UInt16BitwiseOperationsTest
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt16BitwiseOperationsTest_
+  commentId: Overload:Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.BitTests.UInt16BitwiseOperationsTest
+  nameWithType: BitTests.UInt16BitwiseOperationsTest
+- uid: Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest
+  name: UInt32BitwiseOperationsTest()
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt32BitwiseOperationsTest
+  commentId: M:Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest
+  fullName: Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest()
+  nameWithType: BitTests.UInt32BitwiseOperationsTest()
+- uid: Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest*
+  name: UInt32BitwiseOperationsTest
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt32BitwiseOperationsTest_
+  commentId: Overload:Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.BitTests.UInt32BitwiseOperationsTest
+  nameWithType: BitTests.UInt32BitwiseOperationsTest
+- uid: Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest
+  name: UInt64BitwiseOperationsTest()
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt64BitwiseOperationsTest
+  commentId: M:Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest
+  fullName: Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest()
+  nameWithType: BitTests.UInt64BitwiseOperationsTest()
+- uid: Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest*
+  name: UInt64BitwiseOperationsTest
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_UInt64BitwiseOperationsTest_
+  commentId: Overload:Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.BitTests.UInt64BitwiseOperationsTest
+  nameWithType: BitTests.UInt64BitwiseOperationsTest
 - uid: Platform.Numbers.Tests.MathExtensionsTests
   name: MathExtensionsTests
   href: api/Platform.Numbers.Tests.MathExtensionsTests.html
