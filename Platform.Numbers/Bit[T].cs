@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -52,11 +53,13 @@ namespace Platform.Numbers
                 emiter.MarkLabel(calculateSourceMask);
                 var sourceMask = emiter.DeclareLocal<T>();
                 var targetMask = emiter.DeclareLocal<T>();
-                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                LoadMaxValueConstant(emiter);
                 emiter.LoadArgument(limitArgument);
                 emiter.ShiftLeft();
                 emiter.Not();
-                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                LoadMaxValueConstant(emiter);
                 emiter.And();
                 emiter.StoreLocal(sourceMask);
                 emiter.LoadLocal(sourceMask);
@@ -111,11 +114,13 @@ namespace Platform.Numbers
                 emiter.MarkLabel(calculateSourceMask);
                 var sourceMask = emiter.DeclareLocal<T>();
                 var targetMask = emiter.DeclareLocal<T>();
-                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                LoadMaxValueConstant(emiter);
                 emiter.LoadArgument(limitArgument); // limit
                 emiter.ShiftLeft();
                 emiter.Not();
-                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                LoadMaxValueConstant(emiter);
                 emiter.And();
                 emiter.StoreLocal(sourceMask);
                 emiter.LoadLocal(sourceMask);
@@ -129,6 +134,31 @@ namespace Platform.Numbers
                 emiter.ShiftRight();
                 emiter.Return();
             });
+        }
+
+        private static void LoadMaxValueConstant(ILGenerator emiter)
+        {
+            var type = typeof(T);
+            if (type == typeof(ulong))
+            {
+                emiter.Emit(OpCodes.Ldc_I8, unchecked((long)ulong.MaxValue));
+            }
+            else if (type == typeof(uint))
+            {
+                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)uint.MaxValue));
+            }
+            else if (type == typeof(ushort))
+            {
+                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)ushort.MaxValue));
+            }
+            else if (type == typeof(byte))
+            {
+                emiter.Emit(OpCodes.Ldc_I4_S, unchecked((sbyte)byte.MaxValue));
+            }
+            else
+            {
+                throw new NotSupportedException();
+            }
         }
 
         private static Tuple<int, T> GetConstants()
