@@ -213,6 +213,38 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Bit.GetLowestPosition
   nameWithType: Bit.GetLowestPosition
+- uid: Platform.Numbers.Bit.Not*
+  name: Not
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_Not_
+  commentId: Overload:Platform.Numbers.Bit.Not
+  isSpec: "True"
+  fullName: Platform.Numbers.Bit.Not
+  nameWithType: Bit.Not
+- uid: Platform.Numbers.Bit.Not``1(``0)
+  name: Not<T>(T)
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_Not__1___0_
+  commentId: M:Platform.Numbers.Bit.Not``1(``0)
+  name.vb: Not(Of T)(T)
+  fullName: Platform.Numbers.Bit.Not<T>(T)
+  fullName.vb: Platform.Numbers.Bit.Not(Of T)(T)
+  nameWithType: Bit.Not<T>(T)
+  nameWithType.vb: Bit.Not(Of T)(T)
+- uid: Platform.Numbers.Bit.Or*
+  name: Or
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_Or_
+  commentId: Overload:Platform.Numbers.Bit.Or
+  isSpec: "True"
+  fullName: Platform.Numbers.Bit.Or
+  nameWithType: Bit.Or
+- uid: Platform.Numbers.Bit.Or``1(``0,``0)
+  name: Or<T>(T, T)
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_Or__1___0___0_
+  commentId: M:Platform.Numbers.Bit.Or``1(``0,``0)
+  name.vb: Or(Of T)(T, T)
+  fullName: Platform.Numbers.Bit.Or<T>(T, T)
+  fullName.vb: Platform.Numbers.Bit.Or(Of T)(T, T)
+  nameWithType: Bit.Or<T>(T, T)
+  nameWithType.vb: Bit.Or(Of T)(T, T)
 - uid: Platform.Numbers.Bit.PartialRead*
   name: PartialRead
   href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_PartialRead_
@@ -245,6 +277,38 @@ references:
   fullName.vb: Platform.Numbers.Bit.PartialWrite(Of T)(T, T, System.Int32, System.Int32)
   nameWithType: Bit.PartialWrite<T>(T, T, Int32, Int32)
   nameWithType.vb: Bit.PartialWrite(Of T)(T, T, Int32, Int32)
+- uid: Platform.Numbers.Bit.ShiftLeft*
+  name: ShiftLeft
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_ShiftLeft_
+  commentId: Overload:Platform.Numbers.Bit.ShiftLeft
+  isSpec: "True"
+  fullName: Platform.Numbers.Bit.ShiftLeft
+  nameWithType: Bit.ShiftLeft
+- uid: Platform.Numbers.Bit.ShiftLeft``1(``0,System.Int32)
+  name: ShiftLeft<T>(T, Int32)
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_ShiftLeft__1___0_System_Int32_
+  commentId: M:Platform.Numbers.Bit.ShiftLeft``1(``0,System.Int32)
+  name.vb: ShiftLeft(Of T)(T, Int32)
+  fullName: Platform.Numbers.Bit.ShiftLeft<T>(T, System.Int32)
+  fullName.vb: Platform.Numbers.Bit.ShiftLeft(Of T)(T, System.Int32)
+  nameWithType: Bit.ShiftLeft<T>(T, Int32)
+  nameWithType.vb: Bit.ShiftLeft(Of T)(T, Int32)
+- uid: Platform.Numbers.Bit.ShiftRight*
+  name: ShiftRight
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_ShiftRight_
+  commentId: Overload:Platform.Numbers.Bit.ShiftRight
+  isSpec: "True"
+  fullName: Platform.Numbers.Bit.ShiftRight
+  nameWithType: Bit.ShiftRight
+- uid: Platform.Numbers.Bit.ShiftRight``1(``0,System.Int32)
+  name: ShiftRight<T>(T, Int32)
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_ShiftRight__1___0_System_Int32_
+  commentId: M:Platform.Numbers.Bit.ShiftRight``1(``0,System.Int32)
+  name.vb: ShiftRight(Of T)(T, Int32)
+  fullName: Platform.Numbers.Bit.ShiftRight<T>(T, System.Int32)
+  fullName.vb: Platform.Numbers.Bit.ShiftRight(Of T)(T, System.Int32)
+  nameWithType: Bit.ShiftRight<T>(T, Int32)
+  nameWithType.vb: Bit.ShiftRight(Of T)(T, Int32)
 - uid: Platform.Numbers.Bit`1
   name: Bit<T>
   href: api/Platform.Numbers.Bit-1.html
@@ -316,6 +380,22 @@ references:
   commentId: T:Platform.Numbers.BitwiseExtensions
   fullName: Platform.Numbers.BitwiseExtensions
   nameWithType: BitwiseExtensions
+- uid: Platform.Numbers.BitwiseExtensions.Not*
+  name: Not
+  href: api/Platform.Numbers.BitwiseExtensions.html#Platform_Numbers_BitwiseExtensions_Not_
+  commentId: Overload:Platform.Numbers.BitwiseExtensions.Not
+  isSpec: "True"
+  fullName: Platform.Numbers.BitwiseExtensions.Not
+  nameWithType: BitwiseExtensions.Not
+- uid: Platform.Numbers.BitwiseExtensions.Not``1(``0@)
+  name: Not<T>(ref T)
+  href: api/Platform.Numbers.BitwiseExtensions.html#Platform_Numbers_BitwiseExtensions_Not__1___0__
+  commentId: M:Platform.Numbers.BitwiseExtensions.Not``1(``0@)
+  name.vb: Not(Of T)(ByRef T)
+  fullName: Platform.Numbers.BitwiseExtensions.Not<T>(ref T)
+  fullName.vb: Platform.Numbers.BitwiseExtensions.Not(Of T)(ByRef T)
+  nameWithType: BitwiseExtensions.Not<T>(ref T)
+  nameWithType.vb: BitwiseExtensions.Not(Of T)(ByRef T)
 - uid: Platform.Numbers.BitwiseExtensions.PartialRead*
   name: PartialRead
   href: api/Platform.Numbers.BitwiseExtensions.html#Platform_Numbers_BitwiseExtensions_PartialRead_
