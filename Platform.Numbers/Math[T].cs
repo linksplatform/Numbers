@@ -2,7 +2,6 @@
 using System.Reflection;
 using Platform.Exceptions;
 using Platform.Reflection;
-using Platform.Reflection.Sigil;
 
 // ReSharper disable StaticFieldInGenericType
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -20,7 +19,7 @@ namespace Platform.Numbers
             {
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
-                if (Type<T>.IsSigned)
+                if (NumericType<T>.IsSigned)
                 {
                     emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", new[] { typeof(T) }));
                 }

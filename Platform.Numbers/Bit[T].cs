@@ -1,7 +1,6 @@
 ﻿using System;
 using Platform.Exceptions;
 using Platform.Reflection;
-using Platform.Reflection.Sigil;
 
 // ReSharper disable StaticFieldInGenericType
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -45,31 +44,29 @@ namespace Platform.Numbers
                 emiter.Add();
                 emiter.StoreArgument(limitArgument);
                 emiter.MarkLabel(calculateSourceMask);
-                using (var sourceMask = emiter.DeclareLocal<T>())
-                using (var targetMask = emiter.DeclareLocal<T>())
-                {
-                    emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                    emiter.LoadArgument(limitArgument);
-                    emiter.ShiftLeft();
-                    emiter.Not();
-                    emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                    emiter.And();
-                    emiter.StoreLocal(sourceMask);
-                    emiter.LoadLocal(sourceMask);
-                    emiter.LoadArgument(shiftArgument);
-                    emiter.ShiftLeft();
-                    emiter.Not();
-                    emiter.StoreLocal(targetMask);
-                    emiter.LoadArgument(0); // target
-                    emiter.LoadLocal(targetMask);
-                    emiter.And();
-                    emiter.LoadArgument(1); // source
-                    emiter.LoadLocal(sourceMask);
-                    emiter.And();
-                    emiter.LoadArgument(shiftArgument);
-                    emiter.ShiftLeft();
-                    emiter.Or();
-                }
+                var sourceMask = emiter.DeclareLocal<T>();
+                var targetMask = emiter.DeclareLocal<T>();
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                emiter.LoadArgument(limitArgument);
+                emiter.ShiftLeft();
+                emiter.Not();
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                emiter.And();
+                emiter.StoreLocal(sourceMask);
+                emiter.LoadLocal(sourceMask);
+                emiter.LoadArgument(shiftArgument);
+                emiter.ShiftLeft();
+                emiter.Not();
+                emiter.StoreLocal(targetMask);
+                emiter.LoadArgument(0); // target
+                emiter.LoadLocal(targetMask);
+                emiter.And();
+                emiter.LoadArgument(1); // source
+                emiter.LoadLocal(sourceMask);
+                emiter.And();
+                emiter.LoadArgument(shiftArgument);
+                emiter.ShiftLeft();
+                emiter.Or();
                 emiter.Return();
             });
             PartialRead = DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
@@ -102,26 +99,24 @@ namespace Platform.Numbers
                 emiter.Add();
                 emiter.StoreArgument(limitArgument);
                 emiter.MarkLabel(calculateSourceMask);
-                using (var sourceMask = emiter.DeclareLocal<T>())
-                using (var targetMask = emiter.DeclareLocal<T>())
-                {
-                    emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                    emiter.LoadArgument(limitArgument); // limit
-                    emiter.ShiftLeft();
-                    emiter.Not();
-                    emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                    emiter.And();
-                    emiter.StoreLocal(sourceMask);
-                    emiter.LoadLocal(sourceMask);
-                    emiter.LoadArgument(shiftArgument);
-                    emiter.ShiftLeft();
-                    emiter.StoreLocal(targetMask);
-                    emiter.LoadArgument(0); // target
-                    emiter.LoadLocal(targetMask);
-                    emiter.And();
-                    emiter.LoadArgument(shiftArgument);
-                    emiter.ShiftRight();
-                }
+                var sourceMask = emiter.DeclareLocal<T>();
+                var targetMask = emiter.DeclareLocal<T>();
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                emiter.LoadArgument(limitArgument); // limit
+                emiter.ShiftLeft();
+                emiter.Not();
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
+                emiter.And();
+                emiter.StoreLocal(sourceMask);
+                emiter.LoadLocal(sourceMask);
+                emiter.LoadArgument(shiftArgument);
+                emiter.ShiftLeft();
+                emiter.StoreLocal(targetMask);
+                emiter.LoadArgument(0); // target
+                emiter.LoadLocal(targetMask);
+                emiter.And();
+                emiter.LoadArgument(shiftArgument);
+                emiter.ShiftRight();
                 emiter.Return();
             });
         }

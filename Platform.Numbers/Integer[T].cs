@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Collections.Generic;
 using Platform.Exceptions;
 using Platform.Reflection;
-using Platform.Reflection.Sigil;
 using Platform.Converters;
 
 // ReSharper disable StaticFieldInGenericType
@@ -36,9 +35,9 @@ namespace Platform.Numbers
                 {
                     emiter.Call(typeof(To).GetTypeInfo().GetMethod(typeof(T).Name, Types<ulong>.Array.ToArray()));
                 }
-                if (Type<T>.IsNullable)
+                if (NumericType<T>.IsNullable)
                 {
-                    emiter.NewObject(typeof(T), Type<T>.UnderlyingType);
+                    emiter.NewObject(typeof(T), NumericType<T>.UnderlyingType);
                 }
                 if (typeof(T) == typeof(Integer))
                 {
