@@ -29,22 +29,6 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic.Add(Of T)(T, T)
   nameWithType: Arithmetic.Add<T>(T, T)
   nameWithType.vb: Arithmetic.Add(Of T)(T, T)
-- uid: Platform.Numbers.Arithmetic.And*
-  name: And
-  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_And_
-  commentId: Overload:Platform.Numbers.Arithmetic.And
-  isSpec: "True"
-  fullName: Platform.Numbers.Arithmetic.And
-  nameWithType: Arithmetic.And
-- uid: Platform.Numbers.Arithmetic.And``1(``0,``0)
-  name: And<T>(T, T)
-  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_And__1___0___0_
-  commentId: M:Platform.Numbers.Arithmetic.And``1(``0,``0)
-  name.vb: And(Of T)(T, T)
-  fullName: Platform.Numbers.Arithmetic.And<T>(T, T)
-  fullName.vb: Platform.Numbers.Arithmetic.And(Of T)(T, T)
-  nameWithType: Arithmetic.And<T>(T, T)
-  nameWithType.vb: Arithmetic.And(Of T)(T, T)
 - uid: Platform.Numbers.Arithmetic.Decrement*
   name: Decrement
   href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Decrement_
@@ -119,14 +103,6 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic(Of T).Add
   nameWithType: Arithmetic<T>.Add
   nameWithType.vb: Arithmetic(Of T).Add
-- uid: Platform.Numbers.Arithmetic`1.And
-  name: And
-  href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_And
-  commentId: F:Platform.Numbers.Arithmetic`1.And
-  fullName: Platform.Numbers.Arithmetic<T>.And
-  fullName.vb: Platform.Numbers.Arithmetic(Of T).And
-  nameWithType: Arithmetic<T>.And
-  nameWithType.vb: Arithmetic(Of T).And
 - uid: Platform.Numbers.Arithmetic`1.Decrement
   name: Decrement
   href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_Decrement
@@ -195,6 +171,22 @@ references:
   commentId: T:Platform.Numbers.Bit
   fullName: Platform.Numbers.Bit
   nameWithType: Bit
+- uid: Platform.Numbers.Bit.And*
+  name: And
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_And_
+  commentId: Overload:Platform.Numbers.Bit.And
+  isSpec: "True"
+  fullName: Platform.Numbers.Bit.And
+  nameWithType: Bit.And
+- uid: Platform.Numbers.Bit.And``1(``0,``0)
+  name: And<T>(T, T)
+  href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_And__1___0___0_
+  commentId: M:Platform.Numbers.Bit.And``1(``0,``0)
+  name.vb: And(Of T)(T, T)
+  fullName: Platform.Numbers.Bit.And<T>(T, T)
+  fullName.vb: Platform.Numbers.Bit.And(Of T)(T, T)
+  nameWithType: Bit.And<T>(T, T)
+  nameWithType.vb: Bit.And(Of T)(T, T)
 - uid: Platform.Numbers.Bit.Count(System.Int64)
   name: Count(Int64)
   href: api/Platform.Numbers.Bit.html#Platform_Numbers_Bit_Count_System_Int64_
@@ -262,6 +254,14 @@ references:
   fullName.vb: Platform.Numbers.Bit(Of T)
   nameWithType: Bit<T>
   nameWithType.vb: Bit(Of T)
+- uid: Platform.Numbers.Bit`1.And
+  name: And
+  href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_And
+  commentId: F:Platform.Numbers.Bit`1.And
+  fullName: Platform.Numbers.Bit<T>.And
+  fullName.vb: Platform.Numbers.Bit(Of T).And
+  nameWithType: Bit<T>.And
+  nameWithType.vb: Bit(Of T).And
 - uid: Platform.Numbers.Bit`1.PartialRead
   name: PartialRead
   href: api/Platform.Numbers.Bit-1.html#Platform_Numbers_Bit_1_PartialRead
