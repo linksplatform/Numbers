@@ -10,15 +10,45 @@ namespace Platform.Numbers
 {
     public static class Bit<T>
     {
+        public static readonly Func<T, T> Not;
+        public static readonly Func<T, T, T> Or;
         public static readonly Func<T, T, T> And;
+        public static readonly Func<T, int, T> ShiftLeft;
+        public static readonly Func<T, int, T> ShiftRight;
         public static readonly Func<T, T, int, int, T> PartialWrite;
         public static readonly Func<T, int, int, T> PartialRead;
 
         static Bit()
         {
+            Not = CompileNotDelegate();
+            Or = CompileOrDelegate();
             And = CompileAndDelegate();
+            ShiftLeft = CompileShiftLeftDelegate();
+            ShiftRight = CompileShiftRightDelegate();
             PartialWrite = CompilePartialWriteDelegate();
             PartialRead = CompilePartialReadDelegate();
+        }
+
+        private static Func<T, T> CompileNotDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0);
+                emiter.Not();
+                emiter.Return();
+            });
+        }
+
+        private static Func<T, T, T> CompileOrDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.Or();
+                emiter.Return();
+            });
         }
 
         private static Func<T, T, T> CompileAndDelegate()
@@ -28,6 +58,28 @@ namespace Platform.Numbers
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
                 emiter.And();
+                emiter.Return();
+            });
+        }
+
+        private static Func<T, int, T> CompileShiftLeftDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.ShiftLeft();
+                emiter.Return();
+            });
+        }
+
+        private static Func<T, int, T> CompileShiftRightDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.ShiftRight();
                 emiter.Return();
             });
         }

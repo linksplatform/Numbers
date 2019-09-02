@@ -16,6 +16,46 @@ namespace Platform.Numbers.Tests
         }
 
         [Fact]
+        public static void ByteBitwiseOperationsTest()
+        {
+            Assert.True(Bit<byte>.Not(2) == unchecked((byte)~2));
+            Assert.True(Bit<byte>.Or(1, 2) == (1 | 2));
+            Assert.True(Bit<byte>.And(1, 2) == (1 & 2));
+            Assert.True(Bit<byte>.ShiftLeft(1, 2) == (1 << 2));
+            Assert.True(Bit<byte>.ShiftRight(1, 2) == (1 >> 2));
+        }
+
+        [Fact]
+        public static void UInt16BitwiseOperationsTest()
+        {
+            Assert.True(Bit<ushort>.Not(2) == unchecked((ushort)~2));
+            Assert.True(Bit<ushort>.Or(1, 2) == (1 | 2));
+            Assert.True(Bit<ushort>.And(1, 2) == (1 & 2));
+            Assert.True(Bit<ushort>.ShiftLeft(1, 2) == (1 << 2));
+            Assert.True(Bit<ushort>.ShiftRight(1, 2) == (1 >> 2));
+        }
+
+        [Fact]
+        public static void UInt32BitwiseOperationsTest()
+        {
+            Assert.True(Bit<uint>.Not(2) == unchecked((uint)~2));
+            Assert.True(Bit<uint>.Or(1, 2) == (1 | 2));
+            Assert.True(Bit<uint>.And(1, 2) == (1 & 2));
+            Assert.True(Bit<uint>.ShiftLeft(1, 2) == (1 << 2));
+            Assert.True(Bit<uint>.ShiftRight(1, 2) == (1 >> 2));
+        }
+
+        [Fact]
+        public static void UInt64BitwiseOperationsTest()
+        {
+            Assert.True(Bit<ulong>.Not(2) == unchecked((ulong)~2));
+            Assert.True(Bit<ulong>.Or(1, 2) == (1 | 2));
+            Assert.True(Bit<ulong>.And(1, 2) == (1 & 2));
+            Assert.True(Bit<ulong>.ShiftLeft(1, 2) == (1 << 2));
+            Assert.True(Bit<ulong>.ShiftRight(1, 2) == (1 >> 2));
+        }
+
+        [Fact]
         public static void PartialReadWriteTest()
         {
             {
