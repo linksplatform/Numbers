@@ -101,7 +101,14 @@ namespace Platform.Numbers
                 emiter.LoadConstant(0);
                 emiter.BranchIfGreaterOrEqual(checkLimit); // Skip fix
                 // Fix shift
-                emiter.LoadConstant(bitsNumber);
+                if (typeof(T) == typeof(byte))
+                {
+                    emiter.Emit(OpCodes.Ldc_I4_8);
+                }
+                else
+                {
+                    emiter.LoadConstant(bitsNumber);
+                }
                 emiter.LoadArgument(shiftArgument);
                 emiter.Add();
                 emiter.StoreArgument(shiftArgument);
@@ -111,7 +118,14 @@ namespace Platform.Numbers
                 emiter.LoadConstant(0);
                 emiter.BranchIfGreaterOrEqual(calculateSourceMask); // Skip fix
                 // Fix limit
-                emiter.LoadConstant(bitsNumber);
+                if (typeof(T) == typeof(byte))
+                {
+                    emiter.Emit(OpCodes.Ldc_I4_8);
+                }
+                else
+                {
+                    emiter.LoadConstant(bitsNumber);
+                }
                 emiter.LoadArgument(limitArgument);
                 emiter.Add();
                 emiter.StoreArgument(limitArgument);
@@ -218,7 +232,7 @@ namespace Platform.Numbers
             }
             else if (type == typeof(byte))
             {
-                emiter.Emit(OpCodes.Ldc_I4_S, unchecked((sbyte)byte.MaxValue));
+                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)byte.MaxValue));
             }
             else
             {

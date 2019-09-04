@@ -216,5 +216,11 @@ namespace Platform.Numbers.Tests
         private static uint PartialRead(uint target, uint targetMask, int shift) => (target & targetMask) >> shift;
 
         private static uint PartialRead(uint target, Tuple<uint, int> masksAndShift) => PartialRead(target, masksAndShift.Item1, masksAndShift.Item2);
+
+        [Fact]
+        public static void BugWithLoadingConstantOf8Test()
+        {
+            Bit<byte>.PartialWrite(0, 1, 5, -5);
+        }
     }
 }
