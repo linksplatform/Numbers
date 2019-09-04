@@ -1155,6 +1155,19 @@ references:
   commentId: T:Platform.Numbers.Tests.BitTests
   fullName: Platform.Numbers.Tests.BitTests
   nameWithType: BitTests
+- uid: Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test
+  name: BugWithLoadingConstantOf8Test()
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_BugWithLoadingConstantOf8Test
+  commentId: M:Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test
+  fullName: Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test()
+  nameWithType: BitTests.BugWithLoadingConstantOf8Test()
+- uid: Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test*
+  name: BugWithLoadingConstantOf8Test
+  href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_BugWithLoadingConstantOf8Test_
+  commentId: Overload:Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test
+  isSpec: "True"
+  fullName: Platform.Numbers.Tests.BitTests.BugWithLoadingConstantOf8Test
+  nameWithType: BitTests.BugWithLoadingConstantOf8Test
 - uid: Platform.Numbers.Tests.BitTests.ByteBitwiseOperationsTest
   name: ByteBitwiseOperationsTest()
   href: api/Platform.Numbers.Tests.BitTests.html#Platform_Numbers_Tests_BitTests_ByteBitwiseOperationsTest
