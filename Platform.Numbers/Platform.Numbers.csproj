@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.2.0</VersionPrefix>
+    <VersionPrefix>0.2.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -22,18 +22,10 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>Latest</LangVersion>
-    <PackageReleaseNotes>Added support for net461 (.NET Framework 4.6.1).
-Platform.Converters dependency updated from 0.0.4 to 0.0.5.
-Arithmetic.And method removed (this is a breaking change).
-Added Bit methods:
-* Not
-* Or
-* And
-* ShiftLeft
-* ShiftRight
-Refactoring, issues fix.
-
-This release is not backward compatible with previous 0.1.1 release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.5 to 0.0.6.
+Project files updated to support multiple build environments: dotnet, Travis CI, MonoDevelop, and Visual Studio.
+Travis CI build configuration updated to support automatic NuGet package publishing.
+Refactoring, performance optimizations, issues and bugs fix.</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
