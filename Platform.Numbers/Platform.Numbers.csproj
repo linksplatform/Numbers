@@ -6,8 +6,7 @@
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
     <VersionPrefix>0.2.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net461</TargetFrameworks>
-    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyName>Platform.Numbers</AssemblyName>
     <PackageId>Platform.Numbers</PackageId>
     <PackageTags>LinksPlatform;Numbers;Integer;Bit;BitExtensions;Arithmetic;ArithmeticExtensions;Math;MathExtensions</PackageTags>
@@ -22,6 +21,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>Latest</LangVersion>
     <PackageReleaseNotes>Added support for net461 (.NET Framework 4.6.1).
 Platform.Converters dependency updated from 0.0.4 to 0.0.5.
 Arithmetic.And method removed (this is a breaking change).
@@ -35,7 +35,11 @@ Refactoring, issues fix.
 
 This release is not backward compatible with previous 0.1.1 release.</PackageReleaseNotes>
   </PropertyGroup>
-
+  
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />      
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Platform.Converters" Version="0.0.6" />
   </ItemGroup>
