@@ -1,4 +1,6 @@
-﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿using System.Runtime.CompilerServices;
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Platform.Numbers
 {
@@ -54,10 +56,13 @@ namespace Platform.Numbers
             return Factorial(2 * n) / (Factorial(n + 1) * Factorial(n));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Abs<T>(T x) => Math<T>.Abs(x);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Negate<T>(T x) => Math<T>.Negate(x);
     }
 }

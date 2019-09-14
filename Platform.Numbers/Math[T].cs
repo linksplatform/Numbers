@@ -27,7 +27,7 @@ namespace Platform.Numbers
                 emiter.LoadArgument(0);
                 if (NumericType<T>.IsSigned)
                 {
-                    emiter.Call(typeof(System.Math).GetTypeInfo().GetMethod("Abs", Types<T>.Array));
+                    emiter.Call(typeof(System.Math).GetMethod("Abs", Types<T>.Array));
                 }
                 emiter.Return();
             });

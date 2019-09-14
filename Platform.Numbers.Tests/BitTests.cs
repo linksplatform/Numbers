@@ -72,7 +72,6 @@ namespace Platform.Numbers.Tests
                 Assert.True(secondValue == unpackagedSecondValue);
 
                 // Using universal functions:
-
                 Assert.True(PartialRead(value, 0, 1) == firstValue);
                 Assert.True(PartialRead(value, 1, -1) == secondValue);
 
@@ -100,7 +99,6 @@ namespace Platform.Numbers.Tests
                 Assert.True(secondValue == unpackagedSecondValue);
 
                 // Using universal functions:
-
                 Assert.True(Bit.PartialRead(value, 0, 1) == firstValue);
                 Assert.True(Bit.PartialRead(value, 1, -1) == secondValue);
 
@@ -128,7 +126,6 @@ namespace Platform.Numbers.Tests
                 Assert.True(secondValue == unpackagedSecondValue);
 
                 // Using universal functions:
-
                 var readMasksAndShiftFor0And1 = GetReadMaskAndShift(0, 1);
                 var readMasksAndShiftFor1AndMinus1 = GetReadMaskAndShift(1, -1);
                 var writeMasksAndShiftFor0And1 = GetWriteMasksAndShift(0, 1);

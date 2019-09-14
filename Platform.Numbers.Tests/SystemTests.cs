@@ -10,7 +10,6 @@ namespace Platform.Numbers.Tests
             uint value = 0;
 
             // Set one to first bit
-
             value |= 1;
 
             Assert.True(value == 1);

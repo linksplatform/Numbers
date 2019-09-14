@@ -101,14 +101,7 @@ namespace Platform.Numbers
                 emiter.LoadConstant(0);
                 emiter.BranchIfGreaterOrEqual(checkLimit); // Skip fix
                 // Fix shift
-                if (typeof(T) == typeof(byte))
-                {
-                    emiter.Emit(OpCodes.Ldc_I4_8);
-                }
-                else
-                {
-                    emiter.LoadConstant(bitsNumber);
-                }
+                emiter.LoadConstant(bitsNumber);
                 emiter.LoadArgument(shiftArgument);
                 emiter.Add();
                 emiter.StoreArgument(shiftArgument);
@@ -118,27 +111,18 @@ namespace Platform.Numbers
                 emiter.LoadConstant(0);
                 emiter.BranchIfGreaterOrEqual(calculateSourceMask); // Skip fix
                 // Fix limit
-                if (typeof(T) == typeof(byte))
-                {
-                    emiter.Emit(OpCodes.Ldc_I4_8);
-                }
-                else
-                {
-                    emiter.LoadConstant(bitsNumber);
-                }
+                emiter.LoadConstant(bitsNumber);
                 emiter.LoadArgument(limitArgument);
                 emiter.Add();
                 emiter.StoreArgument(limitArgument);
                 emiter.MarkLabel(calculateSourceMask);
                 var sourceMask = emiter.DeclareLocal<T>();
                 var targetMask = emiter.DeclareLocal<T>();
-                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                LoadMaxValueConstant(emiter);
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
                 emiter.LoadArgument(limitArgument);
                 emiter.ShiftLeft();
                 emiter.Not();
-                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                LoadMaxValueConstant(emiter);
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
                 emiter.And();
                 emiter.StoreLocal(sourceMask);
                 emiter.LoadLocal(sourceMask);
@@ -193,13 +177,11 @@ namespace Platform.Numbers
                 emiter.MarkLabel(calculateSourceMask);
                 var sourceMask = emiter.DeclareLocal<T>();
                 var targetMask = emiter.DeclareLocal<T>();
-                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                LoadMaxValueConstant(emiter);
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
                 emiter.LoadArgument(limitArgument); // limit
                 emiter.ShiftLeft();
                 emiter.Not();
-                //emiter.LoadConstant(typeof(T), numberFilledWithOnes);
-                LoadMaxValueConstant(emiter);
+                emiter.LoadConstant(typeof(T), numberFilledWithOnes);
                 emiter.And();
                 emiter.StoreLocal(sourceMask);
                 emiter.LoadLocal(sourceMask);
@@ -213,31 +195,6 @@ namespace Platform.Numbers
                 emiter.ShiftRight();
                 emiter.Return();
             });
-        }
-
-        private static void LoadMaxValueConstant(ILGenerator emiter)
-        {
-            var type = typeof(T);
-            if (type == typeof(ulong))
-            {
-                emiter.Emit(OpCodes.Ldc_I8, unchecked((long)ulong.MaxValue));
-            }
-            else if (type == typeof(uint))
-            {
-                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)uint.MaxValue));
-            }
-            else if (type == typeof(ushort))
-            {
-                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)ushort.MaxValue));
-            }
-            else if (type == typeof(byte))
-            {
-                emiter.Emit(OpCodes.Ldc_I4, unchecked((int)byte.MaxValue));
-            }
-            else
-            {
-                throw new NotSupportedException();
-            }
         }
 
         private static Tuple<int, T> GetConstants()
