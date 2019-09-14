@@ -4,6 +4,36 @@
     "title": "Numbers | LinksPlatform's Platform.Numbers Library",
     "keywords": "Numbers LinksPlatform's Platform.Numbers Class Library. Namespace: Platform.Numbers Forked from: Konard/LinksPlatform/Platform/Platform.Helpers/Numbers NuGet package: Platform.Numbers Documentation PDF file with code for e-readers. Depend on Platform.Converters Dependent libraries Platform.Unsafe Platform.Data Mystery files .travis.yml - Travis CI build configuration. docfx.json and toc.yml - DocFX build configuration. format-document.sh - script for formatting tex file for generating PDF from it. format-csharp-files.py - script for formatting .cs files as a part of tex file. generate-pdf.sh - script that generates PDF with code for e-readers. publish-docs.sh - script that publishes generated documentation and PDF with code for e-readers to gh-pages branch. push-nuget.bat - Windows script for publishing current version of NuGet package."
   },
+  "api/Platform.Numbers.Tests.MathExtensionsTests.html": {
+    "href": "api/Platform.Numbers.Tests.MathExtensionsTests.html",
+    "title": "Class MathExtensionsTests | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class MathExtensionsTests Inheritance Object MathExtensionsTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class MathExtensionsTests : object Methods | Improve this Doc View Source AbsTest() Declaration public static void AbsTest() | Improve this Doc View Source NegateTest() Declaration public static void NegateTest()"
+  },
+  "api/Platform.Numbers.Arithmetic-1.html": {
+    "href": "api/Platform.Numbers.Arithmetic-1.html",
+    "title": "Class Arithmetic<T> | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class Arithmetic<T> Inheritance Object Arithmetic<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Arithmetic<T> Type Parameters Name Description T Fields | Improve this Doc View Source Add Declaration public static readonly Func<T, T, T> Add Field Value Type Description Func <T, T, T> | Improve this Doc View Source Decrement Declaration public static readonly Func<T, T> Decrement Field Value Type Description Func <T, T> | Improve this Doc View Source Increment Declaration public static readonly Func<T, T> Increment Field Value Type Description Func <T, T> | Improve this Doc View Source Subtract Declaration public static readonly Func<T, T, T> Subtract Field Value Type Description Func <T, T, T>"
+  },
+  "api/Platform.Numbers.MathExtensions.html": {
+    "href": "api/Platform.Numbers.MathExtensions.html",
+    "title": "Class MathExtensions | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class MathExtensions Inheritance Object MathExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class MathExtensions Methods | Improve this Doc View Source Abs<T>(ref T) Declaration public static T Abs<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Negate<T>(ref T) Declaration public static T Negate<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T"
+  },
+  "api/Platform.Numbers.ArithmeticExtensions.html": {
+    "href": "api/Platform.Numbers.ArithmeticExtensions.html",
+    "title": "Class ArithmeticExtensions | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class ArithmeticExtensions Inheritance Object ArithmeticExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class ArithmeticExtensions Methods | Improve this Doc View Source Decrement<T>(ref T) Declaration public static T Decrement<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Increment<T>(ref T) Declaration public static T Increment<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T"
+  },
+  "api/Platform.Numbers.Math-1.html": {
+    "href": "api/Platform.Numbers.Math-1.html",
+    "title": "Class Math<T> | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class Math<T> Inheritance Object Math<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Math<T> Type Parameters Name Description T Fields | Improve this Doc View Source Abs Declaration public static readonly Func<T, T> Abs Field Value Type Description Func <T, T> | Improve this Doc View Source Negate Declaration public static readonly Func<T, T> Negate Field Value Type Description Func <T, T>"
+  },
+  "api/Platform.Numbers.Tests.MathTests.html": {
+    "href": "api/Platform.Numbers.Tests.MathTests.html",
+    "title": "Class MathTests | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class MathTests Inheritance Object MathTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class MathTests : object Methods | Improve this Doc View Source CompiledOperationsTest() Declaration public static void CompiledOperationsTest()"
+  },
   "api/Platform.Numbers.Integer-1.html": {
     "href": "api/Platform.Numbers.Integer-1.html",
     "title": "Struct Integer<T> | LinksPlatform's Platform.Numbers Library",
@@ -14,15 +44,15 @@
     "title": "Namespace Platform.Numbers.Tests | LinksPlatform's Platform.Numbers Library",
     "keywords": "Namespace Platform.Numbers.Tests Classes ArithmeticExtensionsTests ArithmeticTests BitTests MathExtensionsTests MathTests SystemTests"
   },
-  "api/Platform.Numbers.Tests.SystemTests.html": {
-    "href": "api/Platform.Numbers.Tests.SystemTests.html",
-    "title": "Class SystemTests | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class SystemTests Inheritance Object SystemTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class SystemTests : object Methods | Improve this Doc View Source PossiblePackTwoValuesIntoOneTest() Declaration public static void PossiblePackTwoValuesIntoOneTest()"
+  "api/Platform.Numbers.Bit-1.html": {
+    "href": "api/Platform.Numbers.Bit-1.html",
+    "title": "Class Bit<T> | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class Bit<T> Inheritance Object Bit<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Bit<T> Type Parameters Name Description T Fields | Improve this Doc View Source And Declaration public static readonly Func<T, T, T> And Field Value Type Description Func <T, T, T> | Improve this Doc View Source Not Declaration public static readonly Func<T, T> Not Field Value Type Description Func <T, T> | Improve this Doc View Source Or Declaration public static readonly Func<T, T, T> Or Field Value Type Description Func <T, T, T> | Improve this Doc View Source PartialRead Declaration public static readonly Func<T, int, int, T> PartialRead Field Value Type Description Func <T, Int32 , Int32 , T> | Improve this Doc View Source PartialWrite Declaration public static readonly Func<T, T, int, int, T> PartialWrite Field Value Type Description Func <T, T, Int32 , Int32 , T> | Improve this Doc View Source ShiftLeft Declaration public static readonly Func<T, int, T> ShiftLeft Field Value Type Description Func <T, Int32 , T> | Improve this Doc View Source ShiftRight Declaration public static readonly Func<T, int, T> ShiftRight Field Value Type Description Func <T, Int32 , T>"
   },
-  "api/Platform.Numbers.Arithmetic-1.html": {
-    "href": "api/Platform.Numbers.Arithmetic-1.html",
-    "title": "Class Arithmetic<T> | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class Arithmetic<T> Inheritance Object Arithmetic<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Arithmetic<T> Type Parameters Name Description T Fields | Improve this Doc View Source Add Declaration public static readonly Func<T, T, T> Add Field Value Type Description Func <T, T, T> | Improve this Doc View Source Decrement Declaration public static readonly Func<T, T> Decrement Field Value Type Description Func <T, T> | Improve this Doc View Source Increment Declaration public static readonly Func<T, T> Increment Field Value Type Description Func <T, T> | Improve this Doc View Source Subtract Declaration public static readonly Func<T, T, T> Subtract Field Value Type Description Func <T, T, T>"
+  "api/Platform.Numbers.Tests.ArithmeticTests.html": {
+    "href": "api/Platform.Numbers.Tests.ArithmeticTests.html",
+    "title": "Class ArithmeticTests | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class ArithmeticTests Inheritance Object ArithmeticTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class ArithmeticTests : object Methods | Improve this Doc View Source CompiledOperationsTest() Declaration public static void CompiledOperationsTest()"
   },
   "api/Platform.Numbers.Bit.html": {
     "href": "api/Platform.Numbers.Bit.html",
@@ -39,50 +69,25 @@
     "title": "Class ArithmeticExtensionsTests | LinksPlatform's Platform.Numbers Library",
     "keywords": "Class ArithmeticExtensionsTests Inheritance Object ArithmeticExtensionsTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class ArithmeticExtensionsTests : object Methods | Improve this Doc View Source DecrementTest() Declaration public static void DecrementTest() | Improve this Doc View Source IncrementTest() Declaration public static void IncrementTest()"
   },
-  "api/Platform.Numbers.Tests.BitTests.html": {
-    "href": "api/Platform.Numbers.Tests.BitTests.html",
-    "title": "Class BitTests | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class BitTests Inheritance Object BitTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class BitTests : object Methods | Improve this Doc View Source BugWithLoadingConstantOf8Test() Declaration public static void BugWithLoadingConstantOf8Test() | Improve this Doc View Source ByteBitwiseOperationsTest() Declaration public static void ByteBitwiseOperationsTest() | Improve this Doc View Source GetLowestBitPositionTest(UInt64, Int32) Declaration public static void GetLowestBitPositionTest(ulong value, int expectedPosition) Parameters Type Name Description UInt64 value Int32 expectedPosition | Improve this Doc View Source PartialReadWriteTest() Declaration public static void PartialReadWriteTest() | Improve this Doc View Source UInt16BitwiseOperationsTest() Declaration public static void UInt16BitwiseOperationsTest() | Improve this Doc View Source UInt32BitwiseOperationsTest() Declaration public static void UInt32BitwiseOperationsTest() | Improve this Doc View Source UInt64BitwiseOperationsTest() Declaration public static void UInt64BitwiseOperationsTest()"
-  },
-  "api/Platform.Numbers.Bit-1.html": {
-    "href": "api/Platform.Numbers.Bit-1.html",
-    "title": "Class Bit<T> | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class Bit<T> Inheritance Object Bit<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Bit<T> Type Parameters Name Description T Fields | Improve this Doc View Source And Declaration public static readonly Func<T, T, T> And Field Value Type Description Func <T, T, T> | Improve this Doc View Source Not Declaration public static readonly Func<T, T> Not Field Value Type Description Func <T, T> | Improve this Doc View Source Or Declaration public static readonly Func<T, T, T> Or Field Value Type Description Func <T, T, T> | Improve this Doc View Source PartialRead Declaration public static readonly Func<T, int, int, T> PartialRead Field Value Type Description Func <T, Int32 , Int32 , T> | Improve this Doc View Source PartialWrite Declaration public static readonly Func<T, T, int, int, T> PartialWrite Field Value Type Description Func <T, T, Int32 , Int32 , T> | Improve this Doc View Source ShiftLeft Declaration public static readonly Func<T, int, T> ShiftLeft Field Value Type Description Func <T, Int32 , T> | Improve this Doc View Source ShiftRight Declaration public static readonly Func<T, int, T> ShiftRight Field Value Type Description Func <T, Int32 , T>"
-  },
-  "api/Platform.Numbers.ArithmeticExtensions.html": {
-    "href": "api/Platform.Numbers.ArithmeticExtensions.html",
-    "title": "Class ArithmeticExtensions | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class ArithmeticExtensions Inheritance Object ArithmeticExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class ArithmeticExtensions Methods | Improve this Doc View Source Decrement<T>(ref T) Declaration public static T Decrement<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Increment<T>(ref T) Declaration public static T Increment<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T"
-  },
   "api/Platform.Numbers.Arithmetic.html": {
     "href": "api/Platform.Numbers.Arithmetic.html",
     "title": "Class Arithmetic | LinksPlatform's Platform.Numbers Library",
     "keywords": "Class Arithmetic Inheritance Object Arithmetic Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Arithmetic Methods | Improve this Doc View Source Add<T>(T, T) Declaration public static T Add<T>(T x, T y) Parameters Type Name Description T x T y Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Decrement<T>(T) Declaration public static T Decrement<T>(T x) Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Increment<T>(T) Declaration public static T Increment<T>(T x) Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Subtract<T>(T, T) Declaration public static T Subtract<T>(T x, T y) Parameters Type Name Description T x T y Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Subtract<T>(Integer<T>, Integer<T>) Declaration public static T Subtract<T>(Integer<T> x, Integer<T> y) Parameters Type Name Description Integer <T> x Integer <T> y Returns Type Description T Type Parameters Name Description T"
   },
-  "api/Platform.Numbers.MathExtensions.html": {
-    "href": "api/Platform.Numbers.MathExtensions.html",
-    "title": "Class MathExtensions | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class MathExtensions Inheritance Object MathExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class MathExtensions Methods | Improve this Doc View Source Abs<T>(ref T) Declaration public static T Abs<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Negate<T>(ref T) Declaration public static T Negate<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T"
+  "api/Platform.Numbers.Tests.SystemTests.html": {
+    "href": "api/Platform.Numbers.Tests.SystemTests.html",
+    "title": "Class SystemTests | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class SystemTests Inheritance Object SystemTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class SystemTests : object Methods | Improve this Doc View Source PossiblePackTwoValuesIntoOneTest() Declaration public static void PossiblePackTwoValuesIntoOneTest()"
+  },
+  "api/Platform.Numbers.Tests.BitTests.html": {
+    "href": "api/Platform.Numbers.Tests.BitTests.html",
+    "title": "Class BitTests | LinksPlatform's Platform.Numbers Library",
+    "keywords": "Class BitTests Inheritance Object BitTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class BitTests : object Methods | Improve this Doc View Source BugWithLoadingConstantOf8Test() Declaration public static void BugWithLoadingConstantOf8Test() | Improve this Doc View Source ByteBitwiseOperationsTest() Declaration public static void ByteBitwiseOperationsTest() | Improve this Doc View Source GetLowestBitPositionTest(UInt64, Int32) Declaration public static void GetLowestBitPositionTest(ulong value, int expectedPosition) Parameters Type Name Description UInt64 value Int32 expectedPosition | Improve this Doc View Source PartialReadWriteTest() Declaration public static void PartialReadWriteTest() | Improve this Doc View Source UInt16BitwiseOperationsTest() Declaration public static void UInt16BitwiseOperationsTest() | Improve this Doc View Source UInt32BitwiseOperationsTest() Declaration public static void UInt32BitwiseOperationsTest() | Improve this Doc View Source UInt64BitwiseOperationsTest() Declaration public static void UInt64BitwiseOperationsTest()"
   },
   "api/Platform.Numbers.Math.html": {
     "href": "api/Platform.Numbers.Math.html",
     "title": "Class Math | LinksPlatform's Platform.Numbers Library",
     "keywords": "Class Math Inheritance Object Math Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Math Remarks Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org Methods | Improve this Doc View Source Abs<T>(T) Declaration public static T Abs<T>(T x) Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source Catalan(Double) Declaration public static double Catalan(double n) Parameters Type Name Description Double n Returns Type Description Double | Improve this Doc View Source Factorial(Double) Declaration public static double Factorial(double n) Parameters Type Name Description Double n Returns Type Description Double | Improve this Doc View Source IsPowerOfTwo(UInt64) Declaration public static bool IsPowerOfTwo(ulong x) Parameters Type Name Description UInt64 x Returns Type Description Boolean | Improve this Doc View Source Negate<T>(T) Declaration public static T Negate<T>(T x) Parameters Type Name Description T x Returns Type Description T Type Parameters Name Description T"
-  },
-  "api/Platform.Numbers.Tests.MathExtensionsTests.html": {
-    "href": "api/Platform.Numbers.Tests.MathExtensionsTests.html",
-    "title": "Class MathExtensionsTests | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class MathExtensionsTests Inheritance Object MathExtensionsTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class MathExtensionsTests : object Methods | Improve this Doc View Source AbsTest() Declaration public static void AbsTest() | Improve this Doc View Source NegateTest() Declaration public static void NegateTest()"
-  },
-  "api/Platform.Numbers.Math-1.html": {
-    "href": "api/Platform.Numbers.Math-1.html",
-    "title": "Class Math<T> | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class Math<T> Inheritance Object Math<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class Math<T> Type Parameters Name Description T Fields | Improve this Doc View Source Abs Declaration public static readonly Func<T, T> Abs Field Value Type Description Func <T, T> | Improve this Doc View Source Negate Declaration public static readonly Func<T, T> Negate Field Value Type Description Func <T, T>"
-  },
-  "api/Platform.Numbers.Tests.MathTests.html": {
-    "href": "api/Platform.Numbers.Tests.MathTests.html",
-    "title": "Class MathTests | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class MathTests Inheritance Object MathTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class MathTests : object Methods | Improve this Doc View Source CompiledOperationsTest() Declaration public static void CompiledOperationsTest()"
   },
   "api/Platform.Numbers.Integer.html": {
     "href": "api/Platform.Numbers.Integer.html",
@@ -93,10 +98,5 @@
     "href": "api/Platform.Numbers.BitwiseExtensions.html",
     "title": "Class BitwiseExtensions | LinksPlatform's Platform.Numbers Library",
     "keywords": "Class BitwiseExtensions Inheritance Object BitwiseExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class BitwiseExtensions Methods | Improve this Doc View Source Not<T>(ref T) Declaration public static T Not<T>(this ref T target) where T : struct Parameters Type Name Description T target Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source PartialRead<T>(T, Int32, Int32) Declaration public static T PartialRead<T>(this T target, int shift, int limit) Parameters Type Name Description T target Int32 shift Int32 limit Returns Type Description T Type Parameters Name Description T | Improve this Doc View Source PartialWrite<T>(ref T, T, Int32, Int32) Declaration public static T PartialWrite<T>(this ref T target, T source, int shift, int limit) where T : struct Parameters Type Name Description T target T source Int32 shift Int32 limit Returns Type Description T Type Parameters Name Description T"
-  },
-  "api/Platform.Numbers.Tests.ArithmeticTests.html": {
-    "href": "api/Platform.Numbers.Tests.ArithmeticTests.html",
-    "title": "Class ArithmeticTests | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class ArithmeticTests Inheritance Object ArithmeticTests Namespace : Platform.Numbers.Tests Assembly : Platform.Numbers.Tests.dll Syntax public static class ArithmeticTests : object Methods | Improve this Doc View Source CompiledOperationsTest() Declaration public static void CompiledOperationsTest()"
   }
 }
