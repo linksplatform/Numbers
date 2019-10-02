@@ -37,7 +37,6 @@ namespace Platform.Numbers
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>
             {
-                Ensure.Always.IsSigned<T>();
                 emiter.LoadArgument(0);
                 emiter.Negate();
                 emiter.Return();
