@@ -33,7 +33,7 @@ Refactoring, performance optimizations, issues and bugs fix.</PackageReleaseNote
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.0.6" />
+    <PackageReference Include="Platform.Converters" Version="0.0.7" />
   </ItemGroup>
 
 </Project>
