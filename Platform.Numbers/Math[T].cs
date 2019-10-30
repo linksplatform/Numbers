@@ -10,14 +10,8 @@ namespace Platform.Numbers
 {
     public static class Math<T>
     {
-        public static readonly Func<T, T> Abs;
-        public static readonly Func<T, T> Negate;
-
-        static Math()
-        {
-            Abs = CompileAbsDelegate();
-            Negate = CompileNegateDelegate();
-        }
+        public static readonly Func<T, T> Abs = CompileAbsDelegate();
+        public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
         private static Func<T, T> CompileAbsDelegate()
         {

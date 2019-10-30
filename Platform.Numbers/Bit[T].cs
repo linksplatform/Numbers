@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection.Emit;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -10,24 +9,13 @@ namespace Platform.Numbers
 {
     public static class Bit<T>
     {
-        public static readonly Func<T, T> Not;
-        public static readonly Func<T, T, T> Or;
-        public static readonly Func<T, T, T> And;
-        public static readonly Func<T, int, T> ShiftLeft;
-        public static readonly Func<T, int, T> ShiftRight;
-        public static readonly Func<T, T, int, int, T> PartialWrite;
-        public static readonly Func<T, int, int, T> PartialRead;
-
-        static Bit()
-        {
-            Not = CompileNotDelegate();
-            Or = CompileOrDelegate();
-            And = CompileAndDelegate();
-            ShiftLeft = CompileShiftLeftDelegate();
-            ShiftRight = CompileShiftRightDelegate();
-            PartialWrite = CompilePartialWriteDelegate();
-            PartialRead = CompilePartialReadDelegate();
-        }
+        public static readonly Func<T, T> Not = CompileNotDelegate();
+        public static readonly Func<T, T, T> Or = CompileOrDelegate();
+        public static readonly Func<T, T, T> And = CompileAndDelegate();
+        public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
+        public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
+        public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
+        public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
         private static Func<T, T> CompileNotDelegate()
         {

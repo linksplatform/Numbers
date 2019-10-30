@@ -9,18 +9,10 @@ namespace Platform.Numbers
 {
     public static class Arithmetic<T>
     {
-        public static readonly Func<T, T, T> Add;
-        public static readonly Func<T, T, T> Subtract;
-        public static readonly Func<T, T> Increment;
-        public static readonly Func<T, T> Decrement;
-
-        static Arithmetic()
-        {
-            Add = CompileAddDelegate();
-            Subtract = CompileSubtractDelegate();
-            Increment = CompileIncrementDelegate();
-            Decrement = CompileDecrementDelegate();
-        }
+        public static readonly Func<T, T, T> Add = CompileAddDelegate();
+        public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
+        public static readonly Func<T, T> Increment = CompileIncrementDelegate();
+        public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
         private static Func<T, T, T> CompileAddDelegate()
         {
