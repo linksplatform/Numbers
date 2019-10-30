@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "AQolns1Yz7xvgbrrOXOZcA=="
+          "hash": "4Fxjk5uBNy5CA73yqgjvIg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "sCg1OPJ2snSy98TNbypfeg=="
+          "hash": "gfEqRUy4910LZTj9NDqfuA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "RKQAPy+m4lL+B01vv/s+ZQ=="
+          "hash": "Meqj60AGA2hSjgKvkPAazA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "fUznnHz1Y8ETHd8d/OIBug=="
+          "hash": "uE3Kus+HxVF0DbepwflaCQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "pdSJLIpa1gNPQswMIjG5ug=="
+          "hash": "kGzAk/UVehYipIobQ/hsjQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "eD7nT8cwiA/9QDB8NvKUvw=="
+          "hash": "4BaMujeZA0AcC6+Y6U8WXw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer-1.html",
-          "hash": "Sv02V+3E/ugPNeFCAad+JQ=="
+          "hash": "Uqi1WKn/epaoqfQWarhnoA=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Integer.html",
-          "hash": "Gnu2O4iTqB94nxm/w5aNAQ=="
+          "hash": "1omsyejW/gCnp6Qnq9BiAA=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "YUFIZ7WCig5oX569i9NxnQ=="
+          "hash": "ze0eP12v/g0PZZbBTMX0VA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "72mTxvtOqJ8W20KR2i9RgQ=="
+          "hash": "71Nrfk9Co/IvC15KdnhyWA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "OhtLVFgFNscfjGFiSwnchQ=="
+          "hash": "xyQpBM3+ucw89aELinA1BQ=="
         }
       },
       "is_incremental": false,
@@ -207,11 +207,10 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 12,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -220,10 +219,11 @@
           "total_file_count": 1,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 12,
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
