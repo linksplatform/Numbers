@@ -21,6 +21,7 @@ namespace Platform.Numbers
 
         public readonly T Value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static Integer()
         {
             _create = CompileCreateDelegate();
@@ -118,6 +119,7 @@ namespace Platform.Numbers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => Value.ToString();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<ulong, Integer<T>> CompileCreateDelegate()
         {
             return DelegateHelpers.Compile<Func<ulong, Integer<T>>>(emiter =>

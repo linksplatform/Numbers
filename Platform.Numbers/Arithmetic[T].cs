@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -14,6 +15,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T> Increment = CompileIncrementDelegate();
         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAddDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -25,6 +27,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileSubtractDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -36,6 +39,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileIncrementDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>
@@ -47,6 +51,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileDecrementDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>

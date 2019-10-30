@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -17,6 +18,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNotDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>
@@ -28,6 +30,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileOrDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -39,6 +42,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAndDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -50,6 +54,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftLeftDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
@@ -61,6 +66,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftRightDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
@@ -72,6 +78,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, int, int, T> CompilePartialWriteDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
@@ -131,6 +138,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, int, T> CompilePartialReadDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
@@ -185,6 +193,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Tuple<int, T> GetConstants()
         {
             var type = typeof(T);

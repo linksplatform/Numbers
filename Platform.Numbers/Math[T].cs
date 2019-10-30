@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -13,6 +13,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileAbsDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>
@@ -27,6 +28,7 @@ namespace Platform.Numbers
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNegateDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>

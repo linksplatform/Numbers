@@ -6,6 +6,7 @@ namespace Platform.Numbers
 {
     public static class Bit
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Count(long x)
         {
             long n = 0;
@@ -17,6 +18,7 @@ namespace Platform.Numbers
             return n;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetLowestPosition(ulong value)
         {
             if (value == 0)
