@@ -21,5 +21,14 @@ namespace Platform.Numbers.Tests
             Assert.Equal(-2L, returnValue);
             Assert.Equal(-2L, number);
         }
+
+        [Fact]
+        public static void UnsignedNegateTest()
+        {
+            var number = 2UL;
+            var returnValue = number.Negate();
+            Assert.Equal(18446744073709551614, returnValue);
+            Assert.Equal(18446744073709551614, number);
+        }
     }
 }
