@@ -8,6 +8,7 @@ namespace Platform.Numbers.Benchmarks
 {
     [SimpleJob]
     [MemoryDiagnoser]
+    [Obsolete]
     public class IntegerBenchmarks
     {
         [Params(10000, 1000000, 100000000)]
@@ -15,14 +16,12 @@ namespace Platform.Numbers.Benchmarks
 
         private static Converter<ulong> _converter;
 
-        [Obsolete]
         public class Converter<TLink> : IConverter<TLink>
         {
             public TLink Convert(TLink source) => (Integer<TLink>)2L;
         }
 
         [GlobalSetup]
-        [Obsolete]
         public static void Setup() => _converter = new Converter<ulong>();
 
         [Benchmark]
@@ -32,19 +31,15 @@ namespace Platform.Numbers.Benchmarks
         public long ToInt64UsingUncheckedConverter() => UncheckedConverter<uint, long>.Default.Convert(2U);
 
         [Benchmark]
-        [Obsolete]
         public ulong ToUInt64UsingInteger() => (Integer)2U;
 
         [Benchmark]
-        [Obsolete]
         public long ToInt64UsingInteger() => (Integer)2U;
 
         [Benchmark]
-        [Obsolete]
         public ulong ToUInt64UsingTypedInteger() => (Integer<int>)2U;
 
         [Benchmark]
-        [Obsolete]
         public long ToInt64UsingTypedInteger() => (Integer<int>)2U;
 
         [Benchmark]
