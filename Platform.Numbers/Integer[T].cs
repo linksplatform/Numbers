@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Platform.Exceptions;
 using Platform.Reflection;
-using Platform.Converters;
 
 // ReSharper disable StaticFieldInGenericType
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -66,52 +65,52 @@ namespace Platform.Numbers
         public static implicit operator Integer<T>(Integer integer) => _create(integer.Value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Integer<T>(long integer) => To.UInt64(integer);
+        public static implicit operator Integer<T>(long integer) => unchecked((ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Integer<T>(uint integer) => new Integer(integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Integer<T>(int integer) => To.UInt64(integer);
+        public static implicit operator Integer<T>(int integer) => unchecked((ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Integer<T>(ushort integer) => new Integer(integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Integer<T>(short integer) => To.UInt64(integer);
+        public static implicit operator Integer<T>(short integer) => unchecked((ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Integer<T>(byte integer) => new Integer(integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Integer<T>(sbyte integer) => To.UInt64(integer);
+        public static implicit operator Integer<T>(sbyte integer) => unchecked((ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Integer<T>(bool integer) => To.UInt64(integer);
+        public static implicit operator Integer<T>(bool integer) => integer ? 1UL : 0UL;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator long(Integer<T> integer) => To.Int64(integer);
+        public static implicit operator long(Integer<T> integer) => unchecked((long)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator uint(Integer<T> integer) => To.UInt32(integer);
+        public static implicit operator uint(Integer<T> integer) => unchecked((uint)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator int(Integer<T> integer) => To.Int32(integer);
+        public static implicit operator int(Integer<T> integer) => unchecked((int)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator ushort(Integer<T> integer) => To.UInt16(integer);
+        public static implicit operator ushort(Integer<T> integer) => unchecked((ushort)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator short(Integer<T> integer) => To.Int16(integer);
+        public static implicit operator short(Integer<T> integer) => unchecked((short)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator byte(Integer<T> integer) => To.Byte(integer);
+        public static implicit operator byte(Integer<T> integer) => unchecked((byte)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator sbyte(Integer<T> integer) => To.SByte(integer);
+        public static implicit operator sbyte(Integer<T> integer) => unchecked((sbyte)(ulong)integer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator bool(Integer<T> integer) => To.Boolean(integer);
+        public static implicit operator bool(Integer<T> integer) => integer != 0UL;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(Integer<T> other) => _equalityComparer.Equals(Value, other.Value);
@@ -130,7 +129,8 @@ namespace Platform.Numbers
                 emiter.LoadArgument(0);
                 if (typeof(T) != typeof(ulong) && typeof(T) != typeof(Integer))
                 {
-                    emiter.Call(typeof(To).GetMethod(typeof(T).Name, Types<ulong>.Array));
+                    emiter.UncheckedConvert<ulong, T>();
+                    //emiter.Call(typeof(To).GetMethod(typeof(T).Name, Types<ulong>.Array));
                 }
                 if (NumericType<T>.IsNullable)
                 {
