@@ -23,7 +23,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <LangVersion>Latest</LangVersion>
+    <LangVersion>latest</LangVersion>
     <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.5 to 0.0.6.
 Project files updated to support multiple build environments: dotnet, Travis CI, MonoDevelop, and Visual Studio.
 Travis CI build configuration updated to support automatic NuGet package publishing.
