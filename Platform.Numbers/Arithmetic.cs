@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -13,6 +14,7 @@ namespace Platform.Numbers
         public static T Subtract<T>(T x, T y) => Arithmetic<T>.Subtract(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Obsolete]
         public static T Subtract<T>(Integer<T> x, Integer<T> y) => Arithmetic<T>.Subtract(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

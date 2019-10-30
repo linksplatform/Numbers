@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Numbers
 {
+    [Obsolete]
     public struct Integer : IEquatable<Integer>
     {
         public readonly ulong Value;

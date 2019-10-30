@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System;
+using BenchmarkDotNet.Attributes;
 using Platform.Converters;
 
 #pragma warning disable CA1822 // Mark members as static
@@ -14,12 +15,14 @@ namespace Platform.Numbers.Benchmarks
 
         private static Converter<ulong> _converter;
 
+        [Obsolete]
         public class Converter<TLink> : IConverter<TLink>
         {
             public TLink Convert(TLink source) => (Integer<TLink>)2L;
         }
 
         [GlobalSetup]
+        [Obsolete]
         public static void Setup() => _converter = new Converter<ulong>();
 
         [Benchmark]
@@ -29,15 +32,19 @@ namespace Platform.Numbers.Benchmarks
         public long ToInt64UsingUncheckedConverter() => UncheckedConverter<uint, long>.Default.Convert(2U);
 
         [Benchmark]
+        [Obsolete]
         public ulong ToUInt64UsingInteger() => (Integer)2U;
 
         [Benchmark]
+        [Obsolete]
         public long ToInt64UsingInteger() => (Integer)2U;
 
         [Benchmark]
+        [Obsolete]
         public ulong ToUInt64UsingTypedInteger() => (Integer<int>)2U;
 
         [Benchmark]
+        [Obsolete]
         public long ToInt64UsingTypedInteger() => (Integer<int>)2U;
 
         [Benchmark]

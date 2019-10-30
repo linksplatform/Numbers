@@ -10,6 +10,7 @@ using Platform.Reflection;
 
 namespace Platform.Numbers
 {
+    [Obsolete]
     public struct Integer<T> : IEquatable<Integer<T>>
     {
         private static readonly EqualityComparer<T> _equalityComparer = EqualityComparer<T>.Default;
