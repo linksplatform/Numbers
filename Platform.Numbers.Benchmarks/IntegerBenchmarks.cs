@@ -13,7 +13,7 @@ namespace Platform.Numbers.Benchmarks
     {
         private static Converter<ulong> _converter;
 
-        public class Converter<TLink> : IConverter<TLink>
+        private class Converter<TLink> : IConverter<TLink>
         {
             public TLink Convert(TLink source) => (Integer<TLink>)2L;
         }
