@@ -45,7 +45,7 @@ Refactoring, performance optimizations, issues fix.</PackageReleaseNotes>
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.0.7" />
+    <PackageReference Include="Platform.Converters" Version="0.0.8" />
   </ItemGroup>
 
 </Project>
