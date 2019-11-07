@@ -11,9 +11,6 @@ namespace Platform.Numbers.Benchmarks
     [Obsolete]
     public class IntegerBenchmarks
     {
-        [Params(10000, 1000000, 100000000)]
-        public int N { get; set; }
-
         private static Converter<ulong> _converter;
 
         public class Converter<TLink> : IConverter<TLink>
