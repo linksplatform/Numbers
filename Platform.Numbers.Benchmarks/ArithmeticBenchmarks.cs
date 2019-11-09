@@ -1,5 +1,4 @@
-﻿using System;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
 #pragma warning disable CA1822 // Mark members as static
 
