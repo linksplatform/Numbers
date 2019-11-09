@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -17,6 +16,12 @@ namespace Platform.Numbers
         public static T Increment<T>(T x) => Arithmetic<T>.Increment(x);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Increment<T>(ref T x) => x = Arithmetic<T>.Increment(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Decrement<T>(T x) => Arithmetic<T>.Decrement(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Decrement<T>(ref T x) => x = Arithmetic<T>.Decrement(x);
     }
 }
