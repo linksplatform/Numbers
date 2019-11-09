@@ -4,12 +4,12 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.2.3</VersionPrefix>
+    <VersionPrefix>0.3.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Numbers</AssemblyName>
     <PackageId>Platform.Numbers</PackageId>
-    <PackageTags>LinksPlatform;Numbers;Arithmetic;ArithmeticExtensions;Bit;BitExtensions;Integer;Math;MathExtensions</PackageTags>
+    <PackageTags>LinksPlatform;Numbers;Arithmetic;ArithmeticExtensions;Bit;BitExtensions;Math;MathExtensions</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Numbers</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,7 +24,13 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.7 to 0.0.8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.8 to 0.1.0.
+Obsolete Integer struct and class removed.
+Removed Arithmetic.Subtract method with Integer&lt;T&gt; as arguments.
+Added Arithmetic.Increment(ref T) and Arithmetic.Decrement(ref T) methods, these methods should be used only for shorter/simpler code, because they are slower then versions without ref.
+Issues fix.
+
+This release is not backward compatible with the previous 0.2.3 release.</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
@@ -32,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All" />
   </ItemGroup>
   
   <ItemGroup>
