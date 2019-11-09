@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "aUvJtj5dsThGNQoSVDlqfA=="
+          "hash": "NHUzUg5XEIHn/ggJDpscuw=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "xwDOXRs6+/pl0VOgjeeabw=="
+          "hash": "pAvHDcwDVCUBp2pb46krpg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "KGb0S8tX2bBv6gfjJknxLw=="
+          "hash": "rHCCeNu3WBwGGkdfst1MZg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "a6feHJanOl2GoNkJwr0zig=="
+          "hash": "Z5vM7u77YBWNCpXm10pDUg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "kPiU/kjgHnX2GREtz4pnaw=="
+          "hash": "vKmJ+ZjcP5nPPGJQhO3FoA=="
         }
       },
       "is_incremental": false,
@@ -90,31 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "7l/ExApPh+gfKq94LkV/kw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Integer-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Integer-1.html",
-          "hash": "rKJOihGaR+s2NW48intdbg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Integer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Integer.html",
-          "hash": "56o7T4CraZq70tHOKaMZ1w=="
+          "hash": "HvxdIWVk8lWlMVQPdmpJcQ=="
         }
       },
       "is_incremental": false,
@@ -126,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "B/JvEnInI0supyMqaETN2Q=="
+          "hash": "1lLzn9uAEQRbNi4SvbK3ig=="
         }
       },
       "is_incremental": false,
@@ -138,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "GdggtDjNl0oHKE0C2eArew=="
+          "hash": "tsv/jSCZ5xp3fv0Xw/1xXg=="
         }
       },
       "is_incremental": false,
@@ -150,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "0qrCVoReCp8/kzTcxUV5LA=="
+          "hash": "NCQ1/L+N0DJ1u09d43suvA=="
         }
       },
       "is_incremental": false,
@@ -162,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.html",
-          "hash": "cQTqT1mrdQmFZfLV03g6lw=="
+          "hash": "3lf2HVSi33lyHxhvpZhQtg=="
         }
       },
       "is_incremental": false,
@@ -174,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "X9KUSVe3tBomaqBLabNt6A=="
+          "hash": "8EhdlZueOg84YXgzLqFYiA=="
         }
       },
       "is_incremental": false,
@@ -207,11 +183,10 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -220,10 +195,11 @@
           "total_file_count": 1,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 12,
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
