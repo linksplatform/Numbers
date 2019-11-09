@@ -14,10 +14,6 @@ namespace Platform.Numbers
         public static T Subtract<T>(T x, T y) => Arithmetic<T>.Subtract(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [Obsolete]
-        public static T Subtract<T>(Integer<T> x, Integer<T> y) => Arithmetic<T>.Subtract(x, y);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Increment<T>(T x) => Arithmetic<T>.Increment(x);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
