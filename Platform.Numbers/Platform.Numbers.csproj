@@ -36,7 +36,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.0.8" />
+    <PackageReference Include="Platform.Converters" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
