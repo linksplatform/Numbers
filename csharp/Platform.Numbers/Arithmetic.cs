@@ -13,6 +13,12 @@ namespace Platform.Numbers
         public static T Subtract<T>(T x, T y) => Arithmetic<T>.Subtract(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Multiply<T>(T x, T y) => Arithmetic<T>.Multiply(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Divide<T>(T x, T y) => Arithmetic<T>.Divide(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Increment<T>(T x) => Arithmetic<T>.Increment(x);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

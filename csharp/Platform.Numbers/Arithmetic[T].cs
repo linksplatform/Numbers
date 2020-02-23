@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
@@ -12,6 +13,8 @@ namespace Platform.Numbers
     {
         public static readonly Func<T, T, T> Add = CompileAddDelegate();
         public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
+        public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
+        public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
         public static readonly Func<T, T> Increment = CompileIncrementDelegate();
         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
@@ -35,6 +38,37 @@ namespace Platform.Numbers
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
                 emiter.Subtract();
+                emiter.Return();
+            });
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static Func<T, T, T> CompileMultiplyDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.Emit(OpCodes.Mul);
+                emiter.Return();
+            });
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static Func<T, T, T> CompileDivideDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
+            {
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                if(NumericType<T>.IsSigned)
+                {
+                    emiter.Emit(OpCodes.Div);
+                }
+                else
+                {
+                    emiter.Emit(OpCodes.Div_Un);
+                }
                 emiter.Return();
             });
         }
