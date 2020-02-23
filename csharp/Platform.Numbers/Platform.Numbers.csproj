@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.3.0</VersionPrefix>
+    <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -24,13 +24,9 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Platform.Converters dependency updated from 0.0.8 to 0.1.0.
-Obsolete Integer struct and class removed.
-Removed Arithmetic.Subtract method with Integer&lt;T&gt; as arguments.
-Added Arithmetic.Increment(ref T) and Arithmetic.Decrement(ref T) methods, these methods should be used only for shorter/simpler code, because they are slower then versions without ref.
-Issues fix.
-
-This release is not backward compatible with the previous 0.2.3 release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.2.
+Platform.Converters dependency updated from 0.1.0 to 0.2.0.
+Added support for generic multiplication and division.</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
