@@ -54,6 +54,22 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic.Decrement(Of T)(ByRef T)
   nameWithType: Arithmetic.Decrement<T>(ref T)
   nameWithType.vb: Arithmetic.Decrement(Of T)(ByRef T)
+- uid: Platform.Numbers.Arithmetic.Divide*
+  name: Divide
+  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Divide_
+  commentId: Overload:Platform.Numbers.Arithmetic.Divide
+  isSpec: "True"
+  fullName: Platform.Numbers.Arithmetic.Divide
+  nameWithType: Arithmetic.Divide
+- uid: Platform.Numbers.Arithmetic.Divide``1(``0,``0)
+  name: Divide<T>(T, T)
+  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Divide__1___0___0_
+  commentId: M:Platform.Numbers.Arithmetic.Divide``1(``0,``0)
+  name.vb: Divide(Of T)(T, T)
+  fullName: Platform.Numbers.Arithmetic.Divide<T>(T, T)
+  fullName.vb: Platform.Numbers.Arithmetic.Divide(Of T)(T, T)
+  nameWithType: Arithmetic.Divide<T>(T, T)
+  nameWithType.vb: Arithmetic.Divide(Of T)(T, T)
 - uid: Platform.Numbers.Arithmetic.Increment*
   name: Increment
   href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Increment_
@@ -79,6 +95,22 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic.Increment(Of T)(ByRef T)
   nameWithType: Arithmetic.Increment<T>(ref T)
   nameWithType.vb: Arithmetic.Increment(Of T)(ByRef T)
+- uid: Platform.Numbers.Arithmetic.Multiply*
+  name: Multiply
+  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Multiply_
+  commentId: Overload:Platform.Numbers.Arithmetic.Multiply
+  isSpec: "True"
+  fullName: Platform.Numbers.Arithmetic.Multiply
+  nameWithType: Arithmetic.Multiply
+- uid: Platform.Numbers.Arithmetic.Multiply``1(``0,``0)
+  name: Multiply<T>(T, T)
+  href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Multiply__1___0___0_
+  commentId: M:Platform.Numbers.Arithmetic.Multiply``1(``0,``0)
+  name.vb: Multiply(Of T)(T, T)
+  fullName: Platform.Numbers.Arithmetic.Multiply<T>(T, T)
+  fullName.vb: Platform.Numbers.Arithmetic.Multiply(Of T)(T, T)
+  nameWithType: Arithmetic.Multiply<T>(T, T)
+  nameWithType.vb: Arithmetic.Multiply(Of T)(T, T)
 - uid: Platform.Numbers.Arithmetic.Subtract*
   name: Subtract
   href: api/Platform.Numbers.Arithmetic.html#Platform_Numbers_Arithmetic_Subtract_
@@ -120,6 +152,14 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic(Of T).Decrement
   nameWithType: Arithmetic<T>.Decrement
   nameWithType.vb: Arithmetic(Of T).Decrement
+- uid: Platform.Numbers.Arithmetic`1.Divide
+  name: Divide
+  href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_Divide
+  commentId: F:Platform.Numbers.Arithmetic`1.Divide
+  fullName: Platform.Numbers.Arithmetic<T>.Divide
+  fullName.vb: Platform.Numbers.Arithmetic(Of T).Divide
+  nameWithType: Arithmetic<T>.Divide
+  nameWithType.vb: Arithmetic(Of T).Divide
 - uid: Platform.Numbers.Arithmetic`1.Increment
   name: Increment
   href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_Increment
@@ -128,6 +168,14 @@ references:
   fullName.vb: Platform.Numbers.Arithmetic(Of T).Increment
   nameWithType: Arithmetic<T>.Increment
   nameWithType.vb: Arithmetic(Of T).Increment
+- uid: Platform.Numbers.Arithmetic`1.Multiply
+  name: Multiply
+  href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_Multiply
+  commentId: F:Platform.Numbers.Arithmetic`1.Multiply
+  fullName: Platform.Numbers.Arithmetic<T>.Multiply
+  fullName.vb: Platform.Numbers.Arithmetic(Of T).Multiply
+  nameWithType: Arithmetic<T>.Multiply
+  nameWithType.vb: Arithmetic(Of T).Multiply
 - uid: Platform.Numbers.Arithmetic`1.Subtract
   name: Subtract
   href: api/Platform.Numbers.Arithmetic-1.html#Platform_Numbers_Arithmetic_1_Subtract
