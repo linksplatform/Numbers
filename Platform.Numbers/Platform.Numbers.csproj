@@ -42,7 +42,7 @@ This release is not backward compatible with the previous 0.2.3 release.</Packag
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.1.0" />
+    <PackageReference Include="Platform.Converters" Version="0.2.0" />
   </ItemGroup>
 
 </Project>
