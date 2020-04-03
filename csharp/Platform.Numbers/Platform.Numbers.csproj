@@ -38,7 +38,7 @@ Added support for generic multiplication and division.</PackageReleaseNotes>
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.2.0" />
+    <PackageReference Include="Platform.Converters" Version="0.2.1" />
   </ItemGroup>
 
 </Project>
