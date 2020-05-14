@@ -7,14 +7,14 @@
 
 LinksPlatform's Platform.Numbers Class Library.
 
-Namespace: [Platform.Numbers](https://linksplatform.github.io/Numbers/api/Platform.Numbers.html)
+Namespace: [Platform.Numbers](https://linksplatform.github.io/Numbers/csharp/api/Platform.Numbers.html)
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Numbers](https://github.com/Konard/LinksPlatform/tree/19902d5c6221b5c93a5e06849de28bb97edac5f8/Platform/Platform.Helpers/Numbers)
 
 NuGet package: [Platform.Numbers](https://www.nuget.org/packages/Platform.Numbers)
 
 ## [Documentation](https://linksplatform.github.io/Numbers)
-[PDF file](https://linksplatform.github.io/Numbers/Platform.Numbers.pdf) with code for e-readers.
+[PDF file](https://linksplatform.github.io/Numbers/csharp/Platform.Numbers.pdf) with code for e-readers.
 
 ## Depend on
 *   [Platform.Converters](https://github.com/linksplatform/Converters)
