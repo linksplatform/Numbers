@@ -18,7 +18,139 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "sn1zf0/H7Fv3U5jiN7h2fA=="
+          "hash": "Ev2gl8lccaxD0W+jcxHTAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Arithmetic-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
+          "hash": "VABmGJKDEJwYQc64XryvZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Arithmetic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Arithmetic.html",
+          "hash": "L82r0JNwl/nNph3Tvg7Zvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.ArithmeticExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
+          "hash": "wX/ZspFj5+wmEeCTTVmzDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Bit-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Bit-1.html",
+          "hash": "Fm0Ln8uQCbXYHOZ57dY5Og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Bit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Bit.html",
+          "hash": "hHzddvHrd1TluuLZwzXyJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.BitwiseExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
+          "hash": "7AWJUEELYsg+5m8Ht6EdMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Math-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Math-1.html",
+          "hash": "5Ctz88hvowtuLTAJ7fxdqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.Math.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.Math.html",
+          "hash": "YOVftXmRbN0l3L0yxShE3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.MathExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.MathExtensions.html",
+          "hash": "aApF4d7CRv5QB5e4Arf7XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Numbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Numbers.html",
+          "hash": "ZDSklZncIirJSyyRtiIGsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "8EhdlZueOg84YXgzLqFYiA=="
         }
       },
       "is_incremental": false,
@@ -33,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "PFMfCfqx1M7X8pXhWAzu+Q=="
+          "hash": "S0Do5sPqxo3AXAKh41XaFg=="
         }
       },
       "is_incremental": false,
@@ -55,6 +187,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
