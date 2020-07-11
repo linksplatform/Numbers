@@ -33,6 +33,9 @@ namespace Platform.Numbers
             18367353072152D,  69533550916004D,  263747951750360D,  1002242216651368D,  3814986502092304D
         };
 
+
+        //Generate the factorial of the value "n".
+        //Генерация факториaла из значения переменной "n".
         public static double Factorial(double n)
         {
             if (n <= 1)
@@ -46,6 +49,8 @@ namespace Platform.Numbers
             return n * Factorial(n - 1);
         }
 
+        //Generating the Catalan Number of the value "n".
+        //Генерация числа Каталана из значения переменной "n".
         public static double Catalan(double n)
         {
             if (n <= 1)
