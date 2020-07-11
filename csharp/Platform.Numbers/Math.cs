@@ -38,7 +38,7 @@ namespace Platform.Numbers
         /// <para>Генерация факториaла из значения переменной "n".</para>
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
-        ///<returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static double Factorial(double n)
         {
             if (n <= 1)
@@ -61,7 +61,7 @@ namespace Platform.Numbers
         /// <para>Генерация числа Каталана из значения переменной "n".</para>
         /// </summary>
         /// <param name="n"><para>Catalan Number generation value.</para><para>Значение генерации Числа Каталана.</para></param>
-        ///<returns><para>Result of Catalan Number calculation.</para><para>Результат подсчета Числа Каталана.</para>
+        /// <returns><para>Result of Catalan Number calculation.</para><para>Результат подсчета Числа Каталана.</para></returns>
         public static double Catalan(double n)
         {
            
