@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "rmk+ZIBGZ4m0AoZEgy2yuw=="
+          "hash": "gWO7YoeCZGWAfZxc9uO78A=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "TkXq628ykNmvZkFJexBjfA=="
+          "hash": "3ZHFaza8fXjie/PsGKIjVw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "4KIt/nAfCN8jY4+tgPy1jA=="
+          "hash": "mf+osg3D8qB7f6P5bDxKvw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "lfo4t173Nfk2ihI0fkyYRA=="
+          "hash": "ICO3uKluJoALMg1Hjf+pTw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "1rGckFHbGXXxOSJjLITbXA=="
+          "hash": "rPAsoVsBYEM5rf39jh15dA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "zkWjx0ZM/YN68sBJwl7RKA=="
+          "hash": "60P7BPQvL2tCzAuytioHOw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "Cxc1ps5MbLkKzXhStgUpxQ=="
+          "hash": "kBexbkADzJ5DKd1f95jP3g=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "mLGxRDpGQwnTCyOcyP/XFg=="
+          "hash": "ghZj8CMMi7Qw/Hg0IhvGbw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "AGc25P+/EA6GN6VTuaJ15Q=="
+          "hash": "18TeFEssIuDnYKHgQEeevg=="
         }
       },
       "is_incremental": false,
