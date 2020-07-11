@@ -34,8 +34,8 @@ namespace Platform.Numbers
         };
 
         /// <summary>
-        /// <para> Generate the factorial of the value "n".</para>
-        /// <para> Генерация факториaла из значения переменной "n".</para>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         ///<returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para>
