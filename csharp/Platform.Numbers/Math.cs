@@ -33,26 +33,43 @@ namespace Platform.Numbers
             18367353072152D,  69533550916004D,  263747951750360D,  1002242216651368D,  3814986502092304D
         };
 
-
-        //Generate the factorial of the value "n".
-        //Генерация факториaла из значения переменной "n".
+        /// <summary>
+        /// <para> Generate the factorial of the value "n".</para>
+        /// <para> Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         public static double Factorial(double n)
         {
             if (n <= 1)
             {
                 return 1;
             }
+            ///<summary>
+            ///<para> Calculates the factorial of.</para>
+            ///<para>Вычисление факториала.</para>
+            //</summary>
+            ///<returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para>
             if (n < _factorials.Length)
             {
                 return _factorials[(int)n];
             }
+            
             return n * Factorial(n - 1);
         }
-
-        //Generating the Catalan Number of the value "n".
-        //Генерация числа Каталана из значения переменной "n".
+        
+        
+        // <summary>
+        /// <para>Generating the Catalan Number of the value "n".</para>
+        /// <para>Генерация числа Каталана из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Catalan Number generation value.</para><para>Значение генерации Числа Каталана.</para></param>
         public static double Catalan(double n)
         {
+             ///<summary>
+            ///<para> Calculates the Catalan Number of.</para>
+            ///<para>Вычисление Числа Каталана.</para>
+            //</summary>
+            ///<returns><para>Result of Catalan Number calculation.</para><para>Результат подсчета Числа Каталана.</para>
             if (n <= 1)
             {
                 return 1;
