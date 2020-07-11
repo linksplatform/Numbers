@@ -56,7 +56,7 @@ namespace Platform.Numbers
         }
         
         
-        // <summary>
+        /// <summary>
         /// <para>Generating the Catalan Number of the value "n".</para>
         /// <para>Генерация числа Каталана из значения переменной "n".</para>
         /// </summary>
