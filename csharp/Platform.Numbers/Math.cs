@@ -116,6 +116,12 @@ namespace Platform.Numbers
             return n * Factorial(n - 1);
         }
 
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long FactorialWhileWithArray(long n)
         {
             long[] _facts =
@@ -130,6 +136,37 @@ namespace Platform.Numbers
             while (n > 1) r *= --n;
             return r;
         }
+
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
+        public static long FactorialWhileWithoutArray(long n)
+        {
+            if (n < _factorials.Length) return _factorials[n];
+
+            long r = n;
+            while (n > 1) r *= --n;
+            return r;
+        }
+
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
+        public static long FactorialWhileWithoutArrayAndCountingArrayLength(long n)
+        {
+            if (n < 21) return _factorials[n];
+
+            long r = n;
+            while (n > 1) r *= --n;
+            return r;
+        }
+
 
         /// <summary>
         /// <para>Generating the Catalan Number of the value "n".</para>

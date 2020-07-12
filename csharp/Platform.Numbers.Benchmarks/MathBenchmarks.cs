@@ -31,5 +31,17 @@ namespace Platform.Numbers.Benchmarks
         {
             return Math.FactorialWhileWithArray(FACTORIALTESTNUMBER);
         }
+
+        [Benchmark]
+        public long FactorialWhileWithoutArray()
+        {
+            return Math.FactorialWhileWithoutArray(FACTORIALTESTNUMBER);
+        }
+
+        [Benchmark]
+        public long FactorialWhileWithoutArrayAndCountingArrayLength()
+        {
+            return Math.FactorialWhileWithoutArrayAndCountingArrayLength(FACTORIALTESTNUMBER);
+        }
     }
 }
