@@ -533,6 +533,32 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
+- uid: Platform.Numbers.Math.FactorialOf19(System.Int64)
+  name: FactorialOf19(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOf19_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialOf19(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialOf19(System.Int64)
+  nameWithType: Math.FactorialOf19(Int64)
+- uid: Platform.Numbers.Math.FactorialOf19*
+  name: FactorialOf19
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOf19_
+  commentId: Overload:Platform.Numbers.Math.FactorialOf19
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialOf19
+  nameWithType: Math.FactorialOf19
+- uid: Platform.Numbers.Math.FactorialOnly21(System.Int64)
+  name: FactorialOnly21(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOnly21_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialOnly21(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialOnly21(System.Int64)
+  nameWithType: Math.FactorialOnly21(Int64)
+- uid: Platform.Numbers.Math.FactorialOnly21*
+  name: FactorialOnly21
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOnly21_
+  commentId: Overload:Platform.Numbers.Math.FactorialOnly21
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialOnly21
+  nameWithType: Math.FactorialOnly21
 - uid: Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
   name: FactorialRecursionCountingArraylength(Int64)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialRecursionCountingArraylength_System_Int64_
