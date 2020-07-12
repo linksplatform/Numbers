@@ -507,12 +507,12 @@ references:
   fullName.vb: Platform.Numbers.Math.Abs(Of T)(T)
   nameWithType: Math.Abs<T>(T)
   nameWithType.vb: Math.Abs(Of T)(T)
-- uid: Platform.Numbers.Math.Catalan(System.Int32)
-  name: Catalan(Int32)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_System_Int32_
-  commentId: M:Platform.Numbers.Math.Catalan(System.Int32)
-  fullName: Platform.Numbers.Math.Catalan(System.Int32)
-  nameWithType: Math.Catalan(Int32)
+- uid: Platform.Numbers.Math.Catalan(System.UInt64)
+  name: Catalan(UInt64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_System_UInt64_
+  commentId: M:Platform.Numbers.Math.Catalan(System.UInt64)
+  fullName: Platform.Numbers.Math.Catalan(System.UInt64)
+  nameWithType: Math.Catalan(UInt64)
 - uid: Platform.Numbers.Math.Catalan*
   name: Catalan
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_
@@ -520,12 +520,12 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Catalan
   nameWithType: Math.Catalan
-- uid: Platform.Numbers.Math.Factorial(System.Int64)
-  name: Factorial(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_System_Int64_
-  commentId: M:Platform.Numbers.Math.Factorial(System.Int64)
-  fullName: Platform.Numbers.Math.Factorial(System.Int64)
-  nameWithType: Math.Factorial(Int64)
+- uid: Platform.Numbers.Math.Factorial(System.UInt64)
+  name: Factorial(UInt64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_System_UInt64_
+  commentId: M:Platform.Numbers.Math.Factorial(System.UInt64)
+  fullName: Platform.Numbers.Math.Factorial(System.UInt64)
+  nameWithType: Math.Factorial(UInt64)
 - uid: Platform.Numbers.Math.Factorial*
   name: Factorial
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_
@@ -533,97 +533,6 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
-- uid: Platform.Numbers.Math.FactorialOf19(System.Int64)
-  name: FactorialOf19(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOf19_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialOf19(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialOf19(System.Int64)
-  nameWithType: Math.FactorialOf19(Int64)
-- uid: Platform.Numbers.Math.FactorialOf19*
-  name: FactorialOf19
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOf19_
-  commentId: Overload:Platform.Numbers.Math.FactorialOf19
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialOf19
-  nameWithType: Math.FactorialOf19
-- uid: Platform.Numbers.Math.FactorialOnly21(System.Int64)
-  name: FactorialOnly21(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOnly21_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialOnly21(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialOnly21(System.Int64)
-  nameWithType: Math.FactorialOnly21(Int64)
-- uid: Platform.Numbers.Math.FactorialOnly21*
-  name: FactorialOnly21
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialOnly21_
-  commentId: Overload:Platform.Numbers.Math.FactorialOnly21
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialOnly21
-  nameWithType: Math.FactorialOnly21
-- uid: Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
-  name: FactorialRecursionCountingArraylength(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialRecursionCountingArraylength_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
-  nameWithType: Math.FactorialRecursionCountingArraylength(Int64)
-- uid: Platform.Numbers.Math.FactorialRecursionCountingArraylength*
-  name: FactorialRecursionCountingArraylength
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialRecursionCountingArraylength_
-  commentId: Overload:Platform.Numbers.Math.FactorialRecursionCountingArraylength
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialRecursionCountingArraylength
-  nameWithType: Math.FactorialRecursionCountingArraylength
-- uid: Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
-  name: FactorialWhileWithArray(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithArray_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
-  nameWithType: Math.FactorialWhileWithArray(Int64)
-- uid: Platform.Numbers.Math.FactorialWhileWithArray*
-  name: FactorialWhileWithArray
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithArray_
-  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithArray
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialWhileWithArray
-  nameWithType: Math.FactorialWhileWithArray
-- uid: Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
-  name: FactorialWhileWithoutArray(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArray_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
-  nameWithType: Math.FactorialWhileWithoutArray(Int64)
-- uid: Platform.Numbers.Math.FactorialWhileWithoutArray*
-  name: FactorialWhileWithoutArray
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArray_
-  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithoutArray
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialWhileWithoutArray
-  nameWithType: Math.FactorialWhileWithoutArray
-- uid: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
-  name: FactorialWhileWithoutArrayAndCountingArrayLength(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArrayAndCountingArrayLength_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
-  nameWithType: Math.FactorialWhileWithoutArrayAndCountingArrayLength(Int64)
-- uid: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength*
-  name: FactorialWhileWithoutArrayAndCountingArrayLength
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArrayAndCountingArrayLength_
-  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength
-  nameWithType: Math.FactorialWhileWithoutArrayAndCountingArrayLength
-- uid: Platform.Numbers.Math.FactTree(System.Int32)
-  name: FactTree(Int32)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_System_Int32_
-  commentId: M:Platform.Numbers.Math.FactTree(System.Int32)
-  fullName: Platform.Numbers.Math.FactTree(System.Int32)
-  nameWithType: Math.FactTree(Int32)
-- uid: Platform.Numbers.Math.FactTree*
-  name: FactTree
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_
-  commentId: Overload:Platform.Numbers.Math.FactTree
-  isSpec: "True"
-  fullName: Platform.Numbers.Math.FactTree
-  nameWithType: Math.FactTree
 - uid: Platform.Numbers.Math.IsPowerOfTwo(System.UInt64)
   name: IsPowerOfTwo(UInt64)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_IsPowerOfTwo_System_UInt64_
@@ -637,6 +546,18 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.IsPowerOfTwo
   nameWithType: Math.IsPowerOfTwo
+- uid: Platform.Numbers.Math.MaximumCatalanIndex
+  name: MaximumCatalanIndex
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_MaximumCatalanIndex
+  commentId: F:Platform.Numbers.Math.MaximumCatalanIndex
+  fullName: Platform.Numbers.Math.MaximumCatalanIndex
+  nameWithType: Math.MaximumCatalanIndex
+- uid: Platform.Numbers.Math.MaximumFactorialNumber
+  name: MaximumFactorialNumber
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_MaximumFactorialNumber
+  commentId: F:Platform.Numbers.Math.MaximumFactorialNumber
+  fullName: Platform.Numbers.Math.MaximumFactorialNumber
+  nameWithType: Math.MaximumFactorialNumber
 - uid: Platform.Numbers.Math.Negate*
   name: Negate
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Negate_
