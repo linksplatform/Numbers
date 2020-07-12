@@ -559,6 +559,32 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.FactorialWhileWithArray
   nameWithType: Math.FactorialWhileWithArray
+- uid: Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
+  name: FactorialWhileWithoutArray(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArray_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialWhileWithoutArray(System.Int64)
+  nameWithType: Math.FactorialWhileWithoutArray(Int64)
+- uid: Platform.Numbers.Math.FactorialWhileWithoutArray*
+  name: FactorialWhileWithoutArray
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArray_
+  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithoutArray
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialWhileWithoutArray
+  nameWithType: Math.FactorialWhileWithoutArray
+- uid: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
+  name: FactorialWhileWithoutArrayAndCountingArrayLength(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArrayAndCountingArrayLength_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength(System.Int64)
+  nameWithType: Math.FactorialWhileWithoutArrayAndCountingArrayLength(Int64)
+- uid: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength*
+  name: FactorialWhileWithoutArrayAndCountingArrayLength
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithoutArrayAndCountingArrayLength_
+  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialWhileWithoutArrayAndCountingArrayLength
+  nameWithType: Math.FactorialWhileWithoutArrayAndCountingArrayLength
 - uid: Platform.Numbers.Math.FactTree(System.Int32)
   name: FactTree(Int32)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_System_Int32_
