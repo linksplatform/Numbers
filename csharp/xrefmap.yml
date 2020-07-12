@@ -533,6 +533,19 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
+- uid: Platform.Numbers.Math.FactorialStatic(System.Int64)
+  name: FactorialStatic(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialStatic_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialStatic(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialStatic(System.Int64)
+  nameWithType: Math.FactorialStatic(Int64)
+- uid: Platform.Numbers.Math.FactorialStatic*
+  name: FactorialStatic
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialStatic_
+  commentId: Overload:Platform.Numbers.Math.FactorialStatic
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialStatic
+  nameWithType: Math.FactorialStatic
 - uid: Platform.Numbers.Math.FactTree(System.Int32)
   name: FactTree(Int32)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_System_Int32_
