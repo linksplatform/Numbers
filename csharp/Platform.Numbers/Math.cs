@@ -43,15 +43,22 @@ namespace Platform.Numbers
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long Factorial(long n)
         {
+            long[] _facts =
+            {
+                1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
+                479001600, 6227020800, 87178291200, 1307674368000, 20922789888000,
+                355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000,
+            };
+
             if (n <= 1)
             {
                 return 1;
             }
           
           
-            if (n < _factorials.Length)
+            if (n < 21)
             {
-                return _factorials[n];
+                return _facts[n];
             }
             
             return n * Factorial(n - 1);
@@ -63,12 +70,35 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
-        public static long FactorialEratosthenesSieve(long n)
+        public static long FactTree(int n)
         {
-            long r = n;
-            while (n > 1)
-                r *= --n;
-            return r;
+            if (n < 0)
+                return 0;
+            if (n == 0)
+                return 1;
+            if (n == 1 || n == 2)
+                return 1;
+            if (n == 3) return 2;
+            if (n == 4) return 6;
+            if (n == 5) return 24;
+            if (n == 6) return 120;
+            if (n == 7) return 720;
+            if (n == 8) return 5040;
+            if (n == 9) return 40320;
+            if (n == 10) return 362880;
+            if (n == 11) return 3628800;
+            if (n == 12) return 39916800;
+            if (n == 13) return 479001600;
+            if (n == 14) return 6227020800;
+            if (n == 15) return 87178291200;
+            if (n == 16) return 1307674368000;
+            if (n == 17) return 20922789888000;
+            if (n == 18) return 355687428096000;
+            if (n == 19) return 6402373705728000;
+            if (n == 20) return 121645100408832000;
+            if (n == 21) return 2432902008176640000;
+
+            return n * Factorial(n - 1);
         }
 
         /// <summary>
