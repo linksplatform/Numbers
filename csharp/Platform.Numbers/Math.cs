@@ -57,46 +57,19 @@ namespace Platform.Numbers
             return n * Factorial(n - 1);
         }
 
-
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long FactorialEratosthenesSieve(long n)
         {
-            if (n < 0)
-                return 0;
-            if (n == 0)
-                return 1;
-            if (n < _factorials.Length)
-                return _factorials[n];
-
-            bool[] u = new bool[n + 1]; // маркеры для решета Эратосфена
-            List<Tuple<long, long>> p = new List<Tuple<long, long>>(); // множители и их показатели степеней
-            for (int i = 2; i <= n; ++i)
-                if (!u[i]) // если i - очередное простое число
-                {
-                    // считаем показатель степени в разложении
-                    long k = n / i;
-                    long c = 0;
-                    while (k > 0)
-                    {
-                        c += k;
-                        k /= i;
-                    }
-                    // запоминаем множитель и его показатель степени
-                    p.Add(new Tuple<long, long>(i, c));
-                    // просеиваем составные числа через решето               
-                    int j = 2;
-                    while (i * j <= n)
-                    {
-                        u[i * j] = true;
-                        ++j;
-                    }
-                }
-            // вычисляем факториал
-            int r = 1;
-            for (int i = p.Count() - 1; i >= 0; --i)
-                r *= (int)System.Math.Pow(p[i].Item1, p[i].Item2);
+            long r = n;
+            while (n > 1)
+                r *= --n;
             return r;
         }
-
 
         /// <summary>
         /// <para>Generating the Catalan Number of the value "n".</para>
