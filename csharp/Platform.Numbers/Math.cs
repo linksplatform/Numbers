@@ -43,13 +43,6 @@ namespace Platform.Numbers
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long Factorial(long n)
         {
-            long[] _facts =
-            {
-                1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
-                479001600, 6227020800, 87178291200, 1307674368000, 20922789888000,
-                355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000,
-            };
-
             if (n <= 1)
             {
                 return 1;
@@ -58,7 +51,7 @@ namespace Platform.Numbers
           
             if (n < 21)
             {
-                return _facts[n];
+                return _factorials[n];
             }
             
             return n * Factorial(n - 1);
@@ -70,7 +63,7 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
-        public static long FactorialStatic(long n)
+        public static long FactorialRecursionCountingArraylength(long n)
         {
             if (n <= 1)
             {
@@ -121,6 +114,21 @@ namespace Platform.Numbers
             if (n == 21) return 2432902008176640000;
 
             return n * Factorial(n - 1);
+        }
+
+        public static long FactorialWhileWithArray(long n)
+        {
+            long[] _facts =
+            {
+                1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
+                479001600, 6227020800, 87178291200, 1307674368000, 20922789888000,
+                355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000,
+            };
+            if (n < _facts.Length) return _facts[n];
+
+            long r = n;
+            while (n > 1) r *= --n;
+            return r;
         }
 
         /// <summary>

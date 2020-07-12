@@ -6,7 +6,7 @@ namespace Platform.Numbers.Benchmarks
     [MemoryDiagnoser]
     public class MathBenchmarks
     {
-        private const int FACTORIALTESTNUMBER = 10000;
+        private const int FACTORIALTESTNUMBER = 19;
 
         [Benchmark]
         public long FactorialUsingRecursion()
@@ -21,9 +21,15 @@ namespace Platform.Numbers.Benchmarks
         }
 
         [Benchmark]
-        public long FactorialUsingRecursionWihoutStaticField()
+        public long FactorialRecursionCountingArraylength()
         {
-            return Math.FactorialStatic(FACTORIALTESTNUMBER);
+            return Math.FactorialRecursionCountingArraylength(FACTORIALTESTNUMBER);
+        }
+
+        [Benchmark]
+        public long FactorialWhileWithArray()
+        {
+            return Math.FactorialWhileWithArray(FACTORIALTESTNUMBER);
         }
     }
 }
