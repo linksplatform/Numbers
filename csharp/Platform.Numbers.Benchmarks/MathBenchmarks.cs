@@ -1,6 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Sharith.Arithmetic;
-using Sharith.Factorial;
 
 namespace Platform.Numbers.Benchmarks
 {
@@ -8,19 +6,18 @@ namespace Platform.Numbers.Benchmarks
     [MemoryDiagnoser]
     public class MathBenchmarks
     {
-        private const int FACTORIALTESTNUMBER = 10000;
+        private const int FACTORIALTESTNUMBER = 50000;
 
         [Benchmark]
-        public int FactorialUsingRecursion()
+        public long FactorialUsingRecursion()
         {
-            return (int)Math.Factorial(FACTORIALTESTNUMBER);
+            return Math.Factorial(FACTORIALTESTNUMBER);
         }
 
         [Benchmark]
-        public XInt FactorialUsingParallelPrimeSwing()
+        public long FactorialUsingEratosthenesSieve()
         {
-            var f = new ParallelPrimeSwing();
-            return f.Factorial(FACTORIALTESTNUMBER);
+            return Math.FastFactor(FACTORIALTESTNUMBER);
         }
     }
 }
