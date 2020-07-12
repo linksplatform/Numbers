@@ -33,21 +33,39 @@ namespace Platform.Numbers
             18367353072152D,  69533550916004D,  263747951750360D,  1002242216651368D,  3814986502092304D
         };
 
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static double Factorial(double n)
         {
             if (n <= 1)
             {
                 return 1;
             }
+          
+          
             if (n < _factorials.Length)
             {
                 return _factorials[(int)n];
             }
+            
             return n * Factorial(n - 1);
         }
-
+        
+        
+        /// <summary>
+        /// <para>Generating the Catalan Number of the value "n".</para>
+        /// <para>Генерация числа Каталана из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Catalan Number generation value.</para><para>Значение генерации Числа Каталана.</para></param>
+        /// <returns><para>Result of Catalan Number calculation.</para><para>Результат подсчета Числа Каталана.</para></returns>
         public static double Catalan(double n)
         {
+           
+           
             if (n <= 1)
             {
                 return 1;
