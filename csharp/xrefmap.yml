@@ -507,12 +507,12 @@ references:
   fullName.vb: Platform.Numbers.Math.Abs(Of T)(T)
   nameWithType: Math.Abs<T>(T)
   nameWithType.vb: Math.Abs(Of T)(T)
-- uid: Platform.Numbers.Math.Catalan(System.Double)
-  name: Catalan(Double)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_System_Double_
-  commentId: M:Platform.Numbers.Math.Catalan(System.Double)
-  fullName: Platform.Numbers.Math.Catalan(System.Double)
-  nameWithType: Math.Catalan(Double)
+- uid: Platform.Numbers.Math.Catalan(System.Int32)
+  name: Catalan(Int32)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_System_Int32_
+  commentId: M:Platform.Numbers.Math.Catalan(System.Int32)
+  fullName: Platform.Numbers.Math.Catalan(System.Int32)
+  nameWithType: Math.Catalan(Int32)
 - uid: Platform.Numbers.Math.Catalan*
   name: Catalan
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Catalan_
@@ -520,12 +520,12 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Catalan
   nameWithType: Math.Catalan
-- uid: Platform.Numbers.Math.Factorial(System.Double)
-  name: Factorial(Double)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_System_Double_
-  commentId: M:Platform.Numbers.Math.Factorial(System.Double)
-  fullName: Platform.Numbers.Math.Factorial(System.Double)
-  nameWithType: Math.Factorial(Double)
+- uid: Platform.Numbers.Math.Factorial(System.Int64)
+  name: Factorial(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_System_Int64_
+  commentId: M:Platform.Numbers.Math.Factorial(System.Int64)
+  fullName: Platform.Numbers.Math.Factorial(System.Int64)
+  nameWithType: Math.Factorial(Int64)
 - uid: Platform.Numbers.Math.Factorial*
   name: Factorial
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_Factorial_
@@ -533,6 +533,19 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
+- uid: Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
+  name: FactorialEratosthenesSieve(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialEratosthenesSieve_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
+  nameWithType: Math.FactorialEratosthenesSieve(Int64)
+- uid: Platform.Numbers.Math.FactorialEratosthenesSieve*
+  name: FactorialEratosthenesSieve
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialEratosthenesSieve_
+  commentId: Overload:Platform.Numbers.Math.FactorialEratosthenesSieve
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialEratosthenesSieve
+  nameWithType: Math.FactorialEratosthenesSieve
 - uid: Platform.Numbers.Math.IsPowerOfTwo(System.UInt64)
   name: IsPowerOfTwo(UInt64)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_IsPowerOfTwo_System_UInt64_
