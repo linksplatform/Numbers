@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SilverFactorial\SilverFactorial64\Sharith\Sharith.csproj" />
     <ProjectReference Include="..\Platform.Numbers\Platform.Numbers.csproj" />
   </ItemGroup>
 
