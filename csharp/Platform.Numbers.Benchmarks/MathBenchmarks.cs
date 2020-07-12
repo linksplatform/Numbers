@@ -20,10 +20,10 @@ namespace Platform.Numbers.Benchmarks
             return Math.FactTree(FACTORIALTESTNUMBER);
         }
 
-        //[Benchmark]
-        //public long FactorialUsingRecursionWihoutStaticField()
-        //{
-        //    return Math.FactTree(FACTORIALTESTNUMBER);
-        //}
+        [Benchmark]
+        public long FactorialUsingRecursionWihoutStaticField()
+        {
+            return Math.FactorialStatic(FACTORIALTESTNUMBER);
+        }
     }
 }

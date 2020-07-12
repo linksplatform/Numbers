@@ -70,6 +70,28 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
+        public static long FactorialStatic(long n)
+        {
+            if (n <= 1)
+            {
+                return 1;
+            }
+
+
+            if (n < _factorials.Length)
+            {
+                return _factorials[n];
+            }
+
+            return n * Factorial(n - 1);
+        }
+
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long FactTree(int n)
         {
             if (n < 0)
