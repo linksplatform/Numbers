@@ -533,19 +533,32 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
-- uid: Platform.Numbers.Math.FactorialStatic(System.Int64)
-  name: FactorialStatic(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialStatic_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialStatic(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialStatic(System.Int64)
-  nameWithType: Math.FactorialStatic(Int64)
-- uid: Platform.Numbers.Math.FactorialStatic*
-  name: FactorialStatic
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialStatic_
-  commentId: Overload:Platform.Numbers.Math.FactorialStatic
+- uid: Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
+  name: FactorialRecursionCountingArraylength(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialRecursionCountingArraylength_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialRecursionCountingArraylength(System.Int64)
+  nameWithType: Math.FactorialRecursionCountingArraylength(Int64)
+- uid: Platform.Numbers.Math.FactorialRecursionCountingArraylength*
+  name: FactorialRecursionCountingArraylength
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialRecursionCountingArraylength_
+  commentId: Overload:Platform.Numbers.Math.FactorialRecursionCountingArraylength
   isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialStatic
-  nameWithType: Math.FactorialStatic
+  fullName: Platform.Numbers.Math.FactorialRecursionCountingArraylength
+  nameWithType: Math.FactorialRecursionCountingArraylength
+- uid: Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
+  name: FactorialWhileWithArray(Int64)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithArray_System_Int64_
+  commentId: M:Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
+  fullName: Platform.Numbers.Math.FactorialWhileWithArray(System.Int64)
+  nameWithType: Math.FactorialWhileWithArray(Int64)
+- uid: Platform.Numbers.Math.FactorialWhileWithArray*
+  name: FactorialWhileWithArray
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialWhileWithArray_
+  commentId: Overload:Platform.Numbers.Math.FactorialWhileWithArray
+  isSpec: "True"
+  fullName: Platform.Numbers.Math.FactorialWhileWithArray
+  nameWithType: Math.FactorialWhileWithArray
 - uid: Platform.Numbers.Math.FactTree(System.Int32)
   name: FactTree(Int32)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_System_Int32_
