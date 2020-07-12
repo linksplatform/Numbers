@@ -533,19 +533,19 @@ references:
   isSpec: "True"
   fullName: Platform.Numbers.Math.Factorial
   nameWithType: Math.Factorial
-- uid: Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
-  name: FactorialEratosthenesSieve(Int64)
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialEratosthenesSieve_System_Int64_
-  commentId: M:Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
-  fullName: Platform.Numbers.Math.FactorialEratosthenesSieve(System.Int64)
-  nameWithType: Math.FactorialEratosthenesSieve(Int64)
-- uid: Platform.Numbers.Math.FactorialEratosthenesSieve*
-  name: FactorialEratosthenesSieve
-  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactorialEratosthenesSieve_
-  commentId: Overload:Platform.Numbers.Math.FactorialEratosthenesSieve
+- uid: Platform.Numbers.Math.FactTree(System.Int32)
+  name: FactTree(Int32)
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_System_Int32_
+  commentId: M:Platform.Numbers.Math.FactTree(System.Int32)
+  fullName: Platform.Numbers.Math.FactTree(System.Int32)
+  nameWithType: Math.FactTree(Int32)
+- uid: Platform.Numbers.Math.FactTree*
+  name: FactTree
+  href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_FactTree_
+  commentId: Overload:Platform.Numbers.Math.FactTree
   isSpec: "True"
-  fullName: Platform.Numbers.Math.FactorialEratosthenesSieve
-  nameWithType: Math.FactorialEratosthenesSieve
+  fullName: Platform.Numbers.Math.FactTree
+  nameWithType: Math.FactTree
 - uid: Platform.Numbers.Math.IsPowerOfTwo(System.UInt64)
   name: IsPowerOfTwo(UInt64)
   href: api/Platform.Numbers.Math.html#Platform_Numbers_Math_IsPowerOfTwo_System_UInt64_
