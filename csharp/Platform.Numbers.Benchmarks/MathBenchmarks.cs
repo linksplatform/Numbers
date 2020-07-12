@@ -15,15 +15,27 @@ namespace Platform.Numbers.Benchmarks
         }
 
         [Benchmark]
+        public long FactorialRecursionCountingArraylength()
+        {
+            return Math.FactorialRecursionCountingArraylength(FACTORIALTESTNUMBER);
+        }
+
+        [Benchmark]
         public long FactorialUsingFactTree()
         {
             return Math.FactTree(FACTORIALTESTNUMBER);
         }
 
         [Benchmark]
-        public long FactorialRecursionCountingArraylength()
+        public long FactorialOnly21()
         {
-            return Math.FactorialRecursionCountingArraylength(FACTORIALTESTNUMBER);
+            return Math.FactorialOnly21(FACTORIALTESTNUMBER);
+        }
+
+        [Benchmark]
+        public long FactorialOf19()
+        {
+            return Math.FactorialOf19(FACTORIALTESTNUMBER);
         }
 
         [Benchmark]

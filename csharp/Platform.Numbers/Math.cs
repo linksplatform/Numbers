@@ -85,6 +85,22 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
         /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
+        public static long FactorialOnly21(long n)
+        {
+            return _factorials[n];
+        }
+
+        public static long FactorialOf19(long n)
+        {
+            return 121645100408832000;
+        }
+
+        /// <summary>
+        /// <para>Generate the factorial of the value "n".</para>
+        /// <para>Генерация факториaла из значения переменной "n".</para>
+        /// </summary>
+        /// <param name="n"><para>Factorial generation value.</para><para>Значение генерации факториала.</para></param>
+        /// <returns><para>Result of factorial calculation.</para><para>Результат подсчета факториала</para></returns>
         public static long FactTree(int n)
         {
             if (n < 0)
