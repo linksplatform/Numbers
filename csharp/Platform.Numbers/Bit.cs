@@ -4,6 +4,7 @@
 
 namespace Platform.Numbers
 {
+    /* the number of ones in the bit representation of a number */
     public static class Bit
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -18,6 +19,7 @@ namespace Platform.Numbers
             return n;
         }
 
+        /* first bit set */
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetLowestPosition(ulong value)
         {
