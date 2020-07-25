@@ -4,10 +4,10 @@
 
 namespace Platform.Numbers
 {
-    ///<summary>
-    ///bit operations
-    ///</summary>
-    
+    /// <summary>
+    /// bit operations
+    /// </summary>
+    /* bit operations */
     public static class BitwiseExtensions
 
     {

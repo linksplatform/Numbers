@@ -6,10 +6,10 @@ namespace Platform.Numbers
 {
     public static class Arithmetic
     {
-      ///<summary>
+      /// <summary>
       /// Each function performs the simplest arithmetic operation on the type specified as a parameter
-      ///</summary>
-
+      /// </summary>
+      /* Each function performs the simplest arithmetic operation on the type specified as a parameter */
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Add<T>(T x, T y) => Arithmetic<T>.Add(x, y);
 

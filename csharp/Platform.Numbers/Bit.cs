@@ -10,9 +10,9 @@ namespace Platform.Numbers
     public static class Bit
     {
         ///<summary>
-        ///the number of ones in the bit representation of a number
+        /// the number of ones in the bit representation of a number
         ///</summary>
-
+        /* the number of ones in the bit representation of a number */
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Count(long x)
         {
@@ -28,7 +28,7 @@ namespace Platform.Numbers
         ///<summary>
         ///first bit set
         ///</summary>
-        
+        /* first bit set */
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetLowestPosition(ulong value)
         {
