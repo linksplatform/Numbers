@@ -4,11 +4,14 @@
 
 namespace Platform.Numbers
 {
+    ///<summary>
+    ///bit operations
+    ///</summary>
+    
     public static class BitwiseExtensions
 
     {
-      /* bi operations */
-       
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Not<T>(this ref T target) where T : struct => target = Bit.Not(target);
 

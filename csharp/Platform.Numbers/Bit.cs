@@ -2,11 +2,17 @@
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+
+
 namespace Platform.Numbers
 {
-    /* the number of ones in the bit representation of a number */
+
     public static class Bit
     {
+        ///<summary>
+        ///the number of ones in the bit representation of a number
+        ///</summary>
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Count(long x)
         {
@@ -19,7 +25,10 @@ namespace Platform.Numbers
             return n;
         }
 
-        /* first bit set */
+        ///<summary>
+        ///first bit set
+        ///</summary>
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetLowestPosition(ulong value)
         {

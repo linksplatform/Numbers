@@ -15,8 +15,6 @@ namespace Platform.Numbers
         /// <para>Источник: https://oeis.org/A000142/list </para>
         /// </remarks>
         
-        /* factorials */
-
         private static readonly ulong[] _factorials =
         {
             1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
