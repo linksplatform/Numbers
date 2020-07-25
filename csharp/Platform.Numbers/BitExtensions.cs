@@ -5,7 +5,7 @@
 namespace Platform.Numbers
 {
     /// <summary>
-    /// bit operations
+    /// <returns> bit operations </returns>
     /// </summary>
     /* bit operations */
     public static class BitwiseExtensions
