@@ -32,7 +32,7 @@
   "api/Platform.Numbers.html": {
     "href": "api/Platform.Numbers.html",
     "title": "Namespace Platform.Numbers | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Namespace Platform.Numbers Classes Arithmetic Each function performs the simplest arithmetic operation on the type specified as a parameter Каждая функция выполняет простейшую арифметическую операцию над типом, указанным в качестве параметра Arithmetic<T> ArithmeticExtensions Bit Bit<T> BitwiseExtensions bit operations Math Math<T> MathExtensions"
+    "keywords": "Namespace Platform.Numbers Classes Arithmetic Each function performs the simplest arithmetic operation on the type specified as a parameter Каждая функция выполняет простейшую арифметическую операцию над типом, указанным в качестве параметра Arithmetic<T> ArithmeticExtensions Bit Bit<T> BitwiseExtensions bit operations Math Math<T> MathExtensions Additional mathematical transformations Дополнительные математические преобразования"
   },
   "api/Platform.Numbers.Math.html": {
     "href": "api/Platform.Numbers.Math.html",
@@ -47,7 +47,7 @@
   "api/Platform.Numbers.MathExtensions.html": {
     "href": "api/Platform.Numbers.MathExtensions.html",
     "title": "Class MathExtensions | LinksPlatform's Platform.Numbers Library",
-    "keywords": "Class MathExtensions Inheritance Object MathExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class MathExtensions Methods | Improve this Doc View Source Abs<T>(ref T) Takes a module from a number Берёт модуль от числа Declaration public static T Abs<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T The absolute value of a number Абсолютное значение числа Type Parameters Name Description T | Improve this Doc View Source Negate<T>(ref T) Makes a number negatory Делает число отрицательным Declaration public static T Negate<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Negatory number Отрицательное число Type Parameters Name Description T"
+    "keywords": "Class MathExtensions Additional mathematical transformations Дополнительные математические преобразования Inheritance Object MathExtensions Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Numbers Assembly : Platform.Numbers.dll Syntax public static class MathExtensions Methods | Improve this Doc View Source Abs<T>(ref T) Takes a module from a number Берёт модуль от числа Declaration public static T Abs<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T The absolute value of a number Абсолютное значение числа Type Parameters Name Description T | Improve this Doc View Source Negate<T>(ref T) Makes a number negatory Делает число отрицательным Declaration public static T Negate<T>(this ref T x) where T : struct Parameters Type Name Description T x Returns Type Description T Negatory number Отрицательное число Type Parameters Name Description T"
   },
   "README.html": {
     "href": "README.html",
