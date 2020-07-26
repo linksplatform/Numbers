@@ -10,9 +10,13 @@ namespace Platform.Numbers
     public static class Bit
     {
         /// <summary>
-        /// <returns>the number of ones in the bit representation of a numberss</returns>
-        /// </summary>
-        /* the number of ones in the bit representation of a number */
+        /// <para> Counts the number of bits set in a number </para>
+        /// <para> Подсчитывает количество установленных бит в числе </para>
+        ///</summary>
+        /// <returns>
+        /// <para> Number of bits set in a number </para>
+        /// <para> Количество установленных бит в числе </para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Count(long x)
         {
@@ -24,11 +28,14 @@ namespace Platform.Numbers
             }
             return n;
         }
-
         /// <summary>
-        /// <returns>first bit set</returns>
+        /// <para> Searches for the first bit set in a number </para>
+        /// <para> Ищет первый установленный бит в числе </para>
         /// </summary>
-        /* first bit set */
+        /// <returns>
+        /// <para> First bit set </para>
+        /// <para> Первый установленный бит </para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetLowestPosition(ulong value)
         {
