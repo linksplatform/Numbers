@@ -4,6 +4,14 @@
 
 namespace Platform.Numbers
 {
+    /// <summary>
+    /// <para> Additional mathematical transformations </para>
+    /// <para> Дополнительные математические преобразования </para>
+    /// </summary>
+    /// <returns>
+    /// <para> The converted value in the original variable </para>
+    /// <para> Преобразованное значение в исходной переменной </para>
+    /// </returns>
     public static class MathExtensions
     {
         /// <summary>
