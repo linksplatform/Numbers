@@ -5,7 +5,7 @@
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>AProvides a set of extension methods that perform mathematical operations on arbitrary object types.</para>
+    /// <para>Provides a set of extension methods that perform mathematical operations on arbitrary object types.</para>
     /// <para>Предоставляет набор методов расширения выполняющих математические операции для объектов произвольного типа.</para>
     /// </summary>
     public static class MathExtensions
@@ -34,7 +34,7 @@ namespace Platform.Numbers
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
         /// <returns>
-        /// <para>Negatory number.</para>
+        /// <para>Negative number.</para>
         /// <para>Отрицательное число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
