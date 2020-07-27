@@ -18,6 +18,10 @@ namespace Platform.Numbers
         /// <para>The number from which to take the absolute value.</para>
         /// <para>Число от которого необходимо взять абсолютное значение.</para>
         /// </param>
+        /// <returns>
+        /// <para>The absolute value of a number.</para>
+        /// <para>Абсолютное значение числа.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Abs<T>(this ref T x) where T : struct => x = Math<T>.Abs(x);
 
@@ -29,6 +33,10 @@ namespace Platform.Numbers
         /// <para>The number to be made negative.</para>
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
+        /// <returns>
+        /// <para>Negatory number.</para>
+        /// <para>Отрицательное число.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Negate<T>(this ref T x) where T : struct => x = Math<T>.Negate(x);
     }
