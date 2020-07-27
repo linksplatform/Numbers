@@ -1,4 +1,4 @@
-<para>﻿using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -7,8 +7,8 @@
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Various operations on the set number bits.</para>
-    /// <para>Различные операции над установленными битами числа.</para>
+    /// <para>A set of operations on the set bits of a number.</para>
+    /// <para>Набор операций над установленными битами числа.</para>
     /// </summary>
 
     public static class Bit
@@ -17,6 +17,10 @@ namespace Platform.Numbers
         /// <para>Counts the number of bits set in a number.</para>
         /// <para>Подсчитывает количество установленных бит в числе.</para>
         /// </summary>
+        /// <param>
+        /// <para>Bitwise number.</para>
+        /// <para>Число в битовом представлении.</para>
+        /// </param>
         /// <returns>
         /// <para>Number of bits set in a number.</para>
         /// <para>Количество установленных бит в числе.</para>
@@ -36,6 +40,10 @@ namespace Platform.Numbers
         /// <para>Searches for the first bit set in a number.</para>
         /// <para>Ищет первый установленный бит в числе.</para>
         /// </summary>
+        /// <param>
+        /// <para>Bitwise number.</para>
+        /// <para>Число в битовом представлении.</para>
+        /// </param> 
         /// <returns>
         /// <para>First bit set.</para>
         /// <para>Первый установленный бит.</para>
