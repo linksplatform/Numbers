@@ -26,7 +26,7 @@ namespace Platform.Numbers
         /// <para>Делает число отрицательным.</para>
         /// </summary>
         /// <param name = "x">
-        /// <para>The number to be made nrgative.</para>
+        /// <para>The number to be made negative.</para>
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
