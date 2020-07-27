@@ -25,7 +25,7 @@ namespace Platform.Numbers
         /// <para>Makes a number negative.</para>
         /// <para>Делает число отрицательным.</para>
         /// </summary>
-        /// <param>
+        /// <param name = "x">
         /// <para>The number to be made nrgative.</para>
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
