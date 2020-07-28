@@ -14,6 +14,10 @@ namespace Platform.Numbers
         /// <para>Performing adding the x and y arguments.</para>
         /// <para>Выполняет сложение аргументов х и у.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>The first term.</para>
         /// <para>Первое слагаемое.</para>
@@ -33,6 +37,10 @@ namespace Platform.Numbers
         /// <para>Performs subtracting y from x.</para>
         /// <para>Выполняет вычитание y из x.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>Minuend.</para>
         /// <para>Уменьшаемое.</para>
@@ -52,6 +60,10 @@ namespace Platform.Numbers
         /// <para>Performs multiplication x by y.</para>
         /// <para>Выполняет умножение х на у.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>First multiplier.</para>
         /// <para>Первый множитель.</para>
@@ -71,6 +83,10 @@ namespace Platform.Numbers
         /// <para>Performs dividing x by y.</para>
         /// <para>Выполняет деление х на у.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>Dividend.</para>
         /// <para>Делимое.</para>
@@ -90,6 +106,10 @@ namespace Platform.Numbers
         /// <para>Increasing the number x by one.</para>
         /// <para>Увеличивает число x на единицу.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>The number to increase.</para>
         /// <para>Число для увеличения.</para>
@@ -105,6 +125,10 @@ namespace Platform.Numbers
         /// <para>Increases the value of argument x by one.</para>
         /// <para>Увеличивает значение аргумента x на единицу.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>The argument to increase.</para>
         /// <para>Аргумент для увеличения.</para>
@@ -120,6 +144,10 @@ namespace Platform.Numbers
         /// <para>Decrease number x by one.</para>
         /// <para>Уменьшает число x на единицу.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>The number to reduce.</para>
         /// <para>Число для уменьшения.</para>
@@ -135,6 +163,10 @@ namespace Platform.Numbers
         /// <para>Decreases the value of the argument x by one.</para>
         /// <para>Уменьшает значение аргумента x на единицу.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <param name="x">
         /// <para>The argument to reduce.</para>
         /// <para>Аргумент для уменьшения.</para>
