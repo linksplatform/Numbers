@@ -87,8 +87,8 @@ namespace Platform.Numbers
         public static T Divide<T>(T x, T y) => Arithmetic<T>.Divide(x, y);
 
         /// <summary>
-        /// <para>Increasing the parameter x by one.</para>
-        /// <para>Увеличение параметра x на единицу.</para>
+        /// <para>Increases the number x by one.</para>
+        /// <para>Увеличение числа x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>Increase the number required.</para>
@@ -102,7 +102,7 @@ namespace Platform.Numbers
         public static T Increment<T>(T x) => Arithmetic<T>.Increment(x);
 
         /// <summary>
-        /// <para>Increase the parameter x passed by reference by one.</para>
+        /// <para>Increases the value of argument x by one.</para>
         /// <para>Увеличение значения аргумента x на единицу.</para>
         /// </summary>
         /// <param name="x">
