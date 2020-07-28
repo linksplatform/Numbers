@@ -91,8 +91,8 @@ namespace Platform.Numbers
         /// <para>Увеличение числа x на единицу.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Increase the number required.</para>
-        /// <para>Число требуемое увеличить.</para>
+        /// <para>The number to increase.</para>
+        /// <para>Число для увеличения.</para>
         /// </param>
         /// <returns>
         /// <para>Increase by one number x.</para>
@@ -106,8 +106,8 @@ namespace Platform.Numbers
         /// <para>Увеличение значения аргумента x на единицу.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Increase the argument required.</para>
-        /// <para>Аргумент требуемый увеличить.</para>
+        /// <para>The argument to increase.</para>
+        /// <para>Аргумент для увеличенияь.</para>
         /// </param>
         /// <returns>
         /// <para>Increased argument x value.</para>
@@ -121,8 +121,8 @@ namespace Platform.Numbers
         /// <para>Уменьшение числа x на единицу.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Require the number reduce.</para>
-        /// <para>Число требуемое уменьшить.</para>
+        /// <para>The number to reduce.</para>
+        /// <para>Число для уменьшения.</para>
         /// </param>
         /// <returns>
         /// <para>Decreased by one number x.</para>
@@ -136,8 +136,8 @@ namespace Platform.Numbers
         /// <para>Уменьшение значения аргумента x на единицу.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Require the argument reduce.</para>
-        /// <para>Аргумент требуемый уменьшить.</para>
+        /// <para>The argument to reduce.</para>
+        /// <para>Аргумент для уменьшения.</para>
         /// </param>
         /// <returns>
         /// <para>Decreased argument x value.</para>
