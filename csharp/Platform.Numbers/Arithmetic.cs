@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Binary mathematical operations.</para>
-    /// <para>Бинарные математические операции.</para>
+    /// <para>Represents a set of arithmetic methods.</para>
+    /// <para>Представляет набор арифметических методов.</para>
     /// </summary>
     public static class Arithmetic
     {
         /// <summary>
         /// <para>Performing adding the x and y arguments.</para>
-        /// <para>Выполняет ложение аргументов х и у.</para>
+        /// <para>Выполняет сложение аргументов х и у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The first term.</para>
@@ -30,8 +30,8 @@ namespace Platform.Numbers
         public static T Add<T>(T x, T y) => Arithmetic<T>.Add(x, y);
 
         /// <summary>
-        /// <para>Performs subtracting x from y.</para>
-        /// <para>Выполняет вычитание х из у.</para>
+        /// <para>Performs subtracting y from x.</para>
+        /// <para>Выполняет вычитание y из x.</para>
         /// </summary>
         /// <param name="x">
         /// <para>Minuend.</para>
@@ -42,15 +42,15 @@ namespace Platform.Numbers
         /// <para>Вычитаемое.</para>
         /// </param>
         /// <returns>
-        /// <para>Difference of x and y.</para>
-        /// <para>Разность x и y.</para>
+        /// <para>Difference between x and y.</para>
+        /// <para>Разность между x и y.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Subtract<T>(T x, T y) => Arithmetic<T>.Subtract(x, y);
 
         /// <summary>
-        /// <para>Performs multiplication the x and y.</para>
-        /// <para>Выполняет умножение х и у.</para>
+        /// <para>Performs multiplication x by y.</para>
+        /// <para>Выполняет умножение х на у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>First multiplier.</para>
@@ -88,7 +88,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Increasing the number x by one.</para>
-        /// <para>Увеличение числа x на единицу.</para>
+        /// <para>Увеличивает число x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The number to increase.</para>
@@ -103,11 +103,11 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Increases the value of argument x by one.</para>
-        /// <para>Увеличение значения аргумента x на единицу.</para>
+        /// <para>Увеличивает значение аргумента x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The argument to increase.</para>
-        /// <para>Аргумент для увеличенияь.</para>
+        /// <para>Аргумент для увеличения.</para>
         /// </param>
         /// <returns>
         /// <para>Increased argument x value.</para>
@@ -118,7 +118,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Decrease number x by one.</para>
-        /// <para>Уменьшение числа x на единицу.</para>
+        /// <para>Уменьшает число x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The number to reduce.</para>
@@ -133,7 +133,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Decreases the value of the argument x by one.</para>
-        /// <para>Уменьшение значения аргумента x на единицу.</para>
+        /// <para>Уменьшает значение аргумента x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The argument to reduce.</para>
