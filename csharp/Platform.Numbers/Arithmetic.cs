@@ -12,7 +12,7 @@ namespace Platform.Numbers
     {
         /// <summary>
         /// <para>Performing adding the x and y arguments.</para>
-        /// <para>Выполняется ложение аргументов х и у.</para>
+        /// <para>Выполняет ложение аргументов х и у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The first term.</para>
@@ -30,8 +30,8 @@ namespace Platform.Numbers
         public static T Add<T>(T x, T y) => Arithmetic<T>.Add(x, y);
 
         /// <summary>
-        /// <para>Permorming subtracting x from y.</para>
-        /// <para>Выполняется вычитание х из у.</para>
+        /// <para>Performs subtracting x from y.</para>
+        /// <para>Выполняет вычитание х из у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>Minuend.</para>
@@ -49,8 +49,8 @@ namespace Platform.Numbers
         public static T Subtract<T>(T x, T y) => Arithmetic<T>.Subtract(x, y);
 
         /// <summary>
-        /// <para>Permorming multiplication the x and y.</para>
-        /// <para>Выполняется умножение х и у.</para>
+        /// <para>Performs multiplication the x and y.</para>
+        /// <para>Выполняет умножение х и у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>First multiplier.</para>
@@ -68,8 +68,8 @@ namespace Platform.Numbers
         public static T Multiply<T>(T x, T y) => Arithmetic<T>.Multiply(x, y);
 
         /// <summary>
-        /// <para>Permorming dividing x by y.</para>
-        /// <para>Выполняется деление х на у.</para>
+        /// <para>Performs dividing x by y.</para>
+        /// <para>Выполняет деление х на у.</para>
         /// </summary>
         /// <param name="x">
         /// <para>Dividend.</para>
@@ -87,12 +87,12 @@ namespace Platform.Numbers
         public static T Divide<T>(T x, T y) => Arithmetic<T>.Divide(x, y);
 
         /// <summary>
-        /// <para>Increases the number x by one.</para>
+        /// <para>Increasing the number x by one.</para>
         /// <para>Увеличение числа x на единицу.</para>
         /// </summary>
         /// <param name="x">
         /// <para>Increase the number required.</para>
-        /// <para>Число необходимое увеличить.</para>
+        /// <para>Число требуемое увеличить.</para>
         /// </param>
         /// <returns>
         /// <para>Increase by one number x.</para>
@@ -122,7 +122,7 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="x">
         /// <para>Require the number reduce.</para>
-        /// <para>Число необходимое уменьшить.</para>
+        /// <para>Число требуемое уменьшить.</para>
         /// </param>
         /// <returns>
         /// <para>Decreased by one number x.</para>
