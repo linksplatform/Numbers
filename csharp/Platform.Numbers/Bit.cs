@@ -17,7 +17,7 @@ namespace Platform.Numbers
         /// <para>Counts the number of bits set in a number.</para>
         /// <para>Подсчитывает количество установленных бит в числе.</para>
         /// </summary>
-        /// <param>
+        /// <param name = "x">
         /// <para>Bitwise number.</para>
         /// <para>Число в битовом представлении.</para>
         /// </param>
@@ -36,14 +36,15 @@ namespace Platform.Numbers
             }
             return n;
         }
+
         /// <summary>
         /// <para>Searches for the first bit set in a number.</para>
         /// <para>Ищет первый установленный бит в числе.</para>
         /// </summary>
-        /// <param>
+        /// <param name = "value">
         /// <para>Bitwise number.</para>
         /// <para>Число в битовом представлении.</para>
-        /// </param> 
+        /// </param>
         /// <returns>
         /// <para>First bit set.</para>
         /// <para>Первый установленный бит.</para>
@@ -65,23 +66,43 @@ namespace Platform.Numbers
         }
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Performing bitwise number x inversion.</para>
+        /// <para>Выполняет побитовую инверсию числа x.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
+        /// <para>Number to invert.</para>
+        /// <para>Число для инверсии.</para>
+        /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Inverse x value.</para>
+        /// <para>Обратное значение x.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Not<T>(T x) => Bit<T>.Not(x);
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Performing bitwise addition x and y.</para>
+        /// <para>Выполняет логическое сложение.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
+        /// <param name="x">
+        /// <para>First term.</para>
+        /// <para>Первое слагаемое.</para>
+        /// </param>
+        /// <param name="y">
+        /// <para>Second term.</para>
+        /// <para>Второе слагаемое.</para>
+        /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Sum of x and y.</para>
+        /// <para>Сумма x и y.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Or<T>(T x, T y) => Bit<T>.Or(x, y);
@@ -89,6 +110,10 @@ namespace Platform.Numbers
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// </summary>
         /// <returns>
         /// <para>.</para>
@@ -101,6 +126,10 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <returns>
         /// <para>.</para>
         /// <para>.</para>
@@ -112,6 +141,10 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
         /// <returns>
         /// <para>.</para>
         /// <para>.</para>
@@ -123,6 +156,10 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <returns>
         /// <para>.</para>
         /// <para>.</para>
@@ -134,6 +171,10 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>Numbers type.</para>
+        /// <para>Тип чисел.</para>
+        /// </typeparam>
         /// <returns>
         /// <para>.</para>
         /// <para>.</para>
