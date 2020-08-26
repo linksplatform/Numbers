@@ -17,7 +17,7 @@ namespace Platform.Numbers
         /// <para>Counts the number of bits set in a number.</para>
         /// <para>Подсчитывает количество установленных бит в числе.</para>
         /// </summary>
-        /// <param name="x">
+        /// <param name = "x">
         /// <para>Bitwise number.</para>
         /// <para>Число в битовом представлении.</para>
         /// </param>
@@ -41,7 +41,7 @@ namespace Platform.Numbers
         /// <para>Searches for the first bit set in a number.</para>
         /// <para>Ищет первый установленный бит в числе.</para>
         /// </summary>
-        /// <param name="value">
+        /// <param name = "value">
         /// <para>Bitwise number.</para>
         /// <para>Число в битовом представлении.</para>
         /// </param>
@@ -66,8 +66,8 @@ namespace Platform.Numbers
         }
 
         /// <summary>
-        /// <para>Performing bitwise inversion of number.</para>
-        /// <para>Выполненяет побитовую инверсии числа.</para>
+        /// <para>Performing bitwise number x inversion.</para>
+        /// <para>Выполняет побитовую инверсию числа x.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Number type.</para>
@@ -78,15 +78,15 @@ namespace Platform.Numbers
         /// <para>Число для инверсии.</para>
         /// </param>
         /// <returns>
-        /// <para>Inverse value of the number</para>
-        /// <para>Обратное значение числа.</para>
+        /// <para>Inverse x value.</para>
+        /// <para>Обратное значение x.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Not<T>(T x) => Bit<T>.Not(x);
 
         /// <summary>
-        /// <para>Performing bitwise numbers addition.</para>
-        /// <para>Выполняет побитовое сложение чисел.</para>
+        /// <para>Performing bitwise addition x and y.</para>
+        /// <para>Выполняет побитовое сложение.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Numbers type.</para>
@@ -101,15 +101,15 @@ namespace Platform.Numbers
         /// <para>Второе слагаемое.</para>
         /// </param>
         /// <returns>
-        /// <para>Numbers sum.</para>
-        /// <para>Сумма чисел.</para>
+        /// <para>Sum of x and y.</para>
+        /// <para>Сумма x и y.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Or<T>(T x, T y) => Bit<T>.Or(x, y);
 
         /// <summary>
-        /// <para>Performs bitwise numbers multiplication.</para>
-        /// <para>Выполняет побитовое умножение чисел.</para>
+        /// <para>Performs bitwise multiplication x by y.</para>
+        /// <para>Выполняет побитовое умножение x на y.</para>
         /// <typeparam name="T">
         /// <para>Numbers type.</para>
         /// <para>Тип чисел.</para>
@@ -124,31 +124,31 @@ namespace Platform.Numbers
         /// <para>Второй множитель.</para>
         /// </param>
         /// <returns>
-        /// <para>Logical product of numbers.</para>
-        /// <para>Логическое произведение чисел.</para>
+        /// <para>Product of x and y.</para>
+        /// <para>Произведение x и y.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T And<T>(T x, T y) => Bit<T>.And(x, y);
 
         /// <summary>
-        /// <para>Performs a bitwise shift of a number to the left by the specified number of bits.</para>
-        /// <para>Выполняет побитовый свиг числа влево на указанное количество бит.</para>
+        /// <para>Performs a bitwise shift of a bit x left by y bits.</para>
+        /// <para>Выполняет побитовые свиг бита x влево, на y бит.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
-        /// <para>The number on which the left bitwise shift operation will be performed.</para>
-        /// <para>Число над которым будет производиться операция пиботового смещения влево.<para>
+        /// <para>The number on which the shift operation will be performed.</para>
+        /// <para>Число над которым будет производиться операция смещения.<para>
         /// </param>
         /// <param name="y">
-        /// <para>The number of bits to shift.</para>
+        /// <para>Number of bits to shift.</para>
         /// <para>Количество бит на которые выполнить смещение.<para>
         /// </param>
         /// <returns>
-        /// <para>The value with discarded high-order bits that are outside the range of the number type and set low-order empty bit positions to zero.</para>
-        /// <para>Значение с отброшенными старшими битами, которые находятся за пределами диапазона типа числа и устанавливленными пустыми битовыми позициями младших разрядов в ноль.</para>
+        /// <para>The changed value of x.</para>
+        /// <para>Изменённое значение x.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T ShiftLeft<T>(T x, int y) => Bit<T>.ShiftLeft(x, y);
@@ -163,22 +163,22 @@ namespace Platform.Numbers
         /// </typeparam>
         /// <param name="x">
         /// <para>The number on which the shift operation will be performed.</para>
-        /// <para>Число над которым будет производиться операция спобитового смещения вправо.<para>
+        /// <para>Число над которым будет производиться операция смещения.<para>
         /// </param>
         /// <param name="y">
-        /// <para>The number of bits to shift.</para>
+        /// <para>Number of bits to shift.</para>
         /// <para>Количество бит на которые выполнить смещение.<para>
         /// </param>
         /// <returns>
-        /// <para>The value with discarded low-order bits.</para>
-        /// <para>Значение с отброшенными младшими битами</para>
+        /// <para>The changed value of x.</para>
+        /// <para>Изменённое значение x.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T ShiftRight<T>(T x, int y) => Bit<T>.ShiftRight(x, y);
 
         /// <summary>
-        /// <para>Performs a partial write of a specified number of bits from source number to target number.</para>
-        /// <para>Выполняет частичную запись определенного количества бит исходного числа в целевое число.</para>
+        /// <para>Performs a partial shift of a specified number of bits from source to target.</para>
+        /// <para>Выполняет частичное смещение определенного количества бит из source в target.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Numbers type.</para>
@@ -193,43 +193,43 @@ namespace Platform.Numbers
         /// <para>Источник данных для записи.</para>
         /// </param>
         /// <param name="shift">
-        /// <para>The start position to read from.</para>
-        /// <para>Стартовая позиция чтения.</para>
+        /// <para>Record start position.</para>
+        /// <para>Стартовая позиция записи.</para>
         /// </param>
         /// <param name="limit">
         /// <para>The number of bits to write from source to target.</para>
         /// <para>Количество бит, которые нужно записать из source в target.</para>
         /// </param>
         /// <returns>
-        /// <para>The target number updated with bits from source number.</para>
-        /// <para>Целевое число с обновленными битами из исходного числа.</para>
+        /// <para>Modified target value.</para>
+        /// <para>Изменённое значение target.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PartialWrite<T>(T target, T source, int shift, int limit) => Bit<T>.PartialWrite(target, source, shift, limit);
 
         /// <summary>
-        /// <para>Reads a specified number of bits from the number at specified position.</para>
-        /// <para>Считывает указанное количество бит из числа в указанной позиции.</para>
+        /// <para>Shifts a specified number of bits into target.</para>
+        /// <para>Сдвигает определенное количество бит в target.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Number type.</para>
-        /// <para>Тип числа.</para>
+        /// <para>Тип чисела.</para>
         /// </typeparam>
         /// <param name="target">
-        /// <para>The number from which the partial read will be performed.</para>
-        /// <para>Число из которого будет выполнено частичное чтение.</para>
+        /// <para>The value in which the partial write will be performed.</para>
+        /// <para>Значение в котором будет выполнена частичная запись.</para>
         /// </param>
         /// <param name="shift">
-        /// <para>The start position to read from.</para>
-        /// <para>Стартовая позиция чтения.</para>
+        /// <para>Record start position.</para>
+        /// <para>Стартовая позиция записи.</para>
         /// </param>
         /// <param name="limit">
-        /// <para>The number of bits to read.</para>
-        /// <para>Количество бит, которые нужно считать.</para>
+        /// <para>The number of bits to shift.</para>
+        /// <para>Количество бит, которые нужно сдвинуть.</para>
         /// </param>
         /// <returns>
-        /// <para>The number consisting of bits read from the source number.</para>
-        /// <para>Число состоящие из считанных из исходного числа бит.</para>
+        /// <para>Modified target value.</para>
+        /// <para>Изменённое значение target.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PartialRead<T>(T target, int shift, int limit) => Bit<T>.PartialRead(target, shift, limit);
