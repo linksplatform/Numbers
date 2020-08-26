@@ -67,7 +67,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Performing bitwise inversion of number.</para>
-        /// <para>Выполненяет побитовую инверсию числа.</para>
+        /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Number type.</para>
