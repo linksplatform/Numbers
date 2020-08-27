@@ -78,7 +78,7 @@ namespace Platform.Numbers
         /// <para>Число для инверсии.</para>
         /// </param>
         /// <returns>
-        /// <para>Inverse value of the number</para>
+        /// <para>Inverse value of the number.</para>
         /// <para>Обратное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,8 +101,8 @@ namespace Platform.Numbers
         /// <para>Второе слагаемое.</para>
         /// </param>
         /// <returns>
-        /// <para>Numbers sum.</para>
-        /// <para>Сумма чисел.</para>
+        /// <para>The logical sum of numbers</para>
+        /// <para>Логическая сумма чисел.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Or<T>(T x, T y) => Bit<T>.Or(x, y);
@@ -229,7 +229,7 @@ namespace Platform.Numbers
         /// </param>
         /// <returns>
         /// <para>The number consisting of bits read from the source number.</para>
-        /// <para>Число состоящие из считанных из исходного числа бит.</para>
+        /// <para>Число состоящее из считанных из исходного числа бит.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PartialRead<T>(T target, int shift, int limit) => Bit<T>.PartialRead(target, shift, limit);
