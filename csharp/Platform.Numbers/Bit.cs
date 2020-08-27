@@ -67,10 +67,10 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Performing bitwise inversion of number.</para>
-        /// <para>Выполненяет побитовую инверсию числа.</para>
+        /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Number type.</para>
+        /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -89,7 +89,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовое сложение чисел.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Numbers type.</para>
+        /// <para>The numbers type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="x">
@@ -111,7 +111,7 @@ namespace Platform.Numbers
         /// <para>Performs bitwise numbers multiplication.</para>
         /// <para>Выполняет побитовое умножение чисел.</para>
         /// <typeparam name="T">
-        /// <para>Numbers type.</para>
+        /// <para>The numbers type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// </summary>
@@ -135,7 +135,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовый свиг числа влево на указанное количество бит.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Number type.</para>
+        /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -154,16 +154,16 @@ namespace Platform.Numbers
         public static T ShiftLeft<T>(T x, int y) => Bit<T>.ShiftLeft(x, y);
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Performs a bitwise shift of a number to the right by the specified number of bits.</para>
+        /// <para>Выполняет побитовый свиг числа вправо на указанное количество бит.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Number type.</para>
+        /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
-        /// <para>The number on which the shift operation will be performed.</para>
-        /// <para>Число над которым будет производиться операция спобитового смещения вправо.<para>
+        /// <para>The number on which the right bitwise shift operation will be performed.</para>
+        /// <para>Число над которым будет производиться операция побитового смещения вправо.<para>
         /// </param>
         /// <param name="y">
         /// <para>The number of bits to shift.</para>
@@ -181,7 +181,7 @@ namespace Platform.Numbers
         /// <para>Выполняет частичную запись определенного количества бит исходного числа в целевое число.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Numbers type.</para>
+        /// <para>The numbers type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="target">
@@ -212,7 +212,7 @@ namespace Platform.Numbers
         /// <para>Считывает указанное количество бит из числа в указанной позиции.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Number type.</para>
+        /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
