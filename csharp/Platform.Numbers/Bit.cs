@@ -137,7 +137,7 @@ namespace Platform.Numbers
         /// </typeparam>
         /// <param name="x">
         /// <para>The number on which the left bitwise shift operation will be performed.</para>
-        /// <para>Число над которым будет производиться операция пиботового смещения влево.<para>
+        /// <para>Число над которым будет производиться операция пиботового смещения влево.</para>
         /// </param>
         /// <param name="y">
         /// <para>The number of bits to shift.</para>
@@ -160,15 +160,15 @@ namespace Platform.Numbers
         /// </typeparam>
         /// <param name="x">
         /// <para>The number on which the right bitwise shift operation will be performed.</para>
-        /// <para>Число над которым будет производиться операция побитового смещения вправо.<para>
+        /// <para>Число над которым будет производиться операция побитового смещения вправо.</para>
         /// </param>
         /// <param name="y">
         /// <para>The number of bits to shift.</para>
-        /// <para>Количество бит на которые выполнить смещение.<para>
+        /// <para>Количество бит на которые выполнить смещение.</para>
         /// </param>
         /// <returns>
         /// <para>The value with discarded low-order bits.</para>
-        /// <para>Значение с отброшенными младшими битами</para>
+        /// <para>Значение с отброшенными младшими битами.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T ShiftRight<T>(T x, int y) => Bit<T>.ShiftRight(x, y);
