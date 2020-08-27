@@ -2,15 +2,12 @@
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-
-
 namespace Platform.Numbers
 {
     /// <summary>
     /// <para>A set of operations on the set bits of a number.</para>
     /// <para>Набор операций над установленными битами числа.</para>
     /// </summary>
-
     public static class Bit
     {
         /// <summary>
