@@ -14,7 +14,11 @@ namespace Platform.Numbers
         /// <para>Takes a module from a number.</para>
         /// <para>Берёт модуль от числа.</para>
         /// </summary>
-        /// <param name = "x">
+        /// <typeparam name="T">
+        /// <para>The number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
         /// <para>The number from which to take the absolute value.</para>
         /// <para>Число от которого необходимо взять абсолютное значение.</para>
         /// </param>
@@ -29,7 +33,11 @@ namespace Platform.Numbers
         /// <para>Makes a number negative.</para>
         /// <para>Делает число отрицательным.</para>
         /// </summary>
-        /// <param name = "x">
+        /// <typeparam name="T">
+        /// <para>The number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
         /// <para>The number to be made negative.</para>
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
