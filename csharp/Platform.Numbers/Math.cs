@@ -21,7 +21,7 @@ namespace Platform.Numbers
             479001600, 6227020800, 87178291200, 1307674368000, 20922789888000,
             355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000
         };
-        
+
         /// <remarks>
         /// <para>Source: https://oeis.org/A000108/list </para>
         /// <para>Источник: https://oeis.org/A000108/list </para>
@@ -43,8 +43,14 @@ namespace Platform.Numbers
         /// <para>Returns the product of all positive integers less than or equal to the number specified as an argument.</para>
         /// <para>Возвращает произведение всех положительных чисел меньше или равных указанному в качестве аргумента числу.</para>
         /// </summary>
-        /// <param name="n"><para>The maximum positive number that will participate in factorial's product.</para><para>Максимальное положительное число, которое будет участвовать в произведение факториала.</para></param>
-        /// <returns><para>The product of all positive integers less than or equal to the number specified as an argument.</para><para>Произведение всех положительных чисел меньше или равных указанному в качестве аргумента числу.</para></returns>
+        /// <param name="n">
+        /// <para>The maximum positive number that will participate in factorial's product.</para>
+        /// <para>Максимальное положительное число, которое будет участвовать в произведение факториала.</para>
+        /// </param>
+        /// <returns>
+        /// <para>The product of all positive integers less than or equal to the number specified as an argument.</para>
+        /// <para>Произведение всех положительных чисел меньше или равных указанному в качестве аргумента числу.</para>
+        /// </returns>
         public static ulong Factorial(ulong n)
         {
             if (n >= 0 && n <= MaximumFactorialNumber)
@@ -61,8 +67,14 @@ namespace Platform.Numbers
         /// <para>Returns the Catalan Number with the number specified as an argument.</para>
         /// <para>Возвращает Каталановое число с номером указанным в качестве аргумента.</para>
         /// </summary>
-        /// <param name="n"><para>The number of Catalan number.</para><para>Номер Каталанового числа.</para></param>
-        /// <returns><para>The Catalan Number with the number specified as an argument.</para><para>Каталановое число с номером указанным в качестве аргумента.</para></returns>
+        /// <param name="n">
+        /// <para>The number of Catalan number.</para>
+        /// <para>Номер Каталанового числа.</para>
+        /// </param>
+        /// <returns>
+        /// <para>The Catalan Number with the number specified as an argument.</para>
+        /// <para>Каталановое число с номером указанным в качестве аргумента.</para>
+        /// </returns>
         public static ulong Catalan(ulong n)
         {
             if (n >= 0 && n <= MaximumCatalanIndex)
@@ -75,12 +87,56 @@ namespace Platform.Numbers
             }
         }
 
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
+        /// <param name="x">
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </param>
+        /// <returns>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
 
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
+        /// <typeparam name="T">
+        /// <para>The number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </param>
+        /// <returns>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Abs<T>(T x) => Math<T>.Abs(x);
 
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
+        /// <typeparam name="T">
+        /// <para>The number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </param>
+        /// <returns>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Negate<T>(T x) => Math<T>.Negate(x);
     }
