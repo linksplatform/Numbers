@@ -141,7 +141,7 @@ namespace Platform.Numbers
         /// </param>
         /// <param name="y">
         /// <para>The number of bits to shift.</para>
-        /// <para>Количество бит на которые выполнить смещение.<para>
+        /// <para>Количество бит на которые выполнить смещение.</para>
         /// </param>
         /// <returns>
         /// <para>The value with discarded high-order bits that are outside the range of the number type and set low-order empty bit positions to zero.</para>
