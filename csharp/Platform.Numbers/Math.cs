@@ -88,54 +88,54 @@ namespace Platform.Numbers
         }
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Checks if a number is a power of two.</para>
+        /// <para>Проверяет является ли число степенью двойки.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Number to check.</para>
+        /// <para>Число для проверки.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>True or False.</para>
+        /// <para>True или False.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Takes a module from a number.</para>
+        /// <para>Берёт модуль от числа.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The number from which to take the absolute value.</para>
+        /// <para>Число от которого необходимо взять абсолютное значение.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The absolute value of a number.</para>
+        /// <para>Абсолютное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Abs<T>(T x) => Math<T>.Abs(x);
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Makes a number negative.</para>
+        /// <para>Делает число отрицательным.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The number to be made negative.</para>
+        /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Negative number.</para>
+        /// <para>Отрицательное число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Negate<T>(T x) => Math<T>.Negate(x);
