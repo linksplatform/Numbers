@@ -96,8 +96,8 @@ namespace Platform.Numbers
         /// <para>Число для проверки.</para>
         /// </param>
         /// <returns>
-        /// <para>True or False.</para>
-        /// <para>True или False.</para>
+        /// <para>True if the number is a power of two otherwise false.</para>
+        /// <para>True, если число является степенью двойки, иначе - false</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
@@ -115,7 +115,7 @@ namespace Platform.Numbers
         /// <para>Число от которого необходимо взять абсолютное значение.</para>
         /// </param>
         /// <returns>
-        /// <para>The absolute value of a number.</para>
+        /// <para>The absolute value of the number.</para>
         /// <para>Абсолютное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -134,7 +134,7 @@ namespace Platform.Numbers
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
         /// <returns>
-        /// <para>Negative number.</para>
+        /// <para>A negative number.</para>
         /// <para>Отрицательное число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
