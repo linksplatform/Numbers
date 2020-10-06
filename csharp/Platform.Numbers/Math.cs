@@ -14,7 +14,6 @@ namespace Platform.Numbers
         /// <para>Source: https://oeis.org/A000142/list </para>
         /// <para>Источник: https://oeis.org/A000142/list </para>
         /// </remarks>
-
         private static readonly ulong[] _factorials =
         {
             1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
@@ -35,8 +34,16 @@ namespace Platform.Numbers
             14544636039226909, 55534064877048198, 212336130412243110, 812944042149730764, 3116285494907301262, 11959798385860453492
         };
 
+        /// <summary>
+        /// <para>Contains the maximum value of the argument for calculating the factorial of numbers that is supported by the  <see cref="ulong"/> type.</para>
+        /// <para>Маскимальное значение аргумента для вычисления факториала чисел, который поддерживается типом <see cref="ulong"/>.</para>
+        /// </summary>
         public static readonly ulong MaximumFactorialNumber = 20;
 
+        /// <summary>
+        /// <para>Contains the maximum value of the argument for calculating Catalan numbers supported by the <see cref="ulong"/> type.</para>
+        /// <para>Содержит максимальное значение аргумента для вычисления каталановых чисел, который поддерживается типом <see cref="ulong"/>.</para>
+        /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
 
         /// <summary>
