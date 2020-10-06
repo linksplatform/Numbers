@@ -68,7 +68,7 @@ namespace Platform.Numbers
         /// <para>Возвращает Каталановое число с номером указанным в качестве аргумента.</para>
         /// </summary>
         /// <param name="n">
-        /// <para>The number of Catalan number.</para>
+        /// <para>The number of the Catalan number.</para>
         /// <para>Номер Каталанового числа.</para>
         /// </param>
         /// <returns>
@@ -92,12 +92,12 @@ namespace Platform.Numbers
         /// <para>Проверяет является ли число степенью двойки.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Number to check.</para>
+        /// <para>The number to check.</para>
         /// <para>Число для проверки.</para>
         /// </param>
         /// <returns>
         /// <para>True if the number is a power of two otherwise false.</para>
-        /// <para>True, если число является степенью двойки, иначе - false</para>
+        /// <para>True, если число является степенью двойки, иначе - false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
