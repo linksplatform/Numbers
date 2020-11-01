@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -8,13 +8,16 @@ namespace Platform.Numbers
     /// <remarks>
     /// Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org
     /// </remarks>
+    /// <summary>
+    /// <para>Represents a collection of algebraic methods.</para>
+    /// <para>Представляет набор алгебраических методов.</para>
+    /// </summary>
     public static class Math
     {
         /// <remarks>
         /// <para>Source: https://oeis.org/A000142/list </para>
         /// <para>Источник: https://oeis.org/A000142/list </para>
         /// </remarks>
-
         private static readonly ulong[] _factorials =
         {
             1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
@@ -35,8 +38,17 @@ namespace Platform.Numbers
             14544636039226909, 55534064877048198, 212336130412243110, 812944042149730764, 3116285494907301262, 11959798385860453492
         };
 
+        /// <summary>
+        /// <para>Represents the limit for calculating the catanal number, supported by the <see cref="ulong"/> type.</para>
+        /// <para>Представляет предел расчета катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
+        /// </summary>
         public static readonly ulong MaximumFactorialNumber = 20;
 
+
+        /// <summary>
+        /// <para>Represents the limit of the catanal number calculation, supported by the <see cref="ulong"/> type.</para>
+        /// <para>Представляет предел рассчёта катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
+        /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
 
         /// <summary>
