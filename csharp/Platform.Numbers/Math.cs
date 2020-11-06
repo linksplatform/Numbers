@@ -39,6 +39,7 @@ namespace Platform.Numbers
         };
 
         /// <summary>
+<<<<<<< HEAD
         /// <para>Represents the limit for calculating the catanal number, supported by the <see cref="ulong"/> type.</para>
         /// <para>Представляет предел расчета катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
@@ -48,6 +49,16 @@ namespace Platform.Numbers
         /// <summary>
         /// <para>Represents the limit of the catanal number calculation, supported by the <see cref="ulong"/> type.</para>
         /// <para>Представляет предел рассчёта катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
+=======
+        /// <para>Contains the maximum value of the argument for calculating the factorial of numbers that is supported by the  <see cref="ulong"/> type.</para>
+        /// <para>Маскимальное значение аргумента для вычисления факториала чисел, который поддерживается типом <see cref="ulong"/>.</para>
+        /// </summary>
+        public static readonly ulong MaximumFactorialNumber = 20;
+
+        /// <summary>
+        /// <para>Contains the maximum value of the argument for calculating Catalan numbers supported by the <see cref="ulong"/> type.</para>
+        /// <para>Содержит максимальное значение аргумента для вычисления каталановых чисел, который поддерживается типом <see cref="ulong"/>.</para>
+>>>>>>> 7e6ab0af942c9188769ff5eb42c31bb90a88652a
         /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
 
@@ -80,7 +91,7 @@ namespace Platform.Numbers
         /// <para>Возвращает Каталановое число с номером указанным в качестве аргумента.</para>
         /// </summary>
         /// <param name="n">
-        /// <para>The number of Catalan number.</para>
+        /// <para>The number of the Catalan number.</para>
         /// <para>Номер Каталанового числа.</para>
         /// </param>
         /// <returns>
@@ -104,12 +115,12 @@ namespace Platform.Numbers
         /// <para>Проверяет является ли число степенью двойки.</para>
         /// </summary>
         /// <param name="x">
-        /// <para>Number to check.</para>
+        /// <para>The number to check.</para>
         /// <para>Число для проверки.</para>
         /// </param>
         /// <returns>
-        /// <para>True or False.</para>
-        /// <para>True или False.</para>
+        /// <para>True if the number is a power of two otherwise false.</para>
+        /// <para>True, если число является степенью двойки, иначе - false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
@@ -127,7 +138,7 @@ namespace Platform.Numbers
         /// <para>Число от которого необходимо взять абсолютное значение.</para>
         /// </param>
         /// <returns>
-        /// <para>The absolute value of a number.</para>
+        /// <para>The absolute value of the number.</para>
         /// <para>Абсолютное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -146,7 +157,7 @@ namespace Platform.Numbers
         /// <para>Число которое нужно сделать отрицательным.</para>
         /// </param>
         /// <returns>
-        /// <para>Negative number.</para>
+        /// <para>A negative number.</para>
         /// <para>Отрицательное число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
