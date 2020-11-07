@@ -39,26 +39,14 @@ namespace Platform.Numbers
         };
 
         /// <summary>
-<<<<<<< HEAD
         /// <para>Represents the limit for calculating the catanal number, supported by the <see cref="ulong"/> type.</para>
         /// <para>Представляет предел расчета катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
         public static readonly ulong MaximumFactorialNumber = 20;
-
-
+        
         /// <summary>
-        /// <para>Represents the limit of the catanal number calculation, supported by the <see cref="ulong"/> type.</para>
-        /// <para>Представляет предел рассчёта катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
-=======
-        /// <para>Contains the maximum value of the argument for calculating the factorial of numbers that is supported by the  <see cref="ulong"/> type.</para>
-        /// <para>Маскимальное значение аргумента для вычисления факториала чисел, который поддерживается типом <see cref="ulong"/>.</para>
-        /// </summary>
-        public static readonly ulong MaximumFactorialNumber = 20;
-
-        /// <summary>
-        /// <para>Contains the maximum value of the argument for calculating Catalan numbers supported by the <see cref="ulong"/> type.</para>
-        /// <para>Содержит максимальное значение аргумента для вычисления каталановых чисел, который поддерживается типом <see cref="ulong"/>.</para>
->>>>>>> 7e6ab0af942c9188769ff5eb42c31bb90a88652a
+        /// <para>Represents the limit for calculating the factorial number, supported by the <see cref="ulong"/> type.</para>
+        /// <para>Представляет предел рассчёта факториала числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
 
