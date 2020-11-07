@@ -11,12 +11,42 @@ namespace Platform.Numbers
 {
     public static class Arithmetic<T>
     {
+
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
         public static readonly Func<T, T, T> Add = CompileAddDelegate();
-        public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
-        public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
-        public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
-        public static readonly Func<T, T> Increment = CompileIncrementDelegate();
-        public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
+
+          /// <summary>
+          /// <para>.</para>
+          /// <para>.</para>
+          /// </summary>
+          public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
+
+         /// <summary>
+         /// <para>.</para>
+         /// <para>.</para>
+         /// </summary>
+         public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
+
+         /// <summary>
+         /// <para>.</para>
+         /// <para>.</para>
+         /// </summary>
+         public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
+
+         /// <summary>
+         /// <para>.</para>
+         /// <para>.</para>
+         /// </summary>
+         public static readonly Func<T, T> Increment = CompileIncrementDelegate();
+
+         /// <summary>
+         /// <para>.</para>
+         /// <para>.</para>
+         /// </summary>
+         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAddDelegate()
