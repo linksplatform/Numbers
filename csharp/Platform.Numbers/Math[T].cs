@@ -10,7 +10,6 @@ namespace Platform.Numbers
 {
     public static class Math<T>
     {
-
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>

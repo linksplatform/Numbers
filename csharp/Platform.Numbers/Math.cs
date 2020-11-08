@@ -5,13 +5,11 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Numbers
 {
-    /// <remarks>
-    /// Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org
-    /// </remarks>
     /// <summary>
     /// <para>Represents a collection of algebraic methods.</para>
     /// <para>Представляет набор алгебраических методов.</para>
     /// </summary>
+    /// <remarks>Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org</remarks>
     public static class Math
     {
         /// <remarks>
@@ -40,10 +38,10 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Represents the limit for calculating the catanal number, supported by the <see cref="ulong"/> type.</para>
-        /// <para>Представляет предел расчета катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
+        /// <para>Представляет предел расчёта катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
         public static readonly ulong MaximumFactorialNumber = 20;
-        
+
         /// <summary>
         /// <para>Represents the limit for calculating the factorial number, supported by the <see cref="ulong"/> type.</para>
         /// <para>Представляет предел рассчёта факториала числа, поддерживаемый <see cref="ulong"/> типом.</para>
@@ -56,11 +54,11 @@ namespace Platform.Numbers
         /// </summary>
         /// <param name="n">
         /// <para>The maximum positive number that will participate in factorial's product.</para>
-        /// <para>Максимальное положительное число, которое будет участвовать в произведение факториала.</para>
+        /// <para>Максимальное положительное число, которое будет участвовать в произведении факториала.</para>
         /// </param>
         /// <returns>
         /// <para>The product of all positive integers less than or equal to the number specified as an argument.</para>
-        /// <para>Произведение всех положительных чисел меньше или равных указанному в качестве аргумента числу.</para>
+        /// <para>Произведение всех положительных чисел меньше или равных указанному, в качестве аргумента, числу.</para>
         /// </returns>
         public static ulong Factorial(ulong n)
         {
@@ -76,15 +74,15 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Returns the Catalan Number with the number specified as an argument.</para>
-        /// <para>Возвращает Каталановое число с номером указанным в качестве аргумента.</para>
+        /// <para>Возвращает Число Катанала с номером, указанным в качестве аргумента.</para>
         /// </summary>
         /// <param name="n">
         /// <para>The number of the Catalan number.</para>
-        /// <para>Номер Каталанового числа.</para>
+        /// <para>Номер Числа Катанала.</para>
         /// </param>
         /// <returns>
         /// <para>The Catalan Number with the number specified as an argument.</para>
-        /// <para>Каталановое число с номером указанным в качестве аргумента.</para>
+        /// <para>Число Катанала с номером, указанным в качестве аргумента.</para>
         /// </returns>
         public static ulong Catalan(ulong n)
         {
@@ -100,7 +98,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Checks if a number is a power of two.</para>
-        /// <para>Проверяет является ли число степенью двойки.</para>
+        /// <para>Проверяет, является ли число степенью двойки.</para>
         /// </summary>
         /// <param name="x">
         /// <para>The number to check.</para>
@@ -123,7 +121,7 @@ namespace Platform.Numbers
         /// </typeparam>
         /// <param name="x">
         /// <para>The number from which to take the absolute value.</para>
-        /// <para>Число от которого необходимо взять абсолютное значение.</para>
+        /// <para>Число, от которого необходимо взять абсолютное значение.</para>
         /// </param>
         /// <returns>
         /// <para>The absolute value of the number.</para>
