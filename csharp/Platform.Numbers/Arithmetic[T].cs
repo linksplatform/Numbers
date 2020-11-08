@@ -50,13 +50,13 @@ namespace Platform.Numbers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAddDelegate()
         {
-           return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
+            return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-               Ensure.Always.IsNumeric<T>();
-               emiter.LoadArguments(0, 1);
-               emiter.Add();
-               emiter.Return();
-           });
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.Add();
+                emiter.Return();
+            });
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,10 +64,10 @@ namespace Platform.Numbers
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
             {
-               Ensure.Always.IsNumeric<T>();
-               emiter.LoadArguments(0, 1);
-               emiter.Subtract();
-               emiter.Return();
+                Ensure.Always.IsNumeric<T>();
+                emiter.LoadArguments(0, 1);
+                emiter.Subtract();
+                emiter.Return();
            });
         }
 
@@ -92,11 +92,11 @@ namespace Platform.Numbers
                 emiter.LoadArguments(0, 1);
                 if(NumericType<T>.IsSigned)
                 {
-                 emiter.Emit(OpCodes.Div);
+                    emiter.Emit(OpCodes.Div);
                 }
                 else
                 {
-                  emiter.Emit(OpCodes.Div_Un);
+                    emiter.Emit(OpCodes.Div_Un);
                 }
                 emiter.Return();
             });
@@ -105,13 +105,13 @@ namespace Platform.Numbers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileIncrementDelegate()
         {
-           return DelegateHelpers.Compile<Func<T, T>>(emiter =>
-           {
+            return DelegateHelpers.Compile<Func<T, T>>(emiter =>
+            {
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArgument(0);
                 emiter.Increment<T>();
                 emiter.Return();
-           });
+            });
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,7 +123,7 @@ namespace Platform.Numbers
                 emiter.LoadArgument(0);
                 emiter.Decrement<T>();
                 emiter.Return();
-           });
+            });
         }
     }
 }
