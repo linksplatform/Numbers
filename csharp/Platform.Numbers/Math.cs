@@ -44,7 +44,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>Represents the limit for calculating the factorial number, supported by the <see cref="ulong"/> type.</para>
-        /// <para>Представляет предел рассчёта факториала числа, поддерживаемый <see cref="ulong"/> типом.</para>
+        /// <para>Представляет предел расчёта факториала числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
 
