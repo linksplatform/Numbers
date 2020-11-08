@@ -4,10 +4,10 @@
 
 namespace Platform.Numbers
 {
-  /// <summary>
-  /// <para>Represents a set of bitwise operation.</para>
-  /// <para>Представляет набор битовых операций.</para>
-  /// </summary>
+    /// <summary>
+    /// <para>Represents a set of bitwise operation.</para>
+    /// <para>Представляет набор битовых операций.</para>
+    /// </summary>
     public static class BitwiseExtensions
     {
         /// <summary>
