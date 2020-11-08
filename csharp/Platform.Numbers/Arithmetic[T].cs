@@ -68,7 +68,7 @@ namespace Platform.Numbers
                 emiter.LoadArguments(0, 1);
                 emiter.Subtract();
                 emiter.Return();
-           });
+            });
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
