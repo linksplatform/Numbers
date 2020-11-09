@@ -10,7 +10,16 @@ namespace Platform.Numbers
 {
     public static class Math<T>
     {
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
+
+        /// <summary>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
