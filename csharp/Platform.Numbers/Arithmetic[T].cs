@@ -9,6 +9,10 @@ using Platform.Reflection;
 
 namespace Platform.Numbers
 {
+    /// <summary>
+    /// <para>.</para>
+    /// <para>.</para>
+    /// </summary>
     public static class Arithmetic<T>
     {
         /// <summary>
