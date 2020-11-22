@@ -5,8 +5,8 @@ using System.Runtime.CompilerServices;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>.</para>
-    /// <para>.</para>
+    /// <para>Implements unary mathematical operations.</para>
+    /// <para>Реализует унарные математические операции.</para>
     /// </summary>
     public static class ArithmeticExtensions
     {
