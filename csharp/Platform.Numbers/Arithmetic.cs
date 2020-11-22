@@ -103,8 +103,8 @@ namespace Platform.Numbers
         public static T Divide<T>(T x, T y) => Arithmetic<T>.Divide(x, y);
 
         /// <summary>
-        /// <para>Increasing the number x by one.</para>
-        /// <para>Увеличивает число x на единицу.</para>
+        /// <para>Increasing the number by one.</para>
+        /// <para>Увеличивает число на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
@@ -115,15 +115,15 @@ namespace Platform.Numbers
         /// <para>Число для увеличения.</para>
         /// </param>
         /// <returns>
-        /// <para>Increase by one number x.</para>
-        /// <para>Увеличенное на единицу число x.</para>
+        /// <para>Increase by one number.</para>
+        /// <para>Увеличенное на единицу число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Increment<T>(T x) => Arithmetic<T>.Increment(x);
 
         /// <summary>
-        /// <para>Increases the value of argument x by one.</para>
-        /// <para>Увеличивает значение аргумента x на единицу.</para>
+        /// <para>Increases the value of argument by one.</para>
+        /// <para>Увеличивает значение аргумента на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
@@ -134,15 +134,15 @@ namespace Platform.Numbers
         /// <para>Аргумент для увеличения.</para>
         /// </param>
         /// <returns>
-        /// <para>Increased argument x value.</para>
-        /// <para>Увеличенное значение аргумента x</para>
+        /// <para>Increased argument value.</para>
+        /// <para>Увеличенное значение аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Increment<T>(ref T x) => x = Arithmetic<T>.Increment(x);
 
         /// <summary>
-        /// <para>Decrease number x by one.</para>
-        /// <para>Уменьшает число x на единицу.</para>
+        /// <para>Decreases number by one.</para>
+        /// <para>Уменьшение числа на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
@@ -153,15 +153,15 @@ namespace Platform.Numbers
         /// <para>Число для уменьшения.</para>
         /// </param>
         /// <returns>
-        /// <para>Decreased by one number x.</para>
-        /// <para>Уменьшенное на единицу число x.</para>
+        /// <para>Decreased by one number.</para>
+        /// <para>Уменьшенное на единицу число.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Decrement<T>(T x) => Arithmetic<T>.Decrement(x);
 
         /// <summary>
-        /// <para>Decreases the value of the argument x by one.</para>
-        /// <para>Уменьшает значение аргумента x на единицу.</para>
+        /// <para>Decreases the value of the argument by one.</para>
+        /// <para>Уменьшает значение аргумента на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number type.</para>
@@ -172,8 +172,8 @@ namespace Platform.Numbers
         /// <para>Аргумент для уменьшения.</para>
         /// </param>
         /// <returns>
-        /// <para>Decreased argument x value.</para>
-        /// <para>Уменьшеное значение аргумента x.</para>
+        /// <para>Decreased argument value.</para>
+        /// <para>Уменьшеное значение аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Decrement<T>(ref T x) => x = Arithmetic<T>.Decrement(x);
