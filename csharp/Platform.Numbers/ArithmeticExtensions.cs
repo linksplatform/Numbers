@@ -4,6 +4,10 @@
 
 namespace Platform.Numbers
 {
+    /// <summary>
+    /// <para>.</para>
+    /// <para>.</para>
+    /// </summary>
     public static class ArithmeticExtensions
     {
         /// <summary>
