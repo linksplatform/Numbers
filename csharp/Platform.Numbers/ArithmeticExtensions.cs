@@ -11,25 +11,6 @@ namespace Platform.Numbers
     public static class ArithmeticExtensions
     {
         /// <summary>
-        /// <para>Increasing the parameter by one.</para>
-        /// <para>Увеличение параметра на единицу.</para>
-        /// </summary>
-        /// <typeparam name="T">
-        /// <para>The number type.</para>
-        /// <para>Тип числа.</para>
-        /// </typeparam>
-        /// <param name="x">
-        /// <para>The parameter to increase.</para>
-        /// <para>Параметр для увеличения.</para>
-        /// </param>
-        /// <returns>
-        /// <para>Increased the value of the parameter per unit.</para>
-        /// <para>Увеличенное значение параметра на единицу.</para>
-        /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Decrement<T>(this ref T x) where T : struct => x = Arithmetic<T>.Decrement(x);
-
-        /// <summary>
         /// <para>Decreases parameter by one.</para>
         /// <para>Уменьшение параметра на единицу.</para>
         /// </summary>
@@ -47,5 +28,24 @@ namespace Platform.Numbers
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Increment<T>(this ref T x) where T : struct => x = Arithmetic<T>.Increment(x);
+        
+        /// <summary>
+        /// <para>Increasing the parameter by one.</para>
+        /// <para>Увеличение параметра на единицу.</para>
+        /// </summary>
+        /// <typeparam name="T">
+        /// <para>The number type.</para>
+        /// <para>Тип числа.</para>
+        /// </typeparam>
+        /// <param name="x">
+        /// <para>The parameter to increase.</para>
+        /// <para>Параметр для увеличения.</para>
+        /// </param>
+        /// <returns>
+        /// <para>Increased the value of the parameter per unit.</para>
+        /// <para>Увеличенное значение параметра на единицу.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Decrement<T>(this ref T x) where T : struct => x = Arithmetic<T>.Decrement(x);
     }
 }
