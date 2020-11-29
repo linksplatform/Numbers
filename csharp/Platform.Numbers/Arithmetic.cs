@@ -107,7 +107,7 @@ namespace Platform.Numbers
         /// <para>Увеличивает число на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type..</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -126,7 +126,7 @@ namespace Platform.Numbers
         /// <para>Увеличивает значение аргумента на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type..</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -145,7 +145,7 @@ namespace Platform.Numbers
         /// <para>Уменьшение числа на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type..</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -164,7 +164,7 @@ namespace Platform.Numbers
         /// <para>Уменьшает значение аргумента на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type..</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">

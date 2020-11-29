@@ -15,7 +15,7 @@ namespace Platform.Numbers
         /// <para>Увеличивает переданную в качестве аргумента переменную на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -23,7 +23,7 @@ namespace Platform.Numbers
         /// <para>Ссылка на увеличиваемую переменную.</para>
         /// </param>
         /// <returns>
-        /// <para>The value of the argument increased by one.</para>
+        /// <para>The value of the argument incremented by one.</para>
         /// <para>Увеличенное значение аргумента на единицу.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,12 +34,12 @@ namespace Platform.Numbers
         /// <para>Уменьшает переданную в качестве аргумента переменную на единицу.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
-        /// <para>The reference to the deremented variable.</para>
-        /// <para>Ссылка на увеличиваемую переменную.</para>
+        /// <para>The reference to the decremented variable.</para>
+        /// <para>Ссылка на уменьшаемую переменную.</para>
         /// </param>
         /// <returns>
         /// <para>The value of the argument decremented by one.</para>
