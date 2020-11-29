@@ -86,7 +86,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовое сложение чисел.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The numbers type.</para>
+        /// <para>The numbers' type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="x">
@@ -108,7 +108,7 @@ namespace Platform.Numbers
         /// <para>Performs bitwise numbers multiplication.</para>
         /// <para>Выполняет побитовое умножение чисел.</para>
         /// <typeparam name="T">
-        /// <para>The numbers type.</para>
+        /// <para>The numbers' type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// </summary>
@@ -178,7 +178,7 @@ namespace Platform.Numbers
         /// <para>Выполняет частичную запись определенного количества бит исходного числа в целевое число.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The numbers type.</para>
+        /// <para>The numbers' type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="target">
