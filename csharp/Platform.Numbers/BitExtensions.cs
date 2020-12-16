@@ -15,7 +15,7 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
@@ -34,7 +34,7 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The numbers type.</para>
+        /// <para>The numbers' type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="target">
@@ -57,7 +57,7 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">

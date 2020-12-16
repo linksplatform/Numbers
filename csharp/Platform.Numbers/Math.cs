@@ -116,7 +116,7 @@ namespace Platform.Numbers
         /// <para>Берёт модуль от числа.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -135,7 +135,7 @@ namespace Platform.Numbers
         /// <para>Делает число отрицательным.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
