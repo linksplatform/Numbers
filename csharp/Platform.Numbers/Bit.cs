@@ -144,7 +144,7 @@ namespace Platform.Numbers
         /// <para>Количество бит на которые выполнить смещение.</para>
         /// </param>
         /// <returns>
-        /// <para>The value with discarded high-order bits that are outside the range of The number's type and set low-order empty bit positions to zero.</para>
+        /// <para>The value with discarded high-order bits that are outside the range of the number's type and set low-order empty bit positions to zero.</para>
         /// <para>Значение с отброшенными старшими битами, которые находятся за пределами диапазона типа числа и устанавливленными пустыми битовыми позициями младших разрядов в ноль.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
