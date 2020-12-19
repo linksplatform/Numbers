@@ -18,7 +18,7 @@ namespace Platform.Numbers
         /// <para>The number type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
-        /// <param name="x">
+        /// <param name="target">
         /// <para>Number to invert.</para>
         /// <para>Число для инверсии.</para>
         /// </param>
