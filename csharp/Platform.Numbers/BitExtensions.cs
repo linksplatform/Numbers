@@ -15,7 +15,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The numbeк's type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
