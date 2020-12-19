@@ -11,62 +11,78 @@ namespace Platform.Numbers
     public static class BitwiseExtensions
     {
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Performs bitwise inversion of a number.</para>
+        /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The number to invert.</para>
+        /// <para>Число для инверсии.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>An inverted value of the number.</para>
+        /// <para>Обратное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Not<T>(this ref T target) where T : struct => target = Bit.Not(target);
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Performs a partial write of a specified number of bits from source number to target number.</para>
+        /// <para>Выполняет частичную запись определенного количества бит исходного числа в целевое число.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The numbers' type.</para>
         /// <para>Тип чисел.</para>
         /// </typeparam>
         /// <param name="target">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The value to which the partial write will be performed.</para>
+        /// <para>Значение в которое будет выполнена частичная запись.</para>
         /// </param>
         /// <param name="source">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Data source for writing.</para>
+        /// <para>Источник данных для записи.</para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The start position to read from.</para>
+        /// <para>Стартовая позиция чтения.</para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The number of bits to write from source to target.</para>
+        /// <para>Количество бит, которые нужно записать из source в target.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The target number updated with bits from source number.</para>
+        /// <para>Целевое число с обновленными битами из исходного числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PartialWrite<T>(this ref T target, T source, int shift, int limit) where T : struct => target = Bit<T>.PartialWrite(target, source, shift, limit);
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>Reads a specified number of bits from the number at specified position.</para>
+        /// <para>Считывает указанное количество бит из числа в указанной позиции.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The number from which the partial read will be performed.</para>
+        /// <para>Число из которого будет выполнено частичное чтение.</para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The start position to read from.</para>
+        /// <para>Стартовая позиция чтения.</para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The number of bits to read.</para>
+        /// <para>Количество бит, которые нужно считать.</para>
         /// </param>
         /// <returns>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>The number consisting of bits read from the source number.</para>
+        /// <para>Число состоящее из считанных из исходного числа бит.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PartialRead<T>(this T target, int shift, int limit) => Bit<T>.PartialRead(target, shift, limit);
