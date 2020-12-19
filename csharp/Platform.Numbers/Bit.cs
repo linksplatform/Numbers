@@ -67,7 +67,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -132,7 +132,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовый свиг числа влево на указанное количество бит.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -144,7 +144,7 @@ namespace Platform.Numbers
         /// <para>Количество бит на которые выполнить смещение.</para>
         /// </param>
         /// <returns>
-        /// <para>The value with discarded high-order bits that are outside the range of the number type and set low-order empty bit positions to zero.</para>
+        /// <para>The value with discarded high-order bits that are outside the range of The number's type and set low-order empty bit positions to zero.</para>
         /// <para>Значение с отброшенными старшими битами, которые находятся за пределами диапазона типа числа и устанавливленными пустыми битовыми позициями младших разрядов в ноль.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,7 +155,7 @@ namespace Platform.Numbers
         /// <para>Выполняет побитовый свиг числа вправо на указанное количество бит.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="x">
@@ -209,7 +209,7 @@ namespace Platform.Numbers
         /// <para>Считывает указанное количество бит из числа в указанной позиции.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The number type.</para>
+        /// <para>The number's type.</para>
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
