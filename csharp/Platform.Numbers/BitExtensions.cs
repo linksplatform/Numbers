@@ -11,7 +11,7 @@ namespace Platform.Numbers
     public static class BitwiseExtensions
     {
         /// <summary>
-        /// <para>Performing bitwise inversion of a number.</para>
+        /// <para>Performs bitwise inversion of a number.</para>
         /// <para>Выполняет побитовую инверсию числа.</para>
         /// </summary>
         /// <typeparam name="T">
@@ -19,11 +19,11 @@ namespace Platform.Numbers
         /// <para>Тип числа.</para>
         /// </typeparam>
         /// <param name="target">
-        /// <para>Number to invert.</para>
+        /// <para>The number to invert.</para>
         /// <para>Число для инверсии.</para>
         /// </param>
         /// <returns>
-        /// <para>Inverse value of the number.</para>
+        /// <para>An inverted value of the number.</para>
         /// <para>Обратное значение числа.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,7 +42,7 @@ namespace Platform.Numbers
         /// <para>Значение в которое будет выполнена частичная запись.</para>
         /// </param>
         /// <param name="source">
-        /// <para>Data source for recording.</para>
+        /// <para>Data source for writing.</para>
         /// <para>Источник данных для записи.</para>
         /// </param>
         /// <param name="shift">
