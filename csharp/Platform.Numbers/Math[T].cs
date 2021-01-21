@@ -18,12 +18,24 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </typeparam>
+        /// <returns>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </returns>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
+        /// <typeparam>
+        /// <para>.</para>
+        /// <para>.</para>
+        /// </typeparam>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
