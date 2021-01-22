@@ -17,8 +17,7 @@ namespace Platform.Numbers
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
-        /// </summary>>
-        /// </returns>
+        /// </summary>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
 
         /// <summary>
