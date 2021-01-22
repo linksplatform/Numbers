@@ -18,70 +18,42 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T> Not = CompileNotDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> Or = CompileOrDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> And = CompileAndDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

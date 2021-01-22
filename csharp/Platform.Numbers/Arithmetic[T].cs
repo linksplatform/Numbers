@@ -19,60 +19,36 @@ namespace Platform.Numbers
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> Add = CompileAddDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T> Increment = CompileIncrementDelegate();
 
         /// <summary>
         /// <para>.</para>
         /// <para>.</para>
         /// </summary>
-        /// <typeparam>
-        /// <para>.</para>
-        /// <para>.</para>
-        /// </typeparam>
         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
