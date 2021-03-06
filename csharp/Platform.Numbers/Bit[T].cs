@@ -33,20 +33,20 @@ namespace Platform.Numbers
         public static readonly Func<T, T, T> And = CompileAndDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise shifting a number to the left function delegate.</para>
+        /// <para>A read-only field that represents a bitwise left shift function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа влево.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise shifting a number to the right function delegate.</para>
+        /// <para>A read-only field that represents a bitwise right shift function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа вправо.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a partial number rewrite function delegate.</para>
-        /// <para>Поле только для чтения, представляющее делегат функции частичной перезаписи числа.</para>
+        /// <para>A read-only field that represents a bitwise rewriting of number representation function delegate.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции частичной побитовой перезаписи представления числа.</para>
         /// </summary>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
