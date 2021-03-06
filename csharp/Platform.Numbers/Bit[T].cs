@@ -45,14 +45,14 @@ namespace Platform.Numbers
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise rewriting of number representation function delegate.</para>
+        /// <para>A read-only field that represents a bitwise number representation partial rewrite function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичной побитовой перезаписи представления числа.</para>
         /// </summary>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a partial number reading function delegate.</para>
-        /// <para>Поле только для чтения, представляющее делегат функции частичного считывания числа.</para>
+        /// <para>A read-only field that represents a bitwise number representation partial reading function delegate.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции частичного побитового считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
