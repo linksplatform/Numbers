@@ -9,20 +9,20 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>.</para>
-    /// <para>.</para>
+    /// <para>Represents compiled algebraic operations delegates.</para>
+    /// <para>Представляет набор скомпилированных делегатов алгебраических операци.</para>
     /// </summary>
     public static class Math<T>
     {
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents a taking the absolute value of a number function delegate.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции взятия абсолютного значения числа.</para>
         /// </summary>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents a negating a number function delegate.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции отрицания числа.</para>
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
