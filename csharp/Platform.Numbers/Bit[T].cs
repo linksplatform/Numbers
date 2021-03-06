@@ -15,7 +15,7 @@ namespace Platform.Numbers
     public static class Bit<T>
     {
         /// <summary>
-        /// <para>A read-only field that represents a delegate of the function of the bitwise inversion of a number.</para>
+        /// <para>A read-only field that represents a bitwise inversion function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитовой инверсии числа.</para>
         /// </summary>
         public static readonly Func<T, T> Not = CompileNotDelegate();
@@ -33,25 +33,25 @@ namespace Platform.Numbers
         public static readonly Func<T, T, T> And = CompileAndDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the function of the bitwise shifting a number to the left.</para>
+        /// <para>A read-only field that represents a bitwise shifting a number to the left delegate function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа влево.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of thesomething function.</para>
+        /// <para>A read-only field that represents a bitwise shifting a number to the right delegate function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа вправо.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the partial number rewrite function.</para>
+        /// <para>A read-only field that represents a partial number rewrite delegate function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичной перезаписи числа.</para>
         /// </summary>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the partial number reading function function.</para>
+        /// <para>A read-only field that represents a partial number reading delegate function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичного считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
