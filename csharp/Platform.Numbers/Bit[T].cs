@@ -51,7 +51,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise number representation partial reading function delegate.</para>
+        /// <para>A read-only field that represents a bitwise number representation partial read function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичного побитового считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
