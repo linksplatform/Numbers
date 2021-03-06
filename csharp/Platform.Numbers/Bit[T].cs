@@ -21,37 +21,37 @@ namespace Platform.Numbers
         public static readonly Func<T, T> Not = CompileNotDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the logic addition function.</para>
+        /// <para>A read-only field that represents a logic addition function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции логического сложения.</para>
         /// </summary>
         public static readonly Func<T, T, T> Or = CompileOrDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the logic multiplication function.</para>
+        /// <para>A read-only field that represents a logic multiplication function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции логического умножения.</para>
         /// </summary>
         public static readonly Func<T, T, T> And = CompileAndDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise shifting a number to the left delegate function.</para>
+        /// <para>A read-only field that represents a bitwise shifting a number to the left function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа влево.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a bitwise shifting a number to the right delegate function.</para>
+        /// <para>A read-only field that represents a bitwise shifting a number to the right function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа вправо.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a partial number rewrite delegate function.</para>
+        /// <para>A read-only field that represents a partial number rewrite function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичной перезаписи числа.</para>
         /// </summary>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a partial number reading delegate function.</para>
+        /// <para>A read-only field that represents a partial number reading function delegate.</para>
         /// <para>Поле только для чтения, представляющее делегат функции частичного считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
