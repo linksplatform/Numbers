@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
 
+// ReSharper disable StaticFieldInGenericType
 namespace Platform.Numbers
 {
     /// <summary>
