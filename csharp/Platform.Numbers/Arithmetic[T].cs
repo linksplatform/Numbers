@@ -34,7 +34,7 @@ namespace Platform.Numbers
         public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents delegate of the divide function.</para>
+        /// <para>A read-only field that represents delegate of the division function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции деления.</para>
         /// </summary>
         public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
