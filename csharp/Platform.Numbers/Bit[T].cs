@@ -9,50 +9,50 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>.</para>
-    /// <para>.</para>
+    /// <para>Represents a set of compiled bit operation delegates.</para>
+    /// <para>Представляет набор скомпилированных делегатов битовых операций.</para>
     /// </summary>
     public static class Bit<T>
     {
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents a delegate of the function of the bitwise inversion of a number.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции побитовой инверсии числа.</para>
         /// </summary>
         public static readonly Func<T, T> Not = CompileNotDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of the logic addition function.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции логического сложения.</para>
         /// </summary>
         public static readonly Func<T, T, T> Or = CompileOrDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of the logic multiplication function.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции логического умножения.</para>
         /// </summary>
         public static readonly Func<T, T, T> And = CompileAndDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of the function of the bitwise shifting a number to the left.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа влево.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftLeft = CompileShiftLeftDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of thesomething function.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции побитового сдвига числа вправо.</para>
         /// </summary>
         public static readonly Func<T, int, T> ShiftRight = CompileShiftRightDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of the partial number rewrite function.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции частичной перезаписи числа.</para>
         /// </summary>
         public static readonly Func<T, T, int, int, T> PartialWrite = CompilePartialWriteDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents delegate of the partial number reading function function.</para>
+        /// <para>Поле только для чтения, представляющее делегат функции частичного считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
