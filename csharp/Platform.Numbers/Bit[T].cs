@@ -9,7 +9,7 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Represents compiled bit operations delegates.</para>
+    /// <para>Represents a set of compiled bit operations delegates.</para>
     /// <para>Представляет набор скомпилированных делегатов битовых операций.</para>
     /// </summary>
     public static class Bit<T>
