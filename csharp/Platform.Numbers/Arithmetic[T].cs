@@ -10,8 +10,8 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>represents compiled arithmetic delegates.</para>
-    /// <para>Представляет набор скомпилированных делегат ов арифметических операций.</para>
+    /// <para>Represents compiled arithmetic delegates.</para>
+    /// <para>Представляет набор скомпилированных делегатов арифметических операций.</para>
     /// </summary>
     public static class Arithmetic<T>
     {
@@ -24,6 +24,7 @@ namespace Platform.Numbers
         /// <summary>
         /// <para>A read-only field that represents delegate of the subtraction function.</para>
         /// <para>Поле только для чтения, представляющее делегат функции вычитания.</para>
+        /// </summary>
         public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
 
         /// <summary>
