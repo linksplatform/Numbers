@@ -10,44 +10,44 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>.</para>
-    /// <para>.</para>
+    /// <para>A set of compiled arithmetic delegates.</para>
+    /// <para>Набор скомпилированных делегатов арифметических операций.</para>
     /// </summary>
     public static class Arithmetic<T>
     {
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the addition function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции сложения.</para>
         /// </summary>
         public static readonly Func<T, T, T> Add = CompileAddDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the subtraction function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции вычитания.</para>
         /// </summary>
         public static readonly Func<T, T, T> Subtract = CompileSubtractDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the multiplication function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции умножения.</para>
         /// </summary>
         public static readonly Func<T, T, T> Multiply = CompileMultiplyDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the divide function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции деления.</para>
         /// </summary>
         public static readonly Func<T, T, T> Divide = CompileDivideDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the increment function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции инкремента.</para>
         /// </summary>
         public static readonly Func<T, T> Increment = CompileIncrementDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents value of the delegate of the decrement function.</para>
+        /// <para>Поле только для чтения, представляющее значение делегата функции декремента.</para>
         /// </summary>
         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
