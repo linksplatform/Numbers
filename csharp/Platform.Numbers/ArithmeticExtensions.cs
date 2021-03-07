@@ -3,8 +3,8 @@
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Provides a set of extension methods that perform arithmetic operations on arbitrary object types.</para>
-    /// <para>Предоставляет набор методов расширения выполняющих арифметические операции для объектов произвольного типа.</para>
+    /// <para>Represents a set of extension methods that perform arithmetic operations on arbitrary object types.</para>
+    /// <para>Представляет набор методов расширения выполняющих арифметические операции для объектов произвольного типа.</para>
     /// </summary>
     public static class ArithmeticExtensions
     {
