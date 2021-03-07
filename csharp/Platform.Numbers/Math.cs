@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Represents a collection of math methods.</para>
+    /// <para>Represents a set of math methods.</para>
     /// <para>Представляет набор математических методов.</para>
     /// </summary>
     /// <remarks>Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org</remarks>
