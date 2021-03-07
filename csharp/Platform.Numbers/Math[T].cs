@@ -20,7 +20,7 @@ namespace Platform.Numbers
 
         /// <summary>
         /// <para>A read-only field that represents a number negation function delegate.</para>
-        /// <para>Поле только для чтения, которое представляюет делегат функции отрицания числа.</para>
+        /// <para>Поле только для чтения, которое представляет делегат функции отрицания числа.</para>
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
