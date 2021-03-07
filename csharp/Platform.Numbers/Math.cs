@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Represents a collection of algebraic methods.</para>
-    /// <para>Представляет набор алгебраических методов.</para>
+    /// <para>Represents a set of math methods.</para>
+    /// <para>Представляет набор математических методов.</para>
     /// </summary>
     /// <remarks>Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org</remarks>
     public static class Math

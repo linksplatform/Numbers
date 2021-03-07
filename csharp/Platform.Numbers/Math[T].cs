@@ -4,25 +4,23 @@ using Platform.Exceptions;
 using Platform.Reflection;
 
 // ReSharper disable StaticFieldInGenericType
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>.</para>
-    /// <para>.</para>
+    /// <para>Represents a set of compiled math operations delegates.</para>
+    /// <para>Представляет набор скомпилированных делегатов математических операций.</para>
     /// </summary>
     public static class Math<T>
     {
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents a number modulus calculation function delegate.</para>
+        /// <para>Поле только для чтения, которое представляет делегат функции вычисления модуля числа.</para>
         /// </summary>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
 
         /// <summary>
-        /// <para>.</para>
-        /// <para>.</para>
+        /// <para>A read-only field that represents a number negation function delegate.</para>
+        /// <para>Поле только для чтения, которое представляет делегат функции отрицания числа.</para>
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 

@@ -8,7 +8,7 @@ using Platform.Reflection;
 namespace Platform.Numbers
 {
     /// <summary>
-    /// <para>Represents compiled arithmetic operations delegates.</para>
+    /// <para>Represents a set of compiled arithmetic operations delegates.</para>
     /// <para>Представляет набор скомпилированных делегатов арифметических операций.</para>
     /// </summary>
     public static class Arithmetic<T>
