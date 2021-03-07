@@ -13,14 +13,14 @@ namespace Platform.Numbers
     public static class Math<T>
     {
         /// <summary>
-        /// <para>A read-only field that represents a delegate of a function that takes the absolute value of a number.</para>
-        /// <para>Поле только для чтения, которое представляет делегат функции взятия абсолютного значения числа.</para>
+        /// <para>A read-only field that represents a number modulus calculation function delegate.</para>
+        /// <para>Поле только для чтения, которое представляет делегат функции вычисления модуля числа.</para>
         /// </summary>
         public static readonly Func<T, T> Abs = CompileAbsDelegate();
 
         /// <summary>
-        /// <para>A read-only field that represents a delegate of function that negates a number.</para>
-        /// <para>Поле только для чтения, представляющее делегат функции отрицания числа.</para>
+        /// <para>A read-only field that represents a number negation function delegate.</para>
+        /// <para>Поле только для чтения, которое представляюет делегат функции отрицания числа.</para>
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
