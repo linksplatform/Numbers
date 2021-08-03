@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.4.1</VersionPrefix>
+    <VersionPrefix>0.5.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1;net5</TargetFrameworks>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -24,7 +24,10 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Platform.Converters dependency updated from 0.2.0 to 0.2.1.</PackageReleaseNotes>
+    <PackageReleaseNotes>.NET 5 support is added.
+Platform.Converters dependency updated from 0.2.1 to 0.3.0.
+Factorial and Catalan from Math class have changed their in and out types from double to ulong. This is a breaking change.
+All classes are covered with comments.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
