@@ -1,4 +1,5 @@
 ﻿using System;
+using Platform.Reflection;
 using Xunit;
 
 namespace Platform.Numbers.Tests
@@ -23,6 +24,7 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<byte>.And(1, 2) == (1 & 2));
             Assert.True(Bit<byte>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<byte>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<byte>.MaxValue >> 1, Bit<byte>.ShiftRight(NumericType<byte>.MaxValue, 1));
         }
 
         [Fact]
@@ -33,6 +35,7 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<ushort>.And(1, 2) == (1 & 2));
             Assert.True(Bit<ushort>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<ushort>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<ushort>.MaxValue >> 1, Bit<ushort>.ShiftRight(NumericType<ushort>.MaxValue, 1));
         }
 
         [Fact]
@@ -43,6 +46,7 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<uint>.And(1, 2) == (1 & 2));
             Assert.True(Bit<uint>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<uint>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<uint>.MaxValue >> 1, Bit<uint>.ShiftRight(NumericType<uint>.MaxValue, 1));
         }
 
         [Fact]
@@ -53,6 +57,7 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<ulong>.And(1, 2) == (1 & 2));
             Assert.True(Bit<ulong>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<ulong>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<ulong>.MaxValue >> 1, Bit<ulong>.ShiftRight(NumericType<ulong>.MaxValue, 1));
         }
 
         [Fact]
