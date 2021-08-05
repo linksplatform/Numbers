@@ -110,7 +110,7 @@ namespace Platform.Numbers
             {
                 Ensure.Always.IsNumeric<T>();
                 emiter.LoadArguments(0, 1);
-                emiter.ShiftRight();
+                emiter.ShiftRight<T>();
                 emiter.Return();
             });
         }
@@ -225,7 +225,7 @@ namespace Platform.Numbers
                 emiter.LoadLocal(targetMask);
                 emiter.And();
                 emiter.LoadArgument(shiftArgument);
-                emiter.ShiftRight();
+                emiter.ShiftRight<T>();
                 emiter.Return();
             });
         }
