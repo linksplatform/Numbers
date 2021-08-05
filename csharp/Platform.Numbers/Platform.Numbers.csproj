@@ -39,7 +39,7 @@ All classes are covered with comments.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.3.0" />
+    <PackageReference Include="Platform.Converters" Version="0.3.1" />
   </ItemGroup>
 
 </Project>
