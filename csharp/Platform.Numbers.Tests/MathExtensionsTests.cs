@@ -1,9 +1,21 @@
-﻿using Xunit;
+using Xunit;
 
 namespace Platform.Numbers.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the math extensions tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class MathExtensionsTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that abs test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void AbsTest()
         {
@@ -13,6 +25,12 @@ namespace Platform.Numbers.Tests
             Assert.Equal(1L, number);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that negate test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void NegateTest()
         {
@@ -22,6 +40,12 @@ namespace Platform.Numbers.Tests
             Assert.Equal(-2L, number);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that unsigned negate test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void UnsignedNegateTest()
         {

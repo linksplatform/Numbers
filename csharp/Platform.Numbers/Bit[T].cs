@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
@@ -55,6 +55,16 @@ namespace Platform.Numbers
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
 
+        /// <summary>
+        /// <para>
+        /// Compiles the not delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNotDelegate()
         {
@@ -67,6 +77,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the or delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileOrDelegate()
         {
@@ -79,6 +99,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the and delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAndDelegate()
         {
@@ -91,6 +121,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the shift left delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftLeftDelegate()
         {
@@ -103,6 +143,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the shift right delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftRightDelegate()
         {
@@ -115,6 +165,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the partial write delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and int and int and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, int, int, T> CompilePartialWriteDelegate()
         {
@@ -175,6 +235,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the partial read delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and int and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, int, T> CompilePartialReadDelegate()
         {
@@ -230,6 +300,20 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Gets the constants.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <exception cref="NotSupportedException">
+        /// <para></para>
+        /// <para></para>
+        /// </exception>
+        /// <returns>
+        /// <para>A tuple of int and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Tuple<int, T> GetConstants()
         {

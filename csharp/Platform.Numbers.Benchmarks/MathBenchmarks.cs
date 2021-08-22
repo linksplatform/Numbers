@@ -1,11 +1,23 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 
 namespace Platform.Numbers.Benchmarks
 {
+    /// <summary>
+    /// <para>
+    /// Represents the math benchmarks.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     [SimpleJob]
     [MemoryDiagnoser]
     public class MathBenchmarks
     {
+        /// <summary>
+        /// <para>
+        /// Represents the alternatives.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private class Alternatives
         {
             /// <remarks>
@@ -19,6 +31,20 @@ namespace Platform.Numbers.Benchmarks
                 355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000,
             };
 
+            /// <summary>
+            /// <para>
+            /// Factorials the using static array and recursion with contant as maximum n using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The ulong</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN(ulong n)
             {
                 if (n <= 1)
@@ -32,6 +58,20 @@ namespace Platform.Numbers.Benchmarks
                 return n * FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN(n - 1);
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the using static array and recursion with array length field as maximum n using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The ulong</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialUsingStaticArrayAndRecursionWithArrayLengthFieldAsMaximumN(ulong n)
             {
                 if (n <= 1)
@@ -45,16 +85,54 @@ namespace Platform.Numbers.Benchmarks
                 return n * FactorialUsingStaticArrayAndRecursionWithArrayLengthFieldAsMaximumN(n - 1);
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the with direct array access using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The ulong</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialWithDirectArrayAccess(ulong n)
             {
                 return _factorials[n];
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the of 19.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <returns>
+            /// <para>The ulong</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialOf19()
             {
                 return 121645100408832000;
             }
 
+            /// <summary>
+            /// <para>
+            /// Conditions the series using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The ulong</para>
+            /// <para></para>
+            /// </returns>
             public static ulong ConditionSeries(ulong n)
             {
                 if (n < 0)
@@ -85,6 +163,20 @@ namespace Platform.Numbers.Benchmarks
                 return n * ConditionSeries(n - 1);
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the while loop with array using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The .</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialWhileLoopWithArray(ulong n)
             {
                 ulong[] _facts =
@@ -99,6 +191,20 @@ namespace Platform.Numbers.Benchmarks
                 return r;
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the while loop without array using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The .</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialWhileLoopWithoutArray(ulong n)
             {
                 if (n < (ulong)_factorials.Length) return _factorials[n];
@@ -107,6 +213,20 @@ namespace Platform.Numbers.Benchmarks
                 return r;
             }
 
+            /// <summary>
+            /// <para>
+            /// Factorials the while loop without array and counting array length using the specified n.
+            /// </para>
+            /// <para></para>
+            /// </summary>
+            /// <param name="n">
+            /// <para>The .</para>
+            /// <para></para>
+            /// </param>
+            /// <returns>
+            /// <para>The .</para>
+            /// <para></para>
+            /// </returns>
             public static ulong FactorialWhileLoopWithoutArrayAndCountingArrayLength(ulong n)
             {
                 if (n < 21) return _factorials[n];
@@ -116,56 +236,152 @@ namespace Platform.Numbers.Benchmarks
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// The factorial number.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private const ulong FactorialNumber = 19;
 
+        /// <summary>
+        /// <para>
+        /// Currents the factorial implementation.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong CurrentFactorialImplementation()
         {
             return Math.Factorial(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the using static array and recursion with contant as maximum n.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN()
         {
             return Alternatives.FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the using static array and recursion with array length field as maximum n.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialUsingStaticArrayAndRecursionWithArrayLengthFieldAsMaximumN()
         {
             return Alternatives.FactorialUsingStaticArrayAndRecursionWithArrayLengthFieldAsMaximumN(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the using fact tree.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialUsingFactTree()
         {
             return Alternatives.ConditionSeries(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the only 21.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialOnly21()
         {
             return Alternatives.FactorialWithDirectArrayAccess(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the of 19.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialOf19()
         {
             return Alternatives.FactorialOf19();
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the while with array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialWhileWithArray()
         {
             return Alternatives.FactorialWhileLoopWithArray(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the while without array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialWhileWithoutArray()
         {
             return Alternatives.FactorialWhileLoopWithoutArray(FactorialNumber);
         }
 
+        /// <summary>
+        /// <para>
+        /// Factorials the while without array and counting array length.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The ulong</para>
+        /// <para></para>
+        /// </returns>
         [Benchmark]
         public ulong FactorialWhileWithoutArrayAndCountingArrayLength()
         {
