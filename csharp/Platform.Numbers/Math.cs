@@ -10,10 +10,6 @@ namespace Platform.Numbers
     /// <remarks>Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org</remarks>
     public static class Math
     {
-        /// <remarks>
-        /// <para>Source: https://oeis.org/A000142/list </para>
-        /// <para>Источник: https://oeis.org/A000142/list </para>
-        /// </remarks>
         private static readonly ulong[] _factorials =
         {
             1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
@@ -21,10 +17,6 @@ namespace Platform.Numbers
             355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000
         };
 
-        /// <remarks>
-        /// <para>Source: https://oeis.org/A000108/list </para>
-        /// <para>Источник: https://oeis.org/A000108/list </para>
-        /// </remarks>
         private static readonly ulong[] _catalans =
         {
             1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012,
