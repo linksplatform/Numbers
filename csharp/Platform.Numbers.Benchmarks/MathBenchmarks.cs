@@ -12,8 +12,18 @@ namespace Platform.Numbers.Benchmarks
     [MemoryDiagnoser]
     public class MathBenchmarks
     {
+        /// <summary>
+        /// <para>
+        /// Represents the alternatives.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private class Alternatives
         {
+            /// <remarks>
+            /// <para>Source: https://oeis.org/A000142/list </para>
+            /// <para>Источник: https://oeis.org/A000142/list </para>
+            /// </remarks>
             private static readonly ulong[] _factorials =
             {
                 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
@@ -226,6 +236,12 @@ namespace Platform.Numbers.Benchmarks
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// The factorial number.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private const ulong FactorialNumber = 19;
 
         /// <summary>
