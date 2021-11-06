@@ -1,10 +1,22 @@
-﻿using System;
+using System;
 using Xunit;
 
 namespace Platform.Numbers.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the arithmetic tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class ArithmeticTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that compiled operations test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void CompiledOperationsTest()
         {

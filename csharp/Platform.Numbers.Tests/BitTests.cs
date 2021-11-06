@@ -1,10 +1,31 @@
-﻿using System;
+using System;
+using Platform.Reflection;
 using Xunit;
 
 namespace Platform.Numbers.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the bit tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class BitTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that get lowest bit position test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="value">
+        /// <para>The value.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="expectedPosition">
+        /// <para>The expected position.</para>
+        /// <para></para>
+        /// </param>
         [Theory]
         [InlineData(00, -1)] // 0000 0000 (none, -1)
         [InlineData(01, 00)] // 0000 0001 (first, 0)
@@ -15,6 +36,12 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit.GetLowestPosition(value) == expectedPosition);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that byte bitwise operations test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void ByteBitwiseOperationsTest()
         {
@@ -23,8 +50,15 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<byte>.And(1, 2) == (1 & 2));
             Assert.True(Bit<byte>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<byte>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<byte>.MaxValue >> 1, Bit<byte>.ShiftRight(NumericType<byte>.MaxValue, 1));
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that u int 16 bitwise operations test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void UInt16BitwiseOperationsTest()
         {
@@ -33,8 +67,15 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<ushort>.And(1, 2) == (1 & 2));
             Assert.True(Bit<ushort>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<ushort>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<ushort>.MaxValue >> 1, Bit<ushort>.ShiftRight(NumericType<ushort>.MaxValue, 1));
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that u int 32 bitwise operations test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void UInt32BitwiseOperationsTest()
         {
@@ -43,8 +84,15 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<uint>.And(1, 2) == (1 & 2));
             Assert.True(Bit<uint>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<uint>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<uint>.MaxValue >> 1, Bit<uint>.ShiftRight(NumericType<uint>.MaxValue, 1));
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that u int 64 bitwise operations test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void UInt64BitwiseOperationsTest()
         {
@@ -53,8 +101,15 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit<ulong>.And(1, 2) == (1 & 2));
             Assert.True(Bit<ulong>.ShiftLeft(1, 2) == (1 << 2));
             Assert.True(Bit<ulong>.ShiftRight(1, 2) == (1 >> 2));
+            Assert.Equal(NumericType<ulong>.MaxValue >> 1, Bit<ulong>.ShiftRight(NumericType<ulong>.MaxValue, 1));
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that partial read write test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void PartialReadWriteTest()
         {
@@ -146,6 +201,32 @@ namespace Platform.Numbers.Tests
         }
 
         // TODO: Can be optimized using precalculation of TargetMask and SourceMask
+        /// <summary>
+        /// <para>
+        /// Partials the write using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="source">
+        /// <para>The source.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialWrite(uint target, uint source, int shift, int limit)
         {
             if (shift < 0)
@@ -161,6 +242,28 @@ namespace Platform.Numbers.Tests
             return target & targetMask | (source & sourceMask) << shift;
         }
 
+        /// <summary>
+        /// <para>
+        /// Partials the read using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialRead(uint target, int shift, int limit)
         {
             if (shift < 0)
@@ -176,6 +279,24 @@ namespace Platform.Numbers.Tests
             return (target & targetMask) >> shift;
         }
 
+        /// <summary>
+        /// <para>
+        /// Gets the write masks and shift using the specified shift.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>A tuple of uint and uint and int</para>
+        /// <para></para>
+        /// </returns>
         private static Tuple<uint, uint, int> GetWriteMasksAndShift(int shift, int limit)
         {
             if (shift < 0)
@@ -191,6 +312,24 @@ namespace Platform.Numbers.Tests
             return new Tuple<uint, uint, int>(targetMask, sourceMask, shift);
         }
 
+        /// <summary>
+        /// <para>
+        /// Gets the read mask and shift using the specified shift.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>A tuple of uint and int</para>
+        /// <para></para>
+        /// </returns>
         private static Tuple<uint, int> GetReadMaskAndShift(int shift, int limit)
         {
             if (shift < 0)
@@ -206,14 +345,112 @@ namespace Platform.Numbers.Tests
             return new Tuple<uint, int>(targetMask, shift);
         }
 
+        /// <summary>
+        /// <para>
+        /// Partials the write using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="targetMask">
+        /// <para>The target mask.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="source">
+        /// <para>The source.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="sourceMask">
+        /// <para>The source mask.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialWrite(uint target, uint targetMask, uint source, uint sourceMask, int shift) => target & targetMask | (source & sourceMask) << shift;
 
+        /// <summary>
+        /// <para>
+        /// Partials the write using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="source">
+        /// <para>The source.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="masksAndShift">
+        /// <para>The masks and shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialWrite(uint target, uint source, Tuple<uint, uint, int> masksAndShift) => PartialWrite(target, masksAndShift.Item1, source, masksAndShift.Item2, masksAndShift.Item3);
 
+        /// <summary>
+        /// <para>
+        /// Partials the read using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="targetMask">
+        /// <para>The target mask.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialRead(uint target, uint targetMask, int shift) => (target & targetMask) >> shift;
 
+        /// <summary>
+        /// <para>
+        /// Partials the read using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="masksAndShift">
+        /// <para>The masks and shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialRead(uint target, Tuple<uint, int> masksAndShift) => PartialRead(target, masksAndShift.Item1, masksAndShift.Item2);
 
+        /// <summary>
+        /// <para>
+        /// Tests that bug with loading constant of 8 test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void BugWithLoadingConstantOf8Test()
         {

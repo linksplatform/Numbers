@@ -334,6 +334,3 @@ ASALocalRun/
 org.kde.konsole.desktop
 *.kate-swp
 *.vE4458
-
-# GitHub refuses chages to .github folder at the moment
-.github/

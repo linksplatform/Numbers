@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using Platform.Exceptions;
@@ -49,6 +49,16 @@ namespace Platform.Numbers
         /// </summary>
         public static readonly Func<T, T> Decrement = CompileDecrementDelegate();
 
+        /// <summary>
+        /// <para>
+        /// Compiles the add delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAddDelegate()
         {
@@ -61,6 +71,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the subtract delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileSubtractDelegate()
         {
@@ -73,6 +93,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the multiply delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileMultiplyDelegate()
         {
@@ -85,6 +115,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the divide delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileDivideDelegate()
         {
@@ -104,6 +144,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the increment delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileIncrementDelegate()
         {
@@ -116,6 +166,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the decrement delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileDecrementDelegate()
         {

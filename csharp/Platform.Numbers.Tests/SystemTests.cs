@@ -1,9 +1,21 @@
-﻿using Xunit;
+using Xunit;
 
 namespace Platform.Numbers.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the system tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class SystemTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that possible pack two values into one test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void PossiblePackTwoValuesIntoOneTest()
         {
@@ -49,6 +61,32 @@ namespace Platform.Numbers.Tests
             Assert.True(PartialRead(value, 1, -1) == secondValue);
         }
 
+        /// <summary>
+        /// <para>
+        /// Partials the write using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="source">
+        /// <para>The source.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialWrite(uint target, uint source, int shift, int limit)
         {
             if (shift < 0)
@@ -64,6 +102,28 @@ namespace Platform.Numbers.Tests
             return (target & targetMask) | ((source & sourceMask) << shift);
         }
 
+        /// <summary>
+        /// <para>
+        /// Partials the read using the specified target.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="target">
+        /// <para>The target.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="shift">
+        /// <para>The shift.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="limit">
+        /// <para>The limit.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The uint</para>
+        /// <para></para>
+        /// </returns>
         private static uint PartialRead(uint target, int shift, int limit)
         {
             if (shift < 0)

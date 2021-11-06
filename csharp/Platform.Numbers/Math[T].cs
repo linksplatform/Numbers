@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
@@ -24,6 +24,16 @@ namespace Platform.Numbers
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
 
+        /// <summary>
+        /// <para>
+        /// Compiles the abs delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileAbsDelegate()
         {
@@ -39,6 +49,16 @@ namespace Platform.Numbers
             });
         }
 
+        /// <summary>
+        /// <para>
+        /// Compiles the negate delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNegateDelegate()
         {
