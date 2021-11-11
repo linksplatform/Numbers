@@ -23,17 +23,6 @@ namespace Platform.Numbers
         /// <para>Поле только для чтения, которое представляет делегат функции отрицания числа.</para>
         /// </summary>
         public static readonly Func<T, T> Negate = CompileNegateDelegate();
-
-        /// <summary>
-        /// <para>
-        /// Compiles the abs delegate.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>A func of t and t</para>
-        /// <para></para>
-        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileAbsDelegate()
         {
@@ -48,17 +37,6 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-
-        /// <summary>
-        /// <para>
-        /// Compiles the negate delegate.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>A func of t and t</para>
-        /// <para></para>
-        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNegateDelegate()
         {
