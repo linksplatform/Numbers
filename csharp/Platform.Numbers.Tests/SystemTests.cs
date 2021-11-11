@@ -60,33 +60,6 @@ namespace Platform.Numbers.Tests
             Assert.True(PartialRead(value, 0, 1) == firstValue);
             Assert.True(PartialRead(value, 1, -1) == secondValue);
         }
-
-        /// <summary>
-        /// <para>
-        /// Partials the write using the specified target.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="target">
-        /// <para>The target.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="source">
-        /// <para>The source.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="shift">
-        /// <para>The shift.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="limit">
-        /// <para>The limit.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The uint</para>
-        /// <para></para>
-        /// </returns>
         private static uint PartialWrite(uint target, uint source, int shift, int limit)
         {
             if (shift < 0)
@@ -101,29 +74,6 @@ namespace Platform.Numbers.Tests
             var targetMask = ~(sourceMask << shift);
             return (target & targetMask) | ((source & sourceMask) << shift);
         }
-
-        /// <summary>
-        /// <para>
-        /// Partials the read using the specified target.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="target">
-        /// <para>The target.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="shift">
-        /// <para>The shift.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="limit">
-        /// <para>The limit.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The uint</para>
-        /// <para></para>
-        /// </returns>
         private static uint PartialRead(uint target, int shift, int limit)
         {
             if (shift < 0)
