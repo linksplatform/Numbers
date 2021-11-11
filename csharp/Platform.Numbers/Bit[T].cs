@@ -54,7 +54,18 @@ namespace Platform.Numbers
         /// <para>Поле только для чтения, представляющее делегат функции частичного побитового считывания числа.</para>
         /// </summary>
         public static readonly Func<T, int, int, T> PartialRead = CompilePartialReadDelegate();
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the not delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T> CompileNotDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T>>(emiter =>
@@ -65,7 +76,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the or delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileOrDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -76,7 +98,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the and delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, T> CompileAndDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, T>>(emiter =>
@@ -87,7 +120,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the shift left delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftLeftDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
@@ -98,7 +142,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the shift right delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, T> CompileShiftRightDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, T>>(emiter =>
@@ -109,7 +164,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the partial write delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and t and int and int and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, T, int, int, T> CompilePartialWriteDelegate()
         {
             return DelegateHelpers.Compile<Func<T, T, int, int, T>>(emiter =>
@@ -168,7 +234,18 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the partial read delegate.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A func of t and int and int and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Func<T, int, int, T> CompilePartialReadDelegate()
         {
             return DelegateHelpers.Compile<Func<T, int, int, T>>(emiter =>
@@ -222,7 +299,22 @@ namespace Platform.Numbers
                 emiter.Return();
             });
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the constants.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <exception cref="NotSupportedException">
+        /// <para></para>
+        /// <para></para>
+        /// </exception>
+        /// <returns>
+        /// <para>A tuple of int and t</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Tuple<int, T> GetConstants()
         {
             var type = typeof(T);
