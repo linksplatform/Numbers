@@ -4,28 +4,8 @@ using Xunit;
 
 namespace Platform.Numbers.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the bit tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public static class BitTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that get lowest bit position test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="value">
-        /// <para>The value.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="expectedPosition">
-        /// <para>The expected position.</para>
-        /// <para></para>
-        /// </param>
         [Theory]
         [InlineData(00, -1)] // 0000 0000 (none, -1)
         [InlineData(01, 00)] // 0000 0001 (first, 0)
@@ -36,12 +16,6 @@ namespace Platform.Numbers.Tests
             Assert.True(Bit.GetLowestPosition(value) == expectedPosition);
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that byte bitwise operations test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void ByteBitwiseOperationsTest()
         {
@@ -53,12 +27,6 @@ namespace Platform.Numbers.Tests
             Assert.Equal(NumericType<byte>.MaxValue >> 1, Bit<byte>.ShiftRight(NumericType<byte>.MaxValue, 1));
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that u int 16 bitwise operations test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void UInt16BitwiseOperationsTest()
         {
@@ -70,12 +38,6 @@ namespace Platform.Numbers.Tests
             Assert.Equal(NumericType<ushort>.MaxValue >> 1, Bit<ushort>.ShiftRight(NumericType<ushort>.MaxValue, 1));
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that u int 32 bitwise operations test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void UInt32BitwiseOperationsTest()
         {
@@ -87,12 +49,6 @@ namespace Platform.Numbers.Tests
             Assert.Equal(NumericType<uint>.MaxValue >> 1, Bit<uint>.ShiftRight(NumericType<uint>.MaxValue, 1));
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that u int 64 bitwise operations test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void UInt64BitwiseOperationsTest()
         {
@@ -104,12 +60,6 @@ namespace Platform.Numbers.Tests
             Assert.Equal(NumericType<ulong>.MaxValue >> 1, Bit<ulong>.ShiftRight(NumericType<ulong>.MaxValue, 1));
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that partial read write test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void PartialReadWriteTest()
         {
@@ -262,12 +212,6 @@ namespace Platform.Numbers.Tests
         private static uint PartialRead(uint target, uint targetMask, int shift) => (target & targetMask) >> shift;
         private static uint PartialRead(uint target, Tuple<uint, int> masksAndShift) => PartialRead(target, masksAndShift.Item1, masksAndShift.Item2);
 
-        /// <summary>
-        /// <para>
-        /// Tests that bug with loading constant of 8 test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BugWithLoadingConstantOf8Test()
         {

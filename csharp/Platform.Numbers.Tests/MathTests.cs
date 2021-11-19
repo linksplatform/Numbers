@@ -2,20 +2,8 @@ using Xunit;
 
 namespace Platform.Numbers.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the math tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public static class MathTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that compiled operations test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void CompiledOperationsTest()
         {

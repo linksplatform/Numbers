@@ -2,20 +2,8 @@ using Xunit;
 
 namespace Platform.Numbers.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the system tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public static class SystemTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that possible pack two values into one test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void PossiblePackTwoValuesIntoOneTest()
         {
