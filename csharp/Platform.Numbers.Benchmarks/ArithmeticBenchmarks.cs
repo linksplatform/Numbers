@@ -4,26 +4,10 @@ using BenchmarkDotNet.Attributes;
 
 namespace Platform.Numbers.Benchmarks
 {
-    /// <summary>
-    /// <para>
-    /// Represents the arithmetic benchmarks.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     [SimpleJob]
     [MemoryDiagnoser]
     public class ArithmeticBenchmarks
     {
-        /// <summary>
-        /// <para>
-        /// Increments the without ref.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>The .</para>
-        /// <para></para>
-        /// </returns>
         [Benchmark]
         public int IncrementWithoutRef()
         {
@@ -32,16 +16,6 @@ namespace Platform.Numbers.Benchmarks
             return x;
         }
 
-        /// <summary>
-        /// <para>
-        /// Increments the with ref.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>The .</para>
-        /// <para></para>
-        /// </returns>
         [Benchmark]
         public int IncrementWithRef()
         {
@@ -50,16 +24,6 @@ namespace Platform.Numbers.Benchmarks
             return x;
         }
 
-        /// <summary>
-        /// <para>
-        /// Decrements the without ref.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>The .</para>
-        /// <para></para>
-        /// </returns>
         [Benchmark]
         public int DecrementWithoutRef()
         {
@@ -68,16 +32,6 @@ namespace Platform.Numbers.Benchmarks
             return x;
         }
 
-        /// <summary>
-        /// <para>
-        /// Decrements the with ref.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>The .</para>
-        /// <para></para>
-        /// </returns>
         [Benchmark]
         public int DecrementWithRef()
         {
