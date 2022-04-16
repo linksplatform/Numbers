@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers", "csharp\Platform.Numbers\Platform.Numbers.csproj", "{F260C339-4FD4-4B05-A514-9BD815350B65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers", "Platform.Numbers\Platform.Numbers.csproj", "{F260C339-4FD4-4B05-A514-9BD815350B65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers.Benchmarks", "csharp\Platform.Numbers.Benchmarks\Platform.Numbers.Benchmarks.csproj", "{522CB950-BD0C-432E-B570-6C1E8EF7C292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers.Benchmarks", "Platform.Numbers.Benchmarks\Platform.Numbers.Benchmarks.csproj", "{522CB950-BD0C-432E-B570-6C1E8EF7C292}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers.Tests", "csharp\Platform.Numbers.Tests\Platform.Numbers.Tests.csproj", "{E1B4D909-847F-4304-A9A4-C03777D162F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Numbers.Tests", "Platform.Numbers.Tests\Platform.Numbers.Tests.csproj", "{E1B4D909-847F-4304-A9A4-C03777D162F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
