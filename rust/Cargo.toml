@@ -1,6 +1,6 @@
 [package]
 name = "platform-num"
-version = "0.1.0-aplha.0"
+version = "0.1.0-aplha.1"
 edition = "2018"
 authors = ["uselesssgoddess", "Linksplatform Team <linksplatformtechnologies@gmail.com>"]
 license = "LGPL-3.0"

@@ -4,9 +4,18 @@ use std::iter::Step;
 
 use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 
-pub trait Num = PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive;
+pub trait Num: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive {}
 
-pub trait SignNum = Num + Signed + FromPrimitive;
+impl<
+    All: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive,
+> Num for All {}
+
+pub trait SignNum: Num + Signed + FromPrimitive {}
+
+impl<
+    All: Num + Signed + FromPrimitive,
+> SignNum for All {}
+
 
 pub trait ToSigned {
     type Type: Num + Signed;
@@ -68,7 +77,22 @@ max_value_impl!(usize);
 // TODO: Not use alias - IDEs does not support it
 #[rustfmt::skip]
 pub trait LinkType:
-    Num
+Num
++ Unsigned
++ Step
++ ToSigned
++ MaxValue
++ FromPrimitive
++ Debug
++ Display
++ Hash
++ Send
++ Sync
++ 'static {}
+
+#[rustfmt::skip]
+impl<
+    All: Num
     + Unsigned
     + Step
     + ToSigned
@@ -79,20 +103,5 @@ pub trait LinkType:
     + Hash
     + Send
     + Sync
-    + 'static { }
-
-#[rustfmt::skip]
-impl<
-    All: Num
-        + Unsigned
-        + Step
-        + ToSigned
-        + MaxValue
-        + FromPrimitive
-        + Debug
-        + Display
-        + Hash
-        + Send
-        + Sync
-        + 'static,
-    > LinkType for All { }
+    + 'static,
+> LinkType for All {}
