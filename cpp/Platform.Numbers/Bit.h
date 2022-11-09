@@ -53,8 +53,8 @@
         {
             limit = sizeof(T) + limit;
         }
-        var sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
-        var targetMask = sourceMask << shift;
+        auto sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
+        auto targetMask = sourceMask << shift;
         return (target & targetMask) >> shift;
     }
 }
