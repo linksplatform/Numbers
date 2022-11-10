@@ -43,7 +43,7 @@
     }
     
     template <typename T>
-    constexpr T PartialRead(T target, T shift, int limit)
+    constexpr T PartialRead(T target, int shift, int limit)
     {
         if (shift < 0)
         {
