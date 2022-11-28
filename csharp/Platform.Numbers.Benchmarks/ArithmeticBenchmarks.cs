@@ -56,7 +56,7 @@ namespace Platform.Numbers.Benchmarks
             ulong result = default;
             for (ulong i = 0; i < N; i++)
             {
-                result = Add(i, i);
+                result += Add(i, i);
             }
             return result;
         }
@@ -67,7 +67,18 @@ namespace Platform.Numbers.Benchmarks
             ulong result = default;
             for (ulong i = 0; i < N; i++)
             {
-                result = i + i;
+                result += i + i;
+            }
+            return result;
+        }
+        
+        [Benchmark]
+        public ulong AddByArithmeticClassMethod()
+        {
+            ulong result = default;
+            for (ulong i = 0; i < N; i++)
+            {
+                result += Arithmetic<ulong>.Add(i, i);
             }
             return result;
         }
