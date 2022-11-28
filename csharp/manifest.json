@@ -1,161 +1,8 @@
 {
   "homepages": [],
-  "source_base_path": "/home/runner/work/Numbers/Numbers",
+  "source_base_path": "/home/runner/work/Numbers/Numbers/csharp",
   "xrefmap": "xrefmap.yml",
   "files": [
-    {
-      "type": "Resource",
-      "output": {
-        "resource": {
-          "relative_path": "index.json"
-        }
-      },
-      "is_incremental": false
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "README.md",
-      "output": {
-        ".html": {
-          "relative_path": "README.html",
-          "hash": "YmNRB53cTS4kpl2c2ZCUJQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Arithmetic-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Arithmetic-1.html",
-          "hash": "JgNX6EqiBivEiFoSGalyMw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Arithmetic.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Arithmetic.html",
-          "hash": "LIamUiS8pY51XrVKMi07oA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.ArithmeticExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.ArithmeticExtensions.html",
-          "hash": "hRRzs6RMEP53xBfxLcf2zw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Bit-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Bit-1.html",
-          "hash": "uVeStabJsFfi4NSKzILA2g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Bit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Bit.html",
-          "hash": "TWm04jE4JB+J1pUB7dwm+Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.BitwiseExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.BitwiseExtensions.html",
-          "hash": "YsnzTW/Zsh0lN6IENKJ0dQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Math-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Math-1.html",
-          "hash": "4Nal99x2xJ42QxJuEQvQWA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.Math.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.Math.html",
-          "hash": "4/+bJpwcfxOZR8d4Ayoxxg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.MathExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.MathExtensions.html",
-          "hash": "NdXnW0LDxWn4UFauhFOLYw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Numbers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Numbers.html",
-          "hash": "0WwRosb2EqqBEDtRSaVfYA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "obj/api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "8EhdlZueOg84YXgzLqFYiA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
     {
       "log_codes": [
         "InvalidFileLink"
@@ -165,7 +12,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "S0Do5sPqxo3AXAKh41XaFg=="
+          "hash": "UWYq6DgSL4ZtOuXs+ePr6w=="
         }
       },
       "is_incremental": false,
@@ -183,18 +30,6 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 1,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 10,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
