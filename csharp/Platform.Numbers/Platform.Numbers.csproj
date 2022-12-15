@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.5.2</VersionPrefix>
+    <VersionPrefix>0.6.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net7</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -12,7 +12,7 @@
     <PackageTags>LinksPlatform;Numbers;Arithmetic;ArithmeticExtensions;Bit;BitExtensions;Math;MathExtensions</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Numbers</PackageProjectUrl>
-    <PackageLicenseExpression>Unlicensed</PackageLicenseExpression>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Numbers</RepositoryUrl>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -23,22 +23,18 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>.NET 6 support is added.
-Microsoft.SourceLink.GitHub dependency is updated from 1.0.0 to 1.1.1.
-Platform.Converters dependency is updated from 0.3.1 to 0.3.2.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target frameworks are changed to net7.
+License is changed to Unlicense.
+Platform.Converters dependency is updated from 0.3.2 to 0.4.0.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Converters" Version="0.3.2" />
+    <PackageReference Include="Platform.Converters" Version="0.4.0" />
   </ItemGroup>
 
 </Project>
