@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.6.0</VersionPrefix>
+    <VersionPrefix>0.7.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net7</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -23,9 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Target frameworks are changed to net7.
-License is changed to Unlicense.
-Platform.Converters dependency is updated from 0.3.2 to 0.4.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Stopped using dynamic compilation and replaced it with generic math from .NET 7.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

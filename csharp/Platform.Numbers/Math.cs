@@ -99,43 +99,5 @@ namespace Platform.Numbers
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
-
-        /// <summary>
-        /// <para>Takes a module from a number.</para>
-        /// <para>Берёт модуль от числа.</para>
-        /// </summary>
-        /// <typeparam name="T">
-        /// <para>The number's type.</para>
-        /// <para>Тип числа.</para>
-        /// </typeparam>
-        /// <param name="x">
-        /// <para>The number from which to take the absolute value.</para>
-        /// <para>Число, от которого необходимо взять абсолютное значение.</para>
-        /// </param>
-        /// <returns>
-        /// <para>The absolute value of the number.</para>
-        /// <para>Абсолютное значение числа.</para>
-        /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Abs<T>(T x) => Math<T>.Abs(x);
-
-        /// <summary>
-        /// <para>Makes a number negative.</para>
-        /// <para>Делает число отрицательным.</para>
-        /// </summary>
-        /// <typeparam name="T">
-        /// <para>The number's type.</para>
-        /// <para>Тип числа.</para>
-        /// </typeparam>
-        /// <param name="x">
-        /// <para>The number to be made negative.</para>
-        /// <para>Число которое нужно сделать отрицательным.</para>
-        /// </param>
-        /// <returns>
-        /// <para>A negative number.</para>
-        /// <para>Отрицательное число.</para>
-        /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Negate<T>(T x) => Math<T>.Negate(x);
     }
 }
