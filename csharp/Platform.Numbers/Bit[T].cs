@@ -13,7 +13,7 @@ namespace Platform.Numbers
     /// <para>Represents a set of compiled bit operations delegates.</para>
     /// <para>Представляет набор скомпилированных делегатов битовых операций.</para>
     /// </summary>
-    public static class Bit<T> where T : INumber<T>, IShiftOperators<T, int, T> , IBitwiseOperators<T, T, T>, IMinMaxValue<T>
+    public static class Bit<T> where T : INumberBase<T>, IShiftOperators<T, int, T> , IBitwiseOperators<T, T, T>, IMinMaxValue<T>
     {
         private static int BitsSize = NumericType<T>.BitsSize;
 
