@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.8.0</VersionPrefix>
+    <VersionPrefix>0.9.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net7</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Constraint of template parameter in the class Bit is changed from INumber to INumberBase.</PackageReleaseNotes>
+    <PackageReleaseNotes>Generic math is used.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
