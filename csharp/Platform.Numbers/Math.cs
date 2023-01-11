@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Numbers
@@ -49,11 +50,11 @@ namespace Platform.Numbers
         /// <para>The product of all positive integers less than or equal to the number specified as an argument.</para>
         /// <para>Произведение всех положительных чисел меньше или равных указанному, в качестве аргумента, числу.</para>
         /// </returns>
-        public static ulong Factorial(ulong n)
+        public static TLinkAddress Factorial<TLinkAddress>(TLinkAddress n) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            if (n >= 0 && n <= MaximumFactorialNumber)
+            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumCatalanIndex))
             {
-                return _factorials[n];
+                return TLinkAddress.CreateTruncating(_factorials[ulong.CreateTruncating(n)]);
             }
             else
             {
@@ -73,11 +74,11 @@ namespace Platform.Numbers
         /// <para>The Catalan Number with the number specified as an argument.</para>
         /// <para>Число Катанала с номером, указанным в качестве аргумента.</para>
         /// </returns>
-        public static ulong Catalan(ulong n)
+        public static TLinkAddress Catalan<TLinkAddress>(TLinkAddress n) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            if (n >= 0 && n <= MaximumCatalanIndex)
+            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumCatalanIndex))
             {
-                return _catalans[n];
+                return TLinkAddress.CreateTruncating(_catalans[ulong.CreateTruncating(n)]);
             }
             else
             {
@@ -98,6 +99,9 @@ namespace Platform.Numbers
         /// <para>True, если число является степенью двойки, иначе - false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsPowerOfTwo(ulong x) => (x & x - 1) == 0;
+        public static bool IsPowerOfTwo<TLinkAddress>(TLinkAddress x) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IBitwiseOperators<TLinkAddress, TLinkAddress, TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
+        {
+            return (x & x - TLinkAddress.One) == TLinkAddress.Zero;
+        }
     }
 }
