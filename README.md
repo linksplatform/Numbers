@@ -1,3 +1,5 @@
+[![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/linksplatform/Numbers)
+
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Numbers)](https://www.nuget.org/packages/Platform.Numbers)
 [![Actions Status](https://github.com/linksplatform/Numbers/workflows/CD/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0f7cbadcfbe43f7b9c732ec8603d974)](https://app.codacy.com/gh/linksplatform/Numbers?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Numbers&utm_campaign=Badge_Grade_Settings)
