@@ -6,7 +6,7 @@
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
     <VersionPrefix>0.9.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFramework>net7</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
     <PackageId>Platform.Numbers</PackageId>
     <PackageTags>LinksPlatform;Numbers;Arithmetic;ArithmeticExtensions;Bit;BitExtensions;Math;MathExtensions</PackageTags>
@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Generic math is used.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update target framework from net7 to net8.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
