@@ -26,11 +26,11 @@ namespace Platform.Numbers
         {
             if (shift < 0)
             {
-                shift = 32 + shift;
+                shift = BitsSize + shift;
             }
             if (limit < 0)
             {
-                limit = 32 + limit;
+                limit = BitsSize + limit;
             }
             var sourceMask = ~(T.MaxValue << limit) & T.MaxValue;
             var targetMask = ~(sourceMask << shift);
@@ -40,11 +40,11 @@ namespace Platform.Numbers
         {
             if (shift < 0)
             {
-                shift = 32 + shift;
+                shift = BitsSize + shift;
             }
             if (limit < 0)
             {
-                limit = 32 + limit;
+                limit = BitsSize + limit;
             }
             var sourceMask = ~(T.MaxValue << limit) & T.MaxValue;
             var targetMask = sourceMask << shift;
