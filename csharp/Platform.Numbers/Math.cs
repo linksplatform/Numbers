@@ -11,12 +11,6 @@ namespace Platform.Numbers
     /// <remarks>Resizable array (FileMappedMemory) for values cache may be used. or cached oeis.org</remarks>
     public static class Math
     {
-        private static readonly ulong[] _factorials =
-        {
-            1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800,
-            479001600, 6227020800, 87178291200, 1307674368000, 20922789888000,
-            355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000
-        };
         private static readonly ulong[] _catalans =
         {
             1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012,
@@ -27,40 +21,10 @@ namespace Platform.Numbers
         };
 
         /// <summary>
-        /// <para>Represents the limit for calculating the catanal number, supported by the <see cref="ulong"/> type.</para>
-        /// <para>Представляет предел расчёта катаналового числа, поддерживаемый <see cref="ulong"/> типом.</para>
-        /// </summary>
-        public static readonly ulong MaximumFactorialNumber = 20;
-
-        /// <summary>
         /// <para>Represents the limit for calculating the factorial number, supported by the <see cref="ulong"/> type.</para>
         /// <para>Представляет предел расчёта факториала числа, поддерживаемый <see cref="ulong"/> типом.</para>
         /// </summary>
         public static readonly ulong MaximumCatalanIndex = 36;
-
-        /// <summary>
-        /// <para>Returns the product of all positive integers less than or equal to the number specified as an argument.</para>
-        /// <para>Возвращает произведение всех положительных чисел меньше или равных указанному в качестве аргумента числу.</para>
-        /// </summary>
-        /// <param name="n">
-        /// <para>The maximum positive number that will participate in factorial's product.</para>
-        /// <para>Максимальное положительное число, которое будет участвовать в произведении факториала.</para>
-        /// </param>
-        /// <returns>
-        /// <para>The product of all positive integers less than or equal to the number specified as an argument.</para>
-        /// <para>Произведение всех положительных чисел меньше или равных указанному, в качестве аргумента, числу.</para>
-        /// </returns>
-        public static TLinkAddress Factorial<TLinkAddress>(TLinkAddress n) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
-        {
-            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumCatalanIndex))
-            {
-                return TLinkAddress.CreateTruncating(_factorials[ulong.CreateTruncating(n)]);
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException($"Only numbers from 0 to {MaximumFactorialNumber} are supported by unsigned integer with 64 bits length.");
-            }
-        }
 
         /// <summary>
         /// <para>Returns the Catalan Number with the number specified as an argument.</para>

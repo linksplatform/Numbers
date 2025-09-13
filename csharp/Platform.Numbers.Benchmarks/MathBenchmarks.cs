@@ -195,12 +195,6 @@ namespace Platform.Numbers.Benchmarks
         private const ulong FactorialNumber = 19;
 
         [Benchmark]
-        public ulong CurrentFactorialImplementation()
-        {
-            return Math.Factorial(FactorialNumber);
-        }
-
-        [Benchmark]
         public ulong FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN()
         {
             return Alternatives.FactorialUsingStaticArrayAndRecursionWithContantAsMaximumN(FactorialNumber);
