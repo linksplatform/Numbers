@@ -52,7 +52,7 @@ namespace Platform.Numbers
         /// </returns>
         public static TLinkAddress Factorial<TLinkAddress>(TLinkAddress n) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumCatalanIndex))
+            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumFactorialNumber))
             {
                 return TLinkAddress.CreateTruncating(_factorials[ulong.CreateTruncating(n)]);
             }
@@ -101,7 +101,7 @@ namespace Platform.Numbers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo<TLinkAddress>(TLinkAddress x) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IBitwiseOperators<TLinkAddress, TLinkAddress, TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            return (x & x - TLinkAddress.One) == TLinkAddress.Zero;
+            return x > TLinkAddress.Zero && (x & (x - TLinkAddress.One)) == TLinkAddress.Zero;
         }
     }
 }
