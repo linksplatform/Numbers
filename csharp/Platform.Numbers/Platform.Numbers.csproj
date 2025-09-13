@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Numbers Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Numbers</AssemblyTitle>
-    <VersionPrefix>0.9.0</VersionPrefix>
+    <VersionPrefix>0.9.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Numbers</AssemblyName>
@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Update target framework from net7 to net8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix LGTM alerts: add missing XML documentation, fix hardcoded bit size constants, fix IsPowerOfTwo method for zero values, fix incorrect MaximumCatalanIndex usage in Factorial method.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
