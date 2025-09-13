@@ -1,0 +1,3 @@
+/tmp/gh-issue-solver-1757801923036/cpp/build/CMakeFiles/Platform.Numbers.Tests.dir
+/tmp/gh-issue-solver-1757801923036/cpp/build/CMakeFiles/edit_cache.dir
+/tmp/gh-issue-solver-1757801923036/cpp/build/CMakeFiles/rebuild_cache.dir

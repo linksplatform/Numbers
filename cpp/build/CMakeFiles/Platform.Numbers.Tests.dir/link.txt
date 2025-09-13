@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Platform.Numbers.Tests.dir/Platform.Numbers.Tests/AllTests.cpp.o -o bin/Platform.Numbers.Tests  /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 
