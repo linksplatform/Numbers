@@ -1,4 +1,8 @@
 using BenchmarkDotNet.Attributes;
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Numbers.Benchmarks
 {
@@ -191,6 +195,95 @@ namespace Platform.Numbers.Benchmarks
                 }
                 return r;
             }
+
+            // Simulating [[likely]] - Hot path optimization with AggressiveInlining
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public static ulong FactorialWithAggressiveInlining(ulong n)
+            {
+                // Likely path: n is within bounds (hot path first)
+                if (n <= 20)
+                {
+                    return _factorials[n];
+                }
+                // Unlikely path: out of range
+                ThrowOutOfRange();
+                return 0; // Never reached
+            }
+
+            // Simulating [[likely]] with AggressiveOptimization
+            [MethodImpl(MethodImplOptions.AggressiveOptimization)]
+            public static ulong FactorialWithAggressiveOptimization(ulong n)
+            {
+                // Likely path: n is within bounds
+                if (n <= 20)
+                {
+                    return _factorials[n];
+                }
+                // Unlikely path: out of range
+                ThrowOutOfRange();
+                return 0; // Never reached
+            }
+
+            // Simulating [[likely]] with both AggressiveInlining and AggressiveOptimization
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            public static ulong FactorialWithBothOptimizations(ulong n)
+            {
+                // Likely path: n is within bounds
+                if (n <= 20)
+                {
+                    return _factorials[n];
+                }
+                // Unlikely path: out of range
+                ThrowOutOfRange();
+                return 0; // Never reached
+            }
+
+            // Helper method marked as DoesNotReturn to help optimizer understand exception path
+            [DoesNotReturn]
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            private static void ThrowOutOfRange()
+            {
+                throw new ArgumentOutOfRangeException("n", "Only numbers from 0 to 20 are supported by unsigned integer with 64 bits length.");
+            }
+
+            // Alternative: Exception in the same method (no DoesNotReturn separation)
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            public static ulong FactorialWithInlineException(ulong n)
+            {
+                if (n <= 20)
+                {
+                    return _factorials[n];
+                }
+                throw new ArgumentOutOfRangeException("n", "Only numbers from 0 to 20 are supported by unsigned integer with 64 bits length.");
+            }
+
+            // Reverse order: unlikely path first (anti-pattern, for comparison)
+            [MethodImpl(MethodImplOptions.AggressiveOptimization)]
+            public static ulong FactorialUnlikelyFirst(ulong n)
+            {
+                // Unlikely path first
+                if (n > 20)
+                {
+                    ThrowOutOfRange();
+                }
+                // Likely path
+                return _factorials[n];
+            }
+
+            // Generic version simulating [[likely]] for modern .NET
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            public static TNumber FactorialGenericOptimized<TNumber>(TNumber n)
+                where TNumber : IUnsignedNumber<TNumber>, IComparisonOperators<TNumber, TNumber, bool>
+            {
+                // Likely path: n is within bounds
+                if (n >= TNumber.Zero && n <= TNumber.CreateTruncating(20))
+                {
+                    return TNumber.CreateTruncating(_factorials[ulong.CreateTruncating(n)]);
+                }
+                // Unlikely path: out of range
+                ThrowOutOfRange();
+                return TNumber.Zero; // Never reached
+            }
         }
         private const ulong FactorialNumber = 19;
 
@@ -246,6 +339,43 @@ namespace Platform.Numbers.Benchmarks
         public ulong FactorialWhileWithoutArrayAndCountingArrayLength()
         {
             return Alternatives.FactorialWhileLoopWithoutArrayAndCountingArrayLength(FactorialNumber);
+        }
+
+        // Benchmarks for [[likely]]/[[unlikely]] simulation
+        [Benchmark]
+        public ulong FactorialWithAggressiveInlining()
+        {
+            return Alternatives.FactorialWithAggressiveInlining(FactorialNumber);
+        }
+
+        [Benchmark]
+        public ulong FactorialWithAggressiveOptimization()
+        {
+            return Alternatives.FactorialWithAggressiveOptimization(FactorialNumber);
+        }
+
+        [Benchmark]
+        public ulong FactorialWithBothOptimizations()
+        {
+            return Alternatives.FactorialWithBothOptimizations(FactorialNumber);
+        }
+
+        [Benchmark]
+        public ulong FactorialWithInlineException()
+        {
+            return Alternatives.FactorialWithInlineException(FactorialNumber);
+        }
+
+        [Benchmark]
+        public ulong FactorialUnlikelyFirst()
+        {
+            return Alternatives.FactorialUnlikelyFirst(FactorialNumber);
+        }
+
+        [Benchmark]
+        public ulong FactorialGenericOptimized()
+        {
+            return Alternatives.FactorialGenericOptimized(FactorialNumber);
         }
     }
 }
