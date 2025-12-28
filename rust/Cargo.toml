@@ -1,14 +1,26 @@
 [package]
 name = "platform-num"
-version = "0.1.0-aplha.1"
+version = "0.1.0"
 edition = "2018"
 authors = ["uselesssgoddess", "Linksplatform Team <linksplatformtechnologies@gmail.com>"]
 license = "LGPL-3.0"
-repository = "https://github.com/linksplatform/platform-rs"
-homepage = "https://github.com/linksplatform/platform-rs"
+repository = "https://github.com/linksplatform/Numbers"
+homepage = "https://github.com/linksplatform/Numbers"
 description = """
 Numbers for linksplatform
 """
+readme = "../README.md"
+keywords = ["numbers", "linksplatform", "traits"]
+categories = ["development-tools"]
+
+[lib]
+name = "platform_num"
+path = "src/lib.rs"
 
 [dependencies]
 num-traits = "0.2.14"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
