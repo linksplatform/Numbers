@@ -1,7 +1,8 @@
 [package]
 name = "platform-num"
-version = "0.1.0"
-edition = "2018"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.70"
 authors = ["uselesssgoddess", "Linksplatform Team <linksplatformtechnologies@gmail.com>"]
 license = "LGPL-3.0"
 repository = "https://github.com/linksplatform/Numbers"
@@ -18,7 +19,7 @@ name = "platform_num"
 path = "src/lib.rs"
 
 [dependencies]
-num-traits = "0.2.14"
+num-traits = "0.2.19"
 
 [profile.release]
 lto = true
