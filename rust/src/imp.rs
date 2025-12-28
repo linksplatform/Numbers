@@ -1,6 +1,5 @@
 use std::fmt::{Debug, Display};
 use std::hash::Hash;
-use std::iter::Step;
 
 use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 
@@ -74,7 +73,6 @@ max_value_impl!(usize);
 pub trait LinkType:
 Num
 + Unsigned
-+ Step
 + ToSigned
 + MaxValue
 + FromPrimitive
@@ -89,7 +87,6 @@ Num
 impl<
     All: Num
     + Unsigned
-    + Step
     + ToSigned
     + MaxValue
     + FromPrimitive
