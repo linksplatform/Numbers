@@ -108,7 +108,7 @@ after the step is added. This needs to be verified by a repository administrator
 - `.github/workflows/rust.yml` — CI/CD pipeline (missing `cargo publish`)
 - `scripts/version-and-commit.mjs` — Version bump script (deprecated `set-output`)
 - `rust/Cargo.toml` — Package metadata (version `0.2.0`)
-- CI run logs: `ci-logs/manual-release-68014689676.log`
+- CI run logs: Available via [GitHub Actions run 23378672204](https://github.com/linksplatform/Numbers/actions/runs/23378672204)
 
 ## References
 
