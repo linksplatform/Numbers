@@ -1,0 +1,422 @@
+Manual Release	Set up job	﻿2026-03-21T11:28:14.6879023Z Current runner version: '2.332.0'
+Manual Release	Set up job	2026-03-21T11:28:14.6903675Z ##[group]Runner Image Provisioner
+Manual Release	Set up job	2026-03-21T11:28:14.6904580Z Hosted Compute Agent
+Manual Release	Set up job	2026-03-21T11:28:14.6905317Z Version: 20260213.493
+Manual Release	Set up job	2026-03-21T11:28:14.6905885Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Manual Release	Set up job	2026-03-21T11:28:14.6906587Z Build Date: 2026-02-13T00:28:41Z
+Manual Release	Set up job	2026-03-21T11:28:14.6907242Z Worker ID: {ff0409b6-37cc-451e-a6e1-a72182dde985}
+Manual Release	Set up job	2026-03-21T11:28:14.6907950Z Azure Region: westus
+Manual Release	Set up job	2026-03-21T11:28:14.6908474Z ##[endgroup]
+Manual Release	Set up job	2026-03-21T11:28:14.6909965Z ##[group]Operating System
+Manual Release	Set up job	2026-03-21T11:28:14.6910558Z Ubuntu
+Manual Release	Set up job	2026-03-21T11:28:14.6911035Z 24.04.3
+Manual Release	Set up job	2026-03-21T11:28:14.6911543Z LTS
+Manual Release	Set up job	2026-03-21T11:28:14.6911988Z ##[endgroup]
+Manual Release	Set up job	2026-03-21T11:28:14.6912497Z ##[group]Runner Image
+Manual Release	Set up job	2026-03-21T11:28:14.6913283Z Image: ubuntu-24.04
+Manual Release	Set up job	2026-03-21T11:28:14.6913926Z Version: 20260309.50.1
+Manual Release	Set up job	2026-03-21T11:28:14.6914925Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+Manual Release	Set up job	2026-03-21T11:28:14.6916670Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+Manual Release	Set up job	2026-03-21T11:28:14.6917577Z ##[endgroup]
+Manual Release	Set up job	2026-03-21T11:28:14.6918664Z ##[group]GITHUB_TOKEN Permissions
+Manual Release	Set up job	2026-03-21T11:28:14.6920478Z Contents: write
+Manual Release	Set up job	2026-03-21T11:28:14.6921051Z Metadata: read
+Manual Release	Set up job	2026-03-21T11:28:14.6921649Z ##[endgroup]
+Manual Release	Set up job	2026-03-21T11:28:14.6923914Z Secret source: Actions
+Manual Release	Set up job	2026-03-21T11:28:14.6924711Z Prepare workflow directory
+Manual Release	Set up job	2026-03-21T11:28:14.7344500Z Prepare all required actions
+Manual Release	Set up job	2026-03-21T11:28:14.7384922Z Getting action download info
+Manual Release	Set up job	2026-03-21T11:28:15.1949940Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Manual Release	Set up job	2026-03-21T11:28:15.3547033Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:631a55b12751854ce901bb631d5902ceb48146f7)
+Manual Release	Set up job	2026-03-21T11:28:15.8091193Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Manual Release	Set up job	2026-03-21T11:28:16.1215042Z Complete job name: Manual Release
+Manual Release	Run actions/checkout@v4	﻿2026-03-21T11:28:16.2073563Z ##[group]Run actions/checkout@v4
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2074976Z with:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2075720Z   fetch-depth: 0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2076873Z   token: ***
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2077664Z   repository: linksplatform/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2078645Z   ssh-strict: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2079409Z   ssh-user: git
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2080193Z   persist-credentials: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2081054Z   clean: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2081848Z   sparse-checkout-cone-mode: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2082798Z   fetch-tags: false
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2083831Z   show-progress: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2084621Z   lfs: false
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2085362Z   submodules: false
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2086172Z   set-safe-directory: true
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2087288Z env:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2088017Z   CARGO_TERM_COLOR: always
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.2088865Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3242486Z Syncing repository: linksplatform/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3246832Z ##[group]Getting Git version info
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3249102Z Working directory is '/home/runner/work/Numbers/Numbers'
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3251594Z [command]/usr/bin/git version
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3336654Z git version 2.53.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3363486Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3378358Z Temporarily overriding HOME='/home/runner/work/_temp/c3d4c972-2586-4c59-b818-e08d9a4f5d8a' before making global git config changes
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3381006Z Adding repository directory to the temporary git global config as a safe directory
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3392164Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Numbers/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3436267Z Deleting the contents of '/home/runner/work/Numbers/Numbers'
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3440773Z ##[group]Initializing the repository
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3446061Z [command]/usr/bin/git init /home/runner/work/Numbers/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3578877Z hint: Using 'master' as the name for the initial branch. This default branch name
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3580971Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3584493Z hint: to use in all of your new repositories, which will suppress this warning,
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3586999Z hint: call:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3588247Z hint:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3589846Z hint: 	git config --global init.defaultBranch <name>
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3591829Z hint:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3594100Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3597773Z hint: 'development'. The just-created branch can be renamed via this command:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3600437Z hint:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3601652Z hint: 	git branch -m <name>
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3603296Z hint:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3604989Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3606886Z Initialized empty Git repository in /home/runner/work/Numbers/Numbers/.git/
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3610499Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3637490Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3638932Z ##[group]Disabling automatic garbage collection
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3640646Z [command]/usr/bin/git config --local gc.auto 0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3671179Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3672463Z ##[group]Setting up auth
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3678584Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.3712004Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4116873Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4150155Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4388030Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4431801Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4674498Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4713751Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4715925Z ##[group]Fetching the repository
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:16.4723954Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3388053Z From https://github.com/linksplatform/Numbers
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3389600Z  * [new branch]      cppwrite               -> origin/cppwrite
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3396509Z  * [new branch]      dependabot/add-v2-config-file -> origin/dependabot/add-v2-config-file
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3402536Z  * [new branch]      dependabot/github_actions/dot-github/workflows/tj-actions/changed-files-41 -> origin/dependabot/github_actions/dot-github/workflows/tj-actions/changed-files-41
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3406886Z  * [new branch]      feature/use_generic_math -> origin/feature/use_generic_math
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3410060Z  * [new branch]      gh-pages               -> origin/gh-pages
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3411944Z  * [new branch]      issue-106-48d2da31     -> origin/issue-106-48d2da31
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3413704Z  * [new branch]      issue-123-ca4a6bfb3f29 -> origin/issue-123-ca4a6bfb3f29
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3415292Z  * [new branch]      issue-125-f599b5d2205c -> origin/issue-125-f599b5d2205c
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3416807Z  * [new branch]      issue-2-fc281745       -> origin/issue-2-fc281745
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3418269Z  * [new branch]      issue-3-5b75eea3       -> origin/issue-3-5b75eea3
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3419724Z  * [new branch]      issue-30-f86e4f8c      -> origin/issue-30-f86e4f8c
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3421186Z  * [new branch]      issue-31-f82ea2f2      -> origin/issue-31-f82ea2f2
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3423076Z  * [new branch]      issue-59-4b426f16      -> origin/issue-59-4b426f16
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3424548Z  * [new branch]      issue-60-37a4ed53      -> origin/issue-60-37a4ed53
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3425979Z  * [new branch]      issue-74-1bb73415      -> origin/issue-74-1bb73415
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3427434Z  * [new branch]      issue-75-4b39ae2b      -> origin/issue-75-4b39ae2b
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3428895Z  * [new branch]      issue-90-bdd0703d      -> origin/issue-90-bdd0703d
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3430350Z  * [new branch]      issue-96-1cad7027      -> origin/issue-96-1cad7027
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3431794Z  * [new branch]      issue-96-b6a6427e      -> origin/issue-96-b6a6427e
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3433259Z  * [new branch]      main                   -> origin/main
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3434479Z  * [new branch]      master                 -> origin/master
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3435697Z  * [new branch]      mrMask                 -> origin/mrMask
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3436848Z  * [new tag]         0.0.1                  -> 0.0.1
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3437950Z  * [new tag]         0.0.2                  -> 0.0.2
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3439013Z  * [new tag]         0.1.0                  -> 0.1.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3440088Z  * [new tag]         0.1.1                  -> 0.1.1
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3441152Z  * [new tag]         0.2.0                  -> 0.2.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3442227Z  * [new tag]         0.2.1                  -> 0.2.1
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3443573Z  * [new tag]         0.2.2                  -> 0.2.2
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3444656Z  * [new tag]         0.2.3                  -> 0.2.3
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3445723Z  * [new tag]         0.3.0                  -> 0.3.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3446798Z  * [new tag]         0.4.0                  -> 0.4.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3447909Z  * [new tag]         0.4.1                  -> 0.4.1
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3448971Z  * [new tag]         0.5.0                  -> 0.5.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3450035Z  * [new tag]         0.5.1                  -> 0.5.1
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3451344Z  * [new tag]         0.5.2                  -> 0.5.2
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3452443Z  * [new tag]         cpp_0.1.0              -> cpp_0.1.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3453807Z  * [new tag]         csharp_0.5.2           -> csharp_0.5.2
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3454990Z  * [new tag]         csharp_0.6.0           -> csharp_0.6.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3456146Z  * [new tag]         csharp_0.7.0           -> csharp_0.7.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3457327Z  * [new tag]         csharp_0.8.0           -> csharp_0.8.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3458487Z  * [new tag]         csharp_0.9.0           -> csharp_0.9.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3459621Z  * [new tag]         v0.1.0                 -> v0.1.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3460694Z  * [new tag]         v0.2.0                 -> v0.2.0
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3511321Z [command]/usr/bin/git branch --list --remote origin/main
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3542531Z   origin/main
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3554310Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3580159Z c2dfaf7dc044eade3dd8d06fb029346ee163d8ce
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3586412Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3588436Z ##[group]Determining the checkout info
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3590693Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3591878Z [command]/usr/bin/git sparse-checkout disable
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3627767Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3656197Z ##[group]Checking out the ref
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3660355Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3730258Z Switched to a new branch 'main'
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3732780Z branch 'main' set up to track 'origin/main'.
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3740699Z ##[endgroup]
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3777197Z [command]/usr/bin/git log -1 --format=%H
+Manual Release	Run actions/checkout@v4	2026-03-21T11:28:17.3800886Z c2dfaf7dc044eade3dd8d06fb029346ee163d8ce
+Manual Release	Install Rust toolchain	﻿2026-03-21T11:28:17.4309141Z ##[group]Run dtolnay/rust-toolchain@stable
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4310156Z with:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4310817Z   toolchain: stable
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4311711Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4312382Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4313503Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4523135Z ##[group]Run : parse toolchain version
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4524342Z [36;1m: parse toolchain version[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4525294Z [36;1mif [[ -z $toolchain ]]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4526979Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4528807Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4529821Z [36;1m  exit 1[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4530925Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4532322Z [36;1m  if [[ Linux == macOS ]]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4534225Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4536026Z [36;1m  else[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4537395Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4538967Z [36;1m  fi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4539986Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4541750Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4543407Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4545162Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4546834Z [36;1melse[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4547671Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4548697Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4605539Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4606688Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4607367Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4608166Z   toolchain: stable
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4608875Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4793233Z ##[group]Run : construct rustup command line
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4794318Z [36;1m: construct rustup command line[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4795801Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4797874Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4799508Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4847109Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4848215Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4848909Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4849692Z   targets: 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4850335Z   components: 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4851071Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4981502Z ##[group]Run : set $CARGO_HOME
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4982424Z [36;1m: set $CARGO_HOME[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.4983834Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5031509Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5032660Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5033607Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5034430Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5159492Z ##[group]Run : install rustup if needed
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5160491Z [36;1m: install rustup if needed[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5161489Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5164003Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5166395Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5167364Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5214542Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5215661Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5216489Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5217334Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5218181Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5345959Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5347726Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5395492Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5396610Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5397269Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5398089Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5398976Z   RUSTUP_PERMIT_COPY_RENAME: 1
+Manual Release	Install Rust toolchain	2026-03-21T11:28:17.5399791Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.6020650Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7150982Z 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7280367Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.94.0 (4a4ef493e 2026-03-02)
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7281216Z 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7343334Z ##[group]Run rustup default stable
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7343769Z [36;1mrustup default stable[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7408262Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7408973Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7409444Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7409991Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7410547Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.7920319Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.9902529Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.9903396Z 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.9997335Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.94.0 (4a4ef493e 2026-03-02)
+Manual Release	Install Rust toolchain	2026-03-21T11:28:18.9999430Z 
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0048075Z ##[group]Run : create cachekey
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0048409Z [36;1m: create cachekey[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0048938Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0049618Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0050134Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0102201Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0102567Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0102780Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0103284Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.0103552Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1069737Z ##[group]Run : disable incremental compilation
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1070444Z [36;1m: disable incremental compilation[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1071022Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1071620Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1072164Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1131433Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1131844Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1132060Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1132344Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1132650Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1226161Z ##[group]Run : enable colors in Cargo output
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1226522Z [36;1m: enable colors in Cargo output[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1226845Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1227202Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1227509Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1275567Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1275932Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1276138Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1276394Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1276661Z   CARGO_INCREMENTAL: 0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1276908Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1368825Z ##[group]Run : enable Cargo sparse registry
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1369428Z [36;1m: enable Cargo sparse registry[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1369811Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1370655Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1371408Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1371996Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1372546Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1373304Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1373887Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1374414Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1374782Z [36;1m  fi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1374991Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1422532Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1423148Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1423367Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1423630Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1423898Z   CARGO_INCREMENTAL: 0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1424117Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1816590Z ##[group]Run : work around spurious network errors in curl 8.0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1817082Z [36;1m: work around spurious network errors in curl 8.0[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1817665Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1818333Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1818810Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1819135Z [36;1mfi[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1871938Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1872307Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1872540Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1873182Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1873485Z   CARGO_INCREMENTAL: 0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.1873727Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2116524Z ##[group]Run rustc +stable --version --verbose
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2116936Z [36;1mrustc +stable --version --verbose[0m
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2169742Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2170123Z env:
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2170339Z   CARGO_TERM_COLOR: always
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2170599Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2170865Z   CARGO_INCREMENTAL: 0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2171091Z ##[endgroup]
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2369154Z rustc 1.94.0 (4a4ef493e 2026-03-02)
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2369973Z binary: rustc
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2370452Z commit-hash: 4a4ef493e3a1488c6e321570238084b38948f6db
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2370882Z commit-date: 2026-03-02
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2371497Z host: x86_64-unknown-linux-gnu
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2397855Z release: 1.94.0
+Manual Release	Install Rust toolchain	2026-03-21T11:28:19.2398295Z LLVM version: 21.1.8
+Manual Release	Setup Node.js	﻿2026-03-21T11:28:19.2500903Z ##[group]Run actions/setup-node@v4
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2501240Z with:
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2501450Z   node-version: 20.x
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2501691Z   always-auth: false
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2501914Z   check-latest: false
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2502277Z   token: ***
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2502491Z env:
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2502690Z   CARGO_TERM_COLOR: always
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2503241Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2503567Z   CARGO_INCREMENTAL: 0
+Manual Release	Setup Node.js	2026-03-21T11:28:19.2503806Z ##[endgroup]
+Manual Release	Setup Node.js	2026-03-21T11:28:19.4307548Z Found in cache @ /opt/hostedtoolcache/node/20.20.1/x64
+Manual Release	Setup Node.js	2026-03-21T11:28:19.4315057Z ##[group]Environment details
+Manual Release	Setup Node.js	2026-03-21T11:28:21.9691785Z node: v20.20.1
+Manual Release	Setup Node.js	2026-03-21T11:28:21.9692252Z npm: 10.8.2
+Manual Release	Setup Node.js	2026-03-21T11:28:21.9692566Z yarn: 1.22.22
+Manual Release	Setup Node.js	2026-03-21T11:28:21.9694215Z ##[endgroup]
+Manual Release	Configure git	﻿2026-03-21T11:28:21.9800030Z ##[group]Run git config user.name "github-actions[bot]"
+Manual Release	Configure git	2026-03-21T11:28:21.9800456Z [36;1mgit config user.name "github-actions[bot]"[0m
+Manual Release	Configure git	2026-03-21T11:28:21.9801014Z [36;1mgit config user.email "github-actions[bot]@users.noreply.github.com"[0m
+Manual Release	Configure git	2026-03-21T11:28:21.9858987Z shell: /usr/bin/bash -e {0}
+Manual Release	Configure git	2026-03-21T11:28:21.9859240Z env:
+Manual Release	Configure git	2026-03-21T11:28:21.9859419Z   CARGO_TERM_COLOR: always
+Manual Release	Configure git	2026-03-21T11:28:21.9859660Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Configure git	2026-03-21T11:28:21.9859902Z   CARGO_INCREMENTAL: 0
+Manual Release	Configure git	2026-03-21T11:28:21.9860106Z ##[endgroup]
+Manual Release	Collect changelog fragments	﻿2026-03-21T11:28:21.9985479Z ##[group]Run # Check if there are any fragments to collect
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9985898Z [36;1m# Check if there are any fragments to collect[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9986350Z [36;1mFRAGMENTS=$(find changelog.d -name "*.md" ! -name "README.md" 2>/dev/null | wc -l)[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9986771Z [36;1mif [ "$FRAGMENTS" -gt 0 ]; then[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9987103Z [36;1m  echo "Found $FRAGMENTS changelog fragment(s), collecting..."[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9987472Z [36;1m  node scripts/collect-changelog.mjs[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9987746Z [36;1melse[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9988000Z [36;1m  echo "No changelog fragments found, skipping collection"[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:21.9988317Z [36;1mfi[0m
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0032315Z shell: /usr/bin/bash -e {0}
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0032552Z env:
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0032733Z   CARGO_TERM_COLOR: always
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0033089Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0033330Z   CARGO_INCREMENTAL: 0
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0033523Z ##[endgroup]
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0193473Z Found 2 changelog fragment(s), collecting...
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0459406Z Collecting changelog fragments for version 0.2.0
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0472077Z Updated CHANGELOG.md with version 0.2.0
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0475059Z Removed changelog.d/20251228_024300_100_percent_test_coverage.md
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0475894Z Removed changelog.d/20251228_053006_migrate_to_stable_rust.md
+Manual Release	Collect changelog fragments	2026-03-21T11:28:22.0476342Z Changelog collection complete
+Manual Release	Version and commit	﻿2026-03-21T11:28:22.0537893Z ##[group]Run node scripts/version-and-commit.mjs \
+Manual Release	Version and commit	2026-03-21T11:28:22.0538314Z [36;1mnode scripts/version-and-commit.mjs \[0m
+Manual Release	Version and commit	2026-03-21T11:28:22.0538610Z [36;1m  --bump-type "patch" \[0m
+Manual Release	Version and commit	2026-03-21T11:28:22.0538867Z [36;1m  --description "Test release "[0m
+Manual Release	Version and commit	2026-03-21T11:28:22.0587992Z shell: /usr/bin/bash -e {0}
+Manual Release	Version and commit	2026-03-21T11:28:22.0588234Z env:
+Manual Release	Version and commit	2026-03-21T11:28:22.0588412Z   CARGO_TERM_COLOR: always
+Manual Release	Version and commit	2026-03-21T11:28:22.0588642Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Version and commit	2026-03-21T11:28:22.0588881Z   CARGO_INCREMENTAL: 0
+Manual Release	Version and commit	2026-03-21T11:28:22.0589076Z ##[endgroup]
+Manual Release	Version and commit	2026-03-21T11:28:27.9102118Z fatal: ambiguous argument 'v0.2.1': unknown revision or path not in the working tree.
+Manual Release	Version and commit	2026-03-21T11:28:27.9103806Z Use '--' to separate paths from revisions, like this:
+Manual Release	Version and commit	2026-03-21T11:28:27.9104600Z 'git <command> [<revision>...] -- [<file>...]'
+Manual Release	Version and commit	2026-03-21T11:28:27.9105167Z v0.2.1
+Manual Release	Version and commit	2026-03-21T11:28:27.9113951Z Tag v0.2.1 already exists
+Manual Release	Version and commit	2026-03-21T11:28:27.9136480Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+Manual Release	Version and commit	2026-03-21T11:28:27.9155839Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+Manual Release	Build release	﻿2026-03-21T11:28:27.9246564Z ##[group]Run cargo build --release
+Manual Release	Build release	2026-03-21T11:28:27.9246863Z [36;1mcargo build --release[0m
+Manual Release	Build release	2026-03-21T11:28:27.9295149Z shell: /usr/bin/bash -e {0}
+Manual Release	Build release	2026-03-21T11:28:27.9295388Z env:
+Manual Release	Build release	2026-03-21T11:28:27.9295563Z   CARGO_TERM_COLOR: always
+Manual Release	Build release	2026-03-21T11:28:27.9295795Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Build release	2026-03-21T11:28:27.9296022Z   CARGO_INCREMENTAL: 0
+Manual Release	Build release	2026-03-21T11:28:27.9296225Z ##[endgroup]
+Manual Release	Build release	2026-03-21T11:28:30.1424958Z [1m[92m    Updating[0m crates.io index
+Manual Release	Build release	2026-03-21T11:28:30.2868954Z [1m[92m Downloading[0m crates ...
+Manual Release	Build release	2026-03-21T11:28:30.3266362Z [1m[92m  Downloaded[0m autocfg v1.5.0
+Manual Release	Build release	2026-03-21T11:28:30.3499994Z [1m[92m  Downloaded[0m num-traits v0.2.19
+Manual Release	Build release	2026-03-21T11:28:30.4631620Z [1m[92m   Compiling[0m autocfg v1.5.0
+Manual Release	Build release	2026-03-21T11:28:35.7076611Z [1m[92m   Compiling[0m num-traits v0.2.19
+Manual Release	Build release	2026-03-21T11:28:38.2287373Z [1m[92m   Compiling[0m platform-num v0.2.0 (/home/runner/work/Numbers/Numbers/rust)
+Manual Release	Build release	2026-03-21T11:28:38.4429773Z [1m[92m    Finished[0m `release` profile [optimized] target(s) in 9.56s
+Manual Release	Create GitHub Release	﻿2026-03-21T11:28:38.4781512Z ##[group]Run node scripts/create-github-release.mjs \
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4781953Z [36;1mnode scripts/create-github-release.mjs \[0m
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4782276Z [36;1m  --release-version "0.2.1" \[0m
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4782582Z [36;1m  --repository "linksplatform/Numbers"[0m
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4831025Z shell: /usr/bin/bash -e {0}
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4831269Z env:
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4831447Z   CARGO_TERM_COLOR: always
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4831685Z   CARGO_HOME: /home/runner/.cargo
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4831940Z   CARGO_INCREMENTAL: 0
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4832367Z   GH_TOKEN: ***
+Manual Release	Create GitHub Release	2026-03-21T11:28:38.4832565Z ##[endgroup]
+Manual Release	Create GitHub Release	2026-03-21T11:28:39.6416849Z Creating GitHub release for v0.2.1...
+Manual Release	Create GitHub Release	2026-03-21T11:28:40.6227063Z {"url":"https://api.github.com/repos/linksplatform/Numbers/releases/299722759","assets_url":"https://api.github.com/repos/linksplatform/Numbers/releases/299722759/assets","upload_url":"https://uploads.github.com/repos/linksplatform/Numbers/releases/299722759/assets{?name,label}","html_url":"https://github.com/linksplatform/Numbers/releases/tag/v0.2.1","id":299722759,"author":{"login":"github-actions[bot]","id":41898282,"node_id":"MDM6Qm90NDE4OTgyODI=","avatar_url":"https://avatars.githubusercontent.com/in/15368?v=4","gravatar_id":"","url":"https://api.github.com/users/github-actions%5Bbot%5D","html_url":"https://github.com/apps/github-actions","followers_url":"https://api.github.com/users/github-actions%5Bbot%5D/followers","following_url":"https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}","gists_url":"https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}","starred_url":"https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/github-actions%5Bbot%5D/subscriptions","organizations_url":"https://api.github.com/users/github-actions%5Bbot%5D/orgs","repos_url":"https://api.github.com/users/github-actions%5Bbot%5D/repos","events_url":"https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}","received_events_url":"https://api.github.com/users/github-actions%5Bbot%5D/received_events","type":"Bot","user_view_type":"public","site_admin":false},"node_id":"RE_kwDOC8wDk84R3WgH","tag_name":"v0.2.1","target_commitish":"main","name":"v0.2.1","draft":false,"immutable":false,"prerelease":false,"created_at":"2025-12-28T04:55:57Z","updated_at":"2026-03-21T11:28:40Z","published_at":"2026-03-21T11:28:40Z","assets":[],"tarball_url":"https://api.github.com/repos/linksplatform/Numbers/tarball/v0.2.1","zipball_url":"https://api.github.com/repos/linksplatform/Numbers/zipball/v0.2.1","body":"Release v0.2.1"}Created GitHub release: v0.2.1
+Manual Release	Post Setup Node.js	﻿2026-03-21T11:28:40.6357148Z Post job cleanup.
+Manual Release	Post Run actions/checkout@v4	﻿2026-03-21T11:28:40.8058731Z Post job cleanup.
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9031231Z [command]/usr/bin/git version
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9069528Z git version 2.53.0
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9116116Z Temporarily overriding HOME='/home/runner/work/_temp/83a5903d-36dc-4c30-8acb-88a6a4d05ca7' before making global git config changes
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9117646Z Adding repository directory to the temporary git global config as a safe directory
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9123212Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Numbers/Numbers
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9167662Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9205398Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9453528Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9476080Z http.https://github.com/.extraheader
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9489051Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9521282Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9761020Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Manual Release	Post Run actions/checkout@v4	2026-03-21T11:28:40.9797618Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Manual Release	Complete job	﻿2026-03-21T11:28:41.0141462Z Cleaning up orphan processes
+Manual Release	Complete job	2026-03-21T11:28:41.0436289Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
