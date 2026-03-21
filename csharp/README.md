@@ -1,7 +1,7 @@
-# [Numbers](https://github.com/linksplatform/Numbers) for C\#
-
 [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Numbers?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Numbers)
 [![Actions Status](https://github.com/linksplatform/Numbers/workflows/CD/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=CD)
+
+# [Numbers](https://github.com/linksplatform/Numbers) for C\#
 
 LinksPlatform's Platform.Numbers Class Library.
 

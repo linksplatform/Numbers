@@ -1,9 +1,9 @@
-# [Numbers](https://github.com/linksplatform/Numbers) for Rust
-
 [![Crates.io](https://img.shields.io/crates/v/platform-num?label=crates.io&style=flat)](https://crates.io/crates/platform-num)
 [![Rust CI/CD Pipeline](https://github.com/linksplatform/Numbers/workflows/Rust%20CI%2FCD%20Pipeline/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=Rust+CI%2FCD+Pipeline)
 [![Docs.rs](https://docs.rs/platform-num/badge.svg)](https://docs.rs/platform-num)
 [![Codecov](https://codecov.io/gh/linksplatform/Numbers/branch/main/graph/badge.svg)](https://codecov.io/gh/linksplatform/Numbers)
+
+# [Numbers](https://github.com/linksplatform/Numbers) for Rust
 
 LinksPlatform's `platform-num` crate — numeric traits and types
 for the Links platform.

@@ -1,6 +1,6 @@
-# [Numbers](https://github.com/linksplatform/Numbers) for C++
-
 [![Actions Status](https://github.com/linksplatform/Numbers/workflows/Deploy%20new%20cpp%20version/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=Deploy+new+cpp+version)
+
+# [Numbers](https://github.com/linksplatform/Numbers) for C++
 
 LinksPlatform's Platform.Numbers Template Library.
 
