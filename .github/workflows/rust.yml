@@ -18,6 +18,14 @@ on:
       - 'changelog.d/**'
   workflow_dispatch:
     inputs:
+      release_mode:
+        description: 'Manual release mode'
+        required: true
+        type: choice
+        default: 'instant'
+        options:
+          - instant
+          - changelog-pr
       bump_type:
         description: 'Version bump type'
         required: true
@@ -38,31 +46,126 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   RUSTFLAGS: -Dwarnings
+  # Support both CARGO_REGISTRY_TOKEN (cargo's native env var) and CARGO_TOKEN (for backwards compatibility)
+  CARGO_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN || secrets.CARGO_TOKEN }}
 
 defaults:
   run:
     working-directory: rust
 
 jobs:
-  # REQUIRED CI CHECKS - All must pass before release
-  # These jobs ensure code quality and tests pass before any release
+  # === DETECT CHANGES - determines which jobs should run ===
+  detect-changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_dispatch'
+    outputs:
+      rs-changed: ${{ steps.changes.outputs.rs-changed }}
+      toml-changed: ${{ steps.changes.outputs.toml-changed }}
+      docs-changed: ${{ steps.changes.outputs.docs-changed }}
+      workflow-changed: ${{ steps.changes.outputs.workflow-changed }}
+      any-code-changed: ${{ steps.changes.outputs.any-code-changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  # Linting and formatting
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
+
+      - name: Detect changes
+        id: changes
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: rust-script scripts/detect-code-changes.rs
+        working-directory: .
+
+  # === CHANGELOG CHECK - only runs on PRs with code changes ===
+  # Docs-only PRs (./docs folder, markdown files) don't require changelog fragments
+  changelog:
+    name: Changelog Fragment Check
+    runs-on: ubuntu-latest
+    needs: [detect-changes]
+    if: github.event_name == 'pull_request' && needs.detect-changes.outputs.any-code-changed == 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
+
+      - name: Check for changelog fragments
+        env:
+          GITHUB_BASE_REF: ${{ github.base_ref }}
+        run: rust-script scripts/check-changelog-fragment.rs
+        working-directory: .
+
+  # === VERSION CHECK - prevents manual version modification in PRs ===
+  # This ensures versions are only modified by the automated release pipeline
+  version-check:
+    name: Version Modification Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
+
+      - name: Check for manual version changes
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+          GITHUB_BASE_REF: ${{ github.base_ref }}
+        run: rust-script scripts/check-version-modification.rs
+        working-directory: .
+
+  # === LINT AND FORMAT CHECK ===
+  # Lint runs independently of changelog check - it's a fast check that should always run
   lint:
     name: Lint and Format Check
     runs-on: ubuntu-latest
+    needs: [detect-changes]
+    # Note: always() is required because detect-changes is skipped on workflow_dispatch,
+    # and without always(), this job would also be skipped even though its condition includes workflow_dispatch.
+    # See: https://github.com/actions/runner/issues/491
+    if: |
+      always() && !cancelled() && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch' ||
+        needs.detect-changes.outputs.rs-changed == 'true' ||
+        needs.detect-changes.outputs.toml-changed == 'true' ||
+        needs.detect-changes.outputs.docs-changed == 'true' ||
+        needs.detect-changes.outputs.workflow-changed == 'true'
+      )
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt
+          components: rustfmt, clippy
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
 
       - name: Cache cargo registry
         uses: actions/cache@v4
@@ -78,14 +181,21 @@ jobs:
       - name: Check formatting
         run: cargo fmt --all -- --check
 
-      - name: Check file size limit
-        working-directory: .
-        run: node scripts/check-file-size.mjs
+      - name: Run Clippy
+        run: cargo clippy --all-targets --all-features
 
-  # Test on multiple OS
+      - name: Check file size limit
+        run: rust-script scripts/check-file-size.rs
+        working-directory: .
+
+  # === TEST ===
+  # Test runs independently of changelog check
   test:
     name: Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    needs: [detect-changes, changelog]
+    # Run if: push event, OR changelog succeeded, OR changelog was skipped (docs-only PR)
+    if: always() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || needs.changelog.result == 'success' || needs.changelog.result == 'skipped')
     strategy:
       fail-fast: false
       matrix:
@@ -93,7 +203,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache cargo registry
@@ -110,14 +220,17 @@ jobs:
       - name: Run tests
         run: cargo test --all-features --verbose
 
-  # Code coverage
+      - name: Run doc tests
+        run: cargo test --doc --verbose
+
+  # === CODE COVERAGE ===
   coverage:
     name: Code Coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           components: llvm-tools-preview
@@ -145,15 +258,17 @@ jobs:
           files: rust/lcov.info
           fail_ci_if_error: false
 
+  # === BUILD ===
   # Build package - only runs if lint and test pass
   build:
     name: Build Package
     runs-on: ubuntu-latest
     needs: [lint, test]
+    if: always() && !cancelled() && needs.lint.result == 'success' && needs.test.result == 'success'
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache cargo registry
@@ -170,48 +285,21 @@ jobs:
       - name: Build release
         run: cargo build --release --verbose
 
-  # Check for changelog fragments in PRs
-  changelog:
-    name: Changelog Fragment Check
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Check package
+        run: cargo package --list
 
-      - name: Check for changelog fragments
-        working-directory: .
-        run: |
-          # Get list of fragment files (excluding README and template)
-          FRAGMENTS=$(find changelog.d -name "*.md" ! -name "README.md" 2>/dev/null | wc -l)
-
-          # Get changed files in PR
-          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
-
-          # Check if any source files changed (excluding docs and config)
-          SOURCE_CHANGED=$(echo "$CHANGED_FILES" | grep -E "^(rust/src/|rust/tests/|scripts/)" | wc -l)
-
-          if [ "$SOURCE_CHANGED" -gt 0 ] && [ "$FRAGMENTS" -eq 0 ]; then
-            echo "::warning::No changelog fragment found. Please add a changelog entry in changelog.d/"
-            echo ""
-            echo "To create a changelog fragment:"
-            echo "  Create a new .md file in changelog.d/ with your changes"
-            echo ""
-            echo "See changelog.d/README.md for more information."
-            # Note: This is a warning, not a failure, to allow flexibility
-            # Change 'exit 0' to 'exit 1' to make it required
-            exit 0
-          fi
-
-          echo "Changelog check passed"
-
+  # === AUTO RELEASE ===
   # Automatic release on push to main using changelog fragments
   # This job automatically bumps version based on fragments in changelog.d/
   auto-release:
     name: Auto Release
-    needs: [lint, test, build, coverage]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, test, build]
+    # Note: always() ensures consistent behavior with other jobs that depend on jobs using always().
+    if: |
+      always() && !cancelled() &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      needs.build.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -221,62 +309,42 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
 
       - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+        run: rust-script scripts/git-config.rs
         working-directory: .
 
       - name: Determine bump type from changelog fragments
         id: bump_type
+        run: rust-script scripts/get-bump-type.rs
         working-directory: .
-        run: node scripts/get-bump-type.mjs
 
       - name: Check if version already released or no fragments
         id: check
+        env:
+          HAS_FRAGMENTS: ${{ steps.bump_type.outputs.has_fragments }}
+        run: rust-script scripts/check-release-needed.rs
         working-directory: .
-        run: |
-          # Check if there are changelog fragments
-          if [ "${{ steps.bump_type.outputs.has_fragments }}" != "true" ]; then
-            # No fragments - check if current version tag exists
-            CURRENT_VERSION=$(grep -Po '(?<=^version = ")[^"]*' rust/Cargo.toml)
-            if git rev-parse "v$CURRENT_VERSION" >/dev/null 2>&1; then
-              echo "No changelog fragments and v$CURRENT_VERSION already released"
-              echo "should_release=false" >> $GITHUB_OUTPUT
-            else
-              echo "No changelog fragments but v$CURRENT_VERSION not yet released"
-              echo "should_release=true" >> $GITHUB_OUTPUT
-              echo "skip_bump=true" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "Found changelog fragments, proceeding with release"
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "skip_bump=false" >> $GITHUB_OUTPUT
-          fi
 
       - name: Collect changelog and bump version
         id: version
         if: steps.check.outputs.should_release == 'true' && steps.check.outputs.skip_bump != 'true'
-        working-directory: .
         run: |
-          node scripts/version-and-commit.mjs \
+          rust-script scripts/version-and-commit.rs \
             --bump-type "${{ steps.bump_type.outputs.bump_type }}"
+        working-directory: .
 
       - name: Get current version
         id: current_version
         if: steps.check.outputs.should_release == 'true'
+        run: rust-script scripts/get-version.rs
         working-directory: .
-        run: |
-          CURRENT_VERSION=$(grep -Po '(?<=^version = ")[^"]*' rust/Cargo.toml)
-          echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
 
       - name: Build release
         if: steps.check.outputs.should_release == 'true'
@@ -284,33 +352,31 @@ jobs:
 
       - name: Publish to Crates.io
         if: steps.check.outputs.should_release == 'true'
+        id: publish-crate
         env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN || secrets.CARGO_TOKEN }}
-        run: |
-          if [ -n "$CARGO_REGISTRY_TOKEN" ]; then
-            echo "Publishing to crates.io..."
-            cargo publish --token "$CARGO_REGISTRY_TOKEN"
-          else
-            echo "::error::CARGO_REGISTRY_TOKEN or CARGO_TOKEN secret is not configured. Skipping crates.io publish."
-            echo "Please configure a crates.io API token in repository secrets."
-            exit 1
-          fi
+          CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
+        run: rust-script scripts/publish-crate.rs
+        working-directory: .
 
       - name: Create GitHub Release
         if: steps.check.outputs.should_release == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: rust-script scripts/create-github-release.rs --release-version "${{ steps.current_version.outputs.version }}" --repository "${{ github.repository }}"
         working-directory: .
-        run: |
-          node scripts/create-github-release.mjs \
-            --release-version "${{ steps.current_version.outputs.version }}" \
-            --repository "${{ github.repository }}"
 
+  # === MANUAL INSTANT RELEASE ===
   # Manual release via workflow_dispatch - only after CI passes
   manual-release:
-    name: Manual Release
-    needs: [lint, test, build, coverage]
-    if: github.event_name == 'workflow_dispatch'
+    name: Instant Release
+    needs: [lint, test, build]
+    # Note: always() is required to evaluate the condition when dependencies use always().
+    # The build job ensures lint and test passed before this job runs.
+    if: |
+      always() && !cancelled() &&
+      github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.release_mode == 'instant' &&
+      needs.build.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -320,39 +386,28 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Rust toolchain
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
 
       - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+        run: rust-script scripts/git-config.rs
         working-directory: .
 
       - name: Collect changelog fragments
+        run: rust-script scripts/collect-changelog.rs
         working-directory: .
-        run: |
-          # Check if there are any fragments to collect
-          FRAGMENTS=$(find changelog.d -name "*.md" ! -name "README.md" 2>/dev/null | wc -l)
-          if [ "$FRAGMENTS" -gt 0 ]; then
-            echo "Found $FRAGMENTS changelog fragment(s), collecting..."
-            node scripts/collect-changelog.mjs
-          else
-            echo "No changelog fragments found, skipping collection"
-          fi
 
       - name: Version and commit
         id: version
+        env:
+          BUMP_TYPE: ${{ github.event.inputs.bump_type }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+        run: rust-script scripts/version-and-commit.rs --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
         working-directory: .
-        run: |
-          node scripts/version-and-commit.mjs \
-            --bump-type "${{ github.event.inputs.bump_type }}" \
-            --description "${{ github.event.inputs.description }}"
 
       - name: Build release
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
@@ -360,24 +415,65 @@ jobs:
 
       - name: Publish to Crates.io
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
+        id: publish-crate
         env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN || secrets.CARGO_TOKEN }}
-        run: |
-          if [ -n "$CARGO_REGISTRY_TOKEN" ]; then
-            echo "Publishing to crates.io..."
-            cargo publish --token "$CARGO_REGISTRY_TOKEN"
-          else
-            echo "::error::CARGO_REGISTRY_TOKEN or CARGO_TOKEN secret is not configured. Skipping crates.io publish."
-            echo "Please configure a crates.io API token in repository secrets."
-            exit 1
-          fi
+          CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
+        run: rust-script scripts/publish-crate.rs
+        working-directory: .
 
       - name: Create GitHub Release
         if: steps.version.outputs.version_committed == 'true' || steps.version.outputs.already_released == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: rust-script scripts/create-github-release.rs --release-version "${{ steps.version.outputs.new_version }}" --repository "${{ github.repository }}"
         working-directory: .
-        run: |
-          node scripts/create-github-release.mjs \
-            --release-version "${{ steps.version.outputs.new_version }}" \
-            --repository "${{ github.repository }}"
+
+  # === MANUAL CHANGELOG PR ===
+  changelog-pr:
+    name: Create Changelog PR
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.release_mode == 'changelog-pr'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install rust-script
+        run: cargo install rust-script
+        working-directory: .
+
+      - name: Create changelog fragment
+        env:
+          BUMP_TYPE: ${{ github.event.inputs.bump_type }}
+          DESCRIPTION: ${{ github.event.inputs.description }}
+        run: rust-script scripts/create-changelog-fragment.rs --bump-type "${{ github.event.inputs.bump_type }}" --description "${{ github.event.inputs.description }}"
+        working-directory: .
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: add changelog for manual ${{ github.event.inputs.bump_type }} release'
+          branch: changelog-manual-release-${{ github.run_id }}
+          delete-branch: true
+          title: 'chore: manual ${{ github.event.inputs.bump_type }} release'
+          body: |
+            ## Manual Release Request
+
+            This PR was created by a manual workflow trigger to prepare a **${{ github.event.inputs.bump_type }}** release.
+
+            ### Release Details
+            - **Type:** ${{ github.event.inputs.bump_type }}
+            - **Description:** ${{ github.event.inputs.description || 'Manual release' }}
+            - **Triggered by:** @${{ github.actor }}
+
+            ### Next Steps
+            1. Review the changelog fragment in this PR
+            2. Merge this PR to main
+            3. The automated release workflow will publish to crates.io and create a GitHub release
