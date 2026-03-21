@@ -10,7 +10,7 @@ homepage = "https://github.com/linksplatform/Numbers"
 description = """
 Numbers for linksplatform
 """
-readme = "../README.md"
+readme = "README.md"
 keywords = ["numbers", "linksplatform", "traits"]
 categories = ["development-tools"]
 
