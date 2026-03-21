@@ -1,6 +1,6 @@
-[![Actions Status](https://github.com/linksplatform/Numbers/workflows/Deploy%20new%20cpp%20version/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=Deploy+new+cpp+version)
-
 # [Numbers](https://github.com/linksplatform/Numbers) for C++
+
+[![Actions Status](https://github.com/linksplatform/Numbers/workflows/Deploy%20new%20cpp%20version/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=Deploy+new+cpp+version)
 
 LinksPlatform's Platform.Numbers Template Library.
 
@@ -8,7 +8,8 @@ Conan package: [platform.numbers](https://conan.io/center/platform.numbers)
 
 ## Overview
 
-This library provides header-only numeric utility templates used throughout the LinksPlatform ecosystem:
+This library provides header-only numeric utility templates used
+throughout the LinksPlatform ecosystem:
 
 - **`Bit`** — Bit manipulation utilities for integral types.
 
@@ -16,7 +17,7 @@ This library provides header-only numeric utility templates used throughout the 
 
 Using [Conan](https://conan.io/):
 
-```
+```ini
 [requires]
 platform.numbers/[latest]
 ```
@@ -37,4 +38,6 @@ target_link_libraries(your_target PRIVATE Platform.Numbers)
 ```
 
 ## Depend on
-*   [Platform.Interfaces](https://github.com/linksplatform/Interfaces) (C++ version)
+
+- [Platform.Interfaces](https://github.com/linksplatform/Interfaces)
+  (C++ version)
