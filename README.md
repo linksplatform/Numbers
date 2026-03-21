@@ -20,6 +20,13 @@ Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Numbers](https://gi
 
 This library is released to the **public domain** under the [Unlicense](http://unlicense.org/).
 
-The Unlicense is the most permissive license available — it places no restrictions whatsoever on users. You are free to copy, modify, publish, use, compile, sell, or distribute this software for any purpose, commercial or non-commercial, in any way you choose, with no conditions attached.
+The Unlicense is the most permissive license available — it places no
+restrictions whatsoever on users. You are free to copy, modify, publish,
+use, compile, sell, or distribute this software for any purpose,
+commercial or non-commercial, in any way you choose, with no conditions
+attached.
 
-Unlike LGPL, which forces users to redistribute modifications under the same license and comply with specific obligations (linking restrictions, source disclosure for modifications), the Unlicense imposes **no obligations at all**. It is truly free as in freedom.
+Unlike LGPL, which forces users to redistribute modifications under the
+same license and comply with specific obligations (linking restrictions,
+source disclosure for modifications), the Unlicense imposes
+**no obligations at all**. It is truly free as in freedom.
