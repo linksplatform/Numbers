@@ -267,7 +267,7 @@ Fragments are automatically collected into CHANGELOG.md during the release proce
 ├── .pre-commit-config.yaml  # Pre-commit hooks
 ├── CHANGELOG.md          # Project changelog
 ├── CONTRIBUTING.md       # This file
-├── LICENSE               # LGPL-3.0
+├── LICENSE               # Unlicense (public domain)
 └── README.md             # Project README
 ```
 
