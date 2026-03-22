@@ -1,3 +1,4 @@
+[![Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 [![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-open-blue?logo=github)](https://codespaces.new/linksplatform/Numbers)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0f7cbadcfbe43f7b9c732ec8603d974)](https://app.codacy.com/gh/linksplatform/Numbers?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Numbers&utm_campaign=Badge_Grade_Settings)
@@ -14,3 +15,18 @@
 LinksPlatform's Platform.Numbers Library.
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Numbers](https://github.com/Konard/LinksPlatform/tree/19902d5c6221b5c93a5e06849de28bb97edac5f8/Platform/Platform.Helpers/Numbers)
+
+## License
+
+This library is released to the **public domain** under the [Unlicense](http://unlicense.org/).
+
+The Unlicense is the most permissive license available — it places no
+restrictions whatsoever on users. You are free to copy, modify, publish,
+use, compile, sell, or distribute this software for any purpose,
+commercial or non-commercial, in any way you choose, with no conditions
+attached.
+
+Unlike LGPL, which forces users to redistribute modifications under the
+same license and comply with specific obligations (linking restrictions,
+source disclosure for modifications), the Unlicense imposes
+**no obligations at all**. It is truly free as in freedom.

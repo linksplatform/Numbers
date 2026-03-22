@@ -1,3 +1,4 @@
+[![Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 [![Crates.io](https://img.shields.io/crates/v/platform-num?label=crates.io&style=flat)](https://crates.io/crates/platform-num)
 [![Rust CI/CD Pipeline](https://github.com/linksplatform/Numbers/workflows/Rust%20CI%2FCD%20Pipeline/badge.svg)](https://github.com/linksplatform/Numbers/actions?workflow=Rust+CI%2FCD+Pipeline)
 [![Docs.rs](https://docs.rs/platform-num/badge.svg)](https://docs.rs/platform-num)
@@ -98,3 +99,18 @@ assert_eq!(to_usize(42u32), 42usize);
   ([trees-rs](https://github.com/linksplatform/trees-rs))
 - [doublets](https://crates.io/crates/doublets)
   ([doublets-rs](https://github.com/linksplatform/doublets-rs))
+
+## License
+
+This crate is released to the **public domain** under the [Unlicense](http://unlicense.org/).
+
+The Unlicense is the most permissive license available — it places no
+restrictions whatsoever on users. You are free to copy, modify, publish,
+use, compile, sell, or distribute this software for any purpose,
+commercial or non-commercial, in any way you choose, with no conditions
+attached.
+
+Unlike LGPL, which forces users to redistribute modifications under the
+same license and comply with specific obligations (linking restrictions,
+source disclosure for modifications), the Unlicense imposes
+**no obligations at all**. It is truly free as in freedom.
