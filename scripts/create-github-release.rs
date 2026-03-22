@@ -43,7 +43,9 @@ fn get_changelog_for_version(version: &str) -> String {
     };
 
     let escaped_version = regex::escape(version);
-    let pattern = format!(r"(?s)## \[{}\].*?\n(.*?)(?=\n## \[|$)", escaped_version);
+    // Use a pattern without lookahead (not supported by the `regex` crate).
+    // Match the section header and capture everything until the next section or end of string.
+    let pattern = format!(r"(?s)## \[{}\][^\n]*\n(.*?)(?:\n## \[|$)", escaped_version);
     let re = Regex::new(&pattern).unwrap();
 
     if let Some(caps) = re.captures(&content) {
