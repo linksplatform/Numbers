@@ -27,7 +27,6 @@ use std::env;
 use std::fs;
 use std::io::Write;
 use std::path::Path;
-use std::process::exit;
 use regex::Regex;
 
 fn get_arg(name: &str) -> Option<String> {
