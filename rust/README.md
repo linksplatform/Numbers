@@ -16,17 +16,17 @@ Crates.io package: [platform-num](https://crates.io/crates/platform-num)
 This crate provides a set of numeric traits used throughout the
 LinksPlatform ecosystem:
 
-- **`Num`** — A base trait combining `PrimInt`, `Default`, `Debug`,
+- **`Number`** — A base trait combining `PrimInt`, `Default`, `Debug`,
   `AsPrimitive<usize>`, and `ToPrimitive`. Implemented for all
   primitive integer types.
-- **`SignNum`** — Extends `Num` with signed number operations
+- **`SignedNumber`** — Extends `Number` with signed number operations
   (`Signed`, `FromPrimitive`). Implemented for signed integer types.
 - **`ToSigned`** — Converts unsigned types to their signed
   counterparts (e.g. `u32` → `i32`).
 - **`MaxValue`** — Provides a `MAX` associated constant for all
   primitive integer types.
-- **`LinkType`** — A composite trait for types that can be used as
-  link identifiers: `Num + Unsigned + ToSigned + MaxValue +
+- **`LinkReference`** — A composite trait for types that can be used as
+  link identifiers: `Number + Unsigned + ToSigned + MaxValue +
   FromPrimitive + Debug + Display + Hash + Send + Sync + 'static`.
   Implemented for `u8`, `u16`, `u32`, `u64`, and `usize`.
 
@@ -36,17 +36,17 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-platform-num = "0.2"
+platform-num = "0.4"
 ```
 
 ## Usage
 
-### Using `LinkType` as a generic constraint
+### Using `LinkReference` as a generic constraint
 
 ```rust
-use platform_num::LinkType;
+use platform_num::LinkReference;
 
-fn create_link<T: LinkType>(source: T, target: T) -> (T, T) {
+fn create_link<T: LinkReference>(source: T, target: T) -> (T, T) {
     (source, target)
 }
 
@@ -76,13 +76,13 @@ fn get_max<T: MaxValue>() -> T {
 assert_eq!(get_max::<u64>(), u64::MAX);
 ```
 
-### Using `Num` for generic numeric operations
+### Using `Number` for generic numeric operations
 
 ```rust
-use platform_num::Num;
+use platform_num::Number;
 use num_traits::AsPrimitive;
 
-fn to_usize<T: Num>(val: T) -> usize {
+fn to_usize<T: Number>(val: T) -> usize {
     val.as_()
 }
 

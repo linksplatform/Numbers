@@ -1,3 +1,3 @@
 mod imp;
 
-pub use imp::{LinkType, MaxValue, Num, SignNum, ToSigned};
+pub use imp::{LinkReference, MaxValue, Number, SignedNumber, ToSigned};
