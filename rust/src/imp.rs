@@ -3,17 +3,65 @@ use std::hash::Hash;
 
 use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 
-pub trait Num: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive {}
+/// A base numeric trait combining `PrimInt`, `Default`, `Debug`,
+/// `AsPrimitive<usize>`, and `ToPrimitive`.
+///
+/// Implemented for all primitive integer types.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::Number;
+/// use num_traits::AsPrimitive;
+///
+/// fn to_usize<T: Number>(val: T) -> usize {
+///     val.as_()
+/// }
+///
+/// assert_eq!(to_usize(42u32), 42usize);
+/// ```
+pub trait Number: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive {}
 
-impl<All: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive> Num for All {}
+impl<All: PrimInt + Default + Debug + AsPrimitive<usize> + ToPrimitive> Number for All {}
 
-pub trait SignNum: Num + Signed + FromPrimitive {}
+/// A signed numeric trait extending [`Number`] with signed operations.
+///
+/// Implemented for all signed primitive integer types.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::SignedNumber;
+///
+/// fn get_abs<T: SignedNumber>(val: T) -> T {
+///     val.abs()
+/// }
+///
+/// assert_eq!(get_abs(-5i32), 5i32);
+/// ```
+pub trait SignedNumber: Number + Signed + FromPrimitive {}
 
-impl<All: Num + Signed + FromPrimitive> SignNum for All {}
+impl<All: Number + Signed + FromPrimitive> SignedNumber for All {}
 
+/// Converts a numeric type to its signed counterpart.
+///
+/// Maps each unsigned type to the corresponding signed type
+/// (e.g. `u32` → `i32`). Signed types map to themselves.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::ToSigned;
+///
+/// let unsigned_val: u32 = 42;
+/// let signed_val: i32 = unsigned_val.to_signed();
+/// assert_eq!(signed_val, 42i32);
+/// ```
 pub trait ToSigned {
-    type Type: Num + Signed;
+    /// The signed type that corresponds to `Self`.
+    type Type: Number + Signed;
 
+    /// Converts `self` to the corresponding signed type via `as` cast.
     fn to_signed(&self) -> Self::Type;
 }
 
@@ -42,7 +90,19 @@ signed_type_impl!(u128, i128);
 signed_type_impl!(isize, isize);
 signed_type_impl!(usize, isize);
 
+/// Provides the maximum value for a numeric type as an associated constant.
+///
+/// Implemented for all primitive integer types.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::MaxValue;
+///
+/// assert_eq!(<u64 as MaxValue>::MAX, u64::MAX);
+/// ```
 pub trait MaxValue {
+    /// The maximum value of this type.
     const MAX: Self;
 }
 
@@ -68,10 +128,30 @@ max_value_impl!(u128);
 max_value_impl!(isize);
 max_value_impl!(usize);
 
+/// A composite trait for types that can be used as link identifiers.
+///
+/// Combines [`Number`], `Unsigned`, [`ToSigned`], [`MaxValue`],
+/// `FromPrimitive`, `Debug`, `Display`, `Hash`, `Send`, `Sync`,
+/// and `'static`.
+///
+/// Implemented for `u8`, `u16`, `u32`, `u64`, and `usize`.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::LinkReference;
+///
+/// fn create_link<T: LinkReference>(source: T, target: T) -> (T, T) {
+///     (source, target)
+/// }
+///
+/// let link = create_link(1u64, 2u64);
+/// assert_eq!(link, (1u64, 2u64));
+/// ```
 // TODO: Not use alias - IDEs does not support it
 #[rustfmt::skip]
-pub trait LinkType:
-Num
+pub trait LinkReference:
+Number
 + Unsigned
 + ToSigned
 + MaxValue
@@ -85,7 +165,7 @@ Num
 
 #[rustfmt::skip]
 impl<
-    All: Num
+    All: Number
     + Unsigned
     + ToSigned
     + MaxValue
@@ -96,126 +176,126 @@ impl<
     + Send
     + Sync
     + 'static,
-> LinkType for All {}
+> LinkReference for All {}
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     // ==========================================
-    // Tests for Num trait
+    // Tests for Number trait
     // ==========================================
 
     #[test]
-    fn test_num_trait_for_i8() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0i8);
+    fn test_number_trait_for_i8() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0i8);
     }
 
     #[test]
-    fn test_num_trait_for_u8() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0u8);
+    fn test_number_trait_for_u8() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0u8);
     }
 
     #[test]
-    fn test_num_trait_for_i16() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0i16);
+    fn test_number_trait_for_i16() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0i16);
     }
 
     #[test]
-    fn test_num_trait_for_u16() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0u16);
+    fn test_number_trait_for_u16() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0u16);
     }
 
     #[test]
-    fn test_num_trait_for_i32() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0i32);
+    fn test_number_trait_for_i32() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0i32);
     }
 
     #[test]
-    fn test_num_trait_for_u32() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0u32);
+    fn test_number_trait_for_u32() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0u32);
     }
 
     #[test]
-    fn test_num_trait_for_i64() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0i64);
+    fn test_number_trait_for_i64() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0i64);
     }
 
     #[test]
-    fn test_num_trait_for_u64() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0u64);
+    fn test_number_trait_for_u64() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0u64);
     }
 
     #[test]
-    fn test_num_trait_for_i128() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0i128);
+    fn test_number_trait_for_i128() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0i128);
     }
 
     #[test]
-    fn test_num_trait_for_u128() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0u128);
+    fn test_number_trait_for_u128() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0u128);
     }
 
     #[test]
-    fn test_num_trait_for_isize() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0isize);
+    fn test_number_trait_for_isize() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0isize);
     }
 
     #[test]
-    fn test_num_trait_for_usize() {
-        fn assert_num<T: Num>(_val: T) {}
-        assert_num(0usize);
+    fn test_number_trait_for_usize() {
+        fn assert_number<T: Number>(_val: T) {}
+        assert_number(0usize);
     }
 
     // ==========================================
-    // Tests for SignNum trait
+    // Tests for SignedNumber trait
     // ==========================================
 
     #[test]
-    fn test_sign_num_trait_for_i8() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0i8);
+    fn test_signed_number_trait_for_i8() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0i8);
     }
 
     #[test]
-    fn test_sign_num_trait_for_i16() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0i16);
+    fn test_signed_number_trait_for_i16() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0i16);
     }
 
     #[test]
-    fn test_sign_num_trait_for_i32() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0i32);
+    fn test_signed_number_trait_for_i32() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0i32);
     }
 
     #[test]
-    fn test_sign_num_trait_for_i64() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0i64);
+    fn test_signed_number_trait_for_i64() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0i64);
     }
 
     #[test]
-    fn test_sign_num_trait_for_i128() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0i128);
+    fn test_signed_number_trait_for_i128() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0i128);
     }
 
     #[test]
-    fn test_sign_num_trait_for_isize() {
-        fn assert_sign_num<T: SignNum>(_val: T) {}
-        assert_sign_num(0isize);
+    fn test_signed_number_trait_for_isize() {
+        fn assert_signed_number<T: SignedNumber>(_val: T) {}
+        assert_signed_number(0isize);
     }
 
     // ==========================================
@@ -413,37 +493,37 @@ mod tests {
     }
 
     // ==========================================
-    // Tests for LinkType trait
+    // Tests for LinkReference trait
     // ==========================================
 
     #[test]
-    fn test_link_type_for_u8() {
-        fn assert_link_type<T: LinkType>(_val: T) {}
-        assert_link_type(0u8);
+    fn test_link_reference_for_u8() {
+        fn assert_link_reference<T: LinkReference>(_val: T) {}
+        assert_link_reference(0u8);
     }
 
     #[test]
-    fn test_link_type_for_u16() {
-        fn assert_link_type<T: LinkType>(_val: T) {}
-        assert_link_type(0u16);
+    fn test_link_reference_for_u16() {
+        fn assert_link_reference<T: LinkReference>(_val: T) {}
+        assert_link_reference(0u16);
     }
 
     #[test]
-    fn test_link_type_for_u32() {
-        fn assert_link_type<T: LinkType>(_val: T) {}
-        assert_link_type(0u32);
+    fn test_link_reference_for_u32() {
+        fn assert_link_reference<T: LinkReference>(_val: T) {}
+        assert_link_reference(0u32);
     }
 
     #[test]
-    fn test_link_type_for_u64() {
-        fn assert_link_type<T: LinkType>(_val: T) {}
-        assert_link_type(0u64);
+    fn test_link_reference_for_u64() {
+        fn assert_link_reference<T: LinkReference>(_val: T) {}
+        assert_link_reference(0u64);
     }
 
     #[test]
-    fn test_link_type_for_usize() {
-        fn assert_link_type<T: LinkType>(_val: T) {}
-        assert_link_type(0usize);
+    fn test_link_reference_for_usize() {
+        fn assert_link_reference<T: LinkReference>(_val: T) {}
+        assert_link_reference(0usize);
     }
 
     // ==========================================
@@ -517,20 +597,20 @@ mod tests {
     // ==========================================
 
     #[test]
-    fn test_link_type_can_be_converted_to_signed() {
-        fn use_link_type<T: LinkType + ToSigned>(val: T) -> <T as ToSigned>::Type {
+    fn test_link_reference_can_be_converted_to_signed() {
+        fn use_link_reference<T: LinkReference + ToSigned>(val: T) -> <T as ToSigned>::Type {
             val.to_signed()
         }
-        assert_eq!(use_link_type(42u8), 42i8);
-        assert_eq!(use_link_type(42u16), 42i16);
-        assert_eq!(use_link_type(42u32), 42i32);
-        assert_eq!(use_link_type(42u64), 42i64);
-        assert_eq!(use_link_type(42usize), 42isize);
+        assert_eq!(use_link_reference(42u8), 42i8);
+        assert_eq!(use_link_reference(42u16), 42i16);
+        assert_eq!(use_link_reference(42u32), 42i32);
+        assert_eq!(use_link_reference(42u64), 42i64);
+        assert_eq!(use_link_reference(42usize), 42isize);
     }
 
     #[test]
-    fn test_link_type_has_max_value() {
-        fn get_max<T: LinkType + MaxValue>() -> T {
+    fn test_link_reference_has_max_value() {
+        fn get_max<T: LinkReference + MaxValue>() -> T {
             T::MAX
         }
         assert_eq!(get_max::<u8>(), u8::MAX);
@@ -541,8 +621,8 @@ mod tests {
     }
 
     #[test]
-    fn test_num_default_values() {
-        fn check_default<T: Num>() -> T {
+    fn test_number_default_values() {
+        fn check_default<T: Number>() -> T {
             T::default()
         }
         assert_eq!(check_default::<i8>(), 0i8);
@@ -560,8 +640,8 @@ mod tests {
     }
 
     #[test]
-    fn test_num_as_usize() {
-        fn to_usize<T: Num>(val: T) -> usize {
+    fn test_number_as_usize() {
+        fn to_usize<T: Number>(val: T) -> usize {
             val.as_()
         }
         assert_eq!(to_usize(42i8), 42usize);
@@ -573,8 +653,8 @@ mod tests {
     }
 
     #[test]
-    fn test_sign_num_signum() {
-        fn get_signum<T: SignNum>(val: T) -> T {
+    fn test_signed_number_signum() {
+        fn get_signum<T: SignedNumber>(val: T) -> T {
             val.signum()
         }
         assert_eq!(get_signum(5i8), 1i8);
@@ -586,8 +666,8 @@ mod tests {
     }
 
     #[test]
-    fn test_sign_num_abs() {
-        fn get_abs<T: SignNum>(val: T) -> T {
+    fn test_signed_number_abs() {
+        fn get_abs<T: SignedNumber>(val: T) -> T {
             val.abs()
         }
         assert_eq!(get_abs(-5i8), 5i8);
