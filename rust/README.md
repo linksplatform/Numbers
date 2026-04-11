@@ -36,7 +36,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-platform-num = "0.4"
+platform-num = "0.5"
 ```
 
 ## Usage
