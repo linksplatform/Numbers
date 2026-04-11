@@ -19,7 +19,7 @@ Thank you for your interest in contributing! This document provides guidelines a
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
    ```
 
-   This project uses a specific nightly toolchain. It will be automatically selected when you run cargo commands due to `rust/rust-toolchain.toml`.
+   This project uses the stable toolchain. It will be automatically selected when you run cargo commands due to `rust/rust-toolchain.toml`.
 
 3. **Install development tools**
 

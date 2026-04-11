@@ -114,7 +114,6 @@ macro_rules! max_value_impl {
     };
 }
 
-// TODO: Create macro foreach
 max_value_impl!(i8);
 max_value_impl!(u8);
 max_value_impl!(i16);
@@ -148,7 +147,6 @@ max_value_impl!(usize);
 /// let link = create_link(1u64, 2u64);
 /// assert_eq!(link, (1u64, 2u64));
 /// ```
-// TODO: Not use alias - IDEs does not support it
 #[rustfmt::skip]
 pub trait LinkReference:
 Number

@@ -1,8 +1,8 @@
 [package]
 name = "platform-num"
 version = "0.5.0"
-edition = "2021"
-rust-version = "1.70"
+edition = "2024"
+rust-version = "1.85"
 authors = ["uselesssgoddess", "Linksplatform Team <linksplatformtechnologies@gmail.com>"]
 license = "Unlicense"
 repository = "https://github.com/linksplatform/Numbers"
