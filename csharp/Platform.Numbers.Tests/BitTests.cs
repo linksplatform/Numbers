@@ -173,5 +173,122 @@ namespace Platform.Numbers.Tests
         {
             Bit<byte>.PartialWrite(0, 1, 5, -5);
         }
+
+        [Theory]
+        [InlineData(0L, 0)]
+        [InlineData(1L, 1)]
+        [InlineData(2L, 1)]
+        [InlineData(3L, 2)]
+        [InlineData(4L, 1)]
+        [InlineData(5L, 2)]
+        [InlineData(7L, 3)]
+        [InlineData(8L, 1)]
+        [InlineData(15L, 4)]
+        [InlineData(255L, 8)]
+        [InlineData(1023L, 10)]
+        [InlineData(-1L, 64)]
+        [InlineData(long.MaxValue, 63)]
+        public static void BitCountTest(long value, int expectedCount)
+        {
+            Assert.Equal(expectedCount, Bit.Count(value));
+        }
+
+        [Fact]
+        public static void BitGenericPartialWriteWithNegativeShiftTest()
+        {
+            uint target = 0xFFFFFFFF;
+            uint source = 0b101;
+            
+            uint result = Bit<uint>.PartialWrite(target, source, -5, 3);
+            
+            // -5 becomes 32-5=27, so we write 101 at positions 27-29
+            uint expected = 0xEFFFFFFF; // 11101111111111111111111111111111
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public static void BitGenericPartialReadWithNegativeShiftTest()
+        {
+            uint target = 0xEFFFFFFF; // 11101111111111111111111111111111
+            
+            uint result = Bit<uint>.PartialRead(target, -5, 3);
+            
+            // -5 becomes 27, read 3 bits at position 27-29 should give 101
+            uint expected = 0b101;
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public static void BitGenericPartialWriteWithNegativeLimitTest()
+        {
+            uint target = 0;
+            uint source = 0b111;
+            
+            uint result = Bit<uint>.PartialWrite(target, source, 0, -29);
+            
+            uint expected = 0b111;
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public static void BitGenericPartialReadWithNegativeLimitTest()
+        {
+            uint target = 0b111;
+            
+            uint result = Bit<uint>.PartialRead(target, 0, -29);
+            
+            uint expected = 0b111;
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public static void BitGenericPartialWriteReadRoundTripTest()
+        {
+            uint original = 0b10110101;
+            uint value1 = 0b011;
+            uint value2 = 0b1010;
+            
+            uint packed = Bit<uint>.PartialWrite(original, value1, 2, 3);
+            packed = Bit<uint>.PartialWrite(packed, value2, 8, 4);
+            
+            uint extracted1 = Bit<uint>.PartialRead(packed, 2, 3);
+            uint extracted2 = Bit<uint>.PartialRead(packed, 8, 4);
+            
+            Assert.Equal(value1, extracted1);
+            Assert.Equal(value2, extracted2);
+        }
+
+        [Theory]
+        [InlineData(typeof(byte))]
+        [InlineData(typeof(ushort))]
+        [InlineData(typeof(uint))]
+        [InlineData(typeof(ulong))]
+        public static void BitGenericWorksWithDifferentTypes(Type numericType)
+        {
+            if (numericType == typeof(byte))
+            {
+                byte result = Bit<byte>.PartialWrite(0, 3, 1, 2);
+                Assert.Equal((byte)6, result);
+                Assert.Equal((byte)3, Bit<byte>.PartialRead(result, 1, 2));
+            }
+            else if (numericType == typeof(ushort))
+            {
+                ushort result = Bit<ushort>.PartialWrite(0, 3, 1, 2);
+                Assert.Equal((ushort)6, result);
+                Assert.Equal((ushort)3, Bit<ushort>.PartialRead(result, 1, 2));
+            }
+            else if (numericType == typeof(uint))
+            {
+                uint result = Bit<uint>.PartialWrite(0, 3, 1, 2);
+                Assert.Equal(6u, result);
+                Assert.Equal(3u, Bit<uint>.PartialRead(result, 1, 2));
+            }
+            else if (numericType == typeof(ulong))
+            {
+                ulong result = Bit<ulong>.PartialWrite(0, 3, 1, 2);
+                Assert.Equal(6ul, result);
+                Assert.Equal(3ul, Bit<ulong>.PartialRead(result, 1, 2));
+            }
+        }
     }
 }

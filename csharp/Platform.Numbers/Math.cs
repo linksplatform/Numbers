@@ -52,7 +52,7 @@ namespace Platform.Numbers
         /// </returns>
         public static TLinkAddress Factorial<TLinkAddress>(TLinkAddress n) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumCatalanIndex))
+            if (n >= TLinkAddress.Zero && n <= TLinkAddress.CreateTruncating(MaximumFactorialNumber))
             {
                 return TLinkAddress.CreateTruncating(_factorials[ulong.CreateTruncating(n)]);
             }
