@@ -78,13 +78,14 @@ The issue requested a comprehensive audit of the Rust codebase:
 
 **Finding:** The C# part of the project already has automated docs via `docfx`, deployed to GitHub Pages at `csharp/` subdirectory on the `gh-pages` branch.
 
-**Action taken:** Added `.github/workflows/deploy-rust-docs.yml` workflow that:
-- Triggers on push to `main` when Rust files change
+**Action taken:** Added a `deploy-docs` job to the main `.github/workflows/rust.yml` workflow that:
+- Runs only after a successful release (auto-release or manual-release)
+- Checks out the `main` branch to get the released code
 - Runs `cargo doc --no-deps` to generate HTML documentation
 - Deploys to `rust/` subdirectory on the `gh-pages` branch
 - Uses `peaceiris/actions-gh-pages@v4` (same approach as the C# docs)
 
-This makes Rust documentation available alongside C# documentation on the project's GitHub Pages site.
+This ensures Rust documentation is regenerated and published only when a new version is released, matching the project's release-driven documentation strategy.
 
 ---
 
@@ -102,7 +103,7 @@ This makes Rust documentation available alongside C# documentation on the projec
 
 5. **Test restructuring:** Moved tests from `src/` to `tests/` directory and added new test coverage.
 
-6. **Automated docs deployment:** Added CI workflow for Rust documentation generation and GitHub Pages deployment.
+6. **Automated docs deployment:** Integrated Rust documentation generation and GitHub Pages deployment into the main CI/CD workflow, triggered after successful releases.
 
 ---
 
