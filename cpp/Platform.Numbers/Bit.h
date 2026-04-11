@@ -1,5 +1,21 @@
-﻿namespace Platform::Numbers::Bit
+#pragma once
+#include <cstdint>
+#include <limits>
+
+namespace Platform::Numbers::Bit
 {
+    /// <summary>
+    /// <para>Counts the number of bits set in a number.</para>
+    /// <para>Подсчитывает количество установленных бит в числе.</para>
+    /// </summary>
+    /// <param name="x">
+    /// <para>Bitwise number.</para>
+    /// <para>Число в битовом представлении.</para>
+    /// </param>
+    /// <returns>
+    /// <para>Number of bits set in a number.</para>
+    /// <para>Количество установленных бит в числе.</para>
+    /// </returns>
     constexpr std::int64_t Count(std::int64_t x)
     {
         std::int64_t n = 0;
@@ -11,6 +27,18 @@
         return n;
     }
 
+    /// <summary>
+    /// <para>Searches for the first bit set in a number.</para>
+    /// <para>Ищет первый установленный бит в числе.</para>
+    /// </summary>
+    /// <param name="value">
+    /// <para>Bitwise number.</para>
+    /// <para>Число в битовом представлении.</para>
+    /// </param>
+    /// <returns>
+    /// <para>First bit set.</para>
+    /// <para>Первый установленный бит.</para>
+    /// </returns>
     constexpr std::int32_t GetLowestPosition(std::uint64_t value)
     {
         if (value == 0)
