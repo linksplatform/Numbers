@@ -1,0 +1,1 @@
+rd_("lplatform_num")
