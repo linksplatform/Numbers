@@ -15,7 +15,7 @@
 //! | [`SignedNumber`] | Extends [`Number`] with signed operations (`Signed + FromPrimitive`) |
 //! | [`ToSigned`] | Converts an unsigned type to its signed counterpart (e.g. `u32` → `i32`) |
 //! | [`MaxValue`] | Provides a `MAX` associated constant for every primitive integer type |
-//! | [`LinkReference`] | Composite trait for link identifiers — unsigned, hashable, displayable, thread-safe |
+//! | [`LinkReference`] | Composite trait for link identifiers — unsigned, hashable, displayable, thread-safe, with `TryFrom`/`TryInto` for all integer types |
 //!
 //! ## Example
 //!

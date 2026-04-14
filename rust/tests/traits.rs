@@ -339,6 +339,12 @@ fn test_link_reference_for_u64() {
 }
 
 #[test]
+fn test_link_reference_for_u128() {
+    fn assert_link_reference<T: LinkReference>(_val: T) {}
+    assert_link_reference(0u128);
+}
+
+#[test]
 fn test_link_reference_for_usize() {
     fn assert_link_reference<T: LinkReference>(_val: T) {}
     assert_link_reference(0usize);
@@ -423,6 +429,7 @@ fn test_link_reference_can_be_converted_to_signed() {
     assert_eq!(use_link_reference(42u16), 42i16);
     assert_eq!(use_link_reference(42u32), 42i32);
     assert_eq!(use_link_reference(42u64), 42i64);
+    assert_eq!(use_link_reference(42u128), 42i128);
     assert_eq!(use_link_reference(42usize), 42isize);
 }
 
@@ -435,6 +442,7 @@ fn test_link_reference_has_max_value() {
     assert_eq!(get_max::<u16>(), u16::MAX);
     assert_eq!(get_max::<u32>(), u32::MAX);
     assert_eq!(get_max::<u64>(), u64::MAX);
+    assert_eq!(get_max::<u128>(), u128::MAX);
     assert_eq!(get_max::<usize>(), usize::MAX);
 }
 
@@ -556,6 +564,7 @@ fn test_link_reference_is_send_sync() {
     assert_send_sync::<u16>();
     assert_send_sync::<u32>();
     assert_send_sync::<u64>();
+    assert_send_sync::<u128>();
     assert_send_sync::<usize>();
 }
 
@@ -588,4 +597,240 @@ fn test_link_reference_from_primitive() {
     assert_eq!(link_from_u64::<u32>(42), Some(42u32));
     assert_eq!(link_from_u64::<u8>(255), Some(255u8));
     assert_eq!(link_from_u64::<u8>(256), None); // overflow
+}
+
+// ==========================================
+// Tests for LinkReference - TryFrom bounds
+// ==========================================
+
+#[test]
+fn test_link_reference_try_from_byte() {
+    fn try_from_byte<T: LinkReference>(val: u8) -> T {
+        T::try_from(val).unwrap()
+    }
+    assert_eq!(try_from_byte::<u8>(42), 42u8);
+    assert_eq!(try_from_byte::<u16>(42), 42u16);
+    assert_eq!(try_from_byte::<u32>(42), 42u32);
+    assert_eq!(try_from_byte::<u64>(42), 42u64);
+    assert_eq!(try_from_byte::<u128>(42), 42u128);
+    assert_eq!(try_from_byte::<usize>(42), 42usize);
+}
+
+#[test]
+fn test_link_reference_try_from_i8() {
+    fn try_from_i8<T: LinkReference>(val: i8) -> Option<T> {
+        T::try_from(val).ok()
+    }
+    assert_eq!(try_from_i8::<u8>(42), Some(42u8));
+    assert_eq!(try_from_i8::<u32>(42), Some(42u32));
+    assert_eq!(try_from_i8::<u8>(-1), None);
+}
+
+#[test]
+fn test_link_reference_try_from_u16() {
+    fn try_from_u16<T: LinkReference>(val: u16) -> Option<T> {
+        T::try_from(val).ok()
+    }
+    assert_eq!(try_from_u16::<u8>(255), Some(255u8));
+    assert_eq!(try_from_u16::<u8>(256), None);
+    assert_eq!(try_from_u16::<u32>(1000), Some(1000u32));
+}
+
+#[test]
+fn test_link_reference_try_from_u64() {
+    fn try_from_u64<T: LinkReference>(val: u64) -> Option<T> {
+        T::try_from(val).ok()
+    }
+    assert_eq!(try_from_u64::<u8>(255), Some(255u8));
+    assert_eq!(try_from_u64::<u8>(256), None);
+    assert_eq!(try_from_u64::<u64>(u64::MAX), Some(u64::MAX));
+}
+
+#[test]
+fn test_link_reference_try_from_i128() {
+    fn try_from_i128<T: LinkReference>(val: i128) -> Option<T> {
+        T::try_from(val).ok()
+    }
+    assert_eq!(try_from_i128::<u32>(42), Some(42u32));
+    assert_eq!(try_from_i128::<u32>(-1), None);
+    assert_eq!(try_from_i128::<u64>(i128::MAX), None);
+}
+
+#[test]
+fn test_link_reference_try_from_usize() {
+    fn try_from_usize<T: LinkReference>(val: usize) -> Option<T> {
+        T::try_from(val).ok()
+    }
+    assert_eq!(try_from_usize::<u8>(100), Some(100u8));
+    assert_eq!(try_from_usize::<u8>(256), None);
+    assert_eq!(try_from_usize::<usize>(12345), Some(12345usize));
+}
+
+// ==========================================
+// Tests for LinkReference - TryInto bounds
+// ==========================================
+
+#[test]
+fn test_link_reference_try_into_u8() {
+    fn try_into_u8<T: LinkReference>(val: T) -> Option<u8> {
+        val.try_into().ok()
+    }
+    assert_eq!(try_into_u8(255u16), Some(255u8));
+    assert_eq!(try_into_u8(256u16), None);
+    assert_eq!(try_into_u8(42u64), Some(42u8));
+}
+
+#[test]
+fn test_link_reference_try_into_i64() {
+    fn try_into_i64<T: LinkReference>(val: T) -> Option<i64> {
+        val.try_into().ok()
+    }
+    assert_eq!(try_into_i64(42u32), Some(42i64));
+    assert_eq!(try_into_i64(u64::MAX), None);
+}
+
+#[test]
+fn test_link_reference_try_into_usize() {
+    fn try_into_usize<T: LinkReference>(val: T) -> Option<usize> {
+        val.try_into().ok()
+    }
+    assert_eq!(try_into_usize(42u8), Some(42usize));
+    assert_eq!(try_into_usize(1000u32), Some(1000usize));
+}
+
+#[test]
+fn test_link_reference_try_into_i128() {
+    fn try_into_i128<T: LinkReference>(val: T) -> Option<i128> {
+        val.try_into().ok()
+    }
+    assert_eq!(try_into_i128(42u8), Some(42i128));
+    assert_eq!(try_into_i128(u64::MAX), Some(u64::MAX as i128));
+}
+
+// ==========================================
+// Tests for LinkReference - u128 large values
+// ==========================================
+
+#[test]
+fn test_link_reference_u128_large_values() {
+    let max: u128 = u128::MAX;
+    assert_eq!(max, 340282366920938463463374607431768211455u128);
+
+    let val: u128 = u128::from_byte(255);
+    assert_eq!(val, 255u128);
+}
+
+#[test]
+fn test_link_reference_u128_try_from_all_integer_types() {
+    assert_eq!(u128::try_from(127i8).unwrap(), 127u128);
+    assert_eq!(u128::from(255u8), 255u128);
+    assert_eq!(u128::try_from(32767i16).unwrap(), 32767u128);
+    assert_eq!(u128::from(65535u16), 65535u128);
+    assert_eq!(u128::try_from(2147483647i32).unwrap(), 2147483647u128);
+    assert_eq!(u128::from(4294967295u32), 4294967295u128);
+    assert_eq!(u128::try_from(i64::MAX).unwrap(), i64::MAX as u128);
+    assert_eq!(u128::from(u64::MAX), u64::MAX as u128);
+    assert_eq!(u128::try_from(i128::MAX).unwrap(), i128::MAX as u128);
+    assert!(u128::try_from(-1i8).is_err());
+    assert!(u128::try_from(-1i128).is_err());
+}
+
+#[test]
+fn test_link_reference_u128_try_into_smaller_types() {
+    let val: u128 = 42;
+    let as_u8: Result<u8, _> = val.try_into();
+    assert_eq!(as_u8.unwrap(), 42u8);
+
+    let as_u64: Result<u64, _> = val.try_into();
+    assert_eq!(as_u64.unwrap(), 42u64);
+
+    let big: u128 = u128::MAX;
+    let as_u64: Result<u64, _> = big.try_into();
+    assert!(as_u64.is_err());
+}
+
+#[test]
+fn test_link_reference_u128_from_byte_all_range() {
+    for n in 0..=255u8 {
+        assert_eq!(u128::from_byte(n), n as u128);
+    }
+}
+
+// ==========================================
+// Tests for LinkReference - from_byte method
+// ==========================================
+
+#[test]
+fn test_link_reference_from_byte() {
+    fn make_val<T: LinkReference>(n: u8) -> T {
+        T::from_byte(n)
+    }
+    assert_eq!(make_val::<u8>(0), 0u8);
+    assert_eq!(make_val::<u8>(255), 255u8);
+    assert_eq!(make_val::<u16>(42), 42u16);
+    assert_eq!(make_val::<u32>(100), 100u32);
+    assert_eq!(make_val::<u64>(1), 1u64);
+    assert_eq!(make_val::<u128>(200), 200u128);
+    assert_eq!(make_val::<usize>(0), 0usize);
+}
+
+#[test]
+fn test_link_reference_from_byte_all_u8_range_for_u16() {
+    for n in 0..=255u8 {
+        assert_eq!(u16::from_byte(n), n as u16);
+    }
+}
+
+#[test]
+fn test_link_reference_from_byte_zero() {
+    assert_eq!(u8::from_byte(0), 0u8);
+    assert_eq!(u16::from_byte(0), 0u16);
+    assert_eq!(u32::from_byte(0), 0u32);
+    assert_eq!(u64::from_byte(0), 0u64);
+    assert_eq!(u128::from_byte(0), 0u128);
+    assert_eq!(usize::from_byte(0), 0usize);
+}
+
+#[test]
+fn test_link_reference_from_byte_one() {
+    assert_eq!(u8::from_byte(1), 1u8);
+    assert_eq!(u16::from_byte(1), 1u16);
+    assert_eq!(u32::from_byte(1), 1u32);
+    assert_eq!(u64::from_byte(1), 1u64);
+    assert_eq!(u128::from_byte(1), 1u128);
+    assert_eq!(usize::from_byte(1), 1usize);
+}
+
+// ==========================================
+// Tests for LinkReference - Sized bound
+// ==========================================
+
+#[test]
+fn test_link_reference_is_sized() {
+    fn assert_sized<T: LinkReference + Sized>() {}
+    assert_sized::<u8>();
+    assert_sized::<u16>();
+    assert_sized::<u32>();
+    assert_sized::<u64>();
+    assert_sized::<u128>();
+    assert_sized::<usize>();
+}
+
+// ==========================================
+// Tests for LinkReference - Error: Debug bound
+// ==========================================
+
+#[test]
+fn test_link_reference_try_from_error_is_debug() {
+    fn check_error_debug<T: LinkReference>() {
+        if let Err(e) = T::try_from(-1i8) {
+            let _ = format!("{e:?}");
+        }
+    }
+    check_error_debug::<u8>();
+    check_error_debug::<u16>();
+    check_error_debug::<u32>();
+    check_error_debug::<u64>();
+    check_error_debug::<u128>();
+    check_error_debug::<usize>();
 }
