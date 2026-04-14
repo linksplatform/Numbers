@@ -12,3 +12,10 @@ Numbers for linksplatform
 
 [dependencies]
 num-traits = "0.2.14"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "math_benchmarks"
+harness = false
