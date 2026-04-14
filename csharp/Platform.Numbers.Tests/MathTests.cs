@@ -9,10 +9,8 @@ namespace Platform.Numbers.Tests
     {
         private static readonly TimeSpan ComputationTimeLimit = TimeSpan.FromSeconds(10);
 
-        /// <summary>
-        /// Computes factorial of n using BigInteger so it never overflows.
-        /// Returns null if computation exceeds the time limit.
-        /// </summary>
+        // Computes factorial of n using BigInteger so it never overflows.
+        // Returns null if computation exceeds the time limit.
         private static BigInteger? ComputeFactorialWithTimeLimit(ulong n)
         {
             var stopwatch = Stopwatch.StartNew();
@@ -28,11 +26,9 @@ namespace Platform.Numbers.Tests
             return result;
         }
 
-        /// <summary>
-        /// Computes the nth Catalan number from scratch using the formula:
-        /// C(n) = (2n)! / ((n+1)! * n!)
-        /// Returns null if computation exceeds the time limit.
-        /// </summary>
+        // Computes the nth Catalan number from scratch using the formula:
+        // C(n) = (2n)! / ((n+1)! * n!)
+        // Returns null if computation exceeds the time limit.
         private static BigInteger? ComputeCatalanWithTimeLimit(ulong n)
         {
             var twoNFact = ComputeFactorialWithTimeLimit(2 * n);
