@@ -2,7 +2,7 @@ name: csharp
 
 on:
   push:
-    branches: main 
+    branches: main
     paths:
       - 'csharp/**'
       - '.github/workflows/csharp.yml'
@@ -10,7 +10,7 @@ env:
   NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
-  
+
 defaults:
   run:
     working-directory: csharp
@@ -19,7 +19,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Test
@@ -29,21 +29,20 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           submodules: true
-      - uses: nuget/setup-nuget@v1
       - name: Publish NuGet package to GitHub Package Registry
         run: |
           dotnet build -c Release
           dotnet pack -c Release
-          nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -UserName linksplatform -Password ${{ secrets.GITHUB_TOKEN }}
-          nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
+          dotnet nuget add source "https://nuget.pkg.github.com/linksplatform/index.json" --name "GitHub" --username linksplatform --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+          dotnet nuget push ./**/*.nupkg --source "GitHub" --skip-duplicate
   pusnToNuget:
     runs-on: ubuntu-latest
     needs: test
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Read project information
@@ -60,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Read project information
@@ -82,12 +81,12 @@ jobs:
     outputs:
       isCsFilesChanged: ${{ steps.setIsCsFilesChangedOutput.outputs.isCsFilesChanged }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
        fetch-depth: 0
     - name: Get changed files using defaults
       id: changed-files
-      uses: tj-actions/changed-files@v21
+      uses: tj-actions/changed-files@v46
     - name: Set output isCsFilesChanged
       id: setIsCsFilesChangedOutput
       run: |
@@ -100,14 +99,14 @@ jobs:
             isCsFilesChanged='true'
           fi
         done
-        echo "::set-output name=isCsFilesChanged::${isCsFilesChanged}"
+        echo "isCsFilesChanged=${isCsFilesChanged}" >> "$GITHUB_OUTPUT"
         echo "isCsFilesChanged: ${isCsFilesChanged}"
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
     if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Generate PDF with code
@@ -122,7 +121,7 @@ jobs:
     needs: [findChangedCsFiles]
     if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Publish documentation to gh-pages branch
