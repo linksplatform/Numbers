@@ -1,17 +1,25 @@
 [package]
 name = "platform-num"
-version = "0.1.0-aplha.1"
-edition = "2018"
+version = "0.8.0"
+edition = "2024"
+rust-version = "1.85"
 authors = ["uselesssgoddess", "Linksplatform Team <linksplatformtechnologies@gmail.com>"]
-license = "LGPL-3.0"
-repository = "https://github.com/linksplatform/platform-rs"
-homepage = "https://github.com/linksplatform/platform-rs"
+license = "Unlicense"
+repository = "https://github.com/linksplatform/Numbers"
+homepage = "https://github.com/linksplatform/Numbers"
 description = """
 Numbers for linksplatform
 """
+readme = "README.md"
+keywords = ["numbers", "linksplatform", "traits"]
+categories = ["development-tools"]
+
+[lib]
+name = "platform_num"
+path = "src/lib.rs"
 
 [dependencies]
-num-traits = "0.2.14"
+num-traits = "0.2.19"
 
 [dev-dependencies]
 criterion = "0.5"
@@ -19,3 +27,8 @@ criterion = "0.5"
 [[bench]]
 name = "math_benchmarks"
 harness = false
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
