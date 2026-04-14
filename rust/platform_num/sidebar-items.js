@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":["LinkReference","MaxValue","Number","SignedNumber","ToSigned"]};
+window.SIDEBAR_ITEMS = {"trait":["AsPrimitive","FromPrimitive","LinkReference","MaxValue","Number","PrimInt","Signed","SignedNumber","ToPrimitive","ToSigned","Unsigned","WrappingAdd","WrappingArithmetic","WrappingMul","WrappingNeg","WrappingShl","WrappingShr","WrappingSub"]};
