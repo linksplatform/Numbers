@@ -595,15 +595,15 @@ fn test_link_reference_from_primitive() {
 // ==========================================
 
 #[test]
-fn test_link_reference_try_from_u8() {
-    fn try_from_u8<T: LinkReference>(val: u8) -> T {
+fn test_link_reference_try_from_byte() {
+    fn try_from_byte<T: LinkReference>(val: u8) -> T {
         T::try_from(val).unwrap()
     }
-    assert_eq!(try_from_u8::<u8>(42), 42u8);
-    assert_eq!(try_from_u8::<u16>(42), 42u16);
-    assert_eq!(try_from_u8::<u32>(42), 42u32);
-    assert_eq!(try_from_u8::<u64>(42), 42u64);
-    assert_eq!(try_from_u8::<usize>(42), 42usize);
+    assert_eq!(try_from_byte::<u8>(42), 42u8);
+    assert_eq!(try_from_byte::<u16>(42), 42u16);
+    assert_eq!(try_from_byte::<u32>(42), 42u32);
+    assert_eq!(try_from_byte::<u64>(42), 42u64);
+    assert_eq!(try_from_byte::<usize>(42), 42usize);
 }
 
 #[test]
@@ -698,13 +698,13 @@ fn test_link_reference_try_into_i128() {
 }
 
 // ==========================================
-// Tests for LinkReference - funty method
+// Tests for LinkReference - from_byte method
 // ==========================================
 
 #[test]
-fn test_link_reference_funty() {
+fn test_link_reference_from_byte() {
     fn make_val<T: LinkReference>(n: u8) -> T {
-        T::funty(n)
+        T::from_byte(n)
     }
     assert_eq!(make_val::<u8>(0), 0u8);
     assert_eq!(make_val::<u8>(255), 255u8);
@@ -715,28 +715,28 @@ fn test_link_reference_funty() {
 }
 
 #[test]
-fn test_link_reference_funty_all_u8_range_for_u16() {
+fn test_link_reference_from_byte_all_u8_range_for_u16() {
     for n in 0..=255u8 {
-        assert_eq!(u16::funty(n), n as u16);
+        assert_eq!(u16::from_byte(n), n as u16);
     }
 }
 
 #[test]
-fn test_link_reference_funty_zero() {
-    assert_eq!(u8::funty(0), 0u8);
-    assert_eq!(u16::funty(0), 0u16);
-    assert_eq!(u32::funty(0), 0u32);
-    assert_eq!(u64::funty(0), 0u64);
-    assert_eq!(usize::funty(0), 0usize);
+fn test_link_reference_from_byte_zero() {
+    assert_eq!(u8::from_byte(0), 0u8);
+    assert_eq!(u16::from_byte(0), 0u16);
+    assert_eq!(u32::from_byte(0), 0u32);
+    assert_eq!(u64::from_byte(0), 0u64);
+    assert_eq!(usize::from_byte(0), 0usize);
 }
 
 #[test]
-fn test_link_reference_funty_one() {
-    assert_eq!(u8::funty(1), 1u8);
-    assert_eq!(u16::funty(1), 1u16);
-    assert_eq!(u32::funty(1), 1u32);
-    assert_eq!(u64::funty(1), 1u64);
-    assert_eq!(usize::funty(1), 1usize);
+fn test_link_reference_from_byte_one() {
+    assert_eq!(u8::from_byte(1), 1u8);
+    assert_eq!(u16::from_byte(1), 1u16);
+    assert_eq!(u32::from_byte(1), 1u32);
+    assert_eq!(u64::from_byte(1), 1u64);
+    assert_eq!(usize::from_byte(1), 1usize);
 }
 
 // ==========================================

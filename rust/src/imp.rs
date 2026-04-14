@@ -204,9 +204,9 @@ Sized
 + 'static
 {
     /// Creates a value of this type from a `u8`, panicking on overflow.
-    fn funty(n: u8) -> Self {
+    fn from_byte(n: u8) -> Self {
         Self::try_from(n).unwrap_or_else(|e| {
-            panic!("LinkReference::funty({n}) failed: {e:?}")
+            panic!("LinkReference::from_byte({n}) failed: {e:?}")
         })
     }
 }
