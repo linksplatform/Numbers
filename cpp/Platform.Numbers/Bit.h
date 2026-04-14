@@ -59,11 +59,11 @@ namespace Platform::Numbers::Bit
     {
         if (shift < 0)
         {
-            shift = sizeof(T) * 8 + shift;
+            shift = sizeof(T) * std::numeric_limits<unsigned char>::digits + shift;
         }
         if (limit < 0)
         {
-            limit = sizeof(T) * 8 + limit;
+            limit = sizeof(T) * std::numeric_limits<unsigned char>::digits + limit;
         }
         auto sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
         auto targetMask = ~(sourceMask << shift);
@@ -75,11 +75,11 @@ namespace Platform::Numbers::Bit
     {
         if (shift < 0)
         {
-            shift = sizeof(T) * 8 + shift;
+            shift = sizeof(T) * std::numeric_limits<unsigned char>::digits + shift;
         }
         if (limit < 0)
         {
-            limit = sizeof(T) * 8 + limit;
+            limit = sizeof(T) * std::numeric_limits<unsigned char>::digits + limit;
         }
         auto sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
         auto targetMask = sourceMask << shift;
