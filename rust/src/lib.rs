@@ -47,6 +47,7 @@
 //! ```
 
 mod imp;
+pub mod math;
 
 pub use imp::{LinkReference, MaxValue, Number, SignedNumber, ToSigned, WrappingArithmetic};
 
