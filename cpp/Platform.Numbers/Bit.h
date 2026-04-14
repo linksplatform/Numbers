@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <climits>
 #include <limits>
 
 namespace Platform::Numbers::Bit
@@ -59,11 +60,11 @@ namespace Platform::Numbers::Bit
     {
         if (shift < 0)
         {
-            shift = sizeof(T) * 8 + shift;
+            shift = sizeof(T) * CHAR_BIT + shift;
         }
         if (limit < 0)
         {
-            limit = sizeof(T) * 8 + limit;
+            limit = sizeof(T) * CHAR_BIT + limit;
         }
         auto sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
         auto targetMask = ~(sourceMask << shift);
@@ -75,11 +76,11 @@ namespace Platform::Numbers::Bit
     {
         if (shift < 0)
         {
-            shift = sizeof(T) * 8 + shift;
+            shift = sizeof(T) * CHAR_BIT + shift;
         }
         if (limit < 0)
         {
-            limit = sizeof(T) * 8 + limit;
+            limit = sizeof(T) * CHAR_BIT + limit;
         }
         auto sourceMask = ~(std::numeric_limits<T>::max() << limit) & std::numeric_limits<T>::max();
         auto targetMask = sourceMask << shift;
