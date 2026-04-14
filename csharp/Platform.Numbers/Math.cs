@@ -101,7 +101,7 @@ namespace Platform.Numbers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPowerOfTwo<TLinkAddress>(TLinkAddress x) where TLinkAddress : IUnsignedNumber<TLinkAddress>, IBitwiseOperators<TLinkAddress, TLinkAddress, TLinkAddress>, IComparisonOperators<TLinkAddress, TLinkAddress, bool>
         {
-            return (x & x - TLinkAddress.One) == TLinkAddress.Zero;
+            return x > TLinkAddress.Zero && (x & (x - TLinkAddress.One)) == TLinkAddress.Zero;
         }
     }
 }
