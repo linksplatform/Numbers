@@ -1,4 +1,4 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use criterion::{Criterion, black_box, criterion_group, criterion_main};
 use platform_num::math;
 
 fn bench_factorial_baseline(c: &mut Criterion) {
