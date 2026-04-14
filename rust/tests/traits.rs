@@ -1,4 +1,4 @@
-use platform_num::{LinkReference, MaxValue, Number, SignedNumber, ToSigned};
+use platform_num::{LinkReference, MaxValue, Number, SignedNumber, ToSigned, WrappingArithmetic};
 
 // ==========================================
 // Tests for Number trait
@@ -308,6 +308,162 @@ fn test_max_value_isize() {
 #[test]
 fn test_max_value_usize() {
     assert_eq!(usize::MAX, <usize as MaxValue>::MAX);
+}
+
+// ==========================================
+// Tests for WrappingArithmetic trait
+// ==========================================
+
+#[test]
+fn test_wrapping_arithmetic_for_u8() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0u8);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_u16() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0u16);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_u32() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0u32);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_u64() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0u64);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_u128() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0u128);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_usize() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0usize);
+}
+
+#[test]
+fn test_wrapping_arithmetic_for_signed_types() {
+    fn assert_wrapping<T: WrappingArithmetic>(_val: T) {}
+    assert_wrapping(0i8);
+    assert_wrapping(0i16);
+    assert_wrapping(0i32);
+    assert_wrapping(0i64);
+    assert_wrapping(0i128);
+    assert_wrapping(0isize);
+}
+
+#[test]
+fn test_wrapping_add_overflow() {
+    fn wrapping_add<T: WrappingArithmetic>(a: &T, b: &T) -> T {
+        a.wrapping_add(b)
+    }
+    assert_eq!(wrapping_add(&u8::MAX, &1u8), 0u8);
+    assert_eq!(wrapping_add(&u16::MAX, &1u16), 0u16);
+    assert_eq!(wrapping_add(&u32::MAX, &1u32), 0u32);
+    assert_eq!(wrapping_add(&u64::MAX, &1u64), 0u64);
+    assert_eq!(wrapping_add(&u128::MAX, &1u128), 0u128);
+    assert_eq!(wrapping_add(&usize::MAX, &1usize), 0usize);
+}
+
+#[test]
+fn test_wrapping_sub_underflow() {
+    fn wrapping_sub<T: WrappingArithmetic>(a: &T, b: &T) -> T {
+        a.wrapping_sub(b)
+    }
+    assert_eq!(wrapping_sub(&0u8, &1u8), u8::MAX);
+    assert_eq!(wrapping_sub(&0u16, &1u16), u16::MAX);
+    assert_eq!(wrapping_sub(&0u32, &1u32), u32::MAX);
+    assert_eq!(wrapping_sub(&0u64, &1u64), u64::MAX);
+    assert_eq!(wrapping_sub(&0u128, &1u128), u128::MAX);
+    assert_eq!(wrapping_sub(&0usize, &1usize), usize::MAX);
+}
+
+#[test]
+fn test_wrapping_mul_overflow() {
+    fn wrapping_mul<T: WrappingArithmetic>(a: &T, b: &T) -> T {
+        a.wrapping_mul(b)
+    }
+    assert_eq!(wrapping_mul(&u8::MAX, &2u8), u8::MAX - 1);
+    assert_eq!(wrapping_mul(&u32::MAX, &2u32), u32::MAX - 1);
+}
+
+#[test]
+fn test_wrapping_neg() {
+    fn wrapping_neg<T: WrappingArithmetic>(a: &T) -> T {
+        a.wrapping_neg()
+    }
+    assert_eq!(wrapping_neg(&0u8), 0u8);
+    assert_eq!(wrapping_neg(&1u8), u8::MAX);
+    assert_eq!(wrapping_neg(&0u32), 0u32);
+    assert_eq!(wrapping_neg(&1u32), u32::MAX);
+}
+
+#[test]
+fn test_wrapping_shl() {
+    fn wrapping_shl<T: WrappingArithmetic>(a: &T, b: u32) -> T {
+        a.wrapping_shl(b)
+    }
+    assert_eq!(wrapping_shl(&1u8, 7), 128u8);
+    assert_eq!(wrapping_shl(&1u32, 31), 1u32 << 31);
+}
+
+#[test]
+fn test_wrapping_shr() {
+    fn wrapping_shr<T: WrappingArithmetic>(a: &T, b: u32) -> T {
+        a.wrapping_shr(b)
+    }
+    assert_eq!(wrapping_shr(&128u8, 7), 1u8);
+    assert_eq!(wrapping_shr(&u32::MAX, 16), 0xFFFFu32);
+}
+
+// ==========================================
+// Tests for LinkReference wrapping arithmetic
+// ==========================================
+
+#[test]
+fn test_link_reference_wrapping_add() {
+    fn wrapping_add<T: LinkReference>(a: &T, b: &T) -> T {
+        a.wrapping_add(b)
+    }
+    assert_eq!(wrapping_add(&u8::MAX, &1u8), 0u8);
+    assert_eq!(wrapping_add(&u32::MAX, &1u32), 0u32);
+    assert_eq!(wrapping_add(&u64::MAX, &1u64), 0u64);
+    assert_eq!(wrapping_add(&u128::MAX, &1u128), 0u128);
+}
+
+#[test]
+fn test_link_reference_wrapping_sub() {
+    fn wrapping_sub<T: LinkReference>(a: &T, b: &T) -> T {
+        a.wrapping_sub(b)
+    }
+    assert_eq!(wrapping_sub(&0u8, &1u8), u8::MAX);
+    assert_eq!(wrapping_sub(&0u32, &1u32), u32::MAX);
+    assert_eq!(wrapping_sub(&0u64, &1u64), u64::MAX);
+    assert_eq!(wrapping_sub(&0u128, &1u128), u128::MAX);
+}
+
+#[test]
+fn test_link_reference_wrapping_arithmetic_no_extra_bounds() {
+    fn wrapping_ops<T: LinkReference>(a: T, b: T) -> (T, T, T) {
+        (
+            a.wrapping_add(&b),
+            a.wrapping_sub(&b),
+            a.wrapping_mul(&b),
+        )
+    }
+    let (add, sub, mul) = wrapping_ops(u32::MAX, 1u32);
+    assert_eq!(add, 0u32);
+    assert_eq!(sub, u32::MAX - 1);
+    assert_eq!(mul, u32::MAX);
 }
 
 // ==========================================
