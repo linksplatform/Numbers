@@ -5,3 +5,4 @@ exclude_paths:
   - "changelog.d/**"
   - "scripts/**"
   - "experiments/**"
+  - "cpp/build/**"
