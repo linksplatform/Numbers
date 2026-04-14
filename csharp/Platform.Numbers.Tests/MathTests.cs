@@ -32,13 +32,22 @@ namespace Platform.Numbers.Tests
         private static BigInteger? ComputeCatalanWithTimeLimit(ulong n)
         {
             var twoNFact = ComputeFactorialWithTimeLimit(2 * n);
-            if (twoNFact is null) return null;
+            if (twoNFact is null)
+            {
+                return null;
+            }
 
             var nPlusOneFact = ComputeFactorialWithTimeLimit(n + 1);
-            if (nPlusOneFact is null) return null;
+            if (nPlusOneFact is null)
+            {
+                return null;
+            }
 
             var nFact = ComputeFactorialWithTimeLimit(n);
-            if (nFact is null) return null;
+            if (nFact is null)
+            {
+                return null;
+            }
 
             return twoNFact / (nPlusOneFact * nFact);
         }
