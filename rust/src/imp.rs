@@ -1,6 +1,9 @@
 use std::fmt::{Debug, Display};
 use std::hash::Hash;
 
+use num_traits::ops::wrapping::{
+    WrappingAdd, WrappingMul, WrappingNeg, WrappingShl, WrappingShr, WrappingSub,
+};
 use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 
 /// A base numeric trait combining `PrimInt`, `Default`, `Debug`,
@@ -138,10 +141,40 @@ macro_rules! max_value_impl {
 
 for_each_integer_type!(max_value_impl);
 
+/// A composite trait for wrapping arithmetic operations.
+///
+/// Combines all wrapping arithmetic traits from `num-traits`:
+/// [`WrappingAdd`], [`WrappingSub`], [`WrappingMul`],
+/// [`WrappingNeg`], [`WrappingShl`], and [`WrappingShr`].
+///
+/// Implemented for all primitive integer types.
+///
+/// # Examples
+///
+/// ```
+/// use platform_num::WrappingArithmetic;
+///
+/// fn wrapping_increment<T: WrappingArithmetic>(a: &T, b: &T) -> T {
+///     a.wrapping_add(b)
+/// }
+///
+/// assert_eq!(wrapping_increment(&u8::MAX, &1u8), 0u8);
+/// ```
+pub trait WrappingArithmetic:
+    WrappingAdd + WrappingSub + WrappingMul + WrappingNeg + WrappingShl + WrappingShr
+{
+}
+
+impl<All: WrappingAdd + WrappingSub + WrappingMul + WrappingNeg + WrappingShl + WrappingShr>
+    WrappingArithmetic for All
+{
+}
+
 /// A composite trait for types that can be used as link identifiers.
 ///
 /// Combines [`Number`], `Unsigned`, [`ToSigned`], [`MaxValue`],
-/// `FromPrimitive`, `TryFrom`/`TryInto` for all integer types,
+/// [`WrappingArithmetic`], `FromPrimitive`,
+/// `TryFrom`/`TryInto` for all integer types,
 /// `Debug`, `Display`, `Hash`, `Send`, `Sync`, and `'static`.
 ///
 /// Implemented for `u8`, `u16`, `u32`, `u64`, `u128`, and `usize`.
@@ -171,6 +204,7 @@ Sized
 + Unsigned
 + ToSigned
 + MaxValue
++ WrappingArithmetic
 + FromPrimitive
 + TryFrom<i8, Error: Debug>
 + TryFrom<u8, Error: Debug>
@@ -218,6 +252,7 @@ impl<
     + Unsigned
     + ToSigned
     + MaxValue
+    + WrappingArithmetic
     + FromPrimitive
     + TryFrom<i8, Error: Debug>
     + TryFrom<u8, Error: Debug>

@@ -15,7 +15,24 @@
 //! | [`SignedNumber`] | Extends [`Number`] with signed operations (`Signed + FromPrimitive`) |
 //! | [`ToSigned`] | Converts an unsigned type to its signed counterpart (e.g. `u32` → `i32`) |
 //! | [`MaxValue`] | Provides a `MAX` associated constant for every primitive integer type |
-//! | [`LinkReference`] | Composite trait for link identifiers — unsigned, hashable, displayable, thread-safe, with `TryFrom`/`TryInto` for all integer types |
+//! | [`WrappingArithmetic`] | Composite trait for wrapping arithmetic — bundles `WrappingAdd`, `WrappingSub`, `WrappingMul`, `WrappingNeg`, `WrappingShl`, `WrappingShr` |
+//! | [`LinkReference`] | Composite trait for link identifiers — unsigned, hashable, displayable, thread-safe, with wrapping arithmetic and `TryFrom`/`TryInto` for all integer types |
+//!
+//! ## Re-exported `num-traits`
+//!
+//! All `num-traits` traits that appear in this crate's supertraits are
+//! re-exported so that downstream crates can use them without adding
+//! `num-traits` as a direct dependency:
+//!
+//! | Re-export | Used in |
+//! |-----------|---------|
+//! | [`PrimInt`] | [`Number`] |
+//! | [`AsPrimitive`] | [`Number`] |
+//! | [`ToPrimitive`] | [`Number`] |
+//! | [`FromPrimitive`] | [`SignedNumber`], [`LinkReference`] |
+//! | [`Signed`] | [`SignedNumber`] |
+//! | [`Unsigned`] | [`LinkReference`] |
+//! | [`WrappingAdd`], [`WrappingSub`], [`WrappingMul`], [`WrappingNeg`], [`WrappingShl`], [`WrappingShr`] | [`WrappingArithmetic`] |
 //!
 //! ## Example
 //!
@@ -31,4 +48,9 @@
 
 mod imp;
 
-pub use imp::{LinkReference, MaxValue, Number, SignedNumber, ToSigned};
+pub use imp::{LinkReference, MaxValue, Number, SignedNumber, ToSigned, WrappingArithmetic};
+
+pub use num_traits::ops::wrapping::{
+    WrappingAdd, WrappingMul, WrappingNeg, WrappingShl, WrappingShr, WrappingSub,
+};
+pub use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
