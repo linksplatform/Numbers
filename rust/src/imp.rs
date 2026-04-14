@@ -141,8 +141,8 @@ for_each_integer_type!(max_value_impl);
 /// A composite trait for types that can be used as link identifiers.
 ///
 /// Combines [`Number`], `Unsigned`, [`ToSigned`], [`MaxValue`],
-/// `FromPrimitive`, `Debug`, `Display`, `Hash`, `Send`, `Sync`,
-/// and `'static`.
+/// `FromPrimitive`, `TryFrom`/`TryInto` for all integer types,
+/// `Debug`, `Display`, `Hash`, `Send`, `Sync`, and `'static`.
 ///
 /// Implemented for `u8`, `u16`, `u32`, `u64`, and `usize`.
 ///
@@ -166,25 +166,83 @@ for_each_integer_type!(max_value_impl);
 /// ```
 #[rustfmt::skip]
 pub trait LinkReference:
-Number
+Sized
++ Number
 + Unsigned
 + ToSigned
 + MaxValue
 + FromPrimitive
++ TryFrom<i8, Error: Debug>
++ TryFrom<u8, Error: Debug>
++ TryFrom<i16, Error: Debug>
++ TryFrom<u16, Error: Debug>
++ TryFrom<i32, Error: Debug>
++ TryFrom<u32, Error: Debug>
++ TryFrom<i64, Error: Debug>
++ TryFrom<u64, Error: Debug>
++ TryFrom<i128, Error: Debug>
++ TryFrom<u128, Error: Debug>
++ TryFrom<isize, Error: Debug>
++ TryFrom<usize, Error: Debug>
++ TryInto<i8, Error: Debug>
++ TryInto<u8, Error: Debug>
++ TryInto<i16, Error: Debug>
++ TryInto<u16, Error: Debug>
++ TryInto<i32, Error: Debug>
++ TryInto<u32, Error: Debug>
++ TryInto<i64, Error: Debug>
++ TryInto<u64, Error: Debug>
++ TryInto<i128, Error: Debug>
++ TryInto<u128, Error: Debug>
++ TryInto<isize, Error: Debug>
++ TryInto<usize, Error: Debug>
 + Debug
 + Display
 + Hash
 + Send
 + Sync
-+ 'static {}
++ 'static
+{
+    /// Creates a value of this type from a `u8`, panicking on overflow.
+    fn funty(n: u8) -> Self {
+        Self::try_from(n).unwrap_or_else(|e| {
+            panic!("LinkReference::funty({n}) failed: {e:?}")
+        })
+    }
+}
 
 #[rustfmt::skip]
 impl<
-    All: Number
+    All: Sized
+    + Number
     + Unsigned
     + ToSigned
     + MaxValue
     + FromPrimitive
+    + TryFrom<i8, Error: Debug>
+    + TryFrom<u8, Error: Debug>
+    + TryFrom<i16, Error: Debug>
+    + TryFrom<u16, Error: Debug>
+    + TryFrom<i32, Error: Debug>
+    + TryFrom<u32, Error: Debug>
+    + TryFrom<i64, Error: Debug>
+    + TryFrom<u64, Error: Debug>
+    + TryFrom<i128, Error: Debug>
+    + TryFrom<u128, Error: Debug>
+    + TryFrom<isize, Error: Debug>
+    + TryFrom<usize, Error: Debug>
+    + TryInto<i8, Error: Debug>
+    + TryInto<u8, Error: Debug>
+    + TryInto<i16, Error: Debug>
+    + TryInto<u16, Error: Debug>
+    + TryInto<i32, Error: Debug>
+    + TryInto<u32, Error: Debug>
+    + TryInto<i64, Error: Debug>
+    + TryInto<u64, Error: Debug>
+    + TryInto<i128, Error: Debug>
+    + TryInto<u128, Error: Debug>
+    + TryInto<isize, Error: Debug>
+    + TryInto<usize, Error: Debug>
     + Debug
     + Display
     + Hash
