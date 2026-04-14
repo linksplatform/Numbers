@@ -1,10 +1,10 @@
 use std::fmt::{Debug, Display};
 use std::hash::Hash;
 
-use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 use num_traits::ops::wrapping::{
     WrappingAdd, WrappingMul, WrappingNeg, WrappingShl, WrappingShr, WrappingSub,
 };
+use num_traits::{AsPrimitive, FromPrimitive, PrimInt, Signed, ToPrimitive, Unsigned};
 
 /// A base numeric trait combining `PrimInt`, `Default`, `Debug`,
 /// `AsPrimitive<usize>`, and `ToPrimitive`.

@@ -454,11 +454,7 @@ fn test_link_reference_wrapping_sub() {
 #[test]
 fn test_link_reference_wrapping_arithmetic_no_extra_bounds() {
     fn wrapping_ops<T: LinkReference>(a: T, b: T) -> (T, T, T) {
-        (
-            a.wrapping_add(&b),
-            a.wrapping_sub(&b),
-            a.wrapping_mul(&b),
-        )
+        (a.wrapping_add(&b), a.wrapping_sub(&b), a.wrapping_mul(&b))
     }
     let (add, sub, mul) = wrapping_ops(u32::MAX, 1u32);
     assert_eq!(add, 0u32);
