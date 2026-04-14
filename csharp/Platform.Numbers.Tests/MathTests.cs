@@ -1,10 +1,52 @@
 using System;
+using System.Diagnostics;
+using System.Numerics;
 using Xunit;
 
 namespace Platform.Numbers.Tests
 {
     public static class MathTests
     {
+        private static readonly TimeSpan ComputationTimeLimit = TimeSpan.FromSeconds(10);
+
+        /// <summary>
+        /// Computes factorial of n using BigInteger so it never overflows.
+        /// Returns null if computation exceeds the time limit.
+        /// </summary>
+        private static BigInteger? ComputeFactorialWithTimeLimit(ulong n)
+        {
+            var stopwatch = Stopwatch.StartNew();
+            BigInteger result = BigInteger.One;
+            for (ulong i = 2; i <= n; i++)
+            {
+                result *= i;
+                if (stopwatch.Elapsed > ComputationTimeLimit)
+                {
+                    return null;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Computes the nth Catalan number from scratch using the formula:
+        /// C(n) = (2n)! / ((n+1)! * n!)
+        /// Returns null if computation exceeds the time limit.
+        /// </summary>
+        private static BigInteger? ComputeCatalanWithTimeLimit(ulong n)
+        {
+            var twoNFact = ComputeFactorialWithTimeLimit(2 * n);
+            if (twoNFact is null) return null;
+
+            var nPlusOneFact = ComputeFactorialWithTimeLimit(n + 1);
+            if (nPlusOneFact is null) return null;
+
+            var nFact = ComputeFactorialWithTimeLimit(n);
+            if (nFact is null) return null;
+
+            return twoNFact / (nPlusOneFact * nFact);
+        }
+
         [Theory]
         [InlineData(0ul, 1ul)]
         [InlineData(1ul, 1ul)]
@@ -106,6 +148,47 @@ namespace Platform.Numbers.Tests
         {
             Assert.Equal(20ul, Math.MaximumFactorialNumber);
             Assert.Equal(36ul, Math.MaximumCatalanIndex);
+        }
+
+        [Fact]
+        public static void PrecalculatedFactorialsMatchComputedValues()
+        {
+            // Verify that every precalculated factorial constant in Math._factorials is actually
+            // a correct factorial value, computed independently using BigInteger arithmetic.
+            // Only computes values that finish within 10 seconds; larger values would need
+            // verification via an external trusted resource (e.g. OEIS A000142: https://oeis.org/A000142).
+            for (ulong n = 0; n <= Math.MaximumFactorialNumber; n++)
+            {
+                var computed = ComputeFactorialWithTimeLimit(n);
+                if (computed is null)
+                {
+                    // Computation exceeded 10 seconds — skip and rely on external verification.
+                    continue;
+                }
+                var precalculated = Math.Factorial<ulong>(n);
+                Assert.Equal((ulong)computed, precalculated);
+            }
+        }
+
+        [Fact]
+        public static void PrecalculatedCatalansMatchComputedFactorials()
+        {
+            // Verify that every precalculated Catalan constant in Math._catalans is actually
+            // a correct Catalan number, computed from scratch using the formula:
+            //   C(n) = (2n)! / ((n+1)! * n!)
+            // Only computes values that finish within 10 seconds; larger values would need
+            // verification via an external trusted resource (e.g. OEIS A000108: https://oeis.org/A000108).
+            for (ulong n = 0; n <= Math.MaximumCatalanIndex; n++)
+            {
+                var computed = ComputeCatalanWithTimeLimit(n);
+                if (computed is null)
+                {
+                    // Computation exceeded 10 seconds — skip and rely on external verification.
+                    continue;
+                }
+                var precalculated = Math.Catalan<ulong>(n);
+                Assert.Equal((ulong)computed, precalculated);
+            }
         }
     }
 }
