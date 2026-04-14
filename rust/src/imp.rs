@@ -144,7 +144,7 @@ for_each_integer_type!(max_value_impl);
 /// `FromPrimitive`, `TryFrom`/`TryInto` for all integer types,
 /// `Debug`, `Display`, `Hash`, `Send`, `Sync`, and `'static`.
 ///
-/// Implemented for `u8`, `u16`, `u32`, `u64`, and `usize`.
+/// Implemented for `u8`, `u16`, `u32`, `u64`, `u128`, and `usize`.
 ///
 /// # Design note
 ///
