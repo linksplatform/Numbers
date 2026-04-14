@@ -6,3 +6,4 @@ exclude_paths:
   - "scripts/**"
   - "experiments/**"
   - "cpp/build/**"
+  - "cpp/Platform.Numbers.Benchmarks/**"

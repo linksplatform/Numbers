@@ -1,10 +1,6 @@
-// cppcheck-suppress missingIncludeSystem
 #include <benchmark/benchmark.h>
-// cppcheck-suppress missingIncludeSystem
 #include <cstdint>
-// cppcheck-suppress missingIncludeSystem
 #include <stdexcept>
-// cppcheck-suppress missingIncludeSystem
 #include <string>
 
 namespace Platform::Numbers::Benchmarks
